@@ -20,21 +20,6 @@ Universal working preferences in `~/.claude/CLAUDE.md`.
 2. [Another project-specific rule]
 3. [Guidelines that encode lessons learned from past sessions]
 
-<!-- Add a Cross-Project Coordination subsection here if this project
-     participates in multi-project coordination. See the Overture workflow
-     framework for the pattern. -->
-
----
-
-## CURRENT METRICS (Sources of Truth)
-
-| Metric | Value | Source of Truth |
-|--------|-------|-----------------|
-| [Metric 1] | [Value] | [Authoritative file or system] |
-| [Metric 2] | [Value] | [Authoritative file or system] |
-
-**Last Validated**: [Date] (Session #XX)
-
 ---
 
 ## SESSION WORKFLOW
@@ -60,15 +45,10 @@ Universal working preferences in `~/.claude/CLAUDE.md`.
 
 ## SESSION PROGRESS
 
-*Updated each session if work is in progress. Cleared when complete.*
-
 **Current**: Session #1 pending
 **Status**: Initial setup
 
 ### Pending Verifications
-
-<!-- Items that need checking in future sessions — things that require
-     a deploy cycle, user test, or time delay to verify. -->
 
 ---
 
@@ -85,7 +65,7 @@ Universal working preferences in `~/.claude/CLAUDE.md`.
 |---------|---------|-------|
 | Initial setup | #1 | Project CLAUDE.md created |
 
-### P2: [FUTURE WORK]
+### P2: FUTURE WORK
 
 [Planned work that isn't the current priority]
 
@@ -93,14 +73,11 @@ Universal working preferences in `~/.claude/CLAUDE.md`.
 
 | Item | Reason |
 |------|--------|
-| [Item] | [Why it's parked — not just "later"] |
+| *(none)* | |
 
 ---
 
 ## DEFERRED WORK
-
-<!-- Categorize by domain as the project matures.
-     Example categories: UX/Product, Infrastructure, Data Quality, Security -->
 
 | Item | Originally From | Context |
 |------|-----------------|---------|
@@ -108,47 +85,48 @@ Universal working preferences in `~/.claude/CLAUDE.md`.
 
 ---
 
-## CRITICAL REMINDERS
+<!--
+============================================================
+SECTIONS BELOW ARE OPTIONAL — add as the project matures.
+Start without them. Add when you need them.
+============================================================
+-->
 
-<!-- Hard rules. NEVER/ALWAYS invariants. Short, absolute, rarely updated.
-     Add these as lessons are learned. -->
+<!-- CURRENT METRICS (Sources of Truth)
+Add when you have values worth tracking across sessions.
+
+| Metric | Value | Source of Truth |
+|--------|-------|-----------------|
+
+**Last Validated**: [Date] (Session #XX)
+-->
+
+<!-- CRITICAL REMINDERS
+Add as lessons are learned. NEVER/ALWAYS invariants only.
 
 1. **NEVER** [dangerous thing to avoid]
 2. **ALWAYS** [essential thing to maintain]
+-->
 
----
-
-## DEVELOPMENT WORKFLOW
+<!-- DEVELOPMENT WORKFLOW
+Add when deployment or environment setup needs a quick reference.
 
 ### Deployment
-
 ```bash
-# [Deployment commands]
+# commands
 ```
+-->
 
-### Environment
-
-<!-- Environment variables, tools, account management notes -->
-
----
-
-## DOCUMENTATION REFERENCE
+<!-- DOCUMENTATION REFERENCE
+Add when supporting docs exist that need staleness tracking.
 
 | Document | Path | Last Updated | Content |
 |----------|------|-------------|---------|
-| [Doc name] | `path/to/doc.md` | [Date/Session] | [Brief description] |
+-->
 
----
-
-## SESSION ARCHIVES
-
-<!-- When CLAUDE.md grows past ~40k characters, archive old session entries here.
-     Archive session history, not work queue or metrics — those stay as living sections. -->
+<!-- SESSION ARCHIVES
+Add when CLAUDE.md grows past ~40k characters.
 
 | Archive | Sessions | Period |
 |---------|----------|--------|
-| *(none yet)* | | |
-
----
-
-**Last Updated**: [Date]
+-->

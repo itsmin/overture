@@ -61,9 +61,9 @@ Not all sections are needed from day one. Start with product status, collaborati
 
 If starting from scratch, open Claude Code in your project directory:
 
-> "Read the Overture workflow framework at `[path/to/overture]` and the templates directory. Help me set up this project."
+> "Read the Overture initialization guide at `[path/to/overture]/templates/init.md` and the other templates in that directory. Help me set up this project."
 
-Claude reads the methodology, asks about your project, and generates your CLAUDE.md and session commands.
+Claude follows the initialization guide: asks about your project, generates your CLAUDE.md and session commands, and confirms the setup. The init guide (`templates/init.md`) has the step-by-step instructions Claude follows.
 
 ---
 

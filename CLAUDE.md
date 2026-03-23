@@ -22,8 +22,9 @@
 | `voice/Voice-Framework.md` | Voice as design material: defining, encoding, maintaining voice in AI-assisted work | v2.0 — March 2026 |
 | `voice/Voice-Reference.md` | Detailed session structure, derivation approach, encoding patterns for voice work | v2.0 — March 2026 |
 | `templates/CLAUDE.md` | Project CLAUDE.md skeleton — copy and fill | v1 — March 2026 |
-| `templates/session-start.md` | Session-start command template — copy to `.claude/commands/` | v1 — March 2026 |
-| `templates/session-end.md` | Session-end command template — copy to `.claude/commands/` | v1 — March 2026 |
+| `templates/init.md` | Initialization guide — Claude follows this to set up a new project | v1 — March 2026 |
+| `templates/session-start.md` | Session-start command template — copy to `.claude/commands/` | v1.1 — March 2026 |
+| `templates/session-end.md` | Session-end command template — copy to `.claude/commands/` | v1.1 — March 2026 |
 | `templates/contract.md` | Cross-project working contract template | v1 — March 2026 |
 
 ### Archived Files
@@ -171,6 +172,7 @@ Before flipping from private → public:
 | Choral Reference | `choral/Choral-Pattern.md` | Session #2 | Standalone coordination pattern guide |
 | Voice Framework | `voice/Voice-Framework.md` | Session #1 | Voice methodology — defining, encoding, maintaining |
 | Voice Reference | `voice/Voice-Reference.md` | Session #1 | Session structure, derivation, encoding patterns |
+| Init Guide | `templates/init.md` | Session #2 | Initialization instructions for Claude to follow |
 
 ---
 

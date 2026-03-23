@@ -10,13 +10,15 @@ Evolved through 460+ working sessions across production SaaS (company intelligen
 
 Open Claude Code in your project directory and say:
 
-> "Read the Overture workflow framework at `[path/to/overture]` and the templates directory. Help me set up this project."
+> "Read the Overture initialization guide at `[path/to/overture]/templates/init.md` and the other templates in that directory. Help me set up this project."
 
-Claude reads the methodology, asks about your project, and generates your CLAUDE.md and session commands.
+Claude asks about your project, generates your `CLAUDE.md` and session commands, and walks you through the setup. After that, `/session-start` and `/session-end` are available as slash commands.
 
-If you don't have `~/.claude/CLAUDE.md` (user-level preferences) yet, say:
+If you don't have `~/.claude/CLAUDE.md` (user-level preferences) yet, add:
 
 > "Also help me set up my user preferences at `~/.claude/CLAUDE.md`."
+
+For understanding the methodology behind the setup, read the [Workflow Framework](workflow/Claude-Code-Workflow-Framework.md). For the conceptual foundations, read [Working with Claude Code](Working-With-Claude-Code.md). Neither is required for initialization — they're reference material.
 
 ---
 
@@ -34,7 +36,8 @@ If you don't have `~/.claude/CLAUDE.md` (user-level preferences) yet, say:
 
 | Template | Purpose |
 |----------|---------|
-| [`templates/CLAUDE.md`](templates/CLAUDE.md) | Project operating document — status, guidelines, metrics, work queue, session progress |
+| [`templates/init.md`](templates/init.md) | Initialization guide — step-by-step instructions Claude follows to set up a new project |
+| [`templates/CLAUDE.md`](templates/CLAUDE.md) | Project operating document — status, guidelines, work queue, session progress |
 | [`templates/session-start.md`](templates/session-start.md) | Session-start command — context loading, metrics validation, work queue |
 | [`templates/session-end.md`](templates/session-end.md) | Session-end command — documentation sync, handoff, cleanup |
 | [`templates/contract.md`](templates/contract.md) | Cross-project working contract for multi-project coordination |

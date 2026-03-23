@@ -8,12 +8,13 @@ Ensure clean handoff to the next session.
 Summarize what was accomplished this session. Be specific — what changed, what was deployed, what was decided.
 
 ### 2. Documentation Sync Check
-Did this session change any documented domain? Check each:
-- [ ] Pricing or tiers → Update pricing config (source of truth) + business docs
-- [ ] Data, entities, or schemas → Run pipelines + update architecture docs
-- [ ] Infrastructure or costs → Update cost docs
+Did this session change any documented domain? Check each that applies to your project:
+- [ ] Configuration or pricing → Update config (source of truth) + docs
+- [ ] Data, entities, or schemas → Update architecture docs
+- [ ] Infrastructure or costs → Update cost/infra docs
 - [ ] Automation or background services → Update automation docs
-<!-- Customize these domains to your project. -->
+
+*Customize this checklist to your project's actual domains. The point isn't the specific items — it's the habit of asking "did this session change anything that's documented elsewhere?"*
 
 ### 3. Deferred Work Check
 Were any planned items bumped or deferred this session? If yes:
@@ -29,26 +30,24 @@ Were any planned items bumped or deferred this session? If yes:
 - Add any items to Pending Verifications that need checking in future sessions
 
 #### Work Queue
-- Move completed items from CURRENT PRIORITIES → COMPLETE (Recent)
+- Move completed items from CURRENT PRIORITIES to COMPLETE (Recent)
 - Promote next priority if current work is done
-- Update NEXT SESSION pointer if applicable
 
 #### Metrics
-- Update Current Metrics if any values changed this session
+*Skip if no Current Metrics table exists.*
+- Update values if any changed this session
 - Update "Last Validated" date
 
 #### Size Check
 - If CLAUDE.md is approaching ~40k characters, archive old session entries to a separate file
-- Add a row to the Session Archives table pointing to the archive
 
 ### 5. Cross-Project Coordination
-<!-- Remove this section if the project doesn't participate in coordination. -->
+*Skip if this project doesn't participate in coordination.*
 If you implemented any approved items from the working contract, update IMPLEMENTATION STATUS with session number and notes.
 If you changed any integration surface (APIs, URL patterns, data models), note the change in the contract's CURRENT INTEGRATION section.
 
 ### 6. Final Checklist
-- Source of truth updates: [done / not needed]
-- Documentation sync: [done / N/A] per doc
+- Documentation sync: [done / N/A]
 - Deferred work tracked: [done / none bumped]
 - Commit ready: [yes / no — reason]
 
