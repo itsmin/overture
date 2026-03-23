@@ -137,13 +137,13 @@ Universal working preferences in `~/.claude/CLAUDE.md`.
 ### PUBLIC-READINESS CRITERIA
 
 Before flipping from private → public:
-- [ ] No absolute paths to local machine in committed files
-- [ ] No CaliKo-specific operational content (provenance references are fine)
-- [ ] LICENSE file present (MIT)
-- [ ] README initialization flow tested end-to-end at least once
-- [ ] All cross-references resolve
-- [ ] All kit files at v1+
-- [ ] CONTRIBUTING.md or equivalent guidance for external contributors
+- [x] No absolute paths to local machine in committed files
+- [x] No CaliKo-specific operational content (provenance references are fine)
+- [x] LICENSE file present (MIT)
+- [x] README initialization flow tested end-to-end at least once
+- [x] All cross-references resolve
+- [x] All kit files at v1+
+- [x] CONTRIBUTING.md or equivalent guidance for external contributors
 
 ### PARKING LOT
 
