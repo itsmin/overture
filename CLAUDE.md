@@ -79,11 +79,11 @@ Universal working preferences in `~/.claude/CLAUDE.md`.
 **Status**: Workflow dogfooding, P1 items, Choral evolution, GitHub repo setup
 
 ### Pending Verifications
-- **#2**: End-to-end initialization test — does the README prompt actually produce a working project setup?
+*(none)*
 
 ### Session #2 Complete (March 23, 2026)
 
-**Workflow Dogfooding + P1 Cleanup + GitHub Setup**
+**Workflow Dogfooding + P1 Cleanup + GitHub Setup + Init Test**
 
 - Set up `/session-start` and `/session-end` slash commands in `.claude/commands/`
 - Archived 3 superseded files to `archive/`
@@ -93,7 +93,8 @@ Universal working preferences in `~/.claude/CLAUDE.md`.
 - Fixed 3 broken anchor links, verified all cross-references
 - Separated operational paths (`.claude/CLAUDE.local.md`, gitignored) from portable CLAUDE.md
 - Added MIT LICENSE, .gitignore, defined public-readiness criteria
-- Created private GitHub repo, initial commit pushed
+- Created private GitHub repo (`itsmin/overture`), initial commit pushed
+- E2E initialization test: found 5 issues, fixed all — new `templates/init.md`, improved template usability, removed unfilled placeholders from session commands
 
 ### Session #1 Complete (March 22, 2026)
 
@@ -112,16 +113,14 @@ Universal working preferences in `~/.claude/CLAUDE.md`.
 
 ### CURRENT PRIORITIES
 
-**P1: End-to-end initialization test**
-- Create a throwaway project, follow README instructions from scratch
-- Validates the kit's usability claim — does the initialization prompt actually work?
-- Find gaps before anyone else does
+*(No active P1 — all items complete through Session #2)*
 
 ### COMPLETE (Recent)
 
 | Item | Session | Notes |
 |---------|---------|-------|
-| GitHub private repo setup | #2 | `itsmin/overture`, private, initial commit pushed |
+| E2E initialization test + fixes | #2 | New `templates/init.md`, fixed template placeholders, improved usability |
+| GitHub private repo setup | #2 | `itsmin/overture`, private |
 | Separate operational paths from portable CLAUDE.md | #2 | Absolute paths → `.claude/CLAUDE.local.md` (gitignored) |
 | Extract Choral pattern as standalone reference | #2 | `choral/Choral-Pattern.md` v1 |
 | Review and refine all docs | #2 | Fixed 3 broken anchors, updated cross-refs, verified CaliKo scoping |
