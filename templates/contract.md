@@ -8,7 +8,9 @@
 
 ## PURPOSE
 
-This contract documents the integration architecture between [Project A] and [Project B]. The coordination session proposes architectural recommendations here. You approve them. Each project session reads approved items and implements independently.
+This contract documents the integration architecture between [Project A] and [Project B]. The coordination session proposes architectural recommendations here. Each project session reads approved items and implements independently.
+
+Recommendations define the interface — what crosses the boundary between the two systems. Request/response shapes, semantic guarantees, and integration constraints are contractual. Everything behind the interface (file structure, function names, internal orchestration, error handling) belongs to the project session.
 
 ---
 
@@ -36,18 +38,39 @@ This contract documents the integration architecture between [Project A] and [Pr
 <!-- Format for each recommendation:
 ### [Number]. [Title] — [STATUS]
 **Proposed**: [Date], Coordination Session #XX
-**Description**: [What and why]
+**Interface**: [What the integration surface looks like — request/response shapes, constraints]
+**Why**: [What problem this solves]
 **Affected projects**: [Which projects need changes]
 **Dependencies**: [What needs to happen first]
+
+Note: the interface definition is contractual. Implementation suggestions are context — project sessions may find a better approach.
 -->
 
 *(No recommendations yet.)*
 
 ---
 
+## OBSERVATIONS
+
+*Findings that don't require action but inform project sessions.*
+
+<!-- Format:
+### OBS-[Number]. [Title]
+**Found**: [Date], Coordination Session #XX
+**Finding**: [What was observed]
+**Affected**: [Which project(s)]
+
+Observations document problems or patterns without prescribing solutions.
+Project sessions decide what (if anything) to do about them.
+-->
+
+*(No observations yet.)*
+
+---
+
 ## APPROVED WORK
 
-*Items you have approved for implementation. Each project session reads this section at session start.*
+*Items approved for implementation. Each project session reads this section at session start.*
 
 *(None yet.)*
 
@@ -55,7 +78,7 @@ This contract documents the integration architecture between [Project A] and [Pr
 
 ## IMPLEMENTATION STATUS
 
-*Project sessions report back here when implementing approved work.*
+*Project sessions report back here when implementing approved work. Include deviations from suggested approach — the coordinator learns from these.*
 
 | Item | Project | Status | Session | Notes |
 |------|---------|--------|---------|-------|
@@ -76,10 +99,10 @@ This contract documents the integration architecture between [Project A] and [Pr
 
 ## HOW TO USE THIS CONTRACT
 
-**Coordination session**: Maintains this file. Reads both codebases, proposes recommendations, tracks implementation status.
+**Coordination session**: Maintains this file. Reads both codebases, proposes recommendations defining interface contracts, documents observations. Does not prescribe implementation details.
 
-**[Project A] session**: Read APPROVED WORK and RECOMMENDATIONS at session start. Owns product decisions within [Project A]'s domain. Update IMPLEMENTATION STATUS when completing approved items. Note changes to integration surfaces in CURRENT INTEGRATION.
+**[Project A] session**: Read APPROVED WORK and OBSERVATIONS at session start. Implement approved items however best fits your codebase — the recommendation defines the interface, you own everything behind it. Update IMPLEMENTATION STATUS when done, including any deviations from the suggested approach.
 
-**[Project B] session**: Same as above, for [Project B]'s domain.
+**[Project B] session**: Same as above.
 
-**Decision authority**: Project sessions own product-scoped decisions within their domain. Cross-cutting changes — those affecting integration surfaces, shared schemas, or multiple projects — require your explicit approval before implementation.
+**Decision authority**: Cross-cutting changes to integration surfaces require explicit user approval (PROPOSED → APPROVED). Once approved, the implementing session has full authority over how to satisfy the requirement. If you find a better approach than what Choral suggested, take it and note what you did.

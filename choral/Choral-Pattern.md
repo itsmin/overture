@@ -58,6 +58,12 @@ Three participants, distinct roles:
 ### Read-only observation
 The coordinator doesn't write to sibling codebases. The moment it starts touching implementation, you have too many cooks. The contract is the interface.
 
+### Define the interface, not the implementation
+Recommendations define what crosses the boundary between projects — request/response shapes, semantic guarantees, integration constraints. These are contractual. Everything behind the interface (file structure, function names, internal orchestration, error handling) belongs to the project session. A recommendation that says "the endpoint should return X" is binding on the API contract. A recommendation that says "implement this in file Y" is context, not instruction — the session may find a better approach given its current codebase state.
+
+### Trust the sessions
+If a project session deviates from a recommendation's suggested approach, that's expected — they found something better. The contract defines *what* the integration needs. *How* each project satisfies that is theirs to decide. When a session takes a different path, they note what they did in the implementation status. The coordinator learns from this for future recommendations.
+
 ### Contract as single communication channel
 No back-channel, no probing between sessions. The contract is the shared artifact. Everything flows through it. This constraint is load-bearing — remove it and you get circular logic between sessions.
 
@@ -68,7 +74,7 @@ When the coordinator identifies a pattern worth reusing, it recommends following
 Different projects have different data trust models. First-person authoritative data (user provided it directly) and third-party assembled data (scraped, inferred, extracted) require fundamentally different confidence models, refresh cadences, and hallucination prevention. The coordinator must understand what kind of data it's looking at, not just where it lives.
 
 ### Decision authority lives in the contract
-The contract encodes what each project session can decide independently vs. what requires human approval. Product-scoped decisions — choices that affect only one project's product behavior — are delegated to project sessions. They own their product. Cross-cutting architectural decisions that affect integration surfaces or multiple projects still require your explicit approval. This prevents the coordination layer from becoming a bottleneck while maintaining the gate where it matters — at the boundaries between projects.
+The contract encodes what each project session can decide independently vs. what requires human approval. Cross-cutting changes to integration surfaces require your explicit approval. But once approved, the implementing session has full authority over how to satisfy the requirement. The coordinator proposes; you approve at the boundary; project sessions own everything behind it.
 
 ---
 
@@ -208,15 +214,31 @@ PROPOSED  ->  APPROVED  ->  IN PROGRESS  ->  COMPLETE
 DEFERRED      REJECTED
 ```
 
-**PROPOSED**: The coordinator writes a recommendation with: what, why, which projects are affected, dependencies, and a specification detailed enough for a project session to implement without the coordinator present.
+**PROPOSED**: The coordinator writes a recommendation defining the interface: request/response shapes, semantic guarantees, integration constraints. Detailed enough for a project session to implement without the coordinator present. Implementation suggestions are context, not instruction.
 
-**APPROVED**: Approved for implementation. For cross-cutting recommendations, this requires your explicit sign-off. For product-scoped recommendations that fall within a project session's decision authority, the project session can approve directly — the contract defines these boundaries.
+**APPROVED**: Approved for implementation. Cross-cutting changes to integration surfaces require your explicit sign-off. Once approved, the implementing session has full authority over *how* to satisfy the requirement.
 
-**IN PROGRESS**: A project session has started implementation. Updated in the contract's IMPLEMENTATION STATUS table with session number and notes.
+**IN PROGRESS**: A project session has started implementation. Updated in the contract's IMPLEMENTATION STATUS table with session number and notes — including any deviations from the suggested approach.
 
 **COMPLETE**: Both (or all) affected projects have finished their parts. The recommendation moves from active to historical.
 
 **DEFERRED/REJECTED**: Decided not now or not ever. Include rationale — it prevents the coordinator from re-proposing the same thing.
+
+---
+
+## Observations
+
+Observations are distinct from recommendations. The coordinator documents findings — data inconsistencies, potential risks, integration patterns — without prescribing solutions.
+
+```
+OBS-001: [Title]
+Finding: [What was observed]
+Affected: [Which project(s)]
+```
+
+The observation says "here's what I found." The project session decides what (if anything) to do about it. This keeps the coordinator in its lane — it identifies problems at the integration level, but product-level responses belong to the project sessions.
+
+Observations that grow into integration-level concerns can be promoted to recommendations. But not every finding needs a recommendation — some are just informational context for the project sessions to consider.
 
 ---
 

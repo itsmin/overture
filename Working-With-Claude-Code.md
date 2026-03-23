@@ -169,13 +169,17 @@ Project sessions update the contract with implementation status
 
 **Read-only observation.** The coordinator doesn't write to sibling codebases. The moment it starts touching implementation, you have too many cooks. The contract is the interface.
 
+**Define the interface, not the implementation.** Recommendations define what crosses the boundary — request/response shapes, semantic guarantees, integration constraints. Everything behind the interface belongs to the project session. "The endpoint should return X" is contractual. "Implement this in file Y" is context, not instruction.
+
+**Trust the sessions.** If a project session deviates from the suggested approach, that's expected — they found something better. The contract defines *what*. Each project owns *how*.
+
 **Contract as single communication channel.** No back-channel, no probing. The contract is the shared artifact. Everything flows through it. This constraint is load-bearing — remove it and you get circular logic between sessions.
 
 **Reference designs, not shared code.** When the coordinator identifies a pattern worth reusing, it recommends following the *architecture* — not extracting a shared library. Shared code is premature until the second consumer proves the abstraction is correct. Build it twice, find the real overlap, *then* extract.
 
 **Provenance matters.** Different projects have different data trust models. A professional's self-reported work history is first-person authoritative. A company's news-extracted intelligence is third-party assembled. A coordination layer that treats these the same will produce bad recommendations. The coordinator must understand what kind of data it's looking at, not just where it lives.
 
-**Decision authority in the contract.** The contract encodes what each project session can decide independently — product-scoped decisions within their domain — vs. what requires your approval — cross-cutting architectural changes that affect integration surfaces. Project sessions own their product. The human gate stays where it matters: at the boundaries between projects.
+**Decision authority in the contract.** Cross-cutting changes to integration surfaces require your approval. Once approved, the implementing session has full authority over how to satisfy the requirement. The human gate stays where it matters: at the boundaries between projects.
 
 ### Making it repeatable
 
