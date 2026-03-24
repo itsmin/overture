@@ -150,119 +150,67 @@ Cross-cutting changes to integration surfaces require your explicit approval. Bu
 
 ---
 
-## Setting Up
+## Getting Started
 
-### 1. Create the coordinator directory
+Setup takes about 5 minutes. You need three things: a directory, a CLAUDE.md, and a contract.
+
+### Quick start
 
 ```
-/Projects/
-    project-a/
-    project-b/
-    coordinator/          <-- new
-        CLAUDE.md
-        .claude/
-            commands/
-                session-start.md
-                session-end.md
-        contracts/
-            a-b.md        <-- one per project pair
-        scripts/
-            integration-monitor.sh
-            create-signal.sh
-            on-a-edit.sh
-            on-b-edit.sh
-            check-signal-a.sh
-            check-signal-b.sh
-        signals/          <-- ephemeral signal files land here
+mkdir coordinator
+mkdir coordinator/contracts
 ```
 
-Start with just the coordinator directory, CLAUDE.md, commands, and contract. Add the scripts incrementally — Mode 1 (reactive hooks) and the integration monitor can be added after the basic pattern is working.
-
-### 2. Write the coordinator CLAUDE.md
-
-The coordinator's CLAUDE.md defines its mandate and boundaries:
+Write a `coordinator/CLAUDE.md`:
 
 ```markdown
 # [Coordinator Name]
 
-## WHAT THIS IS
+Cross-project coordination for [Project A] <> [Project B].
+Read-only. Observes both codebases, writes recommendations to a shared contract.
 
-Cross-project coordination session for [Project A] <> [Project B].
-Read-only. Observes both codebases, writes recommendations to contracts.
-Does not implement.
+**Does:** Read both codebases, identify integration opportunities, write recommendations.
+**Does not:** Implement, write to sibling codebases, make product decisions.
 
-## MANDATE
-
-**Does:**
-- Read both project codebases and their CLAUDE.md files
-- Identify integration opportunities, risks, and shared patterns
-- Write architectural recommendations to the working contract
-- Track implementation status across both projects
-
-**Does not:**
-- Implement changes in either project
-- Write to sibling codebases
-- Make product decisions — those belong to project sessions within their domain
-- Create shared libraries (recommend architecture, not code extraction)
+At session start: read both project CLAUDE.md files + the contract. Present findings.
 ```
 
-### 3. Create the working contract
+Copy `templates/contract.md` to `coordinator/contracts/a-b.md` and fill in what's already integrated.
 
-Copy `templates/contract.md` to `contracts/a-b.md` and fill in:
-
-- **Current Integration**: Document what's already integrated — live APIs, shared URLs, data flows. This is the ground truth.
-- **Operational State**: Each project's current deployment state, session number, and integration-relevant notes.
-- **Recommendations**: Start empty. The coordination session populates this.
-- **Architectural Context**: Data provenance differences, trust models, capabilities available for integration.
-
-See the [contract template](../templates/contract.md) for the full structure.
-
-### 4. Add coordination to each project's CLAUDE.md
-
-Each coordinated project adds a section to its collaboration guidelines:
+Add a cross-project coordination section to each project's CLAUDE.md:
 
 ```markdown
 ### Cross-Project Coordination
-
-**[Coordinator]** (`/path/to/coordinator/`): Coordinates [Project A] <> [Project B].
 Contract: `/path/to/coordinator/contracts/a-b.md`
-
-**Decision authority**: This project session owns product decisions within [Project X]'s domain.
-Cross-cutting changes that affect integration surfaces require human approval.
-
-**At session start**: Read the contract's APPROVED WORK, BLOCKERS, and OBSERVATIONS sections.
-**During session**: Note changes to any integration surface in the contract.
-**At session end**: Update OPERATIONAL STATE and IMPLEMENTATION STATUS for approved items completed.
-
-**Key integration points**:
-- [Specific APIs, URLs, schemas shared between projects]
+At session start: read the contract's APPROVED WORK and BLOCKERS.
+At session end: update OPERATIONAL STATE and IMPLEMENTATION STATUS.
 ```
 
-### 5. Set up session commands
+That's it. Open Claude Code in the coordinator directory and start your first coordination session. The three automation modes are additive — you don't need any of them to start.
 
-**Coordinator session-start** should:
-1. Read both project CLAUDE.md files
-2. Read the working contract
-3. Run the integration monitor in full mode
-4. Check recent git activity in both projects
-5. Present: integration state, pending recommendations, approved work, blockers
+### Adding automation (incremental)
 
-**Coordinator session-end** should:
-1. Write new recommendations to the contract (PROPOSED status)
-2. Update implementation status based on observations
-3. Prepare a summary for each project session (what to read, what's actionable)
+When the basic pattern is working and you want to reduce manual overhead, add automation in layers:
 
-**Project `/choral` command** (mid-session sync):
-1. Read the contract
-2. Surface: pending approved work for this project, active blockers, relevant observations
-3. Check for and clear signal files
-4. Validate cross-project dependency references in CLAUDE.md
+**Mode 2 — Session boundary sync:**
 
-### 6. Build the automation layers (incremental)
+Add `.claude/commands/` to the coordinator for session-start/session-end commands. Build an integration monitor script (`scripts/integration-monitor.sh`) that watches integration-relevant files via `git log --since`. Wire it into project session-starts in quiet mode. Add a `/choral` command to each project for mid-session sync.
 
-**Integration monitor** (Mode 2): A bash script that watches integration-relevant files across projects. Inputs: watched file paths per project, reference timestamp (contract's "last updated"), output mode (`--full`, `--quiet`, `--json`). Uses `git log --since` against each watched file. No external dependencies. Wire it into project session-starts in quiet mode.
+```
+coordinator/
+    CLAUDE.md
+    .claude/commands/
+        session-start.md
+        session-end.md
+    contracts/
+        a-b.md
+    scripts/
+        integration-monitor.sh    <-- add when ready
+```
 
-**Signal hooks** (Mode 1): Shell scripts triggered by Claude Code hooks (PostToolUse on Edit). When a watched file is edited, create a signal file. PreToolUse hooks in the other project check for and display signals. The hooks are configured in each project's `.claude/settings.local.json`:
+**Mode 1 — Real-time detection:**
+
+Add hook scripts triggered by Claude Code's PostToolUse/PreToolUse events. When a watched file is edited, a signal file is created. The other project's hooks check for incoming signals. Configure in each project's `.claude/settings.local.json`:
 
 ```json
 {
@@ -279,7 +227,20 @@ Cross-cutting changes that affect integration surfaces require human approval.
 }
 ```
 
-These are additive. The basic Choral pattern (Mode 3 only) works without any scripts. Add Mode 2 when session boundary detection becomes valuable. Add Mode 1 when you need real-time awareness.
+```
+coordinator/
+    ...
+    scripts/
+        integration-monitor.sh
+        create-signal.sh          <-- add when ready
+        on-a-edit.sh
+        on-b-edit.sh
+        check-signal-a.sh
+        check-signal-b.sh
+    signals/                      <-- ephemeral signal files
+```
+
+Each layer adds value independently. Most teams will be well-served by Mode 3 (manual sessions) + Mode 2 (monitor). Mode 1 (real-time hooks) is for when you're actively developing both projects concurrently.
 
 ---
 
