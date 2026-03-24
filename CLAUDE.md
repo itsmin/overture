@@ -76,25 +76,23 @@ Universal working preferences in `~/.claude/CLAUDE.md`.
 ## SESSION PROGRESS
 
 **Current**: Session #2 complete (March 23, 2026)
-**Status**: Workflow dogfooding, P1 items, Choral evolution, GitHub repo setup
+**Status**: All P1 complete. Repo public. Choral v2.0 (three-mode system). Privacy workflow established.
 
 ### Pending Verifications
 *(none)*
 
 ### Session #2 Complete (March 23, 2026)
 
-**Workflow Dogfooding + P1 Cleanup + GitHub Setup + Init Test**
+**Full Setup + Choral Evolution + GitHub Public + Privacy Workflow**
 
-- Set up `/session-start` and `/session-end` slash commands in `.claude/commands/`
-- Archived 3 superseded files to `archive/`
-- Restructured CLAUDE.md to follow the kit's own framework anatomy
-- Wrote standalone Choral reference (`choral/Choral-Pattern.md`)
-- Updated Choral pattern across all docs: decision authority model (project sessions own product-scoped decisions, human gate at project boundaries)
-- Fixed 3 broken anchor links, verified all cross-references
-- Separated operational paths (`.claude/CLAUDE.local.md`, gitignored) from portable CLAUDE.md
-- Added MIT LICENSE, .gitignore, defined public-readiness criteria
-- Created GitHub repo (private → public), initial commit pushed
-- E2E initialization test: found 5 issues, fixed all — new `templates/init.md`, improved template usability, removed unfilled placeholders from session commands
+- Set up `/session-start` and `/session-end` slash commands, restructured CLAUDE.md to follow own framework
+- Wrote Choral-Pattern.md: v1 (standalone reference) → v2.0 (three-mode coordination: reactive/concurrent/proactive, shared blackboard)
+- Evolved design principles: interface/implementation boundary, trust the sessions, observations pattern, decision authority
+- Created GitHub repo (private → public), MIT LICENSE, CONTRIBUTING.md, .gitignore
+- E2E initialization test: 5 issues found and fixed, created `templates/init.md`
+- Privacy audit workflow: built into session-end (step 2), CRITICAL REMINDERS added, removed sensitive archive file
+- Renamed "digestive system" → "Decay" (musical naming: Overture, Choral, Lyrical, Decay)
+- 8 commits pushed, all public-readiness criteria met
 
 ### Session #1 Complete (March 22, 2026)
 
@@ -119,14 +117,13 @@ Universal working preferences in `~/.claude/CLAUDE.md`.
 
 | Item | Session | Notes |
 |---------|---------|-------|
-| E2E initialization test + fixes | #2 | New `templates/init.md`, fixed template placeholders, improved usability |
-| GitHub repo setup | #2 | Private → public |
-| Separate operational paths from portable CLAUDE.md | #2 | Absolute paths → `.claude/CLAUDE.local.md` (gitignored) |
-| Extract Choral pattern as standalone reference | #2 | `choral/Choral-Pattern.md` v1 |
-| Review and refine all docs | #2 | Fixed 3 broken anchors, updated cross-refs, verified CaliKo scoping |
-| Archive superseded files | #2 | Moved 3 files to `archive/` |
-| Set up `/session-start` and `/session-end` commands | #2 | `.claude/commands/` — Overture dogfooding its own workflow |
-| Restructure CLAUDE.md to follow framework | #2 | Dogfooding the anatomy pattern |
+| Choral three-mode system + shared blackboard | #2 | Choral-Pattern.md v2.0, contract template updated |
+| Privacy audit workflow | #2 | Built into session-end, CRITICAL REMINDERS, removed sensitive file |
+| Rename "digestive system" → "Decay" | #2 | Musical naming: Overture, Choral, Lyrical, Decay |
+| E2E initialization test + fixes | #2 | New `templates/init.md`, fixed template usability |
+| GitHub repo (private → public) | #2 | All public-readiness criteria met |
+| Choral standalone reference + evolution | #2 | Interface/implementation, trust, observations, decision authority |
+| Workflow dogfooding + infrastructure | #2 | Commands, archive, CLAUDE.md restructure, operational path separation |
 | Kit overhaul — framework v2, templates, voice, README | #1 | Major update from 460+ sessions |
 
 ### P2: FUTURE WORK
