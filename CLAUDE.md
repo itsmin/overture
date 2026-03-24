@@ -43,7 +43,7 @@ Universal working preferences in `~/.claude/CLAUDE.md`.
 
 **Overture-Specific Guidelines**:
 1. **CaliKo-agnostic content** — CaliKo projects are provenance ("developed across 460+ sessions on production products"), not dependencies. The kit must work for any codebase at any organization.
-2. **Real over polished** — The value is that these patterns are battle-tested. Honest gaps (scaling unproven, digestive system is lossy, contract drift) are features, not liabilities.
+2. **Real over polished** — The value is that these patterns are battle-tested. Honest gaps (scaling unproven, decay is lossy, contract drift) are features, not liabilities.
 3. **Practitioner voice** — Direct, no thought-leadership inflection, no academic framing where it doesn't serve the reader. These docs are for someone who will use them tomorrow, not study them.
 4. **Don't duplicate, reference** — Live implementations of these patterns exist in production projects. Read them for current practice (paths in `.claude/CLAUDE.local.md`). Don't copy their content into Overture — extract the patterns.
 
@@ -132,7 +132,7 @@ Universal working preferences in `~/.claude/CLAUDE.md`.
 ### P2: FUTURE WORK
 
 1. **Progression guide** — Dedicated 0→1→2→3→4 document with concrete signals and decision criteria
-2. **Level 3 reference implementation** — Digestive system and idle-time automation templates (biggest portability gap — honestly may stay as a documented gap rather than a contrived template)
+2. **Level 3 reference implementation** — Decay and idle-time automation templates (biggest portability gap — honestly may stay as a documented gap rather than a contrived template)
 
 ### PUBLIC-READINESS CRITERIA
 

@@ -63,7 +63,7 @@ CLAUDE.md, session progress, work queues, source-of-truth docs. Persists between
 **Tier 3 — Archive (Cold Storage)**
 Old session logs, completed work, historical context. Not loaded unless specifically needed. Reference, not reasoning.
 
-### The Digestive System
+### Decay
 
 Tier 2 grows. Without pruning, it becomes a wall of text the model skims past. The solution: automated pruning based on signals that approximate relevance.
 
@@ -116,13 +116,13 @@ No persistent state. Open Claude Code, ask a question, close. Most tasks start h
 ### Level 3: Single Project, Automated
 
 **What you add:**
-- The digestive system — scripted summarization and archival based on age, magnitude, access frequency
+- Decay — scripted summarization and archival based on age, magnitude, access frequency
 - Idle-time automation — cron-based test harness execution, linting, health checks that run while you're away
 - Self-maintaining test harnesses — updated when code changes, catch regressions proactively
 
 **What you get:** The project maintains itself between your active sessions. Context stays lean. Tests run without being asked. Stale documentation gets pruned before it becomes noise.
 
-**Caveat:** Level 3 is custom engineering. There's no drop-in framework. The digestive system and idle-time automation are scripts built for your specific workflow. The *pattern* generalizes; the *implementation* doesn't.
+**Caveat:** Level 3 is custom engineering. There's no drop-in framework. Decay and idle-time automation are scripts built for your specific workflow. The *pattern* generalizes; the *implementation* doesn't.
 
 **Level up when:** You have multiple projects that need to be aware of each other's capabilities.
 
@@ -229,13 +229,13 @@ These aren't future work. They're known limitations of the current system.
 
 1. **Scaling is unproven.** Choral has coordinated lightweight integrations. A major architectural change propagating across projects hasn't been stress-tested. The contract model may need versioning, conflict resolution, or breaking-change detection at scale.
 
-2. **The digestive system is lossy by design.** The bet is that old enough ≈ unimportant enough. This is a heuristic, not a guarantee. Important information with low access frequency can be culled incorrectly.
+2. **Decay is lossy by design.** The bet is that old enough ≈ unimportant enough. This is a heuristic, not a guarantee. Important information with low access frequency can be culled incorrectly.
 
 3. **Contract drift is partially mitigated.** An integration monitor can detect file-level changes to watched integration surfaces (see the [Choral Pattern guide](choral/Choral-Pattern.md#integration-monitor)). But semantic drift — changes to what an API *means*, not just that a file changed — is still discipline-only.
 
 4. **No integration testing.** The coordinator reads code and reasons about compatibility. It can't run tests across projects. A breaking API change won't be caught until deployment.
 
-5. **Level 3 is partially documented.** The integration monitor in the Choral pattern is a concrete example of session-start automation. The digestive system (context pruning) still has no reproducible template — the pattern generalizes but the implementation is custom per project.
+5. **Level 3 is partially documented.** The integration monitor in the Choral pattern is a concrete example of session-start automation. Decay still has no reproducible template — the pattern generalizes but the implementation is custom per project.
 
 ---
 

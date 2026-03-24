@@ -31,7 +31,7 @@ Primitives don't tell you how to use them well. This framework is the methodolog
 - **Structured CLAUDE.md as operating document** — not just instructions, but current state, work queues, session progress, sources of truth, deferred work tracking
 - **Cross-session continuity** — session-start and session-end disciplines that prevent context loss between conversations
 - **Documentation hygiene** — sources of truth, domain-specific sync checks, staleness monitoring
-- **The digestive system** — pruning and archival patterns that keep project context lean and relevant as it grows
+- **Decay** — pruning and archival patterns that keep project context lean and relevant as it grows
 - **Cross-project coordination** — contracts and coordination sessions for multi-project work
 
 Auto memory stores discrete facts ("user prefers X"). Your CLAUDE.md is a curated operating document ("here's where the project stands, what's in flight, and what's next"). Use both — they serve different purposes.
@@ -346,7 +346,7 @@ The session-end sync check is a forcing function. Without it, documentation drif
 
 Customize the sync checklist to your project's actual domains. The point isn't the specific questions — it's the habit of asking "did this session change anything that's documented elsewhere?"
 
-### The Digestive System
+### Decay
 
 CLAUDE.md grows. Session entries accumulate. Deferred work tables expand. Without pruning, the document becomes a wall of text the model skims past — and your critical instructions on line 400 get ignored.
 
@@ -448,7 +448,7 @@ Find clean stopping points proactively. A well-closed session (with session-end)
 
 3. **Duplicating authoritative information** — Define one source of truth per domain. Documentation references it, doesn't repeat it. When two sources disagree, which one is right? If you can't answer instantly, you have a drift problem.
 
-4. **Growing CLAUDE.md indefinitely** — Context windows are finite. Attention degrades in long documents. Archive old sessions. Prune stale content. The digestive system is not optional past ~20 sessions.
+4. **Growing CLAUDE.md indefinitely** — Context windows are finite. Attention degrades in long documents. Archive old sessions. Prune stale content. Decay is not optional past ~20 sessions.
 
 5. **Loading everything into context** — A cluttered desk is worse than a focused one, regardless of surface area. Load what's relevant to today's work.
 
@@ -483,7 +483,7 @@ Start with what you need. Add infrastructure as the project demands it:
 |--------|------------|-------|
 | Project persists beyond one session | CLAUDE.md with guidelines + work queue | 1 |
 | Losing context between sessions | Session commands, sources of truth, deferred work tracking | 2 |
-| CLAUDE.md grows unwieldy, maintenance is manual burden | Digestive system, session archives, automation | 3 |
+| CLAUDE.md grows unwieldy, maintenance is manual burden | Decay, session archives, automation | 3 |
 | Multiple projects share integration surfaces | Cross-project coordination, contracts | 4 |
 
 A weekend script at Level 2 is wasted effort. A production product portfolio at Level 1 is flying blind. Match the investment to the need.

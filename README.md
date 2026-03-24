@@ -57,7 +57,7 @@ Not every project needs the full framework. Match the investment to the need:
 | **0** | Nothing. Open Claude Code, ask a question, close. | One-off tasks. |
 | **1** | CLAUDE.md with guidelines + work queue. | Project persists beyond one session. |
 | **2** | Session commands, sources of truth, deferred work tracking. | Losing context between sessions. Work getting dropped. |
-| **3** | Digestive system, session archives, automation. | CLAUDE.md growing unwieldy. Manual maintenance burden. |
+| **3** | Decay, session archives, automation. | CLAUDE.md growing unwieldy. Manual maintenance burden. |
 | **4** | Cross-project coordination, contracts. | Multiple projects sharing integration surfaces. |
 
 A weekend script at Level 2 is wasted effort. A production product at Level 1 is flying blind.
