@@ -68,6 +68,20 @@ Project sessions decide what (if anything) to do about them.
 
 ---
 
+## BLOCKERS
+
+*Cross-project dependencies blocking work. Cleared when resolved.*
+
+<!-- Format:
+| Blocker | Blocking | Waiting On | Status |
+|---------|----------|------------|--------|
+| [What's blocked] | [Which project/recommendation] | [What needs to happen] | ACTIVE / RESOLVED |
+-->
+
+*(None active.)*
+
+---
+
 ## APPROVED WORK
 
 *Items approved for implementation. Each project session reads this section at session start.*

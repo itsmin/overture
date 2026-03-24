@@ -96,6 +96,8 @@ Create a directory at the same level as the projects it coordinates:
                 session-end.md
         contracts/
             a-b.md        <-- one per project pair
+        scripts/
+            integration-monitor.sh  <-- optional, add when needed
 ```
 
 ### 2. Write the coordinator CLAUDE.md
@@ -269,7 +271,53 @@ When a project session changes something that other projects depend on (API rout
 2. Next coordination session picks up the change and evaluates impact
 3. If the change breaks something, the coordinator proposes a remediation recommendation
 
-This is discipline-only — no automated check catches a project session that forgets to update the contract. That's a known limitation.
+The integration monitor (see below) partially automates detection of these changes, but updating the contract itself is still discipline.
+
+---
+
+## Integration Monitor
+
+The biggest gap in the original Choral pattern was detection — changes to integration-relevant files in one project were invisible until the next coordination session. An integration monitor closes this gap.
+
+### What it does
+
+A shell script that watches files involved in cross-project integration. It diffs watched files against the contract's "last updated" timestamp and reports whether integration-relevant changes have occurred.
+
+```
+coordinator/
+    scripts/
+        integration-monitor.sh    <-- the monitor
+```
+
+### What it watches
+
+Define a list of files in each project that touch the integration surface. For an API integration, this might be:
+
+- **Project A**: API route handlers, orchestrators, data services that feed integration endpoints
+- **Project B**: API client code, pipeline files that consume integration data, type definitions shared with the integration
+
+The monitor doesn't watch everything — just the files where a change could affect the other project.
+
+### How it runs
+
+**At project session-start** (quiet mode): Each project's `/session-start` command runs the monitor with a quiet flag. Exit code 0 means no changes; exit code 1 means changes detected. If changes are detected, the session surfaces: "Integration-relevant changes detected since last Choral review."
+
+**At coordination session-start** (full mode): The coordinator runs the monitor in full mode to see exactly which files changed, how many commits, and the latest commit messages. This focuses the coordination session on what actually moved.
+
+**It does not run on a schedule.** The monitor is event-driven — triggered by session-starts, not by a cron. This keeps it simple and avoids unnecessary polling.
+
+### The signal, not the trigger
+
+The monitor signals that changes occurred. It doesn't decide what to do about them. The user decides whether to open a coordination session. A changed file might be a trivial refactor or a breaking API change — the monitor can't tell the difference. It just ensures nothing slips through unnoticed.
+
+### Building one
+
+The monitor is a bash script. The inputs are:
+1. A list of watched file paths per project
+2. A reference timestamp (contract's "last updated" date)
+3. An output mode flag (`--full`, `--quiet`, `--json`)
+
+It uses `git log --since` against each watched file to find changes since the last coordination session. No external dependencies.
 
 ---
 
@@ -299,11 +347,11 @@ If the project pairs have fundamentally different integration patterns (e.g., on
 
 1. **Scaling is unproven.** The pattern has coordinated lightweight integrations (API endpoints, shared URL patterns). Major architectural changes propagating across projects haven't been stress-tested. The contract model may need versioning or conflict resolution at scale.
 
-2. **Contract drift is a discipline problem.** If a project session changes an integration surface without updating the contract, the coordinator reasons against stale state. No automated check catches this.
+2. **Contract drift is partially mitigated.** The integration monitor catches file-level changes to watched integration surfaces. But updating the contract's CURRENT INTEGRATION section with semantic changes (what the API *means*, not just that a file changed) is still discipline-only.
 
 3. **No integration testing.** The coordinator reads code and reasons about compatibility. It can't run tests across projects. A breaking API change won't be caught until deployment.
 
-4. **The coordinator can't observe in real time.** It reads codebases at session start. Changes made between coordination sessions are invisible until the next one.
+4. **Detection is file-level, not semantic.** The integration monitor knows a file changed, not whether the change affects the integration. A trivial refactor and a breaking schema change look the same. The human decides whether to investigate.
 
 5. **Recommendation quality depends on codebase understanding.** The coordinator session has the same context limits as any Claude Code session. Complex integration surfaces may require multiple coordination sessions to fully understand.
 
@@ -313,13 +361,15 @@ If the project pairs have fundamentally different integration patterns (e.g., on
 
 | What | Where |
 |------|-------|
-| Set up coordinator | Create directory, CLAUDE.md, `.claude/commands/`, `contracts/` |
+| Set up coordinator | Create directory, CLAUDE.md, `.claude/commands/`, `contracts/`, `scripts/` |
 | Create a contract | Copy `templates/contract.md`, fill in current integration |
 | Add to project | Cross-project coordination section in project CLAUDE.md |
+| Build integration monitor | Shell script in `scripts/`, wire into project session-starts |
 | Propose changes | Run coordination session — it reads both codebases and writes to contract |
 | Approve changes | Review PROPOSED items, change status to APPROVED |
 | Implement changes | Project sessions read APPROVED WORK, implement, update status |
 | Track progress | IMPLEMENTATION STATUS table in the contract |
+| Detect drift | Integration monitor runs at session-start, signals changes |
 
 ---
 

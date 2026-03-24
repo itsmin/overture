@@ -238,11 +238,11 @@ These aren't future work. They're known limitations of the current system.
 
 2. **The digestive system is lossy by design.** The bet is that old enough ≈ unimportant enough. This is a heuristic, not a guarantee. Important information with low access frequency can be culled incorrectly.
 
-3. **Contract drift is a discipline problem.** If a project session changes the integration surface without updating the contract, the coordinator reasons against stale state. No automated check catches this. It's human discipline only.
+3. **Contract drift is partially mitigated.** An integration monitor can detect file-level changes to watched integration surfaces (see the [Choral Pattern guide](choral/Choral-Pattern.md#integration-monitor)). But semantic drift — changes to what an API *means*, not just that a file changed — is still discipline-only.
 
 4. **No integration testing.** The coordinator reads code and reasons about compatibility. It can't run tests across projects. A breaking API change won't be caught until deployment.
 
-5. **Level 3 has no reference implementation.** The digestive system and idle-time automation are described as patterns but not documented as reproducible templates. This is the biggest gap in making the kit truly portable.
+5. **Level 3 is partially documented.** The integration monitor in the Choral pattern is a concrete example of session-start automation. The digestive system (context pruning) still has no reproducible template — the pattern generalizes but the implementation is custom per project.
 
 ---
 
