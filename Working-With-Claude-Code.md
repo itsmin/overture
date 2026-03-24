@@ -130,11 +130,11 @@ No persistent state. Open Claude Code, ask a question, close. Most tasks start h
 
 **What you add:**
 - A coordination session with its own directory, CLAUDE.md, and mandate
-- Working contracts between coordinated project pairs
+- Working contracts between coordinated project pairs (shared blackboard — all participants read and write)
 - Cross-project references in each project's CLAUDE.md
-- A human approval gate for architectural recommendations
+- Three coordination modes: reactive (hooks), concurrent (commands + monitoring), proactive (assessment sessions)
 
-**What you get:** Projects develop awareness of each other without coupling their implementations. Integration opportunities surface architecturally — proposed in contracts, approved by you, implemented independently by each session.
+**What you get:** Projects develop awareness of each other without coupling their implementations. Integration changes are detected in real time (Mode 1), state syncs at session boundaries (Mode 2), and architectural assessment happens when needed (Mode 3). You stay in the loop for cross-cutting decisions but are removed from the detection and synchronization path.
 
 ---
 
@@ -146,24 +146,17 @@ Multiple products, each with its own Claude Code session. Each session knows its
 
 ### What it is
 
-A Claude Code session dedicated to reading multiple project codebases and writing architectural recommendations to a shared contract. It observes. It proposes. It does not implement.
+A coordination system with three layers of automation, centered on a shared contract that all participants read and write:
 
-### The flow
+**Reactive** (Mode 1) — Hooks detect integration-relevant file edits in real time, create signal files, notify the other project at its next tool call. Fully automated, sub-1-second detection.
 
-```
-Coordination session reads Project A and Project B codebases
-    ↓
-Identifies integration opportunities, risks, shared patterns
-    ↓
-Writes recommendations to the working contract
-    ↓
-You approve, reject, or defer
-    ↓
-Project A session reads the contract → implements approved items
-Project B session reads the contract → implements approved items
-    ↓
-Project sessions update the contract with implementation status
-```
+**Concurrent** (Mode 2) — Session boundary sync. Each project's `/session-start` reads the contract and runs an integration monitor. A `/choral` mid-session command provides on-demand sync. Semi-automated.
+
+**Proactive** (Mode 3) — Full coordination session. You open it when signals or monitors suggest architectural review is needed. Reads both codebases, proposes recommendations to the contract. Human-triggered.
+
+The escalation path: detect (Mode 1) → sync (Mode 2) → assess (Mode 3). Most coordination happens automatically. Only architectural assessment requires human initiation.
+
+See the [Choral Pattern guide](choral/Choral-Pattern.md) for the complete setup and implementation details.
 
 ### Design principles
 

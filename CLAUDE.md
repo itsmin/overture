@@ -18,7 +18,7 @@
 | `README.md` | Entry point — what this is, how to use it, initialization prompt | v1 — March 22, 2026 |
 | `Working-With-Claude-Code.md` | Conceptual framework: ICL foundations, memory architecture, Levels 0-4, Choral, Lyrical | Updated March 22, 2026. Ready. |
 | `workflow/Claude-Code-Workflow-Framework.md` | The methodology: session management, CLAUDE.md anatomy, documentation hygiene, context management | **v2.0** — March 2026 |
-| `choral/Choral-Pattern.md` | Standalone Choral reference: setup, coordination flow, contract mechanics | **v1 — March 23, 2026** |
+| `choral/Choral-Pattern.md` | Standalone Choral reference: three coordination modes, shared blackboard, setup | **v2.0 — March 23, 2026** |
 | `voice/Voice-Framework.md` | Voice as design material: defining, encoding, maintaining voice in AI-assisted work | v2.0 — March 2026 |
 | `voice/Voice-Reference.md` | Detailed session structure, derivation approach, encoding patterns for voice work | v2.0 — March 2026 |
 | `templates/CLAUDE.md` | Project CLAUDE.md skeleton — copy and fill | v1 — March 2026 |
@@ -32,8 +32,8 @@
 | File | Replaced By | Archived |
 |------|------------|----------|
 | `archive/Claude-Code-Workflow-Framework-Personal.md` | `workflow/Claude-Code-Workflow-Framework.md` (v2.0) | Session #2 |
-| `archive/editorial_collaborator_prompt.md` | `voice/Voice-Framework.md` | Session #2 |
 | `archive/editorial_collaborator_reference.md` | `voice/Voice-Reference.md` | Session #2 |
+| *(editorial_collaborator_prompt.md removed — personal voice content, not kit material)* | | |
 
 ---
 
@@ -93,7 +93,7 @@ Universal working preferences in `~/.claude/CLAUDE.md`.
 - Fixed 3 broken anchor links, verified all cross-references
 - Separated operational paths (`.claude/CLAUDE.local.md`, gitignored) from portable CLAUDE.md
 - Added MIT LICENSE, .gitignore, defined public-readiness criteria
-- Created private GitHub repo (`itsmin/overture`), initial commit pushed
+- Created GitHub repo (private → public), initial commit pushed
 - E2E initialization test: found 5 issues, fixed all — new `templates/init.md`, improved template usability, removed unfilled placeholders from session commands
 
 ### Session #1 Complete (March 22, 2026)
@@ -120,7 +120,7 @@ Universal working preferences in `~/.claude/CLAUDE.md`.
 | Item | Session | Notes |
 |---------|---------|-------|
 | E2E initialization test + fixes | #2 | New `templates/init.md`, fixed template placeholders, improved usability |
-| GitHub private repo setup | #2 | `itsmin/overture`, private |
+| GitHub repo setup | #2 | Private → public |
 | Separate operational paths from portable CLAUDE.md | #2 | Absolute paths → `.claude/CLAUDE.local.md` (gitignored) |
 | Extract Choral pattern as standalone reference | #2 | `choral/Choral-Pattern.md` v1 |
 | Review and refine all docs | #2 | Fixed 3 broken anchors, updated cross-refs, verified CaliKo scoping |
@@ -150,6 +150,14 @@ Before flipping from private → public:
 | Item | Reason |
 |------|--------|
 | *(none)* | |
+
+---
+
+## CRITICAL REMINDERS
+
+1. **ALWAYS** run a privacy audit before committing — this repo is PUBLIC. Grep for absolute paths, emails, API keys, proprietary details. See `/session-end` step 2.
+2. **NEVER** commit operational paths (CaliKo project references) — those live in `.claude/CLAUDE.local.md` (gitignored).
+3. **ALWAYS** keep content CaliKo-agnostic. Provenance references are fine. Internal architecture, API specs, or business logic are not.
 
 ---
 

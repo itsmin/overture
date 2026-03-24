@@ -7,7 +7,11 @@ Ensure clean handoff to the next session.
 ### 1. Session Summary
 Summarize what was accomplished this session. Be specific — what changed, what was deployed, what was decided.
 
-### 2. Documentation Sync Check
+### 2. Privacy Audit (if public repo)
+*Skip if the repo is private.*
+Before committing, grep modified files for: absolute machine paths, email addresses, API keys/tokens, proprietary details that shouldn't be public. Fix before committing.
+
+### 3. Documentation Sync Check
 Did this session change any documented domain? Check each that applies to your project:
 - [ ] Configuration or pricing → Update config (source of truth) + docs
 - [ ] Data, entities, or schemas → Update architecture docs
@@ -16,13 +20,13 @@ Did this session change any documented domain? Check each that applies to your p
 
 *Customize this checklist to your project's actual domains. The point isn't the specific items — it's the habit of asking "did this session change anything that's documented elsewhere?"*
 
-### 3. Deferred Work Check
+### 4. Deferred Work Check
 Were any planned items bumped or deferred this session? If yes:
 - Add each to the Deferred Work table in CLAUDE.md
 - Include: what it was, which session it came from, and context needed to resume
 - Never let a planned item disappear silently
 
-### 4. Update CLAUDE.md
+### 5. Update CLAUDE.md
 
 #### Session Progress
 - Update the "Current" line with this session's number and brief status
@@ -41,12 +45,13 @@ Were any planned items bumped or deferred this session? If yes:
 #### Size Check
 - If CLAUDE.md is approaching ~40k characters, archive old session entries to a separate file
 
-### 5. Cross-Project Coordination
+### 6. Cross-Project Coordination
 *Skip if this project doesn't participate in coordination.*
 If you implemented any approved items from the working contract, update IMPLEMENTATION STATUS with session number and notes.
 If you changed any integration surface (APIs, URL patterns, data models), note the change in the contract's CURRENT INTEGRATION section.
 
-### 6. Final Checklist
+### 7. Final Checklist
+- Privacy audit: [clean / N/A (private repo)]
 - Documentation sync: [done / N/A]
 - Deferred work tracked: [done / none bumped]
 - Commit ready: [yes / no — reason]

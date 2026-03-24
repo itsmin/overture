@@ -1,16 +1,27 @@
 # Working Contract: [Project A] <> [Project B]
 
-**Maintained by**: [Coordinator name] (`/path/to/coordinator/`)
-**Read by**: [Project A] session, [Project B] session
+**Maintained by**: All participants (shared blackboard)
+**Participants**: [Coordinator] session, [Project A] session, [Project B] session
 **Last updated**: [Date]
 
 ---
 
 ## PURPOSE
 
-This contract documents the integration architecture between [Project A] and [Project B]. The coordination session proposes architectural recommendations here. Each project session reads approved items and implements independently.
+This contract documents the integration architecture between [Project A] and [Project B]. The coordination session proposes architectural recommendations here. Each project session reads approved items and implements independently. All participants write to their own sections.
 
 Recommendations define the interface — what crosses the boundary between the two systems. Request/response shapes, semantic guarantees, and integration constraints are contractual. Everything behind the interface (file structure, function names, internal orchestration, error handling) belongs to the project session.
+
+---
+
+## OPERATIONAL STATE
+
+*Each project session updates its own row at session-end and on deploy.*
+
+| Project | Version | Session | Integration Notes |
+|---------|---------|---------|-------------------|
+| [Project A] | | | |
+| [Project B] | | | |
 
 ---
 
@@ -113,10 +124,12 @@ Project sessions decide what (if anything) to do about them.
 
 ## HOW TO USE THIS CONTRACT
 
-**Coordination session**: Maintains this file. Reads both codebases, proposes recommendations defining interface contracts, documents observations. Does not prescribe implementation details.
+This contract is a shared blackboard. All participants read and write to their own sections.
 
-**[Project A] session**: Read APPROVED WORK and OBSERVATIONS at session start. Implement approved items however best fits your codebase — the recommendation defines the interface, you own everything behind it. Update IMPLEMENTATION STATUS when done, including any deviations from the suggested approach.
+**Coordination session** (Mode 3): Proposes RECOMMENDATIONS and documents OBSERVATIONS. Reads both codebases to assess integration health. Does not prescribe implementation details.
+
+**[Project A] session**: At session-start, read APPROVED WORK, BLOCKERS, and OBSERVATIONS. At session-end and on deploy, update your OPERATIONAL STATE row. When implementing approved items, update IMPLEMENTATION STATUS — including any deviations from the suggested approach. You own everything behind the interface.
 
 **[Project B] session**: Same as above.
 
-**Decision authority**: Cross-cutting changes to integration surfaces require explicit user approval (PROPOSED → APPROVED). Once approved, the implementing session has full authority over how to satisfy the requirement. If you find a better approach than what Choral suggested, take it and note what you did.
+**Decision authority**: Cross-cutting changes to integration surfaces require explicit user approval (PROPOSED → APPROVED). Once approved, the implementing session has full authority over how to satisfy the requirement. If you find a better approach than what the coordinator suggested, take it and note what you did.
