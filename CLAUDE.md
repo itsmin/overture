@@ -75,23 +75,23 @@ Universal working preferences in `~/.claude/CLAUDE.md`.
 
 ## SESSION PROGRESS
 
-**Current**: Session #3 in progress (March 25, 2026)
-**Status**: Approachability overhaul — README restructure, audience headers across all kit files, itsmin.com added as pattern source.
+**Current**: Session #3 complete (March 25, 2026)
+**Status**: Approachability overhaul shipped. README v2, audience headers on all kit files, itsmin.com added as pattern source.
 
 ### Pending Verifications
 *(none)*
 
-### Session #3 In Progress (March 25, 2026)
+### Session #3 Complete (March 25, 2026)
 
-**Approachability + Audience Clarity + itsmin.com Pattern Monitoring**
+**Approachability Overhaul + Audience Clarity + itsmin.com Pattern Monitoring**
 
-- README v2: restructured from reference layout to narrative arc (problem → get started → orientation → going deeper)
-- Added "What Just Happened" bridge section — orients new users after setup
-- Added "Going Deeper" signal-based table — read docs when you hit specific needs, not upfront
-- Audience headers on all 10 kit files — every file now declares who reads it (Claude / You / Both)
+- README v2: narrative arc (problem → get started → orientation → going deeper), replaces reference-style layout
+- "What Just Happened" bridge section orients new users; "Going Deeper" links docs to signals not upfront reading
+- Audience headers on all 10 kit files (Claude / You / Both) — resolves feedback that it's unclear what's for Claude vs. the user
 - Kit table in CLAUDE.md and README now includes Audience column
-- Levels table reframed: "Levels 1-2 cover the vast majority of projects"
-- Added itsmin.com to CLAUDE.local.md as live implementation reference (simpler stack, Level 1-2 patterns)
+- Levels reframed: "Levels 1-2 cover the vast majority of projects"
+- itsmin.com added to CLAUDE.local.md as live implementation reference (simpler stack, Level 1-2 patterns)
+- Committed and pushed to GitHub
 
 ### Session #2 Complete (March 23, 2026)
 
@@ -123,7 +123,7 @@ Universal working preferences in `~/.claude/CLAUDE.md`.
 
 ### CURRENT PRIORITIES
 
-*(Session #3 work in progress — approachability overhaul)*
+*(No active P1 — all items complete through Session #3)*
 
 ### COMPLETE (Recent)
 
