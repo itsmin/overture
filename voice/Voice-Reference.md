@@ -4,6 +4,8 @@
 **Purpose**: Detailed session structure, derivation approach, and encoding patterns for voice work
 **Part of**: [Overture](../README.md) — the Claude Code working kit
 
+> **Audience**: You — detailed reference for voice derivation sessions. Companion to the [Voice Framework](Voice-Framework.md).
+
 ---
 
 ## Session Structure for Voice Work

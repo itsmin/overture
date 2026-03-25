@@ -6,6 +6,8 @@
 **Part of**: [Overture](../README.md) — the Claude Code working kit
 **Companion**: [Voice Reference](Voice-Reference.md) — detailed session structure, derivation approach, encoding patterns
 
+> **Audience**: You — reference reading for voice work. Read it when tone, personality, and consistency matter for your project.
+
 ---
 
 ## What This Is

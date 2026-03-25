@@ -1,5 +1,7 @@
 # Session End
 
+> **Audience**: Claude Code — this is a slash command Claude runs when you type `/session-end`. You invoke it; Claude follows the instructions.
+
 Ensure clean handoff to the next session.
 
 ## Instructions

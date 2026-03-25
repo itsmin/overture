@@ -6,6 +6,8 @@
 **Part of**: [Overture](../README.md) — the Claude Code working kit
 **Companion**: [Working with Claude Code](../Working-With-Claude-Code.md) — conceptual foundations (ICL, memory tiers, Levels 0-4)
 
+> **Audience**: You — this is the methodology reference. Read it to understand how to structure your CLAUDE.md, manage sessions, and maintain documentation. Claude uses the patterns described here but doesn't read this file directly.
+
 ---
 
 ## What This Is

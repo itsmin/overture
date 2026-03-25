@@ -1,5 +1,7 @@
 # Session Start
 
+> **Audience**: Claude Code — this is a slash command Claude runs when you type `/session-start`. You invoke it; Claude follows the instructions.
+
 Load project context and present current state.
 
 ## Instructions

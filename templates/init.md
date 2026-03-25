@@ -1,5 +1,7 @@
 # Project Initialization
 
+> **Audience**: Claude Code — Claude reads this file during project initialization. You don't need to read or understand it; just point Claude at it with the prompt in the [README](../README.md#get-started).
+
 Set up a new project with the Overture workflow framework.
 
 ## Instructions

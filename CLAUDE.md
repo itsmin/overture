@@ -13,19 +13,19 @@
 
 ## WHAT'S IN THE KIT
 
-| File | Purpose | Status |
-|------|---------|--------|
-| `README.md` | Entry point — what this is, how to use it, initialization prompt | v1 — March 22, 2026 |
-| `Working-With-Claude-Code.md` | Conceptual framework: ICL foundations, memory architecture, Levels 0-4, Choral, Lyrical | Updated March 22, 2026. Ready. |
-| `workflow/Claude-Code-Workflow-Framework.md` | The methodology: session management, CLAUDE.md anatomy, documentation hygiene, context management | **v2.0** — March 2026 |
-| `choral/Choral-Pattern.md` | Standalone Choral reference: three coordination modes, shared blackboard, setup | **v2.0 — March 23, 2026** |
-| `voice/Voice-Framework.md` | Voice as design material: defining, encoding, maintaining voice in AI-assisted work | v2.0 — March 2026 |
-| `voice/Voice-Reference.md` | Detailed session structure, derivation approach, encoding patterns for voice work | v2.0 — March 2026 |
-| `templates/CLAUDE.md` | Project CLAUDE.md skeleton — copy and fill | v1 — March 2026 |
-| `templates/init.md` | Initialization guide — Claude follows this to set up a new project | v1 — March 2026 |
-| `templates/session-start.md` | Session-start command template — copy to `.claude/commands/` | v1.1 — March 2026 |
-| `templates/session-end.md` | Session-end command template — copy to `.claude/commands/` | v1.1 — March 2026 |
-| `templates/contract.md` | Cross-project working contract template | v1 — March 2026 |
+| File | Purpose | Audience | Status |
+|------|---------|----------|--------|
+| `README.md` | Entry point — problem, quick start, orientation, kit overview | You | **v2** — March 25, 2026 |
+| `Working-With-Claude-Code.md` | Conceptual framework: ICL foundations, memory architecture, Levels 0-4, Choral, Lyrical | You | Updated March 22, 2026 |
+| `workflow/Claude-Code-Workflow-Framework.md` | The methodology: session management, CLAUDE.md anatomy, documentation hygiene | You | **v2.0** — March 2026 |
+| `choral/Choral-Pattern.md` | Standalone Choral reference: three coordination modes, shared blackboard, setup | You | **v2.0** — March 23, 2026 |
+| `voice/Voice-Framework.md` | Voice as design material: defining, encoding, maintaining voice | You | v2.0 — March 2026 |
+| `voice/Voice-Reference.md` | Detailed session structure, derivation approach, encoding patterns | You | v2.0 — March 2026 |
+| `templates/CLAUDE.md` | Project operating document skeleton | Both | v1 — March 2026 |
+| `templates/init.md` | Initialization guide — Claude follows this to set up a new project | Claude | v1 — March 2026 |
+| `templates/session-start.md` | Session-start command template — copy to `.claude/commands/` | Claude | v1.1 — March 2026 |
+| `templates/session-end.md` | Session-end command template — copy to `.claude/commands/` | Claude | v1.1 — March 2026 |
+| `templates/contract.md` | Cross-project working contract template | Both | v1 — March 2026 |
 
 ### Archived Files
 
@@ -75,11 +75,23 @@ Universal working preferences in `~/.claude/CLAUDE.md`.
 
 ## SESSION PROGRESS
 
-**Current**: Session #2 complete (March 23, 2026)
-**Status**: All P1 complete. Repo public. Choral v2.0 (three-mode system). Privacy workflow established.
+**Current**: Session #3 in progress (March 25, 2026)
+**Status**: Approachability overhaul — README restructure, audience headers across all kit files, itsmin.com added as pattern source.
 
 ### Pending Verifications
 *(none)*
+
+### Session #3 In Progress (March 25, 2026)
+
+**Approachability + Audience Clarity + itsmin.com Pattern Monitoring**
+
+- README v2: restructured from reference layout to narrative arc (problem → get started → orientation → going deeper)
+- Added "What Just Happened" bridge section — orients new users after setup
+- Added "Going Deeper" signal-based table — read docs when you hit specific needs, not upfront
+- Audience headers on all 10 kit files — every file now declares who reads it (Claude / You / Both)
+- Kit table in CLAUDE.md and README now includes Audience column
+- Levels table reframed: "Levels 1-2 cover the vast majority of projects"
+- Added itsmin.com to CLAUDE.local.md as live implementation reference (simpler stack, Level 1-2 patterns)
 
 ### Session #2 Complete (March 23, 2026)
 
@@ -111,19 +123,17 @@ Universal working preferences in `~/.claude/CLAUDE.md`.
 
 ### CURRENT PRIORITIES
 
-*(No active P1 — all items complete through Session #2)*
+*(Session #3 work in progress — approachability overhaul)*
 
 ### COMPLETE (Recent)
 
 | Item | Session | Notes |
 |---------|---------|-------|
+| Approachability overhaul — README v2, audience headers, orientation | #3 | README restructured, all 10 files have audience markers, kit table updated |
+| itsmin.com added as pattern source | #3 | CLAUDE.local.md updated, simpler-stack reference for Level 1-2 patterns |
 | Choral three-mode system + shared blackboard | #2 | Choral-Pattern.md v2.0, contract template updated |
 | Privacy audit workflow | #2 | Built into session-end, CRITICAL REMINDERS, removed sensitive file |
-| Rename "digestive system" → "Decay" | #2 | Musical naming: Overture, Choral, Lyrical, Decay |
-| E2E initialization test + fixes | #2 | New `templates/init.md`, fixed template usability |
 | GitHub repo (private → public) | #2 | All public-readiness criteria met |
-| Choral standalone reference + evolution | #2 | Interface/implementation, trust, observations, decision authority |
-| Workflow dogfooding + infrastructure | #2 | Commands, archive, CLAUDE.md restructure, operational path separation |
 | Kit overhaul — framework v2, templates, voice, README | #1 | Major update from 460+ sessions |
 
 ### P2: FUTURE WORK
@@ -170,7 +180,7 @@ Before flipping from private → public:
 
 | Document | Path | Last Updated | Content |
 |----------|------|-------------|---------|
-| README | `README.md` | Session #1 | Entry point, kit structure, initialization prompt |
+| README | `README.md` | Session #3 | Entry point — problem, quick start, orientation, audience guide |
 | Conceptual Framework | `Working-With-Claude-Code.md` | Session #1 | ICL, memory tiers, Levels 0-4, Choral, Lyrical |
 | Workflow Framework | `workflow/Claude-Code-Workflow-Framework.md` | Session #1 | Methodology v2.0 — session management, CLAUDE.md anatomy |
 | Choral Reference | `choral/Choral-Pattern.md` | Session #2 | Standalone coordination pattern guide |

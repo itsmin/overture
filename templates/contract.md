@@ -1,5 +1,7 @@
 # Working Contract: [Project A] <> [Project B]
 
+> **Audience**: Both — the coordinator session and project sessions read and write to this document. See the [Choral Pattern](../choral/Choral-Pattern.md) for how contracts work.
+
 **Maintained by**: All participants (shared blackboard)
 **Participants**: [Coordinator] session, [Project A] session, [Project B] session
 **Last updated**: [Date]

@@ -1,5 +1,7 @@
 # [Project Name] — Documentation & Status
 
+> **Audience**: Both — Claude reads this file automatically at every session start. You maintain it as your project evolves. This is the skeleton; the [Workflow Framework](../workflow/Claude-Code-Workflow-Framework.md) explains each section.
+
 ## PRODUCT STATUS
 
 **[Project Name]** is [shipped / in development / prototype].

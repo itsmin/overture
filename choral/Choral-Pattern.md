@@ -5,6 +5,8 @@
 **Companion**: [Working with Claude Code, Part 4](../Working-With-Claude-Code.md#part-4-choral--the-coordination-pattern) — conceptual foundations
 **Template**: [Contract template](../templates/contract.md) — copy and fill for each project pair
 
+> **Audience**: You — reference reading for setting up cross-project coordination. Read it when you have multiple projects that need awareness of each other.
+
 ---
 
 ## The Problem
