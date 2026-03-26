@@ -57,7 +57,7 @@ This is personal. It travels with you to any project, any employer. Don't put pr
 
 Copy `templates/CLAUDE.md` into your project root and fill in the sections. Then copy `templates/session-start.md` and `templates/session-end.md` into `.claude/commands/`.
 
-Not all sections are needed from day one. Start with product status, collaboration guidelines, and a work queue. Add metrics tracking, deferred work, session archives, and cross-project coordination as the project matures. (See [Levels of Sophistication](../Working-With-Claude-Code.md#part-3-the-levels) for when to add what.)
+Not all sections are needed from day one. Start with product status, collaboration guidelines, and a work queue. Add metrics tracking, deferred work, session archives, and cross-project coordination as the project matures. (See the [Progression Guide](../Progression.md) for when to add what.)
 
 ### Initialization
 
@@ -490,7 +490,7 @@ Start with what you need. Add infrastructure as the project demands it:
 
 A weekend script at Level 2 is wasted effort. A production product portfolio at Level 1 is flying blind. Match the investment to the need.
 
-See [Levels of Sophistication](../Working-With-Claude-Code.md#part-3-the-levels) for the full progression framework.
+See the [Progression Guide](../Progression.md) for the full progression framework with day-1 paths and decision criteria.
 
 ---
 

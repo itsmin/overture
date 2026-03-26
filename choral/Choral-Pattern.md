@@ -311,7 +311,46 @@ coordinator/
         b-c.md
 ```
 
-Each contract is independent. A recommendation in `a-b.md` doesn't automatically propagate to `a-c.md`. If a change in A affects both B and C, the coordinator writes separate recommendations to each contract.
+Each contract is structurally independent — a recommendation in `a-b.md` doesn't automatically propagate to `a-c.md`. If a change in A affects both B and C, the coordinator writes separate recommendations to each contract.
+
+But contracts are not *strategically* independent when they share a bottleneck. If Project B is the implementing side for both `a-b.md` and `a-c.md`, the coordination work across both contracts competes for B's capacity. The coordinator needs a cross-contract view to surface this.
+
+### Coordination Manifest
+
+When managing multiple contracts, add a **Coordination Manifest** section to the coordinator's CLAUDE.md. This is the cross-contract view that individual contracts can't provide.
+
+The manifest tracks three things:
+
+**Contract health**: Which contracts are active (items in progress), dormant (approved work waiting), or complete? This helps the human decide when to open a coordination session.
+
+**Coordination queue**: All pending items across all contracts, grouped by actionability (unblocked vs. blocked) with explicit dependency markers. Items are tagged with their source contract and assigned project. This replaces a flat numbered work queue that implies ordering without acknowledging cross-contract relationships.
+
+**Bottleneck identification**: Which project session is the constraint? When all pending items are assigned to one project, that's worth stating explicitly — it affects sequencing decisions.
+
+```markdown
+## COORDINATION MANIFEST
+
+### Contract Health
+| Contract | Status | Pending | Bottleneck |
+|----------|--------|---------|------------|
+| A ↔ B    | Active | 3 items (B-side) | B |
+| A ↔ C    | Dormant | 2 approved, blocked | B (prerequisite) |
+
+### Coordination Queue
+
+**Actionable:**
+| Item | Contract | Owner | Dependencies |
+| REC-X | a-b | B | Independent |
+| Phase 1 | a-c | B | Blocks REC-Y, REC-Z |
+
+**Blocked:**
+| Item | Contract | Owner | Blocked By |
+| REC-Y | a-c | C | Phase 1 |
+```
+
+The manifest is updated at each coordination session. The coordinator's session-start reads it and cross-references against current project state — have blocked items become actionable? Have actionable items been completed?
+
+**What the manifest is not**: a scheduler. It surfaces actionability, dependencies, and bottlenecks. The human decides sequencing — including how coordination work ranks against each project's internal priorities.
 
 ### When to split coordinators
 

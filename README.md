@@ -6,11 +6,11 @@ The setup before the performance. A working framework for AI-assisted developmen
 
 ## The Problem This Solves
 
-You open Claude Code, do good work, close the session. Next time, Claude remembers nothing. Context is lost between sessions. Work gets dropped. Documentation drifts. You become the sole carrier of project state.
+You open Claude Code, do good work, close the session. Next time, Claude remembers nothing. Context lost between sessions. Work gets dropped. Documentation drifts. You become the sole carrier of project state.
 
-Overture fixes that. It gives Claude a structured operating document for your project — current state, priorities, work queue, session handoffs — so every session starts where the last one ended.
+Overture fixes that. It gives Claude a structured operating document — current state, priorities, work queue, session handoffs — so every session starts where the last one ended.
 
-Evolved through 460+ working sessions across production SaaS and professional services. These aren't theoretical patterns — they're what survived contact with real products, real users, and real deadlines.
+Evolved through 460+ working sessions across production SaaS and professional services. Not theoretical patterns. What survived contact with real products, real users, real deadlines.
 
 ## What You Need
 
@@ -36,16 +36,17 @@ If you don't have user-level preferences yet, add: *"Also help me set up `~/.cla
 
 ## What Just Happened
 
-Claude now has a structured document that loads automatically at every session start. It knows where your project stands, what's in flight, and what to check at session boundaries. You maintain one file (`CLAUDE.md`); Claude handles the continuity.
+Claude now has a structured document that loads automatically every session. It knows where the project stands, what's in flight, what to check at session boundaries. You maintain one file (`CLAUDE.md`); Claude handles the continuity.
 
-**A key thing to understand about this repo**: most of the files here are instructions for Claude, not for you. The templates, commands, and configuration files are things Claude reads and follows. You don't need to memorize them — you point Claude at the initialization guide and answer its questions.
+**A key thing about this repo**: most files here are instructions for Claude, not for you. Templates, commands, configuration — Claude reads and follows them. You don't need to memorize anything. Point Claude at the initialization guide, answer its questions.
 
 ## Going Deeper
 
-You don't need to read anything else to use the framework. These docs are here when you want them:
+You don't need to read anything else to use the framework. These are here when you want them:
 
 | When You... | Read This |
 |-------------|-----------|
+| Want to know what to do next as your project grows | [Progression Guide](Progression.md) — what each level feels like, when to evolve |
 | Want to understand *why* the framework works | [Working with Claude Code](Working-With-Claude-Code.md) — ICL, memory architecture, context management |
 | Want the full methodology reference | [Workflow Framework](workflow/Claude-Code-Workflow-Framework.md) — CLAUDE.md anatomy, session management, documentation hygiene |
 | Are coordinating multiple projects | [Choral Pattern](choral/Choral-Pattern.md) — cross-project coordination with shared contracts |
@@ -64,6 +65,7 @@ Most files in this repo are read by Claude, not by you. The **Audience** column 
 | [`templates/session-start.md`](templates/session-start.md) | Session-start command — context loading, work queue presentation | Claude |
 | [`templates/session-end.md`](templates/session-end.md) | Session-end command — documentation sync, handoff, cleanup | Claude |
 | [`templates/contract.md`](templates/contract.md) | Cross-project working contract for coordination | Both |
+| [`Progression.md`](Progression.md) | Progression guide — what each level feels like, when to evolve | You |
 | [`Working-With-Claude-Code.md`](Working-With-Claude-Code.md) | Conceptual foundations — ICL, memory, Levels 0-4, Choral, Lyrical | You |
 | [`workflow/Claude-Code-Workflow-Framework.md`](workflow/Claude-Code-Workflow-Framework.md) | The methodology — session management, CLAUDE.md anatomy, documentation hygiene | You |
 | [`choral/Choral-Pattern.md`](choral/Choral-Pattern.md) | Cross-project coordination — setup, modes, contracts | You |
@@ -86,15 +88,17 @@ Not every project needs the full framework. Most don't.
 | **3** | Decay, session archives, automation | CLAUDE.md growing unwieldy |
 | **4** | Cross-project coordination, contracts | Multiple projects sharing integration surfaces |
 
-**Levels 1-2 cover the vast majority of projects.** Levels 3-4 exist for production portfolios with long-running, multi-project development. If you never need them, the framework is working correctly — you matched the investment to the need.
+**Levels 1-2 cover the vast majority of projects.** Levels 3-4 exist for production portfolios with long-running, multi-project development. If you never need them, the framework is working — you matched the investment to the need.
 
-For the full progression framework with decision criteria, see [Levels of Sophistication](Working-With-Claude-Code.md#part-3-the-levels).
+For the full progression framework with decision criteria, see the [Progression Guide](Progression.md).
 
 ---
 
 ## Provenance
 
-Built across 460+ sessions on a company intelligence platform (shipped December 2025, production SaaS) and a professional representation service (AI-powered interview and representation agents). The cross-project coordination between the two became the Choral pattern. Approaches that didn't work were dropped. Honest gaps are [documented](Working-With-Claude-Code.md#part-6-honest-gaps).
+Built across 460+ sessions on a company intelligence platform (shipped December 2025, production SaaS) and a professional representation service (AI-powered interview and representation agents). Cross-project coordination between the two became the Choral pattern. Approaches that didn't work were dropped. Honest gaps are [documented](Working-With-Claude-Code.md#part-6-honest-gaps).
+
+This framework — including its documentation — was built collaboratively with Claude Code, using the patterns described in the kit. The system architecture, workflow design, and judgment calls are the author's; Claude is a collaborator on implementation and documentation. A framework for AI-assisted development should probably be built that way.
 
 ---
 

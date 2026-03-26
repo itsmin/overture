@@ -16,6 +16,7 @@
 | File | Purpose | Audience | Status |
 |------|---------|----------|--------|
 | `README.md` | Entry point — problem, quick start, orientation, kit overview | You | **v2** — March 25, 2026 |
+| `Progression.md` | Progression guide — day-1 paths, level-by-level experience, when to evolve | You | **v1** — March 25, 2026 |
 | `Working-With-Claude-Code.md` | Conceptual framework: ICL foundations, memory architecture, Levels 0-4, Choral, Lyrical | You | Updated March 22, 2026 |
 | `workflow/Claude-Code-Workflow-Framework.md` | The methodology: session management, CLAUDE.md anatomy, documentation hygiene | You | **v2.0** — March 2026 |
 | `choral/Choral-Pattern.md` | Standalone Choral reference: three coordination modes, shared blackboard, setup | You | **v2.0** — March 23, 2026 |
@@ -29,11 +30,7 @@
 
 ### Archived Files
 
-| File | Replaced By | Archived |
-|------|------------|----------|
-| `archive/Claude-Code-Workflow-Framework-Personal.md` | `workflow/Claude-Code-Workflow-Framework.md` (v2.0) | Session #2 |
-| `archive/editorial_collaborator_reference.md` | `voice/Voice-Reference.md` | Session #2 |
-| *(editorial_collaborator_prompt.md removed — personal voice content, not kit material)* | | |
+Archive directory removed from the public repo in Session #4. Superseded files are available in git history.
 
 ---
 
@@ -75,11 +72,21 @@ Universal working preferences in `~/.claude/CLAUDE.md`.
 
 ## SESSION PROGRESS
 
-**Current**: Session #3 complete (March 25, 2026)
-**Status**: Approachability overhaul shipped. README v2, audience headers on all kit files, itsmin.com added as pattern source.
+**Current**: Session #4 in progress (March 25, 2026)
+**Status**: Progression Guide shipped. Idle-time automation extraction deferred pending BETA's autonomous agent work.
 
 ### Pending Verifications
 *(none)*
+
+### Session #4 In Progress (March 25, 2026)
+
+**Progression Guide + Pattern Monitoring**
+
+- Progression Guide v1 (`Progression.md`): day-1 paths (new project, existing codebase, team adoption), level-by-level experience and judgment calls, anti-patterns per level, "most projects stay at Level 2" framing
+- README updated with Progression Guide in "Going Deeper" table and kit table
+- Checked BETA for idle-time autonomous agent patterns — Phase 1-2 of Autonomous Quality Harness shipped (infrastructure automation), but Claude-as-autonomous-agent pattern not yet implemented. Extraction deferred with trigger condition.
+- Checked Choral Session #4 — Coordination Manifest pattern already documented in Choral-Pattern.md, implementation consistent with docs. No update needed.
+- P2 work queue restructured: progression guide complete, idle-time extraction split from decay reference
 
 ### Session #3 Complete (March 25, 2026)
 
@@ -138,8 +145,9 @@ Universal working preferences in `~/.claude/CLAUDE.md`.
 
 ### P2: FUTURE WORK
 
-1. **Progression guide** — Dedicated 0→1→2→3→4 document with concrete signals and decision criteria
-2. **Level 3 reference implementation** — Decay and idle-time automation templates (biggest portability gap — honestly may stay as a documented gap rather than a contrived template)
+1. ~~**Progression guide**~~ — **COMPLETE** (Session #4). `Progression.md` — day-1 paths, level-by-level experience and judgment calls, anti-patterns per level
+2. **Idle-time automation patterns** — Standalone doc + template for autonomous background work (bug hunting, alignment audits, freshness maintenance). **Trigger**: extract from BETA once its autonomous agent implementation has shipped and been used for several sessions. Poll BETA's CLAUDE.md periodically to check progress. Not a Choral task — this is pattern extraction for the public kit, not cross-project coordination.
+3. **Decay reference** — Decay and memory lifecycle templates (may stay as a documented gap rather than a contrived template)
 
 ### PUBLIC-READINESS CRITERIA
 
@@ -180,7 +188,8 @@ Before flipping from private → public:
 
 | Document | Path | Last Updated | Content |
 |----------|------|-------------|---------|
-| README | `README.md` | Session #3 | Entry point — problem, quick start, orientation, audience guide |
+| README | `README.md` | Session #4 | Entry point — problem, quick start, orientation, audience guide |
+| Progression Guide | `Progression.md` | Session #4 | Day-1 paths, level-by-level experience, when to evolve |
 | Conceptual Framework | `Working-With-Claude-Code.md` | Session #1 | ICL, memory tiers, Levels 0-4, Choral, Lyrical |
 | Workflow Framework | `workflow/Claude-Code-Workflow-Framework.md` | Session #1 | Methodology v2.0 — session management, CLAUDE.md anatomy |
 | Choral Reference | `choral/Choral-Pattern.md` | Session #2 | Standalone coordination pattern guide |
