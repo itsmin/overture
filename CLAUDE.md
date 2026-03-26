@@ -72,11 +72,20 @@ Universal working preferences in `~/.claude/CLAUDE.md`.
 
 ## SESSION PROGRESS
 
-**Current**: Session #4 complete (March 25, 2026)
-**Status**: Progression Guide, voice pass, attribution, Prelude v1 built. Archive removed. Idle-time extraction deferred.
+**Current**: Session #5 in progress (March 25, 2026)
+**Status**: Voice review pass complete on remaining docs. P2 #1 done.
 
 ### Pending Verifications
 *(none)*
+
+### Session #5 In Progress (March 25, 2026)
+
+**Voice Review Pass — Remaining Docs**
+
+- Voice pass on Working-With-Claude-Code.md, Workflow Framework, Choral-Pattern.md, Voice-Reference.md against Prelude voice reference
+- Docs were already in strong voice from Session #1 collaboration — 5 targeted cuts across 4 files, Voice Framework unchanged
+- Cuts: redundant audience tag, generic filler phrase, redundant instruction, over-explained observation passage, parentheses → em dashes
+- P2 #1 complete, written into Prelude
 
 ### Session #4 Complete (March 25, 2026)
 
@@ -135,12 +144,13 @@ Universal working preferences in `~/.claude/CLAUDE.md`.
 
 ### CURRENT PRIORITIES
 
-*(No active P1 — all items complete through Session #3)*
+*(No active P1 — all items complete through Session #5)*
 
 ### COMPLETE (Recent)
 
 | Item | Session | Notes |
 |---------|---------|-------|
+| Voice review pass — remaining docs | #5 | 4 files touched, Voice Framework unchanged. Light pass — docs already strong. |
 | Progression Guide, voice pass, attribution, Prelude v1 | #4 | Progression.md, voice pass on entry points, collaborative attribution, archive removed, Prelude built |
 | Approachability overhaul — README v2, audience headers, orientation | #3 | README restructured, all 10 files have audience markers, kit table updated |
 | itsmin.com added as pattern source | #3 | CLAUDE.local.md updated, simpler-stack reference for Level 1-2 patterns |
@@ -151,9 +161,8 @@ Universal working preferences in `~/.claude/CLAUDE.md`.
 
 ### P2: FUTURE WORK
 
-1. **Voice review pass** — Apply appropriate levels of Min's voice across remaining docs (Working-With-Claude-Code, Workflow Framework, Choral, Voice). Entry points (README, Progression) done in Session #4. Discrete session.
-2. **Idle-time automation patterns** — Standalone doc + template for autonomous background work (bug hunting, alignment audits, freshness maintenance). **Trigger**: extract from BETA once its autonomous agent implementation has shipped and been used for several sessions. Poll BETA's CLAUDE.md periodically to check progress. Not a Choral task — this is pattern extraction for the public kit, not cross-project coordination.
-3. **Decay reference** — Decay and memory lifecycle templates (may stay as a documented gap rather than a contrived template)
+1. **Idle-time automation patterns** — Standalone doc + template for autonomous background work (bug hunting, alignment audits, freshness maintenance). **Trigger**: extract from BETA once its autonomous agent implementation has shipped and been used for several sessions. Poll BETA's CLAUDE.md periodically to check progress. Not a Choral task — this is pattern extraction for the public kit, not cross-project coordination.
+2. **Decay reference** — Decay and memory lifecycle templates (may stay as a documented gap rather than a contrived template)
 
 ### PUBLIC-READINESS CRITERIA
 
