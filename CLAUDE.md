@@ -72,15 +72,15 @@ Universal working preferences in `~/.claude/CLAUDE.md`.
 
 ## SESSION PROGRESS
 
-**Current**: Session #4 in progress (March 25, 2026)
-**Status**: Progression Guide shipped. Idle-time automation extraction deferred pending BETA's autonomous agent work.
+**Current**: Session #4 complete (March 25, 2026)
+**Status**: Progression Guide, voice pass, attribution, Prelude v1 built. Archive removed. Idle-time extraction deferred.
 
 ### Pending Verifications
 *(none)*
 
-### Session #4 In Progress (March 25, 2026)
+### Session #4 Complete (March 25, 2026)
 
-**Progression Guide + Pattern Monitoring**
+**Progression Guide + Voice + Attribution + Prelude**
 
 - Progression Guide v1 (`Progression.md`): day-1 paths (new project, existing codebase, team adoption), level-by-level experience and judgment calls, anti-patterns per level, "most projects stay at Level 2" framing
 - Voice pass on README.md and Progression.md against Min's voice reference
@@ -141,6 +141,7 @@ Universal working preferences in `~/.claude/CLAUDE.md`.
 
 | Item | Session | Notes |
 |---------|---------|-------|
+| Progression Guide, voice pass, attribution, Prelude v1 | #4 | Progression.md, voice pass on entry points, collaborative attribution, archive removed, Prelude built |
 | Approachability overhaul — README v2, audience headers, orientation | #3 | README restructured, all 10 files have audience markers, kit table updated |
 | itsmin.com added as pattern source | #3 | CLAUDE.local.md updated, simpler-stack reference for Level 1-2 patterns |
 | Choral three-mode system + shared blackboard | #2 | Choral-Pattern.md v2.0, contract template updated |
@@ -151,7 +152,6 @@ Universal working preferences in `~/.claude/CLAUDE.md`.
 ### P2: FUTURE WORK
 
 1. **Voice review pass** — Apply appropriate levels of Min's voice across remaining docs (Working-With-Claude-Code, Workflow Framework, Choral, Voice). Entry points (README, Progression) done in Session #4. Discrete session.
-2. ~~**Progression guide**~~ — **COMPLETE** (Session #4). `Progression.md` — day-1 paths, level-by-level experience and judgment calls, anti-patterns per level
 2. **Idle-time automation patterns** — Standalone doc + template for autonomous background work (bug hunting, alignment audits, freshness maintenance). **Trigger**: extract from BETA once its autonomous agent implementation has shipped and been used for several sessions. Poll BETA's CLAUDE.md periodically to check progress. Not a Choral task — this is pattern extraction for the public kit, not cross-project coordination.
 3. **Decay reference** — Decay and memory lifecycle templates (may stay as a documented gap rather than a contrived template)
 
