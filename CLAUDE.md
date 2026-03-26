@@ -89,7 +89,7 @@ Universal working preferences in `~/.claude/CLAUDE.md`.
 - README updated with Progression Guide in "Going Deeper" table and kit table
 - Checked BETA for idle-time autonomous agent patterns — infrastructure automation shipped, Claude-as-autonomous-agent not yet. Extraction deferred.
 - Checked Choral Session #4 — Coordination Manifest already in Choral-Pattern.md. No update needed.
-- **Prelude v1 built** (`/Users/itsmin/Projects/prelude/`): Min's personal Overture instance with documentation voice reference, personalized templates, Choral pre-wired, drift check in session-end. Private repo initialized.
+- **Prelude v1 built**: Personal Overture instance with documentation voice reference, personalized templates, Choral pre-wired, drift check in session-end. Private repo initialized.
 - `~/.claude/CLAUDE.md` updated with Prelude in portfolio
 - Voice review pass on remaining Overture docs queued as P2 #1
 
