@@ -101,7 +101,7 @@ Four sections. That's it. Don't add session progress tracking, deferred work tab
 
 **The honest part**: Level 3 is custom engineering. No drop-in template. Decay scripts, hook configurations, automation harnesses — built for your project's specific needs. The *pattern* generalizes. The *implementation* doesn't.
 
-**What Overture provides here**: The conceptual framework ([decay](Working-With-Claude-Code.md#decay), [memory architecture](Working-With-Claude-Code.md#part-2-memory-architecture)) and the principles. Not a turnkey solution. If you're at Level 3, you're experienced enough to build what your project needs from those principles.
+**What Overture provides here**: The conceptual framework ([decay](Working-With-Claude-Code.md#decay), [memory architecture](Working-With-Claude-Code.md#part-2-memory-architecture)), documented patterns for [session hooks](workflow/Claude-Code-Workflow-Framework.md#session-hooks) and [autonomous background triggers](patterns/Autonomous-Background.md), and an [architectural pattern](patterns/Data-Authority.md) for preventing systemic bug classes. Not a turnkey solution — but more than just principles. If you're at Level 3, you're experienced enough to specialize these patterns for your project.
 
 **Over-investment**: Automating everything before you know what's worth automating. Build the manual version first. Notice what's repetitive and error-prone. Automate that. Automation built from theory breaks. Automation built from observed repetition works.
 
@@ -135,4 +135,4 @@ The goal isn't Level 4. It's the minimum investment that keeps your work from le
 
 ---
 
-*Evolved through 460+ working sessions across production products. Levels 1-2 are thoroughly proven. Level 3 is project-specific by nature. Level 4 (Choral) is documented but tested at small scale. [Honest gaps](Working-With-Claude-Code.md#part-6-honest-gaps) are documented.*
+*Evolved through 475+ working sessions across production products. Levels 1-2 are thoroughly proven. Level 3 is project-specific by nature. Level 4 (Choral) is documented but tested at small scale. [Honest gaps](Working-With-Claude-Code.md#part-6-honest-gaps) are documented.*

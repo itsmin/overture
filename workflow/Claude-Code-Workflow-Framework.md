@@ -1,7 +1,7 @@
 # Claude Code Workflow Framework
 
 **Version**: 2.0 — March 2026
-**Evolved through**: 460+ working sessions across production SaaS and professional services products
+**Evolved through**: 475+ working sessions across production SaaS and professional services products
 **Previous**: v1.0 (December 2025, ~170 sessions)
 **Part of**: [Overture](../README.md) — the Claude Code working kit
 **Companion**: [Working with Claude Code](../Working-With-Claude-Code.md) — conceptual foundations (ICL, memory tiers, Levels 0-4)
@@ -325,6 +325,97 @@ The session-end command ensures clean handoff to the next session:
    - Commit ready
 
 **Session complete. Safe to exit.**
+
+---
+
+## Session Hooks
+
+Session commands handle interactive work — alignment, reconciliation, decisions. Hooks handle the mechanical parts: health checks, size warnings, git status. They run automatically at session boundaries without manual invocation.
+
+### What Hooks Automate
+
+**Session-start hook** (runs when Claude Code starts or resumes):
+- Production service health (if applicable)
+- Git status and recent commits
+- Key metrics snapshot
+- Documentation staleness warnings
+- Current session progress pointer
+- Communication guidelines reminder
+
+**Session-end hook** (runs when session ends):
+- Was CLAUDE.md updated this session?
+- CLAUDE.md size check (character budget)
+- Uncommitted changes warning
+- Unpushed commits warning
+- File organization check
+- Session statistics logging
+
+### Setup
+
+Register hooks in `.claude/settings.local.json`:
+
+```json
+{
+  "hooks": {
+    "SessionStart": [
+      {
+        "type": "command",
+        "command": "bash .claude/hooks/session-start.sh",
+        "timeout": 30000
+      }
+    ],
+    "SessionEnd": [
+      {
+        "type": "command",
+        "command": "bash .claude/hooks/session-end.sh",
+        "timeout": 30000
+      }
+    ]
+  }
+}
+```
+
+Output format: JSON to stdout for Claude Code context injection. Human-readable output to stderr. Both work — JSON gives Claude the context directly; stderr requires Claude to read it from the terminal.
+
+### Specialization
+
+The baseline hook checks git status, health, docs, and CLAUDE.md. Every project specializes from there. That's expected, not drift.
+
+Production hooks grow significantly. A mature SaaS product might have a 400+ line session-start hook checking deployment health, pipeline stages, source coverage, CI status, and document staleness with version extraction. A services product might check session directories, worker health, and type errors.
+
+**The principle**: If you're checking something manually every session start, automate it into the hook.
+
+### Specialization Recipes
+
+These patterns are extracted from production hooks. Adapt them to your project — don't copy verbatim.
+
+**Multi-stage pipeline validation.** When data flows through stages (raw → processed → deployed), check counts at each stage and flag gaps:
+
+```bash
+MASTER_COUNT=$(jq '.entities | length' data/registry.json 2>/dev/null || echo "0")
+GENERATED_COUNT=$(ls data/generated/*.json 2>/dev/null | wc -l | tr -d ' ')
+DEPLOYED_COUNT=$(curl -s "$HEALTH_URL/api/stats" | jq '.entityCount' 2>/dev/null || echo "?")
+
+if [ "$MASTER_COUNT" != "$GENERATED_COUNT" ] 2>/dev/null; then
+    echo "Generation gap: $((MASTER_COUNT - GENERATED_COUNT)) entities not generated"
+fi
+```
+
+**Metadata-based review tracking.** File modification time tells you when a file was touched, not when its content was deliberately reviewed. For config files that need periodic human review, embed review dates in the file itself and check them in the hook.
+
+**Structured document extraction.** Pull key metrics from documentation files (version numbers, endpoint counts, cost figures) so the session starts with actual numbers, not "go read the docs."
+
+**CI/automation status.** Check multiple GitHub Actions workflows, flag failures. Projects with daily refreshes, scheduled deploys, or validation runs benefit from this — a silent failure can compound over days.
+
+### What Stays Manual
+
+Hooks automate mechanical checks. These still require the slash commands:
+- Work queue reconciliation
+- Feature verification and judgment calls
+- Deferred work audit
+- Cross-project coordination decisions
+- CLAUDE.md content updates
+- Alignment check
 
 ---
 

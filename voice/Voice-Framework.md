@@ -1,7 +1,7 @@
 # Voice Framework
 
 **Version**: 2.0 — March 2026
-**Evolved through**: Editorial content, product agent design, and professional representation across 460+ sessions
+**Evolved through**: Editorial content, product agent design, and professional representation across 475+ sessions
 **Previous**: v1.0 (December 2025) — editorial-only, Substack/LinkedIn-specific
 **Part of**: [Overture](../README.md) — the Claude Code working kit
 **Companion**: [Voice Reference](Voice-Reference.md) — detailed session structure, derivation approach, encoding patterns

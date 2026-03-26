@@ -10,7 +10,7 @@ You open Claude Code, do good work, close the session. Next time, Claude remembe
 
 Overture fixes that. It gives Claude a structured operating document — current state, priorities, work queue, session handoffs — so every session starts where the last one ended.
 
-Evolved through 460+ working sessions across production SaaS and professional services. Not theoretical patterns. What survived contact with real products, real users, real deadlines.
+Evolved through 475+ working sessions across production SaaS and professional services. Not theoretical patterns. What survived contact with real products, real users, real deadlines.
 
 ## What You Need
 
@@ -48,9 +48,11 @@ You don't need to read anything else to use the framework. These are here when y
 |-------------|-----------|
 | Want to know what to do next as your project grows | [Progression Guide](Progression.md) — what each level feels like, when to evolve |
 | Want to understand *why* the framework works | [Working with Claude Code](Working-With-Claude-Code.md) — ICL, memory architecture, context management |
-| Want the full methodology reference | [Workflow Framework](workflow/Claude-Code-Workflow-Framework.md) — CLAUDE.md anatomy, session management, documentation hygiene |
+| Want the full methodology reference | [Workflow Framework](workflow/Claude-Code-Workflow-Framework.md) — CLAUDE.md anatomy, session management, hooks, documentation hygiene |
 | Are coordinating multiple projects | [Choral Pattern](choral/Choral-Pattern.md) — cross-project coordination with shared contracts |
 | Need voice, tone, or editorial consistency | [Voice Framework](voice/) — defining and maintaining voice in AI-assisted work |
+| Hit "data is correct but display is wrong" bugs | [Data Authority](patterns/Data-Authority.md) — single source of truth for derived state |
+| Want Claude doing quality work between sessions | [Autonomous Background](patterns/Autonomous-Background.md) — scheduled triggers, phased rollout |
 
 ---
 
@@ -71,6 +73,8 @@ Most files in this repo are read by Claude, not by you. The **Audience** column 
 | [`choral/Choral-Pattern.md`](choral/Choral-Pattern.md) | Cross-project coordination — setup, modes, contracts | You |
 | [`voice/Voice-Framework.md`](voice/Voice-Framework.md) | Voice methodology — defining, encoding, maintaining voice | You |
 | [`voice/Voice-Reference.md`](voice/Voice-Reference.md) | Detailed session structure, derivation, encoding patterns | You |
+| [`patterns/Data-Authority.md`](patterns/Data-Authority.md) | Architectural pattern — single source of truth for derived state | You |
+| [`patterns/Autonomous-Background.md`](patterns/Autonomous-Background.md) | Scheduled triggers for between-session quality work | You |
 
 ## How It Works
 
@@ -96,7 +100,7 @@ For the full progression framework with decision criteria, see the [Progression 
 
 ## Provenance
 
-Built across 460+ sessions on a company intelligence platform (shipped December 2025, production SaaS) and a professional representation service (AI-powered interview and representation agents). Cross-project coordination between the two became the Choral pattern. Approaches that didn't work were dropped. Honest gaps are [documented](Working-With-Claude-Code.md#part-6-honest-gaps).
+Built across 475+ sessions on a company intelligence platform (shipped December 2025, production SaaS) and a professional representation service (AI-powered interview and representation agents). Cross-project coordination between the two became the Choral pattern. Approaches that didn't work were dropped. Honest gaps are [documented](Working-With-Claude-Code.md#part-6-honest-gaps).
 
 This framework — including its documentation — was built collaboratively with Claude Code, using the patterns described in the kit. The system architecture, workflow design, and judgment calls are the author's; Claude is a collaborator on implementation and documentation. A framework for AI-assisted development should probably be built that way.
 

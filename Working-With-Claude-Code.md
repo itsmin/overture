@@ -1,7 +1,7 @@
 # Working with Claude Code
 
 **Created**: March 22, 2026 | **Updated**: March 2026
-**Context**: These patterns emerged from 460+ working sessions across production SaaS, professional services, and multi-project coordination. The concepts are grounded in how LLMs actually work — not how they're marketed.
+**Context**: These patterns emerged from 475+ working sessions across production SaaS, professional services, and multi-project coordination. The concepts are grounded in how LLMs actually work — not how they're marketed.
 **Purpose**: Conceptual foundations for working with Claude Code. Why the workflow patterns work, not just how to set them up.
 **Part of**: [Overture](README.md) — the Claude Code working kit
 **Companion**: [Workflow Framework](workflow/Claude-Code-Workflow-Framework.md) — the practical methodology and templates
@@ -118,13 +118,14 @@ No persistent state. Open Claude Code, ask a question, close. Most tasks start h
 ### Level 3: Single Project, Automated
 
 **What you add:**
+- Session hooks — automated health checks, metrics snapshots, and hygiene enforcement at session boundaries (see [Workflow Framework: Session Hooks](workflow/Claude-Code-Workflow-Framework.md#session-hooks))
+- Autonomous background triggers — scheduled agents that run quality checks and strategic audits between sessions (see [Autonomous Background Patterns](patterns/Autonomous-Background.md))
 - Decay — scripted summarization and archival based on age, magnitude, access frequency
-- Idle-time automation — cron-based test harness execution, linting, health checks that run while you're away
-- Self-maintaining test harnesses — updated when code changes, catch regressions proactively
+- Architectural invariants — patterns like [Data Authority](patterns/Data-Authority.md) encoded in CLAUDE.md to prevent systemic bug classes
 
-**What you get:** The project maintains itself between your active sessions. Context stays lean. Tests run without being asked. Stale documentation gets pruned before it becomes noise.
+**What you get:** The project maintains itself between your active sessions. Context stays lean. Tests run without being asked. Quality checks happen whether or not you open a session. Stale documentation gets flagged before it becomes noise.
 
-**Caveat:** Level 3 is custom engineering. There's no drop-in framework. Decay and idle-time automation are scripts built for your specific workflow. The *pattern* generalizes; the *implementation* doesn't.
+**Caveat:** Level 3 is custom engineering. Hooks and triggers follow documented patterns, but the specialization is specific to your project. The *patterns* generalize; the *implementation details* don't.
 
 **Level up when:** You have multiple projects that need to be aware of each other's capabilities.
 
@@ -237,7 +238,7 @@ These aren't future work. They're known limitations of the current system.
 
 4. **No integration testing.** The coordinator reads code and reasons about compatibility. It can't run tests across projects. A breaking API change won't be caught until deployment.
 
-5. **Level 3 is partially documented.** The integration monitor in the Choral pattern is a concrete example of session-start automation. Decay still has no reproducible template — the pattern generalizes but the implementation is custom per project.
+5. **Level 3 is partially documented.** Session hooks and autonomous background triggers now have documented patterns and recipes (see the [Workflow Framework](workflow/Claude-Code-Workflow-Framework.md#session-hooks) and [Autonomous Background Patterns](patterns/Autonomous-Background.md)). Decay still has no reproducible template — the pattern generalizes but the implementation is custom per project.
 
 ---
 

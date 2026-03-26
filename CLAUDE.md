@@ -7,7 +7,7 @@
 - **Stage**: Active development — interview-ready, day-1-usable
 - **Audience**: Min, and eventually any team or organization where Min works
 - **Goal**: Battle-tested system for Claude Code working patterns, from single projects to multi-project orchestration
-- **Provenance**: Evolved through 460+ working sessions across production SaaS and professional services
+- **Provenance**: Evolved through 475+ working sessions across production SaaS and professional services
 
 ---
 
@@ -22,6 +22,8 @@
 | `choral/Choral-Pattern.md` | Standalone Choral reference: three coordination modes, shared blackboard, setup | You | **v2.0** — March 23, 2026 |
 | `voice/Voice-Framework.md` | Voice as design material: defining, encoding, maintaining voice | You | v2.0 — March 2026 |
 | `voice/Voice-Reference.md` | Detailed session structure, derivation approach, encoding patterns | You | v2.0 — March 2026 |
+| `patterns/Data-Authority.md` | Architectural pattern: single source of truth for derived state | You | v1 — March 2026 |
+| `patterns/Autonomous-Background.md` | Scheduled triggers for between-session quality work | You | v1 — March 2026 |
 | `templates/CLAUDE.md` | Project operating document skeleton | Both | v1 — March 2026 |
 | `templates/init.md` | Initialization guide — Claude follows this to set up a new project | Claude | v1 — March 2026 |
 | `templates/session-start.md` | Session-start command template — copy to `.claude/commands/` | Claude | v1.1 — March 2026 |
@@ -72,11 +74,11 @@ Universal working preferences in `~/.claude/CLAUDE.md`.
 
 ## SESSION PROGRESS
 
-**Current**: Session #5 complete (March 25, 2026)
-**Status**: Voice pass complete on all kit docs. P2 assessed — both items deferred with rationale.
+**Current**: Session #6 in progress (March 26, 2026)
+**Status**: Pattern extraction from Prelude + BETA. New patterns/ directory with two docs.
 
 ### Pending Verifications
-- **#5**: BETA autonomous agent triggers shipped March 25 — poll in 5-10 sessions for battle-tested patterns (P2 #1 trigger)
+*(none)*
 
 ### Session #5 Complete (March 25, 2026)
 
@@ -145,12 +147,14 @@ Universal working preferences in `~/.claude/CLAUDE.md`.
 
 ### CURRENT PRIORITIES
 
-*(No active P1 — all items complete through Session #5)*
+*(No active P1 — all items complete through Session #6)*
 
 ### COMPLETE (Recent)
 
 | Item | Session | Notes |
 |---------|---------|-------|
+| Pattern extraction — Data Authority + Autonomous Background | #6 | Two new docs in patterns/. Workflow Framework updated with hooks section. Level 3 now documented. |
+| Hooks section in Workflow Framework | #6 | Setup, specialization principle, 4 recipes from production. |
 | Voice review pass — remaining docs | #5 | 4 files touched, Voice Framework unchanged. Light pass — docs already strong. |
 | Progression Guide, voice pass, attribution, Prelude v1 | #4 | Progression.md, voice pass on entry points, collaborative attribution, archive removed, Prelude built |
 | Approachability overhaul — README v2, audience headers, orientation | #3 | README restructured, all 10 files have audience markers, kit table updated |
@@ -162,8 +166,8 @@ Universal working preferences in `~/.claude/CLAUDE.md`.
 
 ### P2: FUTURE WORK
 
-1. **Idle-time automation patterns** — Standalone doc + template for autonomous background work (bug hunting, alignment audits, freshness maintenance). **Trigger**: BETA shipped autonomous triggers (daily quality patrol + weekly alignment audit) on March 25, 2026. Extract after 5-10 sessions of real use — patterns should survive contact with reality before documenting. Poll BETA's CLAUDE.md to check maturity. Not a Choral task — pattern extraction for the public kit.
-2. **Decay reference** — Decay and memory lifecycle templates. **Recommendation (Session #5)**: leave as documented gap. Level 3 is explicitly custom engineering with no drop-in template. A contrived template would contradict the framework's own guidance. Revisit only if a generalizable pattern emerges from production use.
+1. **Decay reference** — Decay and memory lifecycle templates. **Recommendation (Session #5)**: leave as documented gap. Level 3 is explicitly custom engineering with no drop-in template. A contrived template would contradict the framework's own guidance. Revisit only if a generalizable pattern emerges from production use.
+2. **Hook templates** — Prelude has production hook scripts (session-start.sh, session-end.sh). Evaluate whether to include baseline hook script templates in Overture's templates/ directory. The Workflow Framework now documents the pattern and recipes; scripts would make it copy-paste ready.
 
 ### PUBLIC-READINESS CRITERIA
 
@@ -206,11 +210,13 @@ Before flipping from private → public:
 |----------|------|-------------|---------|
 | README | `README.md` | Session #4 | Entry point — problem, quick start, orientation, audience guide |
 | Progression Guide | `Progression.md` | Session #4 | Day-1 paths, level-by-level experience, when to evolve |
-| Conceptual Framework | `Working-With-Claude-Code.md` | Session #1 | ICL, memory tiers, Levels 0-4, Choral, Lyrical |
-| Workflow Framework | `workflow/Claude-Code-Workflow-Framework.md` | Session #1 | Methodology v2.0 — session management, CLAUDE.md anatomy |
+| Conceptual Framework | `Working-With-Claude-Code.md` | Session #6 | ICL, memory tiers, Levels 0-4, Choral, Lyrical |
+| Workflow Framework | `workflow/Claude-Code-Workflow-Framework.md` | Session #6 | Methodology v2.0 — session management, CLAUDE.md anatomy, hooks |
 | Choral Reference | `choral/Choral-Pattern.md` | Session #2 | Standalone coordination pattern guide |
 | Voice Framework | `voice/Voice-Framework.md` | Session #1 | Voice methodology — defining, encoding, maintaining |
 | Voice Reference | `voice/Voice-Reference.md` | Session #1 | Session structure, derivation, encoding patterns |
+| Data Authority | `patterns/Data-Authority.md` | Session #6 | Architectural pattern: single source of truth for derived state |
+| Autonomous Background | `patterns/Autonomous-Background.md` | Session #6 | Scheduled triggers for between-session quality work |
 | Init Guide | `templates/init.md` | Session #2 | Initialization instructions for Claude to follow |
 
 ---
