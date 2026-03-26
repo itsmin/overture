@@ -72,20 +72,21 @@ Universal working preferences in `~/.claude/CLAUDE.md`.
 
 ## SESSION PROGRESS
 
-**Current**: Session #5 in progress (March 25, 2026)
-**Status**: Voice review pass complete on remaining docs. P2 #1 done.
+**Current**: Session #5 complete (March 25, 2026)
+**Status**: Voice pass complete on all kit docs. P2 assessed — both items deferred with rationale.
 
 ### Pending Verifications
-*(none)*
+- **#5**: BETA autonomous agent triggers shipped March 25 — poll in 5-10 sessions for battle-tested patterns (P2 #1 trigger)
 
-### Session #5 In Progress (March 25, 2026)
+### Session #5 Complete (March 25, 2026)
 
-**Voice Review Pass — Remaining Docs**
+**Voice Review Pass + P2 Assessment**
 
 - Voice pass on Working-With-Claude-Code.md, Workflow Framework, Choral-Pattern.md, Voice-Reference.md against Prelude voice reference
-- Docs were already in strong voice from Session #1 collaboration — 5 targeted cuts across 4 files, Voice Framework unchanged
-- Cuts: redundant audience tag, generic filler phrase, redundant instruction, over-explained observation passage, parentheses → em dashes
-- P2 #1 complete, written into Prelude
+- 5 targeted cuts across 4 files; Voice Framework unchanged — docs already strong from Session #1
+- Prelude voice.md validated against full kit
+- P2 #1 (idle-time): BETA shipped autonomous triggers today (daily quality patrol + weekly alignment audit). Not yet battle-tested — extract after 5-10 sessions of real use
+- P2 #2 (Decay): Recommend leaving as documented gap. Level 3 is custom by design; a template that doesn't generalize isn't a template
 
 ### Session #4 Complete (March 25, 2026)
 
@@ -161,8 +162,8 @@ Universal working preferences in `~/.claude/CLAUDE.md`.
 
 ### P2: FUTURE WORK
 
-1. **Idle-time automation patterns** — Standalone doc + template for autonomous background work (bug hunting, alignment audits, freshness maintenance). **Trigger**: extract from BETA once its autonomous agent implementation has shipped and been used for several sessions. Poll BETA's CLAUDE.md periodically to check progress. Not a Choral task — this is pattern extraction for the public kit, not cross-project coordination.
-2. **Decay reference** — Decay and memory lifecycle templates (may stay as a documented gap rather than a contrived template)
+1. **Idle-time automation patterns** — Standalone doc + template for autonomous background work (bug hunting, alignment audits, freshness maintenance). **Trigger**: BETA shipped autonomous triggers (daily quality patrol + weekly alignment audit) on March 25, 2026. Extract after 5-10 sessions of real use — patterns should survive contact with reality before documenting. Poll BETA's CLAUDE.md to check maturity. Not a Choral task — pattern extraction for the public kit.
+2. **Decay reference** — Decay and memory lifecycle templates. **Recommendation (Session #5)**: leave as documented gap. Level 3 is explicitly custom engineering with no drop-in template. A contrived template would contradict the framework's own guidance. Revisit only if a generalizable pattern emerges from production use.
 
 ### PUBLIC-READINESS CRITERIA
 
