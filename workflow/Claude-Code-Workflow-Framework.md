@@ -14,7 +14,7 @@
 
 A methodology for using Claude Code effectively on real projects. Not a Claude Code tutorial — this assumes you know what Claude Code is and have it running.
 
-This framework shows you how to build working patterns that survive across hundreds of sessions: continuity, documentation hygiene, context management, and cross-project coordination that go beyond what the tool provides out of the box.
+These patterns survive across hundreds of sessions: continuity, documentation hygiene, context management, and cross-project coordination.
 
 ### What Claude Code Gives You (Primitives)
 
@@ -153,7 +153,7 @@ Define what happens at session boundaries:
 - Commit changes if appropriate
 ```
 
-The specifics vary by project. A product with a database might check an admin queue at session start. A project with cross-project coordination reads the contract. Customize to what your project actually needs.
+The specifics vary by project. A product with a database might check an admin queue at session start. A project with cross-project coordination reads the contract.
 
 ### Session Progress
 

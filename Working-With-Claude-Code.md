@@ -6,7 +6,7 @@
 **Part of**: [Overture](README.md) — the Claude Code working kit
 **Companion**: [Workflow Framework](workflow/Claude-Code-Workflow-Framework.md) — the practical methodology and templates
 
-> **Audience**: You — this is reference reading on the concepts behind the framework. Claude doesn't need this file to operate. Read it when you want to understand *why* the patterns work, not just how to set them up.
+> **Audience**: You — conceptual foundations. Claude doesn't need this file to operate.
 
 ---
 

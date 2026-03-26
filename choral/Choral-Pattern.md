@@ -277,9 +277,9 @@ Finding: [What was observed]
 Affected: [Which project(s)]
 ```
 
-The observation says "here's what I found." The project session decides what (if anything) to do about it. This keeps the coordinator in its lane — it identifies problems at the integration level, but product-level responses belong to the project sessions.
+The observation says "here's what I found." The project session decides what — if anything — to do about it. This keeps the coordinator in its lane.
 
-Observations that grow into integration-level concerns can be promoted to recommendations. But not every finding needs a recommendation — some are just informational context for the project sessions to consider.
+Observations that grow into integration-level concerns can be promoted to recommendations. Not every finding needs one.
 
 ---
 

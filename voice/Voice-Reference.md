@@ -63,7 +63,7 @@ Failures become anti-patterns and banned phrases. Successes become sounds-like p
 
 ### 5. Test and Refine
 
-Apply the definition to new content. If the model still drifts, the definition has gaps — add specificity. If the model becomes overly constrained (safe, careful, stripped of personality), the anti-patterns are too aggressive — add positive patterns to balance.
+Apply the definition to new content. If the model still drifts, the definition has gaps — add specificity. If the model becomes overly constrained — safe, careful, stripped of personality — the anti-patterns are too aggressive. Add positive patterns to balance.
 
 ---
 
