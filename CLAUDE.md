@@ -80,23 +80,19 @@ Universal working preferences in `~/.claude/CLAUDE.md`.
 
 ## SESSION PROGRESS
 
-**Current**: Session #8 in progress (March 27, 2026)
-**Status**: Pattern extraction from Prelude.
+**Current**: Session #8 complete (March 27, 2026)
+**Status**: Pushed to GitHub.
 
 ### Pending Verifications
 *(none)*
 
-### Session #8 In Progress (March 27, 2026)
+### Session #8 Complete (March 27, 2026)
 
-**Pattern Extraction from Prelude**
+**Pattern Extraction from Prelude — Four New Patterns**
 
-- Hook script templates (`templates/hooks/`) — session-start.sh, session-end.sh, README.md with setup, testing, and specialization recipes
-- Size Management pattern (`patterns/Size-Management.md`) — thresholds, two project profiles, archiving protocol, session entry format
-- Settings Hygiene pattern (`patterns/Settings-Hygiene.md`) — two-layer settings organization, accumulation problem, cleanup protocol
-- Section Ordering pattern (`patterns/Section-Ordering.md`) — canonical CLAUDE.md section order from cross-project comparison
-- Kit table, README, Workflow Framework cross-references updated
-- P2 #2 (hook templates) resolved; P2 #1 (decay) updated — size management covers the actionable part
-- Interview audience note cleared (interview happened March 27)
+- Hook script templates, Size Management, Settings Hygiene, Section Ordering extracted from Prelude
+- 7 new files, 3 updated files, all cross-references and kit tables updated
+- P2 #2 (hook templates) resolved; P2 #1 (decay) narrowed to memory lifecycle only
 
 ### Session #7 Complete (March 26, 2026)
 
