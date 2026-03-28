@@ -81,11 +81,20 @@ Universal working preferences in `~/.claude/CLAUDE.md`.
 
 ## SESSION PROGRESS
 
-**Current**: Session #8 complete (March 27, 2026)
+**Current**: Session #9 complete (March 28, 2026)
 **Status**: Pushed to GitHub.
 
 ### Pending Verifications
 *(none)*
+
+### Session #9 Complete (March 28, 2026)
+
+**Privacy Boundary Pattern Extraction from Prelude**
+
+- Created `patterns/Privacy-Boundary.md` — PII filtering at public surfaces, five invariants, runtime verification
+- Updated section-ordering (position 2b), CLAUDE.md template (commented-out section), session-end (code-level + data-level audit)
+- All CaliKo references stripped; pattern is fully org-agnostic
+- 5 files changed, committed and pushed
 
 ### Session #8 Complete (March 27, 2026)
 
@@ -181,12 +190,13 @@ Universal working preferences in `~/.claude/CLAUDE.md`.
 
 ### CURRENT PRIORITIES
 
-*(No active P1 — all items complete through Session #6)*
+*(No active P1 — all items complete through Session #9)*
 
 ### COMPLETE (Recent)
 
 | Item | Session | Notes |
 |---------|---------|-------|
+| Privacy boundary pattern extraction | #9 | New pattern doc, section-ordering, template, session-end updated. |
 | Pattern extraction — Data Authority + Autonomous Background | #6 | Two new docs in patterns/. Workflow Framework updated with hooks section. Level 3 now documented. |
 | Hooks section in Workflow Framework | #6 | Setup, specialization principle, 4 recipes from production. |
 | Voice review pass — remaining docs | #5 | 4 files touched, Voice Framework unchanged. Light pass — docs already strong. |
