@@ -53,6 +53,10 @@ You don't need to read anything else to use the framework. These are here when y
 | Need voice, tone, or editorial consistency | [Voice Framework](voice/) — defining and maintaining voice in AI-assisted work |
 | Hit "data is correct but display is wrong" bugs | [Data Authority](patterns/Data-Authority.md) — single source of truth for derived state |
 | Want Claude doing quality work between sessions | [Autonomous Background](patterns/Autonomous-Background.md) — scheduled triggers, phased rollout |
+| Need to manage CLAUDE.md growth | [Size Management](patterns/Size-Management.md) — thresholds, archiving, project profiles |
+| Setting up a new project's permissions | [Settings Hygiene](patterns/Settings-Hygiene.md) — two-layer settings, credential cleanup |
+| Standardizing CLAUDE.md structure across projects | [Section Ordering](patterns/Section-Ordering.md) — canonical section order |
+| Ready to automate session checks | [Hook Templates](templates/hooks/) — scripts, setup, specialization recipes |
 
 ---
 
@@ -75,6 +79,12 @@ Most files in this repo are read by Claude, not by you. The **Audience** column 
 | [`voice/Voice-Reference.md`](voice/Voice-Reference.md) | Detailed session structure, derivation, encoding patterns | You |
 | [`patterns/Data-Authority.md`](patterns/Data-Authority.md) | Architectural pattern — single source of truth for derived state | You |
 | [`patterns/Autonomous-Background.md`](patterns/Autonomous-Background.md) | Scheduled triggers for between-session quality work | You |
+| [`patterns/Size-Management.md`](patterns/Size-Management.md) | CLAUDE.md size thresholds, archiving protocol, project profiles | You |
+| [`patterns/Settings-Hygiene.md`](patterns/Settings-Hygiene.md) | Settings accumulation, two-layer organization, cleanup protocol | You |
+| [`patterns/Section-Ordering.md`](patterns/Section-Ordering.md) | Canonical CLAUDE.md section ordering across projects | You |
+| [`templates/hooks/README.md`](templates/hooks/README.md) | Hook setup, testing, specialization recipes | You |
+| [`templates/hooks/session-start.sh`](templates/hooks/session-start.sh) | Automated session-start hook — git, health, docs, metrics | Claude (via hook) |
+| [`templates/hooks/session-end.sh`](templates/hooks/session-end.sh) | Automated session-end hook — hygiene, size, git, stats | Claude (via hook) |
 
 ## How It Works
 

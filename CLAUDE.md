@@ -24,11 +24,17 @@
 | `voice/Voice-Reference.md` | Detailed session structure, derivation approach, encoding patterns | You | v2.0 — March 2026 |
 | `patterns/Data-Authority.md` | Architectural pattern: single source of truth for derived state | You | v1 — March 2026 |
 | `patterns/Autonomous-Background.md` | Scheduled triggers for between-session quality work | You | v1 — March 2026 |
+| `patterns/Size-Management.md` | CLAUDE.md size thresholds, archiving protocol, project profiles | You | v1 — March 2026 |
+| `patterns/Settings-Hygiene.md` | Settings accumulation, two-layer organization, cleanup protocol | You | v1 — March 2026 |
+| `patterns/Section-Ordering.md` | Canonical CLAUDE.md section ordering across projects | You | v1 — March 2026 |
 | `templates/CLAUDE.md` | Project operating document skeleton | Both | v1 — March 2026 |
 | `templates/init.md` | Initialization guide — Claude follows this to set up a new project | Claude | v1 — March 2026 |
 | `templates/session-start.md` | Session-start command template — copy to `.claude/commands/` | Claude | v1.1 — March 2026 |
 | `templates/session-end.md` | Session-end command template — copy to `.claude/commands/` | Claude | v1.1 — March 2026 |
 | `templates/contract.md` | Cross-project working contract template | Both | v1 — March 2026 |
+| `templates/hooks/README.md` | Hook setup, testing, specialization recipes | You | v1 — March 2026 |
+| `templates/hooks/session-start.sh` | Automated session-start hook script | Claude (via hook) | v1 — March 2026 |
+| `templates/hooks/session-end.sh` | Automated session-end hook script | Claude (via hook) | v1 — March 2026 |
 
 ### Archived Files
 
@@ -74,11 +80,30 @@ Universal working preferences in `~/.claude/CLAUDE.md`.
 
 ## SESSION PROGRESS
 
-**Current**: Session #6 complete (March 26, 2026)
-**Status**: Pattern extraction complete. Two new docs, Workflow Framework updated, Level 3 substantially documented.
+**Current**: Session #8 in progress (March 27, 2026)
+**Status**: Pattern extraction from Prelude.
 
 ### Pending Verifications
 *(none)*
+
+### Session #8 In Progress (March 27, 2026)
+
+**Pattern Extraction from Prelude**
+
+- Hook script templates (`templates/hooks/`) — session-start.sh, session-end.sh, README.md with setup, testing, and specialization recipes
+- Size Management pattern (`patterns/Size-Management.md`) — thresholds, two project profiles, archiving protocol, session entry format
+- Settings Hygiene pattern (`patterns/Settings-Hygiene.md`) — two-layer settings organization, accumulation problem, cleanup protocol
+- Section Ordering pattern (`patterns/Section-Ordering.md`) — canonical CLAUDE.md section order from cross-project comparison
+- Kit table, README, Workflow Framework cross-references updated
+- P2 #2 (hook templates) resolved; P2 #1 (decay) updated — size management covers the actionable part
+- Interview audience note cleared (interview happened March 27)
+
+### Session #7 Complete (March 26, 2026)
+
+**GitHub Sync**
+
+- Pushed 5 unpushed commits (Sessions #5-6) to GitHub after privacy audit
+- No content changes — verification and sync only
 
 ### Session #6 Complete (March 26, 2026)
 
@@ -178,8 +203,7 @@ Universal working preferences in `~/.claude/CLAUDE.md`.
 
 ### P2: FUTURE WORK
 
-1. **Decay reference** — Decay and memory lifecycle templates. **Recommendation (Session #5)**: leave as documented gap. Level 3 is explicitly custom engineering with no drop-in template. A contrived template would contradict the framework's own guidance. Revisit only if a generalizable pattern emerges from production use.
-2. **Hook templates** — Prelude has production hook scripts (session-start.sh, session-end.sh). Evaluate whether to include baseline hook script templates in Overture's templates/ directory. The Workflow Framework now documents the pattern and recipes; scripts would make it copy-paste ready.
+1. **Decay reference** — Decay and memory lifecycle templates. **Recommendation (Session #5)**: leave as documented gap. Level 3 is explicitly custom engineering with no drop-in template. Size Management pattern (`patterns/Size-Management.md`) now covers the actionable part (thresholds, archiving protocol). What remains is memory lifecycle — revisit only if a generalizable pattern emerges.
 
 ### PUBLIC-READINESS CRITERIA
 
@@ -229,6 +253,10 @@ Before flipping from private → public:
 | Voice Reference | `voice/Voice-Reference.md` | Session #1 | Session structure, derivation, encoding patterns |
 | Data Authority | `patterns/Data-Authority.md` | Session #6 | Architectural pattern: single source of truth for derived state |
 | Autonomous Background | `patterns/Autonomous-Background.md` | Session #6 | Scheduled triggers for between-session quality work |
+| Size Management | `patterns/Size-Management.md` | Session #8 | CLAUDE.md size thresholds, archiving protocol |
+| Settings Hygiene | `patterns/Settings-Hygiene.md` | Session #8 | Settings accumulation, two-layer org, cleanup |
+| Section Ordering | `patterns/Section-Ordering.md` | Session #8 | Canonical CLAUDE.md section ordering |
+| Hook Templates | `templates/hooks/` | Session #8 | Hook scripts, setup guide, specialization recipes |
 | Init Guide | `templates/init.md` | Session #2 | Initialization instructions for Claude to follow |
 
 ---

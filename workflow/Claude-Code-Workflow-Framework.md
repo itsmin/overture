@@ -377,6 +377,8 @@ Register hooks in `.claude/settings.local.json`:
 
 Output format: JSON to stdout for Claude Code context injection. Human-readable output to stderr. Both work — JSON gives Claude the context directly; stderr requires Claude to read it from the terminal.
 
+Ready-to-use hook scripts are available in [`templates/hooks/`](../templates/hooks/). Copy, customize the PROJECT CONFIG section, and register in settings. The [Hook README](../templates/hooks/README.md) has setup instructions, testing commands, and specialization recipes.
+
 ### Specialization
 
 The baseline hook checks git status, health, docs, and CLAUDE.md. Every project specializes from there. That's expected, not drift.
@@ -452,6 +454,8 @@ CLAUDE.md grows. Session entries accumulate. Deferred work tables expand. Withou
 This is cache eviction for documentation. The mechanism is session archives — batch old session entries to separate files, keep an index in CLAUDE.md.
 
 **The honest part**: Things get dropped. The bet is that old enough approximates unimportant enough. If you don't notice something's gone within the grace period, it probably wasn't load-bearing. Keeping everything fails harder — the model ignores your instructions because they're buried in noise, and you don't know it's happening.
+
+For concrete size thresholds, archiving protocol, and project profiles, see [Size Management](../patterns/Size-Management.md).
 
 ### Preventing Lost Work
 
