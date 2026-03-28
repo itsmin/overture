@@ -126,6 +126,28 @@ Add when supporting docs exist that need staleness tracking.
 |----------|------|-------------|---------|
 -->
 
+<!-- PRIVACY BOUNDARIES
+
+Activate this section if the project handles third-party PII and has public-facing surfaces.
+See patterns/Privacy-Boundary.md for the full pattern.
+
+## PRIVACY BOUNDARIES
+
+*Remove this section if the project handles no third-party PII or has no public surfaces.*
+
+| Data Source | Contains | Public Surface | Filtering |
+|-------------|----------|----------------|-----------|
+| [source] | [what PII] | [what surface, path] | [how filtered — data redaction, prompt instructions, field filtering] |
+
+**Rules**:
+1. Changes to any column in this table require PII verification before deploying
+2. New data sources feeding public surfaces get a row before the feature ships
+3. New public surfaces consuming PII-containing data get a row before the feature ships
+4. LLM-powered features consuming PII need both data-level redaction AND prompt-level instructions
+
+**Last verified**: [Date] (Session #XX) — tested with adversarial queries designed to surface PII
+-->
+
 <!-- SESSION ARCHIVES
 Add when CLAUDE.md grows past ~40k characters.
 

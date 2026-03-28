@@ -27,6 +27,7 @@
 | `patterns/Size-Management.md` | CLAUDE.md size thresholds, archiving protocol, project profiles | You | v1 — March 2026 |
 | `patterns/Settings-Hygiene.md` | Settings accumulation, two-layer organization, cleanup protocol | You | v1 — March 2026 |
 | `patterns/Section-Ordering.md` | Canonical CLAUDE.md section ordering across projects | You | v1 — March 2026 |
+| `patterns/Privacy-Boundary.md` | PII filtering at public surfaces — boundary declaration, LLM output as public surface, runtime verification | You | v1 — March 2026 |
 | `templates/CLAUDE.md` | Project operating document skeleton | Both | v1 — March 2026 |
 | `templates/init.md` | Initialization guide — Claude follows this to set up a new project | Claude | v1 — March 2026 |
 | `templates/session-start.md` | Session-start command template — copy to `.claude/commands/` | Claude | v1.1 — March 2026 |
@@ -252,6 +253,7 @@ Before flipping from private → public:
 | Size Management | `patterns/Size-Management.md` | Session #8 | CLAUDE.md size thresholds, archiving protocol |
 | Settings Hygiene | `patterns/Settings-Hygiene.md` | Session #8 | Settings accumulation, two-layer org, cleanup |
 | Section Ordering | `patterns/Section-Ordering.md` | Session #8 | Canonical CLAUDE.md section ordering |
+| Privacy Boundary | `patterns/Privacy-Boundary.md` | Session #9 | PII filtering at public surfaces, boundary declaration, runtime verification |
 | Hook Templates | `templates/hooks/` | Session #8 | Hook scripts, setup guide, specialization recipes |
 | Init Guide | `templates/init.md` | Session #2 | Initialization instructions for Claude to follow |
 

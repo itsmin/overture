@@ -22,6 +22,7 @@ When projects evolve independently, they develop the same section types in diffe
 
 1. **PROJECT STATUS** — What is this, what stage, who uses it
 2. **COLLABORATION GUIDELINES** — Project-specific rules, cross-project coordination
+2b. **PRIVACY BOUNDARIES** *(optional)* — PII sources, public surfaces, filtering. Only for projects handling third-party PII with public-facing surfaces. See `patterns/Privacy-Boundary.md`.
 3. **CURRENT METRICS** — Sources of truth, last validated
 4. **SESSION WORKFLOW** — How sessions work in this project
 5. **SESSION PROGRESS** — Current session, pending verifications
@@ -49,6 +50,7 @@ After reordering, scan top-to-bottom. This is the mental model:
 
 1. What is this project?
 2. How do we work together?
+2b. What data is sensitive, and where does it go? *(if applicable)*
 3. What are the numbers?
 4. How do sessions work?
 5. What's in progress?

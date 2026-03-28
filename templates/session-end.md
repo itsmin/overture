@@ -9,9 +9,22 @@ Ensure clean handoff to the next session.
 ### 1. Session Summary
 Summarize what was accomplished this session. Be specific — what changed, what was deployed, what was decided.
 
-### 2. Privacy Audit (if public repo)
-*Skip if the repo is private.*
+### 2. Privacy Audit
+*Skip if the repo is private AND the project has no public-facing surfaces.*
+
+**Code-level** (secrets in source):
 Before committing, grep modified files for: absolute machine paths, email addresses, API keys/tokens, proprietary details that shouldn't be public. Fix before committing.
+
+**Data-level** (PII at public surfaces):
+If the project has a PRIVACY BOUNDARIES table in CLAUDE.md, check whether this session's changes touch any declared boundary (data source, public surface, or connecting code). If yes:
+- Verify PII filtering is intact for affected rows
+- If prompt/system instructions changed: confirm PII redaction instructions survived
+- If data schema changed: confirm new fields don't flow unfiltered to public surfaces
+- If a new public surface was added: confirm it has a row in the table
+
+If the project handles third-party PII and has NO declared boundaries, flag the gap.
+
+See `patterns/Privacy-Boundary.md` for the full pattern.
 
 ### 3. Documentation Sync Check
 Did this session change any documented domain? Check each that applies to your project:
