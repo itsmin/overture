@@ -7,7 +7,7 @@
 - **Stage**: Active development — interview-ready, day-1-usable
 - **Audience**: Min, and eventually any team or organization where Min works
 - **Goal**: Battle-tested system for Claude Code working patterns, from single projects to multi-project orchestration
-- **Provenance**: Evolved through 475+ working sessions across production SaaS and professional services
+- **Provenance**: Evolved through 480+ working sessions across production SaaS and professional services
 
 ---
 
@@ -81,11 +81,20 @@ Universal working preferences in `~/.claude/CLAUDE.md`.
 
 ## SESSION PROGRESS
 
-**Current**: Session #9 complete (March 28, 2026)
+**Current**: Session #10 complete (March 28, 2026)
 **Status**: Pushed to GitHub.
 
 ### Pending Verifications
 *(none)*
+
+### Session #10 Complete (March 28, 2026)
+
+**Session template evolution from pxtxt production patterns**
+
+- Session-start v2: Step 0 (clean state), queue hygiene signal, project health, richer work queue with NEXT pointer and handoff quality check
+- Session-end v2: draft-first mode, work queue reconciliation, feature verification with code path tables, open discussions, next-session planning, settings hygiene
+- CLAUDE.md template v2: NEXT pointer, queue hygiene tracking, UPCOMING SESSIONS section
+- 4 files changed, committed and pushed
 
 ### Session #9 Complete (March 28, 2026)
 
@@ -196,6 +205,7 @@ Universal working preferences in `~/.claude/CLAUDE.md`.
 
 | Item | Session | Notes |
 |---------|---------|-------|
+| Session template evolution — v2 from pxtxt patterns | #10 | session-start, session-end, CLAUDE.md template all upgraded |
 | Privacy boundary pattern extraction | #9 | New pattern doc, section-ordering, template, session-end updated. |
 | Pattern extraction — Data Authority + Autonomous Background | #6 | Two new docs in patterns/. Workflow Framework updated with hooks section. Level 3 now documented. |
 | Hooks section in Workflow Framework | #6 | Setup, specialization principle, 4 recipes from production. |
