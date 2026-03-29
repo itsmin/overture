@@ -27,10 +27,14 @@ Universal working preferences in `~/.claude/CLAUDE.md`.
 ## SESSION WORKFLOW
 
 ### At `/session-start`:
-1. Present work queue from this document
-2. Check deferred work — review items bumped in previous sessions
-3. Note any in-progress work from Session Progress
-4. Wait for direction
+0. Clean state — commit/push/deploy anything left from last session
+1. [Project-specific: metrics validation, health checks — customize or skip]
+2. [Project-specific: domain health checks — customize or skip]
+3. Present deferred work
+4. Check pending verifications
+5. Cross-project coordination (if applicable)
+6. Present work queue — NEXT pointer first, then full priorities
+7. Alignment check
 
 ### During session:
 - Stay aligned with work queue unless redirected
@@ -39,8 +43,10 @@ Universal working preferences in `~/.claude/CLAUDE.md`.
 
 ### Before `/session-end`:
 - Update Session Progress if mid-implementation
-- Documentation Sync Check (see session-end command)
+- Verify features end-to-end (not just "code looks correct")
+- Documentation Sync Check
 - Add bumped items to Deferred Work
+- Plan next session with prioritized reasoning
 - Commit changes if appropriate
 
 ---
@@ -49,6 +55,8 @@ Universal working preferences in `~/.claude/CLAUDE.md`.
 
 **Current**: Session #1 pending
 **Status**: Initial setup
+**NEXT**: [Set by session-end — the #1 priority for the next session, stated specifically]
+**Last queue hygiene**: Session #1
 
 ### Pending Verifications
 
@@ -60,6 +68,10 @@ Universal working preferences in `~/.claude/CLAUDE.md`.
 
 **P1: [First Priority]**
 - [Details, context, approach]
+
+### UPCOMING SESSIONS
+
+[Set by session-end — prioritized candidates with reasoning, not just titles. Each candidate gets a sub-bullet explaining why this order and what it unblocks.]
 
 ### COMPLETE (Recent)
 

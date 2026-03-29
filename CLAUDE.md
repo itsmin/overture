@@ -28,10 +28,10 @@
 | `patterns/Settings-Hygiene.md` | Settings accumulation, two-layer organization, cleanup protocol | You | v1 — March 2026 |
 | `patterns/Section-Ordering.md` | Canonical CLAUDE.md section ordering across projects | You | v1 — March 2026 |
 | `patterns/Privacy-Boundary.md` | PII filtering at public surfaces — boundary declaration, LLM output as public surface, runtime verification | You | v1 — March 2026 |
-| `templates/CLAUDE.md` | Project operating document skeleton | Both | v1 — March 2026 |
+| `templates/CLAUDE.md` | Project operating document skeleton | Both | v2 — March 2026 |
 | `templates/init.md` | Initialization guide — Claude follows this to set up a new project | Claude | v1 — March 2026 |
-| `templates/session-start.md` | Session-start command template — copy to `.claude/commands/` | Claude | v1.1 — March 2026 |
-| `templates/session-end.md` | Session-end command template — copy to `.claude/commands/` | Claude | v1.1 — March 2026 |
+| `templates/session-start.md` | Session-start command template — copy to `.claude/commands/` | Claude | v2 — March 2026 |
+| `templates/session-end.md` | Session-end command template — copy to `.claude/commands/` | Claude | v2 — March 2026 |
 | `templates/contract.md` | Cross-project working contract template | Both | v1 — March 2026 |
 | `templates/hooks/README.md` | Hook setup, testing, specialization recipes | You | v1 — March 2026 |
 | `templates/hooks/session-start.sh` | Automated session-start hook script | Claude (via hook) | v1 — March 2026 |
