@@ -6,16 +6,30 @@
 
 - **Stage**: Active development — interview-ready, day-1-usable
 - **Audience**: Min, and eventually any team or organization where Min works
-- **Goal**: Battle-tested system for Claude Code working patterns, from single projects to multi-project orchestration
+- **Goal**: Battle-tested system for AI-assisted development patterns, from single projects to multi-project orchestration. Tool-agnostic via Agent Skills standard; Claude Code plugin as primary distribution.
 - **Provenance**: Evolved through 480+ working sessions across production SaaS and professional services
 
 ---
 
 ## WHAT'S IN THE KIT
 
+### Plugin & Skills (NEW — Session #11)
+
 | File | Purpose | Audience | Status |
 |------|---------|----------|--------|
-| `README.md` | Entry point — problem, quick start, orientation, kit overview | You | **v2** — March 25, 2026 |
+| `.claude-plugin/plugin.json` | Claude Code plugin manifest — `/plugin install overture` | Agent | **v1** — April 2026 |
+| `commands/init.md` | CC plugin init command — `/overture:init` | Agent | **v1** — April 2026 |
+| `skills/overture-init/SKILL.md` | Init skill (Agent Skills format) — cross-tool project setup | Agent | **v1** — April 2026 |
+| `skills/overture-init/references/operating-document-template.md` | Tool-agnostic operating document template | Both | **v1** — April 2026 |
+| `skills/session-start/SKILL.md` | Session-start skill — cross-tool context loading | Agent | **v1** — April 2026 |
+| `skills/session-end/SKILL.md` | Session-end skill — cross-tool handoff and cleanup | Agent | **v1** — April 2026 |
+| `glossary.md` | Controlled vocabulary for tool-agnostic terminology | Both | **v1** — April 2026 |
+
+### Methodology
+
+| File | Purpose | Audience | Status |
+|------|---------|----------|--------|
+| `README.md` | Entry point — problem, quick start, orientation, kit overview | You | **v3** — April 5, 2026 |
 | `Progression.md` | Progression guide — day-1 paths, level-by-level experience, when to evolve | You | **v1** — March 25, 2026 |
 | `Working-With-Claude-Code.md` | Conceptual framework: ICL foundations, memory architecture, Levels 0-4, Choral, Lyrical | You | Updated March 22, 2026 |
 | `workflow/Claude-Code-Workflow-Framework.md` | The methodology: session management, CLAUDE.md anatomy, documentation hygiene | You | **v2.0** — March 2026 |
@@ -24,18 +38,23 @@
 | `voice/Voice-Reference.md` | Detailed session structure, derivation approach, encoding patterns | You | v2.0 — March 2026 |
 | `patterns/Data-Authority.md` | Architectural pattern: single source of truth for derived state | You | v1 — March 2026 |
 | `patterns/Autonomous-Background.md` | Scheduled triggers for between-session quality work | You | v1 — March 2026 |
-| `patterns/Size-Management.md` | CLAUDE.md size thresholds, archiving protocol, project profiles | You | v1 — March 2026 |
+| `patterns/Size-Management.md` | Operating document size thresholds, archiving protocol, project profiles | You | v1 — March 2026 |
 | `patterns/Settings-Hygiene.md` | Settings accumulation, two-layer organization, cleanup protocol | You | v1 — March 2026 |
-| `patterns/Section-Ordering.md` | Canonical CLAUDE.md section ordering across projects | You | v1 — March 2026 |
-| `patterns/Privacy-Boundary.md` | PII filtering at public surfaces — boundary declaration, LLM output as public surface, runtime verification | You | v1 — March 2026 |
-| `templates/CLAUDE.md` | Project operating document skeleton | Both | v2 — March 2026 |
-| `templates/init.md` | Initialization guide — Claude follows this to set up a new project | Claude | v1 — March 2026 |
-| `templates/session-start.md` | Session-start command template — copy to `.claude/commands/` | Claude | v2 — March 2026 |
-| `templates/session-end.md` | Session-end command template — copy to `.claude/commands/` | Claude | v2 — March 2026 |
+| `patterns/Section-Ordering.md` | Canonical operating document section ordering across projects | You | v1 — March 2026 |
+| `patterns/Privacy-Boundary.md` | PII filtering at public surfaces — boundary declaration, runtime verification | You | v1 — March 2026 |
+
+### Templates & Hooks (manual setup / backwards compatible)
+
+| File | Purpose | Audience | Status |
+|------|---------|----------|--------|
+| `templates/CLAUDE.md` | CC-specific operating document skeleton | Both | v2 — March 2026 |
+| `templates/init.md` | Manual init guide (superseded by plugin/skills) | Agent | v1 — March 2026 |
+| `templates/session-start.md` | CC session-start command template | Agent | v2 — March 2026 |
+| `templates/session-end.md` | CC session-end command template | Agent | v2 — March 2026 |
 | `templates/contract.md` | Cross-project working contract template | Both | v1 — March 2026 |
 | `templates/hooks/README.md` | Hook setup, testing, specialization recipes | You | v1 — March 2026 |
-| `templates/hooks/session-start.sh` | Automated session-start hook script | Claude (via hook) | v1 — March 2026 |
-| `templates/hooks/session-end.sh` | Automated session-end hook script | Claude (via hook) | v1 — March 2026 |
+| `templates/hooks/session-start.sh` | Automated session-start hook script | Agent (via hook) | v1 — March 2026 |
+| `templates/hooks/session-end.sh` | Automated session-end hook script | Agent (via hook) | v1 — March 2026 |
 
 ### Archived Files
 
@@ -52,6 +71,7 @@ Universal working preferences in `~/.claude/CLAUDE.md`.
 2. **Real over polished** — The value is that these patterns are battle-tested. Honest gaps (scaling unproven, decay is lossy, contract drift) are features, not liabilities.
 3. **Practitioner voice** — Direct, no thought-leadership inflection, no academic framing where it doesn't serve the reader. These docs are for someone who will use them tomorrow, not study them.
 4. **Don't duplicate, reference** — Live implementations of these patterns exist in production projects. Read them for current practice (paths in `.claude/CLAUDE.local.md`). Don't copy their content into Overture — extract the patterns.
+5. **Tool-agnostic by default** — Skills and methodology docs use the glossary (`glossary.md`). Tool-specific terms only in adapter-layer files (plugin commands, hook configs). When in doubt, use the Overture term.
 
 ---
 
@@ -261,7 +281,13 @@ Before flipping from private → public:
 
 | Document | Path | Last Updated | Content |
 |----------|------|-------------|---------|
-| README | `README.md` | Session #4 | Entry point — problem, quick start, orientation, audience guide |
+| README | `README.md` | Session #11 | Entry point — plugin install, multi-tool, orientation |
+| Glossary | `glossary.md` | Session #11 | Controlled vocabulary for tool-agnostic terminology |
+| Plugin Manifest | `.claude-plugin/plugin.json` | Session #11 | Claude Code plugin — `/plugin install overture` |
+| Init Command (CC) | `commands/init.md` | Session #11 | CC plugin command — `/overture:init` |
+| Init Skill | `skills/overture-init/` | Session #11 | Cross-tool init (Agent Skills format) |
+| Session-Start Skill | `skills/session-start/` | Session #11 | Cross-tool session-start (Agent Skills format) |
+| Session-End Skill | `skills/session-end/` | Session #11 | Cross-tool session-end (Agent Skills format) |
 | Progression Guide | `Progression.md` | Session #4 | Day-1 paths, level-by-level experience, when to evolve |
 | Conceptual Framework | `Working-With-Claude-Code.md` | Session #6 | ICL, memory tiers, Levels 0-4, Choral, Lyrical |
 | Workflow Framework | `workflow/Claude-Code-Workflow-Framework.md` | Session #6 | Methodology v2.0 — session management, CLAUDE.md anatomy, hooks |
@@ -270,12 +296,12 @@ Before flipping from private → public:
 | Voice Reference | `voice/Voice-Reference.md` | Session #1 | Session structure, derivation, encoding patterns |
 | Data Authority | `patterns/Data-Authority.md` | Session #6 | Architectural pattern: single source of truth for derived state |
 | Autonomous Background | `patterns/Autonomous-Background.md` | Session #6 | Scheduled triggers for between-session quality work |
-| Size Management | `patterns/Size-Management.md` | Session #8 | CLAUDE.md size thresholds, archiving protocol |
+| Size Management | `patterns/Size-Management.md` | Session #8 | Operating document size thresholds, archiving protocol |
 | Settings Hygiene | `patterns/Settings-Hygiene.md` | Session #8 | Settings accumulation, two-layer org, cleanup |
-| Section Ordering | `patterns/Section-Ordering.md` | Session #8 | Canonical CLAUDE.md section ordering |
+| Section Ordering | `patterns/Section-Ordering.md` | Session #8 | Canonical operating document section ordering |
 | Privacy Boundary | `patterns/Privacy-Boundary.md` | Session #9 | PII filtering at public surfaces, boundary declaration, runtime verification |
 | Hook Templates | `templates/hooks/` | Session #8 | Hook scripts, setup guide, specialization recipes |
-| Init Guide | `templates/init.md` | Session #2 | Initialization instructions for Claude to follow |
+| Init Guide (legacy) | `templates/init.md` | Session #2 | Manual init (superseded by plugin/skills) |
 
 ---
 

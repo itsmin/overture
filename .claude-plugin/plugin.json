@@ -1,0 +1,20 @@
+{
+  "name": "overture",
+  "version": "1.0.0",
+  "description": "Session management framework for AI-assisted development. Operating documents, session discipline, work tracking, and progressive methodology evolved through 480+ production sessions.",
+  "author": {
+    "name": "Min Chang"
+  },
+  "license": "MIT",
+  "keywords": [
+    "workflow",
+    "session-management",
+    "methodology",
+    "operating-document",
+    "productivity"
+  ],
+  "commands": [
+    "./commands/init.md"
+  ],
+  "skills": "./skills/"
+}
