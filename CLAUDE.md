@@ -101,11 +101,24 @@ Universal working preferences in `~/.claude/CLAUDE.md`.
 
 ## SESSION PROGRESS
 
-**Current**: Session #10 complete (March 28, 2026)
+**Current**: Session #11 complete (April 5, 2026)
 **Status**: Pushed to GitHub.
+**NEXT**: Live plugin test — `/plugin install` from fresh CC session on a test project
+**Last queue hygiene**: Session #11
 
 ### Pending Verifications
-*(none)*
+- **Live plugin install test** — structural validation passed, init simulation passed, but actual `/plugin install overture` + `/overture:init` not yet tested in a fresh CC session
+- **Cross-tool portability** — skills written in Agent Skills format but not tested on Codex or Gemini CLI
+
+### Session #11 Complete (April 5, 2026)
+
+**Plugin architecture + Agent Skills format + tool-agnostic foundation**
+
+- Plugin manifest, 3 Agent Skills (init, session-start, session-end), CC init command, glossary
+- README v3: three installation paths (plugin, skills, manual), tool-agnostic language throughout
+- Structural validation passed, init simulation on test project passed
+- Strategic briefing evaluated — challenged pattern-to-skill mapping, adapter layer timing, maintenance surface
+- 9 files changed (7 new, 2 updated), committed and pushed
 
 ### Session #10 Complete (March 28, 2026)
 
@@ -219,12 +232,24 @@ Universal working preferences in `~/.claude/CLAUDE.md`.
 
 ### CURRENT PRIORITIES
 
-*(No active P1 — all items complete through Session #9)*
+**P1: Live plugin test + cross-tool portability**
+- Live test: fresh CC session, `/plugin install`, `/overture:init` on test project
+- Cross-tool: copy skills to Codex or Gemini CLI, verify they load and produce correct output
+- Fix any issues discovered
+
+### UPCOMING SESSIONS
+
+1. **Session #12: Live plugin test + interview prep** — Test the actual plugin install flow in a fresh CC session. Fix path resolution or formatting issues. This is the must-have for interview readiness — demonstrating "install in one command, init in one command" live.
+   - If plugin test passes clean: do a cross-tool test on Codex CLI (most likely second tool at an interview)
+   - If plugin test surfaces issues: fix those first, defer cross-tool
+
+2. **Session #13: Cross-tool portability + methodology lazy refactor** — Test skills on Codex and/or Gemini CLI. Start applying glossary terms to methodology docs as they're touched. Only if Session #12 didn't already cover cross-tool.
 
 ### COMPLETE (Recent)
 
 | Item | Session | Notes |
 |---------|---------|-------|
+| Plugin architecture + Agent Skills + tool-agnostic foundation | #11 | 7 new files, README v3, glossary, structural validation passed |
 | Session template evolution — v2 from pxtxt patterns | #10 | session-start, session-end, CLAUDE.md template all upgraded |
 | Privacy boundary pattern extraction | #9 | New pattern doc, section-ordering, template, session-end updated. |
 | Pattern extraction — Data Authority + Autonomous Background | #6 | Two new docs in patterns/. Workflow Framework updated with hooks section. Level 3 now documented. |
@@ -240,7 +265,9 @@ Universal working preferences in `~/.claude/CLAUDE.md`.
 
 ### P2: FUTURE WORK
 
-1. **Decay reference** — Decay and memory lifecycle templates. **Recommendation (Session #5)**: leave as documented gap. Level 3 is explicitly custom engineering with no drop-in template. Size Management pattern (`patterns/Size-Management.md`) now covers the actionable part (thresholds, archiving protocol). What remains is memory lifecycle — revisit only if a generalizable pattern emerges.
+1. **Decay reference** — Decay and memory lifecycle templates. **Recommendation (Session #5)**: leave as documented gap. Size Management covers the actionable part. Revisit only if a generalizable pattern emerges.
+2. **Methodology doc lazy refactor** — Apply glossary terms to existing docs (Working-With-Claude-Code.md, Workflow Framework, Progression, patterns) as they're touched. No dedicated refactoring pass unless needed.
+3. **Adapter layer** — Build only after testing on a second tool reveals what actually needs adapting. Don't pre-build from theory.
 
 ### PUBLIC-READINESS CRITERIA
 
