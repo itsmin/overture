@@ -123,6 +123,20 @@ Four sections. That's it. Don't add session progress tracking, deferred work tab
 
 ---
 
+## Your Overture Profile
+
+This isn't a level — it's something that happens naturally alongside any level. After a few projects, you'll notice you keep making the same choices during init: the same sections, the same session checks, the same conventions. That's when you create a profile.
+
+Your profile lives at `~/.overture/profile.md`. It tells Overture's init what you prefer, so new projects start with your refinements already in place. You can also add a voice reference (`~/.overture/voice.md`) if you've developed one.
+
+**Signal to create one**: You set up a second or third project and find yourself wishing it already had the structure you built in the first one. The profile carries that forward.
+
+**What it replaces**: Without a profile, you either reconfigure each project manually or maintain a personal fork of Overture. The profile is the middle path — your customizations, layered on top of the standard framework, without the maintenance burden of a fork.
+
+See the [profile template](templates/profile.md) to get started.
+
+---
+
 ## The Judgment Call
 
 The hard part isn't setting up any level. It's knowing when to stay where you are.

@@ -6,6 +6,16 @@ Set up this project for AI-assisted development with the Overture session manage
 
 ## Instructions
 
+### 0. Check for an Overture Profile
+
+Check if the user has a personal Overture profile at `~/.overture/profile.md`.
+
+**If found**: Read it. This contains the user's preferences for what to generate — default sections, session workflow customizations, voice reference, conventions. Apply these preferences throughout the remaining steps.
+
+If the profile references additional files (like `~/.overture/voice.md`), read those too.
+
+**If not found**: Continue with defaults. Mention that they can create one later to carry preferences into future projects.
+
 ### 1. Understand the Project
 
 Ask the user about their project. You need:
@@ -46,6 +56,8 @@ If not, suggest creating one.
 
 Tell the user:
 - What files were created
+- If a profile was applied, which preferences were used
 - How to use `/session-start` and `/session-end`
 - That optional CLAUDE.md sections can be uncommented as the project matures
+- If no profile exists: mention they can create one at `~/.overture/profile.md` to carry preferences into future projects
 - They can now run `/session-start` to begin their first session

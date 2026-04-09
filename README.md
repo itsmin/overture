@@ -70,6 +70,27 @@ From then on: run `/session-start` at the beginning of each session, `/session-e
 
 If you haven't set up personal preferences that apply across all your projects, ask Claude to help you create a `~/.claude/CLAUDE.md` — this tells Claude how you like to work, regardless of which project you're in.
 
+### Personalizing Overture
+
+As you use the framework across projects, you'll develop preferences — sections you always want, session checks you rely on, conventions that work for you. Instead of reconfiguring each project, you can create a personal profile:
+
+```
+~/.overture/profile.md
+```
+
+When you run init on a new project, Overture checks for this file and applies your preferences automatically. Your profile might include things like:
+
+- Sections to always include (privacy checks, cross-project coordination)
+- Session workflow additions (deployment health checks, documentation sync for specific domains)
+- A voice reference for consistent tone (`~/.overture/voice.md`)
+- Conventions you've settled on (PR style, session entry length, work queue structure)
+
+The profile is natural language, not config syntax — describe what you want and init makes it happen.
+
+There's a template to start from at [`templates/profile.md`](templates/profile.md). Copy it to `~/.overture/profile.md` and make it yours.
+
+You don't need a profile to use Overture. Most people start without one and create it after a few projects, once they know what they want to carry forward.
+
 ## What Just Happened
 
 Claude now has a file it reads at the start of every session. It knows where your project stands, what you're working on, and what to check before diving in. You maintain one file; Claude handles the continuity.
@@ -83,6 +104,7 @@ You don't need to read anything else to use the framework. These are here when y
 | When You... | Read This |
 |-------------|-----------|
 | Want to know what to do next as your project grows | [Progression Guide](Progression.md) — what each level feels like, when to add more |
+| Want your preferences to carry into every new project | [Profile Template](templates/profile.md) — your personal Overture customizations |
 | Want to understand *why* the framework works | [Foundations](Working-With-Claude-Code.md) — how Claude's memory works, why structure helps |
 | Want the full methodology reference | [Workflow Framework](workflow/Claude-Code-Workflow-Framework.md) — how to structure your CLAUDE.md, session management, keeping docs current |
 | Are coordinating multiple projects | [Choral Pattern](choral/Choral-Pattern.md) — keeping projects in sync when they depend on each other |
@@ -132,6 +154,7 @@ Most files in this repo are read by your agent, not by you. The **Audience** col
 
 | File | Purpose | Audience |
 |------|---------|----------|
+| [`templates/profile.md`](templates/profile.md) | Profile template — personalize what init generates | You |
 | [`templates/init.md`](templates/init.md) | Manual setup instructions (use the plugin instead if you can) | Agent |
 | [`templates/CLAUDE.md`](templates/CLAUDE.md) | CLAUDE.md template | Both |
 | [`templates/session-start.md`](templates/session-start.md) | Session-start command template | Agent |

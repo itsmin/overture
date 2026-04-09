@@ -17,7 +17,8 @@
 
 | File | Purpose | Audience | Status |
 |------|---------|----------|--------|
-| `.claude-plugin/plugin.json` | Claude Code plugin manifest — `/plugin install overture` | Agent | **v1** — April 2026 |
+| `.claude-plugin/plugin.json` | Claude Code plugin manifest | Agent | **v1** — April 2026 |
+| `.claude-plugin/marketplace.json` | Self-hosted marketplace manifest | Agent | **v1** — April 2026 |
 | `commands/init.md` | CC plugin init command — `/overture:init` | Agent | **v1** — April 2026 |
 | `skills/overture-init/SKILL.md` | Init skill (Agent Skills format) — cross-tool project setup | Agent | **v1** — April 2026 |
 | `skills/overture-init/references/operating-document-template.md` | Tool-agnostic operating document template | Both | **v1** — April 2026 |
@@ -47,6 +48,7 @@
 
 | File | Purpose | Audience | Status |
 |------|---------|----------|--------|
+| `templates/profile.md` | Overture profile template — personal customizations | You | **v1** — April 2026 |
 | `templates/CLAUDE.md` | CC-specific operating document skeleton | Both | v3 — April 2026 |
 | `templates/init.md` | Manual init guide (superseded by plugin/skills) | Agent | v1 — March 2026 |
 | `templates/session-start.md` | CC session-start command template | Agent | v2 — March 2026 |
@@ -321,9 +323,10 @@ Before flipping from private → public:
 |----------|------|-------------|---------|
 | README | `README.md` | Session #11 | Entry point — plugin install, multi-tool, orientation |
 | Glossary | `glossary.md` | Session #11 | Controlled vocabulary for tool-agnostic terminology |
-| Plugin Manifest | `.claude-plugin/plugin.json` | Session #11 | Claude Code plugin — `/plugin install overture` |
-| Init Command (CC) | `commands/init.md` | Session #11 | CC plugin command — `/overture:init` |
-| Init Skill | `skills/overture-init/` | Session #11 | Cross-tool init (Agent Skills format) |
+| Plugin Manifest | `.claude-plugin/plugin.json` | Session #13 | Claude Code plugin manifest |
+| Marketplace Manifest | `.claude-plugin/marketplace.json` | Session #13 | Self-hosted marketplace for plugin distribution |
+| Init Command (CC) | `commands/init.md` | Session #13 | CC plugin command — `/overture:init` (profile-aware) |
+| Init Skill | `skills/overture-init/` | Session #13 | Cross-tool init (Agent Skills format, profile-aware) |
 | Session-Start Skill | `skills/session-start/` | Session #11 | Cross-tool session-start (Agent Skills format) |
 | Session-End Skill | `skills/session-end/` | Session #11 | Cross-tool session-end (Agent Skills format) |
 | Progression Guide | `Progression.md` | Session #4 | Day-1 paths, level-by-level experience, when to evolve |
@@ -339,6 +342,7 @@ Before flipping from private → public:
 | Settings Hygiene | `patterns/Settings-Hygiene.md` | Session #8 | Settings accumulation, two-layer org, cleanup |
 | Section Ordering | `patterns/Section-Ordering.md` | Session #8 | Canonical operating document section ordering |
 | Privacy Boundary | `patterns/Privacy-Boundary.md` | Session #9 | PII filtering at public surfaces, boundary declaration, runtime verification |
+| Profile Template | `templates/profile.md` | Session #13 | Personal Overture profile — customization layer |
 | Hook Templates | `templates/hooks/` | Session #8 | Hook scripts, setup guide, specialization recipes |
 | Init Guide (legacy) | `templates/init.md` | Session #2 | Manual init (superseded by plugin/skills) |
 

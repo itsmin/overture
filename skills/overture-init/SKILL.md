@@ -30,6 +30,18 @@ Determine which AI coding agent you're running in and set these variables:
 
 If you can't detect the tool, ask the user. Default to Claude Code conventions.
 
+## Step 0: Check for an Overture Profile
+
+Check if the user has a personal Overture profile at `~/.overture/profile.md`.
+
+**If found**: Read it. This contains the user's preferences for what to generate — default sections, session workflow customizations, voice reference, conventions. Apply these preferences throughout the remaining steps. Where the profile specifies a preference, follow it. Where it's silent, use sensible defaults.
+
+If the profile references additional files (like `~/.overture/voice.md`), read those too.
+
+**If not found**: Continue with defaults. Don't ask the user to create one — that's a later step in their journey with the framework.
+
+Mention what you found: "I found your Overture profile and will apply your preferences" or "No Overture profile found — using defaults. You can create one later to carry your preferences into future projects."
+
 ## Step 1: Understand the Project
 
 Ask the user about their project. You need:
@@ -51,7 +63,9 @@ Read the operating document template at `references/operating-document-template.
 - Work queue with their current priorities
 - Only include optional sections (metrics, critical reminders, development workflow, documentation reference, session archives) if the project has content for them
 
-**Keep it lean.** A new project's operating document should be short — four core sections (status, guidelines, workflow, work queue). It grows as the project does.
+**If a profile exists**: Include sections and conventions specified in the profile. The profile may request sections beyond the core four — include them if the profile says to.
+
+**If no profile**: Keep it lean. A new project's operating document should be short — four core sections (status, guidelines, workflow, work queue). It grows as the project does.
 
 ## Step 3: Register Session Commands
 
@@ -64,6 +78,8 @@ Customize per project:
 - **session-end**: Replace the generic documentation sync checklist with the project's actual domains (e.g., API routes, database schema, environment variables)
 - **Remove inapplicable steps**: If the project doesn't use cross-project coordination or metrics, drop those steps entirely rather than leaving "skip if not applicable" stubs
 
+**If a profile exists**: Apply the profile's session workflow customizations. These are the user's preferred additions across all projects — merge them with the project-specific customizations above.
+
 For Claude Code, the commands become `/session-start` and `/session-end` slash commands. For other tools, adapt the invocation and path to the tool's conventions.
 
 ## Step 4: Gitignore Local Settings
@@ -74,6 +90,8 @@ If the project has a `.gitignore`, add the local settings file for the detected 
 
 Tell the user:
 - What files were created and where
+- If a profile was applied, which preferences were used
 - How to invoke the session commands in their tool
 - That optional operating document sections can be added as the project matures
+- If no profile exists: mention they can create one at `~/.overture/profile.md` to carry preferences into future projects (see the profile template in Overture's `templates/profile.md`)
 - They can now run their session-start command to begin their first session
