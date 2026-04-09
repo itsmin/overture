@@ -23,8 +23,11 @@ That's it.
 
 ### Option A: Plugin Install (Claude Code)
 
+Add the Overture marketplace, then install:
+
 ```
-/plugin install overture
+/plugin marketplace add itsmin/overture
+/plugin install overture@overture
 ```
 
 Then in your project directory:

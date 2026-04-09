@@ -1,0 +1,13 @@
+{
+  "name": "overture",
+  "owner": {
+    "name": "Min Chang"
+  },
+  "plugins": [
+    {
+      "name": "overture",
+      "source": ".",
+      "description": "Session management framework for AI-assisted development. Operating documents, session discipline, work tracking, and progressive methodology evolved through 480+ production sessions."
+    }
+  ]
+}

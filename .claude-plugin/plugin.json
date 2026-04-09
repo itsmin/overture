@@ -13,8 +13,6 @@
     "operating-document",
     "productivity"
   ],
-  "commands": [
-    "./commands/init.md"
-  ],
+  "commands": "./commands/",
   "skills": "./skills/"
 }
