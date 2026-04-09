@@ -30,8 +30,8 @@
 
 | File | Purpose | Audience | Status |
 |------|---------|----------|--------|
-| `README.md` | Entry point — problem, quick start, orientation, kit overview | You | **v3** — April 5, 2026 |
-| `Progression.md` | Progression guide — day-1 paths, level-by-level experience, when to evolve | You | **v1** — March 25, 2026 |
+| `README.md` | Entry point — problem, quick start, orientation, kit overview | You | **v4** — April 9, 2026 |
+| `Progression.md` | Progression guide — day-1 paths, level-by-level experience, when to evolve | You | **v2** — April 9, 2026 |
 | `Working-With-Claude-Code.md` | Conceptual framework: ICL foundations, memory architecture, Levels 0-4, Choral, Lyrical | You | Updated March 22, 2026 |
 | `workflow/Claude-Code-Workflow-Framework.md` | The methodology: session management, CLAUDE.md anatomy, documentation hygiene | You | **v2.0** — March 2026 |
 | `choral/Choral-Pattern.md` | Standalone Choral reference: three coordination modes, shared blackboard, setup | You | **v2.0** — March 23, 2026 |
@@ -104,14 +104,27 @@ Universal working preferences in `~/.claude/CLAUDE.md`.
 
 ## SESSION PROGRESS
 
-**Current**: Session #12 complete (April 8, 2026)
-**Status**: Pushed to GitHub.
-**NEXT**: Live plugin test — `/plugin install` from fresh CC session on a test project
+**Current**: Session #13 complete (April 9, 2026)
+**Status**: Pushed to GitHub. Plugin install tested live.
+**NEXT**: Cross-tool portability test — copy skills to Codex or Gemini CLI, verify they load
 **Last queue hygiene**: Session #11
 
 ### Pending Verifications
-- **Live plugin install test** — structural validation passed, init simulation passed, but actual `/plugin install overture` + `/overture:init` not yet tested in a fresh CC session
 - **Cross-tool portability** — skills written in Agent Skills format but not tested on Codex or Gemini CLI
+- **Live init with profile** — plugin installs and marketplace works; full `/overture:init` with profile applied not yet verified end-to-end on a real project
+
+### Session #13 Complete (April 9, 2026)
+
+**Plugin distribution fix + accessibility pass + profile customization layer**
+
+- Fixed plugin.json `commands` field (array → directory path) and marketplace.json source pattern
+- Created self-hosted marketplace — two-command install: `/plugin marketplace add` + `/plugin install`
+- Language simplification pass on README and Progression.md for less technical audiences
+- Built Overture profile system (`~/.overture/profile.md` + `voice.md`) — customization without forking
+- Updated init skill and command with Step 0 profile discovery
+- Created Min's personal profile and voice file
+- Also fixed Prelude's plugin.json and managed global settings registration
+- 4 commits, all pushed
 
 ### Session #12 Complete (April 8, 2026)
 
@@ -244,23 +257,21 @@ Universal working preferences in `~/.claude/CLAUDE.md`.
 
 ### CURRENT PRIORITIES
 
-**P1: Live plugin test + cross-tool portability**
-- Live test: fresh CC session, `/plugin install`, `/overture:init` on test project
-- Cross-tool: copy skills to Codex or Gemini CLI, verify they load and produce correct output
-- Fix any issues discovered
+**P1: Cross-tool portability**
+- Copy skills to Codex or Gemini CLI, verify they load and produce correct output
+- This is the remaining gap from the original P1 (plugin test now complete)
 
 ### UPCOMING SESSIONS
 
-1. **Session #13: Live plugin test + interview prep** — Test the actual plugin install flow in a fresh CC session. Fix path resolution or formatting issues. This is the must-have for interview readiness — demonstrating "install in one command, init in one command" live.
-   - If plugin test passes clean: do a cross-tool test on Codex CLI (most likely second tool at an interview)
-   - If plugin test surfaces issues: fix those first, defer cross-tool
+1. **Session #14: Cross-tool portability test** — Copy skills to Codex CLI (most likely second tool at an interview). Verify they load, init generates correct output. If issues surface, may need an adapter layer.
 
-2. **Session #14: Cross-tool portability + methodology lazy refactor** — Test skills on Codex and/or Gemini CLI. Start applying glossary terms to methodology docs as they're touched. Only if Session #13 didn't already cover cross-tool.
+2. **Session #15: Methodology doc lazy refactor** — Apply glossary terms to methodology docs as they're touched. Only if Session #14 doesn't absorb the full session.
 
 ### COMPLETE (Recent)
 
 | Item | Session | Notes |
 |---------|---------|-------|
+| Plugin distribution + accessibility + profile layer | #13 | Marketplace, language pass, profile system, Prelude fixes. 4 commits. |
 | Choral coordination evolution from Prelude | #12 | 5 improvements: CONTRACT HYGIENE, HARD RULE, bidirectional OBS, /choral template, CLAUDE.md coordination section |
 | Plugin architecture + Agent Skills + tool-agnostic foundation | #11 | 7 new files, README v3, glossary, structural validation passed |
 | Session template evolution — v2 from pxtxt patterns | #10 | session-start, session-end, CLAUDE.md template all upgraded |
@@ -321,7 +332,7 @@ Before flipping from private → public:
 
 | Document | Path | Last Updated | Content |
 |----------|------|-------------|---------|
-| README | `README.md` | Session #11 | Entry point — plugin install, multi-tool, orientation |
+| README | `README.md` | Session #13 | Entry point — plugin install, profile, orientation |
 | Glossary | `glossary.md` | Session #11 | Controlled vocabulary for tool-agnostic terminology |
 | Plugin Manifest | `.claude-plugin/plugin.json` | Session #13 | Claude Code plugin manifest |
 | Marketplace Manifest | `.claude-plugin/marketplace.json` | Session #13 | Self-hosted marketplace for plugin distribution |
@@ -329,7 +340,7 @@ Before flipping from private → public:
 | Init Skill | `skills/overture-init/` | Session #13 | Cross-tool init (Agent Skills format, profile-aware) |
 | Session-Start Skill | `skills/session-start/` | Session #11 | Cross-tool session-start (Agent Skills format) |
 | Session-End Skill | `skills/session-end/` | Session #11 | Cross-tool session-end (Agent Skills format) |
-| Progression Guide | `Progression.md` | Session #4 | Day-1 paths, level-by-level experience, when to evolve |
+| Progression Guide | `Progression.md` | Session #13 | Day-1 paths, level-by-level experience, profile, when to evolve |
 | Conceptual Framework | `Working-With-Claude-Code.md` | Session #6 | ICL, memory tiers, Levels 0-4, Choral, Lyrical |
 | Workflow Framework | `workflow/Claude-Code-Workflow-Framework.md` | Session #6 | Methodology v2.0 — session management, CLAUDE.md anatomy, hooks |
 | Choral Reference | `choral/Choral-Pattern.md` | Session #12 | Standalone coordination pattern guide |
