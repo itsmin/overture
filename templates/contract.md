@@ -124,13 +124,42 @@ Project sessions decide what (if anything) to do about them.
 
 ---
 
+## CONTRACT HYGIENE
+
+This contract is read into context by every session-start and /choral invocation across all participants. Stale content costs context tokens and attention across the entire portfolio.
+
+**Target**: Keep the contract under 300 lines. With N participants × multiple sessions = significant context multiplier.
+
+**What stays (active surface)**:
+- OPERATIONAL STATE (always current)
+- CURRENT INTEGRATION (live integration points)
+- Active RECOMMENDATIONS (PROPOSED or APPROVED, not yet COMPLETE on all sides)
+- Active BLOCKERS
+- Active OBSERVATIONS (not yet addressed or still relevant)
+- APPROVED WORK (pending items only)
+- ARCHITECTURAL CONTEXT (reference material, trim if large)
+- HOW TO USE (governance)
+
+**What archives (completed/resolved)**:
+- COMPLETE recommendations → archive file (retain one-line summary in a COMPLETE table)
+- Resolved BLOCKERS → remove from main contract
+- IMPLEMENTATION STATUS entries for COMPLETE items → archive
+- Resolved OBSERVATIONS → archive with resolution note
+- APPROVED WORK rows where all sides are COMPLETE → remove
+
+**When to archive**: At the start of each coordination session, check line count. If over 300 lines, archive completed items before doing new work. Project sessions don't archive — that's the coordinator's housekeeping role.
+
+**Archive format**: Each archive file is append-only with timestamps. Sessions can read archives for historical context, but they're not loaded automatically.
+
+---
+
 ## HOW TO USE THIS CONTRACT
 
 This contract is a shared blackboard. All participants read and write to their own sections.
 
 **Coordination session** (Mode 3): Proposes RECOMMENDATIONS and documents OBSERVATIONS. Reads both codebases to assess integration health. Does not prescribe implementation details.
 
-**[Project A] session**: At session-start, read APPROVED WORK, BLOCKERS, and OBSERVATIONS. At session-end and on deploy, update your OPERATIONAL STATE row. When implementing approved items, update IMPLEMENTATION STATUS — including any deviations from the suggested approach. You own everything behind the interface.
+**[Project A] session**: At session-start, read APPROVED WORK, BLOCKERS, and OBSERVATIONS. At session-end (**HARD RULE**), update your OPERATIONAL STATE row — every session, not just on deploy. When implementing approved items, update IMPLEMENTATION STATUS — including deviations from the suggested approach. Write OBS for cross-project issues discovered (data quality, client-side workarounds, integration surface changes). You own everything behind the interface.
 
 **[Project B] session**: Same as above.
 

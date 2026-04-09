@@ -132,6 +132,7 @@ Most files in this repo are read by your agent, not by you. The **Audience** col
 | [`templates/session-start.md`](templates/session-start.md) | Session-start command template | Agent |
 | [`templates/session-end.md`](templates/session-end.md) | Session-end command template | Agent |
 | [`templates/contract.md`](templates/contract.md) | Cross-project working contract template | Both |
+| [`templates/choral.md`](templates/choral.md) | Choral sync command template — mid-session coordination | Agent |
 | [`templates/hooks/README.md`](templates/hooks/README.md) | Hook setup, testing, specialization recipes | You |
 | [`templates/hooks/session-start.sh`](templates/hooks/session-start.sh) | Automated session-start hook script | Agent (via hook) |
 | [`templates/hooks/session-end.sh`](templates/hooks/session-end.sh) | Automated session-end hook script | Agent (via hook) |

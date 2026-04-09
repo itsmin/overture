@@ -170,9 +170,17 @@ Add condensed entry (~8 lines max):
 
 ### 10. Cross-Project Coordination
 *Skip if not applicable.*
+
+**HARD RULE**: Update your OPERATIONAL STATE row in the contract — every session, not just on deploy. Include current version, session number, and integration notes (or "No integration changes").
+
 - Update IMPLEMENTATION STATUS for approved items completed
 - Note integration surface changes in the contract's CURRENT INTEGRATION section
-- Update OPERATIONAL STATE row if deployment changed
+- Write OBS for cross-project issues discovered during this session:
+  - Data quality issues in what the other project provides
+  - Client-side workarounds for the other project's API behavior
+  - Changes to how you consume integration data that the other project should know about
+  - Integration surface changes that could break the other project silently
+  - Format: `### OBS-NNN: [title] ([project] #session)` — check the last OBS number in the contract and increment
 
 ### 11. Settings Hygiene Check
 

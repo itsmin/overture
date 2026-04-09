@@ -22,6 +22,18 @@ Universal working preferences in `~/.claude/CLAUDE.md`.
 2. [Another project-specific rule]
 3. [Guidelines that encode lessons learned from past sessions]
 
+<!-- CROSS-PROJECT COORDINATION
+Activate this section if the project participates in Choral coordination.
+See choral/Choral-Pattern.md for the full pattern.
+
+### Cross-Project Coordination
+Contract: [path to working contract]
+
+1. At session start: Read contract's APPROVED WORK, BLOCKERS, and OBSERVATIONS
+2. During session: Note changes to integration surfaces in the contract
+3. At session end (**HARD RULE**): Update OPERATIONAL STATE row (version, session number, integration notes or "No integration changes"), update IMPLEMENTATION STATUS for completed items, write OBS for discovered cross-project issues
+-->
+
 ---
 
 ## SESSION WORKFLOW

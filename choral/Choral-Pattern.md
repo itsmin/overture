@@ -1,6 +1,6 @@
 # The Choral Pattern — Cross-Project Coordination
 
-**Version**: 2.0 — March 2026
+**Version**: 2.1 — April 2026
 **Part of**: [Overture](../README.md) — the Claude Code working kit
 **Companion**: [Working with Claude Code, Part 4](../Working-With-Claude-Code.md#part-4-choral--the-coordination-pattern) — conceptual foundations
 **Template**: [Contract template](../templates/contract.md) — copy and fill for each project pair
@@ -45,7 +45,7 @@ The contract is a shared blackboard — not owned by the coordinator, but writte
 | Section | Coordinator | Project A | Project B |
 |---------|-------------|-----------|-----------|
 | RECOMMENDATIONS | Writes | Reads | Reads |
-| OBSERVATIONS | Writes | Reads | Reads |
+| OBSERVATIONS | Writes | Reads + writes own | Reads + writes own |
 | OPERATIONAL STATE | Reads | Writes own row | Writes own row |
 | CURRENT INTEGRATION | Reads | Writes changes | Writes changes |
 | BLOCKERS | Can add | Can add/clear | Can add/clear |
@@ -179,14 +179,17 @@ At session start: read both project CLAUDE.md files + the contract. Present find
 
 Copy `templates/contract.md` to `coordinator/contracts/a-b.md` and fill in what's already integrated.
 
-Add a cross-project coordination section to each project's CLAUDE.md:
+Add a cross-project coordination section to each project's CLAUDE.md (see the commented-out section in `templates/CLAUDE.md`):
 
 ```markdown
 ### Cross-Project Coordination
 Contract: `/path/to/coordinator/contracts/a-b.md`
-At session start: read the contract's APPROVED WORK and BLOCKERS.
-At session end: update OPERATIONAL STATE and IMPLEMENTATION STATUS.
+1. At session start: Read contract's APPROVED WORK, BLOCKERS, and OBSERVATIONS
+2. During session: Note changes to integration surfaces in the contract
+3. At session end (HARD RULE): Update OPERATIONAL STATE row, IMPLEMENTATION STATUS, write OBS for discovered issues
 ```
+
+Copy `templates/choral.md` to each project's `.claude/commands/choral.md` for mid-session sync.
 
 That's it. Open Claude Code in the coordinator directory and start your first coordination session. The three automation modes are additive — you don't need any of them to start.
 
@@ -269,15 +272,17 @@ DEFERRED      REJECTED
 
 ## Observations
 
-Observations are distinct from recommendations. The coordinator documents findings — data inconsistencies, potential risks, integration patterns — without prescribing solutions.
+Observations are distinct from recommendations. Both the coordinator and project sessions write observations — findings without prescribed solutions.
+
+The coordinator documents cross-project patterns visible from both codebases. Project sessions document issues discovered during implementation: data quality problems in what the other project provides, client-side workarounds for API behavior, changes to how they consume integration data, or integration surface changes that could break the other project silently.
 
 ```
-OBS-001: [Title]
+OBS-001: [Title] ([source] #session)
 Finding: [What was observed]
 Affected: [Which project(s)]
 ```
 
-The observation says "here's what I found." The project session decides what — if anything — to do about it. This keeps the coordinator in its lane.
+The observation says "here's what I found." The affected session decides what — if anything — to do about it. This makes projects first-class coordination participants, not passive readers of the coordinator's findings.
 
 Observations that grow into integration-level concerns can be promoted to recommendations. Not every finding needs one.
 
@@ -384,7 +389,7 @@ If the project pairs have fundamentally different integration patterns (e.g., on
 | Propose changes | Run coordination session (Mode 3) — reads both codebases, writes to contract |
 | Approve changes | Review PROPOSED items, change status to APPROVED |
 | Implement changes | Project sessions read APPROVED WORK, implement, update status |
-| Mid-session sync | Project runs `/choral` command — reads contract, surfaces pending work |
+| Mid-session sync | Project runs `/choral` command (copy `templates/choral.md`) — reads contract, surfaces pending work, writes OBS |
 | Detect drift | Mode 1 (real-time) + Mode 2 (session-start) |
 
 ---

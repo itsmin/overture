@@ -47,11 +47,12 @@
 
 | File | Purpose | Audience | Status |
 |------|---------|----------|--------|
-| `templates/CLAUDE.md` | CC-specific operating document skeleton | Both | v2 — March 2026 |
+| `templates/CLAUDE.md` | CC-specific operating document skeleton | Both | v3 — April 2026 |
 | `templates/init.md` | Manual init guide (superseded by plugin/skills) | Agent | v1 — March 2026 |
 | `templates/session-start.md` | CC session-start command template | Agent | v2 — March 2026 |
-| `templates/session-end.md` | CC session-end command template | Agent | v2 — March 2026 |
-| `templates/contract.md` | Cross-project working contract template | Both | v1 — March 2026 |
+| `templates/session-end.md` | CC session-end command template | Agent | v3 — April 2026 |
+| `templates/contract.md` | Cross-project working contract template | Both | v2 — April 2026 |
+| `templates/choral.md` | Choral sync command template — mid-session coordination | Agent | v1 — April 2026 |
 | `templates/hooks/README.md` | Hook setup, testing, specialization recipes | You | v1 — March 2026 |
 | `templates/hooks/session-start.sh` | Automated session-start hook script | Agent (via hook) | v1 — March 2026 |
 | `templates/hooks/session-end.sh` | Automated session-end hook script | Agent (via hook) | v1 — March 2026 |
@@ -318,7 +319,8 @@ Before flipping from private → public:
 | Progression Guide | `Progression.md` | Session #4 | Day-1 paths, level-by-level experience, when to evolve |
 | Conceptual Framework | `Working-With-Claude-Code.md` | Session #6 | ICL, memory tiers, Levels 0-4, Choral, Lyrical |
 | Workflow Framework | `workflow/Claude-Code-Workflow-Framework.md` | Session #6 | Methodology v2.0 — session management, CLAUDE.md anatomy, hooks |
-| Choral Reference | `choral/Choral-Pattern.md` | Session #2 | Standalone coordination pattern guide |
+| Choral Reference | `choral/Choral-Pattern.md` | Session #12 | Standalone coordination pattern guide |
+| Choral Sync Template | `templates/choral.md` | Session #12 | Mid-session coordination command template |
 | Voice Framework | `voice/Voice-Framework.md` | Session #1 | Voice methodology — defining, encoding, maintaining |
 | Voice Reference | `voice/Voice-Reference.md` | Session #1 | Session structure, derivation, encoding patterns |
 | Data Authority | `patterns/Data-Authority.md` | Session #6 | Architectural pattern: single source of truth for derived state |
