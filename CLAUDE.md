@@ -102,7 +102,7 @@ Universal working preferences in `~/.claude/CLAUDE.md`.
 
 ## SESSION PROGRESS
 
-**Current**: Session #11 complete (April 5, 2026)
+**Current**: Session #12 complete (April 8, 2026)
 **Status**: Pushed to GitHub.
 **NEXT**: Live plugin test — `/plugin install` from fresh CC session on a test project
 **Last queue hygiene**: Session #11
@@ -110,6 +110,15 @@ Universal working preferences in `~/.claude/CLAUDE.md`.
 ### Pending Verifications
 - **Live plugin install test** — structural validation passed, init simulation passed, but actual `/plugin install overture` + `/overture:init` not yet tested in a fresh CC session
 - **Cross-tool portability** — skills written in Agent Skills format but not tested on Codex or Gemini CLI
+
+### Session #12 Complete (April 8, 2026)
+
+**Choral coordination evolution from Prelude production patterns**
+
+- Examined Prelude Sessions #2-8 for extractable process improvements
+- 5 changes: CONTRACT HYGIENE in contract template, HARD RULE every-session updates, bidirectional OBS-writing, `/choral` sync command template (new), Cross-Project Coordination in CLAUDE.md template
+- Choral-Pattern.md v2.0 → v2.1: shared blackboard updated, Observations section rewritten, Getting Started strengthened
+- 7 files changed (1 new), committed and pushed
 
 ### Session #11 Complete (April 5, 2026)
 
@@ -240,16 +249,17 @@ Universal working preferences in `~/.claude/CLAUDE.md`.
 
 ### UPCOMING SESSIONS
 
-1. **Session #12: Live plugin test + interview prep** — Test the actual plugin install flow in a fresh CC session. Fix path resolution or formatting issues. This is the must-have for interview readiness — demonstrating "install in one command, init in one command" live.
+1. **Session #13: Live plugin test + interview prep** — Test the actual plugin install flow in a fresh CC session. Fix path resolution or formatting issues. This is the must-have for interview readiness — demonstrating "install in one command, init in one command" live.
    - If plugin test passes clean: do a cross-tool test on Codex CLI (most likely second tool at an interview)
    - If plugin test surfaces issues: fix those first, defer cross-tool
 
-2. **Session #13: Cross-tool portability + methodology lazy refactor** — Test skills on Codex and/or Gemini CLI. Start applying glossary terms to methodology docs as they're touched. Only if Session #12 didn't already cover cross-tool.
+2. **Session #14: Cross-tool portability + methodology lazy refactor** — Test skills on Codex and/or Gemini CLI. Start applying glossary terms to methodology docs as they're touched. Only if Session #13 didn't already cover cross-tool.
 
 ### COMPLETE (Recent)
 
 | Item | Session | Notes |
 |---------|---------|-------|
+| Choral coordination evolution from Prelude | #12 | 5 improvements: CONTRACT HYGIENE, HARD RULE, bidirectional OBS, /choral template, CLAUDE.md coordination section |
 | Plugin architecture + Agent Skills + tool-agnostic foundation | #11 | 7 new files, README v3, glossary, structural validation passed |
 | Session template evolution — v2 from pxtxt patterns | #10 | session-start, session-end, CLAUDE.md template all upgraded |
 | Privacy boundary pattern extraction | #9 | New pattern doc, section-ordering, template, session-end updated. |
