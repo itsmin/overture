@@ -1,7 +1,7 @@
 # Progression Guide — From Zero to Effective
 
 **Part of**: [Overture](README.md) — the Claude Code working kit
-**Companion**: [Working with Claude Code, Part 3](Working-With-Claude-Code.md#part-3-the-levels) — conceptual foundations for each level
+**Companion**: [Working with Claude Code, Part 3](Working-With-Claude-Code.md#part-3-the-levels) — why each level works
 **Companion**: [Workflow Framework](workflow/Claude-Code-Workflow-Framework.md) — the full methodology reference
 
 > **Audience**: You — read this when you want to know what to do next. The conceptual framework explains *why*. This tells you *when* and *how much*.
@@ -95,13 +95,13 @@ Four sections. That's it. Don't add session progress tracking, deferred work tab
 **What you add**:
 - Decay — automated pruning and archival based on age, access frequency, relevance
 - Session hooks — shell scripts triggered by Claude Code events (session start/end, tool use)
-- Background automation — scheduled quality checks, health monitoring, CI integration
+- Background automation — scheduled quality checks, health monitoring, continuous integration
 
 **When you actually need it**: The project is mature enough that manual maintenance is a real burden. Not a minor inconvenience — a burden. CLAUDE.md is genuinely unwieldy. You have automated processes that benefit from proactive monitoring.
 
-**The honest part**: Level 3 is custom engineering. No drop-in template. Decay scripts, hook configurations, automation harnesses — built for your project's specific needs. The *pattern* generalizes. The *implementation* doesn't.
+**The honest part**: Level 3 is custom work. No drop-in template. Archiving rules, automated checks, scheduled tasks — built for your project's specific needs. The *pattern* generalizes. The *implementation* doesn't.
 
-**What Overture provides here**: The conceptual framework ([decay](Working-With-Claude-Code.md#decay), [memory architecture](Working-With-Claude-Code.md#part-2-memory-architecture)), documented patterns for [session hooks](workflow/Claude-Code-Workflow-Framework.md#session-hooks) and [autonomous background triggers](patterns/Autonomous-Background.md), and an [architectural pattern](patterns/Data-Authority.md) for preventing systemic bug classes. Not a turnkey solution — but more than just principles. If you're at Level 3, you're experienced enough to specialize these patterns for your project.
+**What Overture provides here**: The conceptual framework ([decay](Working-With-Claude-Code.md#decay), [how Claude's memory works](Working-With-Claude-Code.md#part-2-memory-architecture)), documented patterns for [automated session checks](workflow/Claude-Code-Workflow-Framework.md#session-hooks) and [scheduled background tasks](patterns/Autonomous-Background.md), and a [pattern](patterns/Data-Authority.md) for preventing a common class of "data is right but display is wrong" bugs. Not a turnkey solution — but more than just principles. If you're at Level 3, you're experienced enough to adapt these patterns to your project.
 
 **Over-investment**: Automating everything before you know what's worth automating. Build the manual version first. Notice what's repetitive and error-prone. Automate that. Automation built from theory breaks. Automation built from observed repetition works.
 
@@ -115,7 +115,7 @@ Four sections. That's it. Don't add session progress tracking, deferred work tab
 - Integration monitoring — scripts that detect when one project touches the integration surface
 - Real-time hooks — signals between concurrent sessions (optional, for active parallel development)
 
-**When you need it**: Two or more projects consuming each other's APIs, sharing data models, or having deployment dependencies. Not "two projects by the same person" — specifically projects that *interoperate*. Independent projects? Coordinate in your head. Shared integration surfaces? You need a contract.
+**When you need it**: Two or more projects that talk to each other — shared APIs, shared data, or deployment dependencies. Not "two projects by the same person" — specifically projects that *interoperate*. Independent projects? Coordinate in your head. Projects that depend on each other? You need a contract.
 
 **What Overture provides**: The full [Choral pattern](choral/Choral-Pattern.md) — setup guide, three coordination modes, contract template, design principles, scaling guidance. Most complete part of the kit at this level because it's been tested across production integrations.
 
