@@ -106,14 +106,27 @@ Universal working preferences in `~/.claude/CLAUDE.md`.
 
 ## SESSION PROGRESS
 
-**Current**: Session #15 complete (April 13, 2026)
-**Status**: Portfolio housekeeping propagated across all 6 projects. Prelude collapse direction decided.
-**NEXT**: Session #16 — Upstream audit (Overture ↔ Prelude). Pattern-by-pattern and template-by-template diff. Upstream any Prelude refinement generally useful to Overture with a privacy audit per commit. Exit criterion: Prelude's patterns directory provably redundant to Overture's.
+**Current**: Session #16 complete (April 13, 2026)
+**Status**: Prelude pattern + template upstream audit complete. 5 of 6 patterns now provably redundant. Session #17 deliverables already mostly in place from Session #13. Session #18 (archive Prelude) blocked on user confirmation of destructive actions.
+**NEXT**: Session #18 — Prelude archive + retirement. Confirm with user, tag Prelude at final state, archive repo, remove from `~/.claude/CLAUDE.md` portfolio list, update Overture's `.claude/CLAUDE.local.md`, confirm `/plugin uninstall prelude`. Open: instances/ files retirement (recommend retire — see Session #16 notes).
 **Last queue hygiene**: Session #11
 
 ### Pending Verifications
-- **Cross-tool portability** — skills not tested on Codex or Gemini CLI. Deferred until after standardization (Sessions #16-18); porting to a second tool with Prelude/Overture drift in place would compound the mess.
-- **Live init with profile** — full `/overture:init` with profile applied not yet verified end-to-end on a real project. Naturally verified during Session #17 profile consolidation.
+- **Cross-tool portability** — skills not tested on Codex or Gemini CLI. Deferred until after standardization (Session #18 archive); porting to a second tool with Prelude/Overture drift in place would compound the mess.
+- **Live init with profile** — `/overture:init` profile loading verified by code-reading SKILL.md Step 0 (loads `~/.overture/profile.md`, applies preferences). End-to-end run on a fresh project still pending — discharge naturally on next real init.
+
+### Session #16 Complete (April 13, 2026)
+
+**Prelude upstream audit + Session #17 work largely already in place**
+
+- Diffed Overture's 6 patterns + 5 shared templates against Prelude's (including Prelude's 8 uncommitted refinements). 6 upstream candidates extracted, fully sanitized of CaliKo references, committed in `429559c`.
+- Patterns upstreamed: Data-Authority `Staleness and Refresh` section (refresh through existing flows), Size-Management `Coordination` profile + Coordination Session Notes, Autonomous-Background `Relationship to Other Patterns` cross-reference section, Privacy-Boundary `How It Hid` (de-identified five-layer failure narrative).
+- Templates upstreamed: CLAUDE.md impact-radius guideline (data/experience changes), HARD RULE clarified ("every session, not just on deploy"), NEXT pointer specificity example, CRITICAL REMINDERS framing ("hard-won rules, not aspirational").
+- Skipped after diff: Settings-Hygiene (Prelude version is a CaliKo config reference, not a portable pattern — keep separate), Section-Ordering (trivial drift), session-end.md draft-first (already in Overture from earlier session), session-start/contract/choral templates (cosmetic only).
+- **Session #17 already substantially done**: `~/.overture/profile.md` and `~/.overture/voice.md` already exist (created Session #13). Voice file is **identical** to Prelude's voice.md. Profile already encodes impact-radius guideline, draft-first session-end, Choral coordination, 8-line entries, NEXT specificity, archive thresholds, COMPLETE-Recent ~10 entry rule. Init skill Step 0 already loads profile. The only remaining Session #17 item is the instance files decision.
+- **Instance files recommendation**: `prelude/instances/beta.md` and `pxtxt.md` are alignment-tracking docs for the pre-collapse era when Prelude was a separately-maintained framework. Post-collapse, projects use Overture templates directly and "drift from upstream" stops being a concept. Their historical specializations (BETA hooks, pxtxt data-authority discovery) are already captured in Overture patterns/templates. Recommend retiring on Session #18.
+- 5 of 6 Prelude patterns now provably redundant to Overture's. Settings is the structural exception — different doc type, not a portable pattern.
+- Privacy audit clean (grep across patterns/ + templates/CLAUDE.md for project names, paths, identifiers).
 
 ### Session #15 Complete (April 13, 2026)
 
@@ -280,28 +293,27 @@ Universal working preferences in `~/.claude/CLAUDE.md`.
 
 ### CURRENT PRIORITIES
 
-**P1: Standardize portfolio on Overture (Prelude collapse)**
-- Collapse Prelude into Overture's profile layer. Six patterns, templates, and the Prelude plugin are duplicated; `/prelude:init` is unused. End state = one framework (Overture) with Min-specific opinions in `~/.overture/profile.md` + `voice.md`, Prelude repo archived.
-- Phased across Sessions #16-18 (audit → consolidation → archive). Full plan in UPCOMING SESSIONS below.
+**P1: Standardize portfolio on Overture (Prelude collapse)** — *audit + consolidation phase complete*
+- Sessions #16 and (effectively) #17 done. Patterns + templates upstreamed in commit `429559c`. Profile + voice already in place from Session #13. Final phase is Session #18 (archive + retirement), blocked on user confirmation of destructive actions.
 
-**P1: Cross-tool portability** *(re-sequenced, blocked by standardization)*
-- Copy skills to Codex or Gemini CLI, verify they load and produce correct output.
-- Moved behind standardization: porting to a second tool while Prelude/Overture drift persists would compound the mess. Unblocks after Session #18.
+**P1: Cross-tool portability** *(blocked by Session #18)*
+- Copy skills to Codex or Gemini CLI, verify they load and produce correct output. Unblocks once Prelude is archived.
 
 ### UPCOMING SESSIONS
 
-1. **Session #16: Upstream audit (Overture ↔ Prelude)** — Pattern-by-pattern diff on the six patterns shared between repos (Data-Authority, Autonomous-Background, Size-Management, Settings-Hygiene, Section-Ordering, Privacy-Boundary). Template-by-template diff on shared templates (CLAUDE.md, session-start, session-end, contract, choral, hooks). Upstream any Prelude refinement generally useful to Overture; privacy audit each commit. Exit criterion: Prelude's `patterns/` directory is provably redundant to Overture's.
+1. **Session #18: Prelude archive + retirement** *(blocked on user confirmation)* — Tag Prelude at final state (`v-final` or similar). Archive repo to a cold location per user preference. Delete `prelude/instances/{beta,pxtxt}.md` first if user accepts retirement recommendation. Remove Prelude from `~/.claude/CLAUDE.md` portfolio list. Update Overture's `.claude/CLAUDE.local.md` Live Implementations reference (drop Prelude row, keep BETA/pxtxt/itsmin.com/Choral). Confirm user has run `/plugin uninstall prelude`. Unblocks Cross-tool portability test as next P1.
 
-2. **Session #17: Profile + template consolidation** — Populate `~/.overture/profile.md` and `~/.overture/voice.md` from Prelude's voice and personal content. Verify `/overture:init` profile discovery actually loads them end-to-end on a sample project (this also discharges the "live init with profile" pending verification). Decide instance files fate: inspect `prelude/instances/beta.md` and `pxtxt.md` — if not load-bearing in current use, retire. Upstream template refinements (impact radius check, HARD RULE contract sync, CONTRACT HYGIENE, OBS bidirectional writing) from Prelude to Overture where not already present.
+   *Why blocked*: Tagging + archiving + plugin uninstall are destructive/non-local actions. Need explicit user sign-off before executing.
 
-3. **Session #18: Prelude archive + retirement** — Tag Prelude at final state. Archive repo to a cold location (user preference: keep archive, OK to collapse repo). Remove Prelude from `~/.claude/CLAUDE.md` portfolio list. Update Overture's `.claude/CLAUDE.local.md` Live Implementations reference. Confirm user has run `/plugin uninstall prelude`. Unblocks Cross-tool portability test as next P1.
+2. **Cross-tool portability test** *(unblocks after #18)* — Copy Overture skills to Codex CLI or Gemini CLI directory. Verify they load and produce correct output. First real test of Agent Skills cross-tool claim.
 
-4. **Parallel P2 track — CLAUDE.md tracking normalization** — pxtxt and itsmin.com gitignore CLAUDE.md, so Session #15 SESSION WORKFLOW expansions in those projects are on-disk only and won't survive a fresh clone. Fix in-place during each project's own sessions: privacy audit → move sensitive bits to `.claude/CLAUDE.local.md` → remove `CLAUDE.md` from that project's `.gitignore` → commit. Not blocking standardization, but required for fresh-clone portability.
+3. **Parallel P2 track — CLAUDE.md tracking normalization** — pxtxt and itsmin.com gitignore CLAUDE.md, so Session #15 SESSION WORKFLOW expansions in those projects are on-disk only and won't survive a fresh clone. Fix in-place during each project's own sessions: privacy audit → move sensitive bits to `.claude/CLAUDE.local.md` → remove `CLAUDE.md` from that project's `.gitignore` → commit. Not blocking standardization, but required for fresh-clone portability.
 
 ### COMPLETE (Recent)
 
 | Item | Session | Notes |
 |---------|---------|-------|
+| Prelude upstream audit — 6 patterns + 5 templates diffed, 6 candidates upstreamed and sanitized | #16 | 5/6 patterns now redundant; Settings is structural exception. Session #17 found already-done from #13. Commit `429559c`. |
 | Portfolio housekeeping propagation + Prelude standardization decision | #15 | Pilot verified, privacy gap fixed (`.claude/projects/` gitignored), 6 projects cleaned up, 4 git commits, Prelude collapse direction set, Session #16-18 plan written. |
 | Skill framework fix + Overture local-command cleanup pilot | #14 | Skills now authoritatively defer to operating doc SESSION WORKFLOW. Overture local `.claude/commands/session-{start,end}.md` deleted. 2 commits. |
 | Plugin distribution + accessibility + profile layer | #13 | Marketplace, language pass, profile system, Prelude fixes. 4 commits. |
