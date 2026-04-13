@@ -109,7 +109,7 @@ Universal working preferences in `~/.claude/CLAUDE.md`.
 **Current**: Session #18 complete (April 13, 2026)
 **Status**: Prelude collapse done. One framework remaining (Overture); Min-specific opinions live in `~/.overture/profile.md` + `voice.md`. Prelude archived to `~/Projects/_archive/prelude` at tag `archived-2026-04-13`. Cross-tool portability unblocked.
 **NEXT**: Session #19 — Cross-tool portability test. Copy Overture skills to Codex CLI (or Gemini CLI) skill directory, verify they load and produce correct output on a sample project. First real test of the Agent Skills cross-tool claim. May reveal adapter-layer needs.
-**Last queue hygiene**: Session #11
+**Last queue hygiene**: Session #19 (housekeeping pass: CLAUDE.md compressed #1-#10 to one-liners, 34.5k → 28.5k; deferred-work pruned)
 
 ### Pending Verifications
 - **Cross-tool portability** — skills not tested on Codex or Gemini CLI. Now unblocked; queued as Session #19.
@@ -203,111 +203,18 @@ Universal working preferences in `~/.claude/CLAUDE.md`.
 - Strategic briefing evaluated — challenged pattern-to-skill mapping, adapter layer timing, maintenance surface
 - 9 files changed (7 new, 2 updated), committed and pushed
 
-### Session #10 Complete (March 28, 2026)
+### Sessions #1-#10 (compressed)
 
-**Session template evolution from pxtxt production patterns**
-
-- Session-start v2: Step 0 (clean state), queue hygiene signal, project health, richer work queue with NEXT pointer and handoff quality check
-- Session-end v2: draft-first mode, work queue reconciliation, feature verification with code path tables, open discussions, next-session planning, settings hygiene
-- CLAUDE.md template v2: NEXT pointer, queue hygiene tracking, UPCOMING SESSIONS section
-- 4 files changed, committed and pushed
-
-### Session #9 Complete (March 28, 2026)
-
-**Privacy Boundary Pattern Extraction from Prelude**
-
-- Created `patterns/Privacy-Boundary.md` — PII filtering at public surfaces, five invariants, runtime verification
-- Updated section-ordering (position 2b), CLAUDE.md template (commented-out section), session-end (code-level + data-level audit)
-- All CaliKo references stripped; pattern is fully org-agnostic
-- 5 files changed, committed and pushed
-
-### Session #8 Complete (March 27, 2026)
-
-**Pattern Extraction from Prelude — Four New Patterns**
-
-- Hook script templates, Size Management, Settings Hygiene, Section Ordering extracted from Prelude
-- 7 new files, 3 updated files, all cross-references and kit tables updated
-- P2 #2 (hook templates) resolved; P2 #1 (decay) narrowed to memory lifecycle only
-
-### Session #7 Complete (March 26, 2026)
-
-**GitHub Sync**
-
-- Pushed 5 unpushed commits (Sessions #5-6) to GitHub after privacy audit
-- No content changes — verification and sync only
-
-### Session #6 Complete (March 26, 2026)
-
-**Pattern Extraction + Level 3 Documentation**
-
-- Data Authority pattern (`patterns/Data-Authority.md`) extracted from Prelude — single source of truth for derived state, five invariants, CaliKo-agnostic
-- Autonomous Background pattern (`patterns/Autonomous-Background.md`) extracted from BETA — two-trigger model (daily operational + weekly strategic), phased rollout, anti-patterns
-- Session Hooks section added to Workflow Framework — setup, specialization principle, four production recipes
-- Level 3 updated across Working-With-Claude-Code.md and Progression.md — now references hooks, triggers, and data authority
-- Honest Gaps #5 updated — Level 3 partially → substantially documented
-- P2 #1 (idle-time automation) resolved; new P2 #2 (hook script templates) queued
-- Session counts 460+ → 475+ across all doc headers; pxtxt status updated in global CLAUDE.md
-
-### Session #5 Complete (March 25, 2026)
-
-**Voice Review Pass + P2 Assessment**
-
-- Voice pass on Working-With-Claude-Code.md, Workflow Framework, Choral-Pattern.md, Voice-Reference.md against Prelude voice reference
-- 5 targeted cuts across 4 files; Voice Framework unchanged — docs already strong from Session #1
-- Prelude voice.md validated against full kit
-- P2 #1 (idle-time): BETA shipped autonomous triggers today (daily quality patrol + weekly alignment audit). Not yet battle-tested — extract after 5-10 sessions of real use
-- P2 #2 (Decay): Recommend leaving as documented gap. Level 3 is custom by design; a template that doesn't generalize isn't a template
-
-### Session #4 Complete (March 25, 2026)
-
-**Progression Guide + Voice + Attribution + Prelude**
-
-- Progression Guide v1 (`Progression.md`): day-1 paths (new project, existing codebase, team adoption), level-by-level experience and judgment calls, anti-patterns per level, "most projects stay at Level 2" framing
-- Voice pass on README.md and Progression.md against Min's voice reference
-- Attribution added to README provenance — collaborative process, stated plainly
-- Archive directory removed from public repo (still in git history)
-- README updated with Progression Guide in "Going Deeper" table and kit table
-- Checked BETA for idle-time autonomous agent patterns — infrastructure automation shipped, Claude-as-autonomous-agent not yet. Extraction deferred.
-- Checked Choral Session #4 — Coordination Manifest already in Choral-Pattern.md. No update needed.
-- **Prelude v1 built**: Personal Overture instance with documentation voice reference, personalized templates, Choral pre-wired, drift check in session-end. Private repo initialized.
-- `~/.claude/CLAUDE.md` updated with Prelude in portfolio
-- Voice review pass on remaining Overture docs queued as P2 #1
-
-### Session #3 Complete (March 25, 2026)
-
-**Approachability Overhaul + Audience Clarity + itsmin.com Pattern Monitoring**
-
-- README v2: narrative arc (problem → get started → orientation → going deeper), replaces reference-style layout
-- "What Just Happened" bridge section orients new users; "Going Deeper" links docs to signals not upfront reading
-- Audience headers on all 10 kit files (Claude / You / Both) — resolves feedback that it's unclear what's for Claude vs. the user
-- Kit table in CLAUDE.md and README now includes Audience column
-- Levels reframed: "Levels 1-2 cover the vast majority of projects"
-- itsmin.com added to CLAUDE.local.md as live implementation reference (simpler stack, Level 1-2 patterns)
-- Committed and pushed to GitHub
-
-### Session #2 Complete (March 23, 2026)
-
-**Full Setup + Choral Evolution + GitHub Public + Privacy Workflow**
-
-- Set up `/session-start` and `/session-end` slash commands, restructured CLAUDE.md to follow own framework
-- Wrote Choral-Pattern.md: v1 (standalone reference) → v2.0 (three-mode coordination: reactive/concurrent/proactive, shared blackboard)
-- Evolved design principles: interface/implementation boundary, trust the sessions, observations pattern, decision authority
-- Created GitHub repo (private → public), MIT LICENSE, CONTRIBUTING.md, .gitignore
-- E2E initialization test: 5 issues found and fixed, created `templates/init.md`
-- Privacy audit workflow: built into session-end (step 2), CRITICAL REMINDERS added, removed sensitive archive file
-- Renamed "digestive system" → "Decay" (musical naming: Overture, Choral, Lyrical, Decay)
-- 8 commits pushed, all public-readiness criteria met
-
-### Session #1 Complete (March 22, 2026)
-
-**Kit Overhaul — Framework v2 + Templates + Voice Evolution + README**
-
-- Wrote Workflow Framework v2.0 — single version, 460+ session patterns
-- Built 4 template files — CLAUDE.md, session-start, session-end, contract
-- Evolved voice docs from editorial-only to general voice-as-design-material module
-- Wrote README.md — entry point, initialization prompt, kit structure
-- Updated Working-With-Claude-Code.md — generalized refs, updated cross-links
-- Architecture decision: single framework, personal preferences in `~/.claude/CLAUDE.md`
+- **#1** (Mar 22) — Kit overhaul: Workflow Framework v2, 4 templates, voice-as-design-material, README, single-framework architecture.
+- **#2** (Mar 23) — Full setup: `/session-start`+`/session-end` commands, Choral-Pattern v2 (three-mode, shared blackboard), GitHub public, privacy audit workflow, "Decay" rename.
+- **#3** (Mar 25) — Approachability: README v2 narrative arc, audience headers on all kit files, Levels 1-2 framing, itsmin.com added as pattern source.
+- **#4** (Mar 25) — Progression Guide v1 (day-1 paths, level experience), voice pass on entry points, collaborative attribution, archive removed from public repo, **Prelude v1 built**.
+- **#5** (Mar 25) — Voice review pass (4 files, light cuts); P2 assessment: Decay stays as documented gap, idle-time extraction deferred pending BETA battle-testing.
+- **#6** (Mar 26) — Pattern extraction: `Data-Authority.md` (from Prelude), `Autonomous-Background.md` (from BETA); Workflow Framework hooks section; Level 3 now documented.
+- **#7** (Mar 26) — GitHub sync: pushed 5 unpushed commits from #5-6 after privacy audit. Verification only.
+- **#8** (Mar 27) — Pattern extraction from Prelude: hook templates, Size-Management, Settings-Hygiene, Section-Ordering. P2 #2 resolved.
+- **#9** (Mar 28) — `Privacy-Boundary.md` extracted: PII filtering, five invariants, runtime verification. Template + section-ordering + session-end updated.
+- **#10** (Mar 28) — Session template v2 from pxtxt patterns: session-start (Step 0, queue hygiene, NEXT), session-end (draft-first, verification), CLAUDE.md template (NEXT pointer, UPCOMING SESSIONS).
 
 ---
 
@@ -320,7 +227,7 @@ Universal working preferences in `~/.claude/CLAUDE.md`.
 
 ### UPCOMING SESSIONS
 
-1. **Session #19: Cross-tool portability test** — *Open with archive*: CLAUDE.md ended Session #18 at 34.3k (Standard YELLOW, 716 chars from RED). Compress Sessions #1-#10 to one-line entries before doing real work, or the test session will hit RED mid-flight. Then: copy Overture skills (`overture-init`, `session-start`, `session-end`) to Codex CLI's skill directory (or Gemini CLI's). Run `/overture:init` (or tool equivalent) on a throwaway project. Watch for: skill loading errors, glossary/terminology friction, hard-coded Claude Code paths in skill bodies, profile discovery (`~/.overture/profile.md`) working under the new tool's filesystem conventions. Capture findings — this is the first real test of the Agent Skills cross-tool claim and likely reveals what an adapter layer would actually need to do.
+1. **Session #19: Cross-tool portability test** — Copy Overture skills (`overture-init`, `session-start`, `session-end`) to Codex CLI's skill directory (or Gemini CLI's). Run `/overture:init` (or tool equivalent) on a throwaway project. Watch for: skill loading errors, glossary/terminology friction, hard-coded Claude Code paths in skill bodies, profile discovery (`~/.overture/profile.md`) working under the new tool's filesystem conventions. Capture findings — first real test of the Agent Skills cross-tool claim; likely reveals what an adapter layer would actually need to do. *(Housekeeping done at session open: CLAUDE.md now at 28.5k GREEN.)*
 
 2. **Session #20+: Adapter layer (only if #19 reveals real needs)** — Don't pre-build from theory. Build only what the portability test proves is needed.
 
@@ -340,16 +247,7 @@ Universal working preferences in `~/.claude/CLAUDE.md`.
 | Plugin architecture + Agent Skills + tool-agnostic foundation | #11 | 7 new files, README v3, glossary, structural validation passed |
 | Session template evolution — v2 from pxtxt patterns | #10 | session-start, session-end, CLAUDE.md template all upgraded |
 | Privacy boundary pattern extraction | #9 | New pattern doc, section-ordering, template, session-end updated. |
-| Pattern extraction — Data Authority + Autonomous Background | #6 | Two new docs in patterns/. Workflow Framework updated with hooks section. Level 3 now documented. |
-| Hooks section in Workflow Framework | #6 | Setup, specialization principle, 4 recipes from production. |
-| Voice review pass — remaining docs | #5 | 4 files touched, Voice Framework unchanged. Light pass — docs already strong. |
-| Progression Guide, voice pass, attribution, Prelude v1 | #4 | Progression.md, voice pass on entry points, collaborative attribution, archive removed, Prelude built |
-| Approachability overhaul — README v2, audience headers, orientation | #3 | README restructured, all 10 files have audience markers, kit table updated |
-| itsmin.com added as pattern source | #3 | CLAUDE.local.md updated, simpler-stack reference for Level 1-2 patterns |
-| Choral three-mode system + shared blackboard | #2 | Choral-Pattern.md v2.0, contract template updated |
-| Privacy audit workflow | #2 | Built into session-end, CRITICAL REMINDERS, removed sensitive file |
-| GitHub repo (private → public) | #2 | All public-readiness criteria met |
-| Kit overhaul — framework v2, templates, voice, README | #1 | Major update from 460+ sessions |
+| *...and earlier foundational work (#1-#8)* | #1-8 | See compressed Session Progress entries above. |
 
 ### P2: FUTURE WORK
 
@@ -389,7 +287,6 @@ Before flipping from private → public:
 
 | Item | Originally From | Context |
 |------|-----------------|---------|
-| Cross-tool portability test | Session #14 | Re-sequenced behind standardization (Sessions #16-18). Porting skills to a second tool while Prelude/Overture drift persists would compound the mess. Unblocks after #18. |
 | CLAUDE.md tracking normalization (pxtxt, itsmin.com) | Session #15 | Both projects gitignore CLAUDE.md, so Session #15 SESSION WORKFLOW expansions are on-disk only. Fix in each project's own session: privacy audit → move sensitive bits to `.claude/CLAUDE.local.md` → remove `CLAUDE.md` from the project's `.gitignore` → commit. |
 
 ---
