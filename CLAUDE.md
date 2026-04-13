@@ -37,19 +37,19 @@
 | `choral/Choral-Pattern.md` | Standalone Choral reference: three coordination modes, shared blackboard, setup | You | **v2.0** — March 23, 2026 |
 | `voice/Voice-Framework.md` | Voice as design material: defining, encoding, maintaining voice | You | v2.0 — March 2026 |
 | `voice/Voice-Reference.md` | Detailed session structure, derivation approach, encoding patterns | You | v2.0 — March 2026 |
-| `patterns/Data-Authority.md` | Architectural pattern: single source of truth for derived state | You | v1 — March 2026 |
-| `patterns/Autonomous-Background.md` | Scheduled triggers for between-session quality work | You | v1 — March 2026 |
-| `patterns/Size-Management.md` | Operating document size thresholds, archiving protocol, project profiles | You | v1 — March 2026 |
+| `patterns/Data-Authority.md` | Architectural pattern: single source of truth for derived state | You | v1.1 — April 2026 |
+| `patterns/Autonomous-Background.md` | Scheduled triggers for between-session quality work | You | v1.1 — April 2026 |
+| `patterns/Size-Management.md` | Operating document size thresholds, archiving protocol, project profiles | You | v1.1 — April 2026 |
 | `patterns/Settings-Hygiene.md` | Settings accumulation, two-layer organization, cleanup protocol | You | v1 — March 2026 |
 | `patterns/Section-Ordering.md` | Canonical operating document section ordering across projects | You | v1 — March 2026 |
-| `patterns/Privacy-Boundary.md` | PII filtering at public surfaces — boundary declaration, runtime verification | You | v1 — March 2026 |
+| `patterns/Privacy-Boundary.md` | PII filtering at public surfaces — boundary declaration, runtime verification | You | v1.1 — April 2026 |
 
 ### Templates & Hooks (manual setup / backwards compatible)
 
 | File | Purpose | Audience | Status |
 |------|---------|----------|--------|
 | `templates/profile.md` | Overture profile template — personal customizations | You | **v1** — April 2026 |
-| `templates/CLAUDE.md` | CC-specific operating document skeleton | Both | v3 — April 2026 |
+| `templates/CLAUDE.md` | CC-specific operating document skeleton | Both | v3.1 — April 2026 |
 | `templates/init.md` | Manual init guide (superseded by plugin/skills) | Agent | v1 — March 2026 |
 | `templates/session-start.md` | CC session-start command template | Agent | v2 — March 2026 |
 | `templates/session-end.md` | CC session-end command template | Agent | v3 — April 2026 |
@@ -320,7 +320,7 @@ Universal working preferences in `~/.claude/CLAUDE.md`.
 
 ### UPCOMING SESSIONS
 
-1. **Session #19: Cross-tool portability test** — Copy Overture skills (`overture-init`, `session-start`, `session-end`) to Codex CLI's skill directory (or Gemini CLI's). Run `/overture:init` (or tool equivalent) on a throwaway project. Watch for: skill loading errors, glossary/terminology friction, hard-coded Claude Code paths in skill bodies, profile discovery (`~/.overture/profile.md`) working under the new tool's filesystem conventions. Capture findings — this is the first real test of the Agent Skills cross-tool claim and likely reveals what an adapter layer would actually need to do.
+1. **Session #19: Cross-tool portability test** — *Open with archive*: CLAUDE.md ended Session #18 at 34.3k (Standard YELLOW, 716 chars from RED). Compress Sessions #1-#10 to one-line entries before doing real work, or the test session will hit RED mid-flight. Then: copy Overture skills (`overture-init`, `session-start`, `session-end`) to Codex CLI's skill directory (or Gemini CLI's). Run `/overture:init` (or tool equivalent) on a throwaway project. Watch for: skill loading errors, glossary/terminology friction, hard-coded Claude Code paths in skill bodies, profile discovery (`~/.overture/profile.md`) working under the new tool's filesystem conventions. Capture findings — this is the first real test of the Agent Skills cross-tool claim and likely reveals what an adapter layer would actually need to do.
 
 2. **Session #20+: Adapter layer (only if #19 reveals real needs)** — Don't pre-build from theory. Build only what the portability test proves is needed.
 
@@ -413,12 +413,12 @@ Before flipping from private → public:
 | Choral Sync Template | `templates/choral.md` | Session #12 | Mid-session coordination command template |
 | Voice Framework | `voice/Voice-Framework.md` | Session #1 | Voice methodology — defining, encoding, maintaining |
 | Voice Reference | `voice/Voice-Reference.md` | Session #1 | Session structure, derivation, encoding patterns |
-| Data Authority | `patterns/Data-Authority.md` | Session #6 | Architectural pattern: single source of truth for derived state |
-| Autonomous Background | `patterns/Autonomous-Background.md` | Session #6 | Scheduled triggers for between-session quality work |
-| Size Management | `patterns/Size-Management.md` | Session #8 | Operating document size thresholds, archiving protocol |
+| Data Authority | `patterns/Data-Authority.md` | Session #16 | Architectural pattern: single source of truth for derived state. Staleness/Refresh added #16. |
+| Autonomous Background | `patterns/Autonomous-Background.md` | Session #16 | Scheduled triggers for between-session quality work. Pattern interconnection added #16. |
+| Size Management | `patterns/Size-Management.md` | Session #16 | Operating document size thresholds, archiving protocol. Coordination profile added #16. |
 | Settings Hygiene | `patterns/Settings-Hygiene.md` | Session #8 | Settings accumulation, two-layer org, cleanup |
 | Section Ordering | `patterns/Section-Ordering.md` | Session #8 | Canonical operating document section ordering |
-| Privacy Boundary | `patterns/Privacy-Boundary.md` | Session #9 | PII filtering at public surfaces, boundary declaration, runtime verification |
+| Privacy Boundary | `patterns/Privacy-Boundary.md` | Session #16 | PII filtering at public surfaces, boundary declaration, runtime verification. How-It-Hid narrative added #16. |
 | Profile Template | `templates/profile.md` | Session #13 | Personal Overture profile — customization layer |
 | Hook Templates | `templates/hooks/` | Session #8 | Hook scripts, setup guide, specialization recipes |
 | Init Guide (legacy) | `templates/init.md` | Session #2 | Manual init (superseded by plugin/skills) |
