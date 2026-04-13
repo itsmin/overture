@@ -19,10 +19,26 @@ Thresholds vary by project complexity. Larger projects with more domain sections
 |---------|-------|--------|-----|------------|
 | **Standard** | <30k | 30k-35k | >35k | Most projects. Content sites, tools, services. |
 | **Large** | <34k | 34k-37k | >37k | Complex products with domain sections, extensive metrics, multi-contract coordination. |
+| **Coordination** | <30k | 30k-35k | >35k | Coordination sessions (e.g., Choral). No code, contract-heavy, cross-project narrative. |
 
-Pick the profile that fits. New projects start with Standard and graduate if needed.
+Pick the profile that fits. New projects start with Standard and graduate if needed. Coordination sessions use the Coordination profile from day one — they accumulate differently than code projects.
 
 The principle: CLAUDE.md must stay useful as context, not become a liability. If you're spending more time archiving than working, your thresholds are too tight. If session-start feels sluggish reading the file, they're too loose.
+
+---
+
+## Coordination Session Notes
+
+Coordination sessions (Choral profile) accumulate differently than code projects — cross-project narrative, recommendation specs, and observation histories instead of code changes. Key differences:
+
+**Multi-file archives**: Instead of a single archive file, organize by content type:
+- `contracts/archive/sessions.md` — verbatim session entries
+- `contracts/archive/recommendations.md` — completed recommendation specs
+- `contracts/archive/observations.md` — resolved observations
+
+**Contract hygiene**: The shared contract is read by every participating session. Keep it under a target line count (e.g., 300 lines). Archive completed recommendations, resolved blockers, and finished implementation status entries. Retain one-line summaries in a COMPLETE table for reference.
+
+**Entry discipline is critical**: Coordination sessions tend toward longer entries because they describe recommendations and cross-project interactions. The 8-line max per session entry matters more here — each entry is loaded into 3+ actors' context windows.
 
 ---
 

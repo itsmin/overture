@@ -21,6 +21,7 @@ Universal working preferences in `~/.claude/CLAUDE.md`.
 1. [Rule specific to this project]
 2. [Another project-specific rule]
 3. [Guidelines that encode lessons learned from past sessions]
+4. **Impact radius on data/experience changes** (if applicable) — When modifying pipelines, transformers, or user-facing surfaces: check existing data impact, run end-to-end through to render, don't trust layer-scoped verification. See `patterns/Data-Authority.md`.
 
 <!-- CROSS-PROJECT COORDINATION
 Activate this section if the project participates in Choral coordination.
@@ -31,7 +32,7 @@ Contract: [path to working contract]
 
 1. At session start: Read contract's APPROVED WORK, BLOCKERS, and OBSERVATIONS
 2. During session: Note changes to integration surfaces in the contract
-3. At session end (**HARD RULE**): Update OPERATIONAL STATE row (version, session number, integration notes or "No integration changes"), update IMPLEMENTATION STATUS for completed items, write OBS for discovered cross-project issues
+3. At session end (**HARD RULE**): Update OPERATIONAL STATE row (version, session number, integration notes or "No integration changes") **every session, not just on deploy** — update IMPLEMENTATION STATUS for completed items, write OBS for discovered cross-project issues
 -->
 
 ---
@@ -69,7 +70,7 @@ Contract: [path to working contract]
 
 **Current**: Session #1 pending
 **Status**: Initial setup
-**NEXT**: [Set by session-end — the #1 priority for the next session, stated specifically]
+**NEXT**: [Set by session-end — the #1 priority for the next session, stated specifically. Be precise: "Auth middleware + tenant config", not "Continue P1 work"]
 **Last queue hygiene**: Session #1
 
 ### Pending Verifications
@@ -130,7 +131,7 @@ Add when you have values worth tracking across sessions.
 -->
 
 <!-- CRITICAL REMINDERS
-Add as lessons are learned. NEVER/ALWAYS invariants only.
+Add as lessons are learned — NEVER/ALWAYS invariants only. These are hard-won rules, not aspirational guidelines. If a rule hasn't earned its place through a real incident or near-miss, leave it out.
 
 1. **NEVER** [dangerous thing to avoid]
 2. **ALWAYS** [essential thing to maintain]

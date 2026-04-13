@@ -75,6 +75,21 @@ Code-level review is necessary but not sufficient. PII exposure through LLMs is 
 
 ---
 
+## How It Hid
+
+The originating incident: a public chat feature consumed a derivative of an internal schema that contained real third-party names — legitimate internal data for the system, but not for visitors. A visitor asked an open-ended question about prior collaborators, and the chat answered with a specific full name.
+
+Why it wasn't caught:
+- **The feature worked correctly.** It answered the question accurately and helpfully. Quality masked the privacy signal.
+- **The PII wasn't in any committed code.** It was in the data the code consumed. Code review and grep both came up clean.
+- **No privacy boundary was declared.** The project's CLAUDE.md had no awareness that this data → surface path existed, so neither did Claude.
+- **The system prompt had no PII filtering instructions.** The model was free to use whatever it found.
+- **Nobody tested with adversarial queries** designed to surface names.
+
+Five layers of detection, all silent. The fix at the failing project was straightforward (system prompt redaction + data-level filtering). The systemic gap — no awareness of the boundary — is what this pattern addresses.
+
+---
+
 ## When to Apply
 
 - Any project where internal data contains third-party PII (names, contact info, employment history)

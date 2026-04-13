@@ -171,4 +171,13 @@ Each phase should be stable before starting the next. Rushing to Phase 3 without
 
 ---
 
+## Relationship to Other Patterns
+
+- **Hook templates** (`../templates/hooks/`): Hooks run during sessions. Triggers run between sessions. Hooks are Level 3; triggers are Level 3+. Build hooks first.
+- **Data Authority** (`Data-Authority.md`): Triggers validate that sources of truth haven't drifted. The data authority pattern tells you which values to check.
+- **Privacy Boundary** (`Privacy-Boundary.md`): Weekly strategic audits should verify privacy boundary filtering is intact — adversarial queries against public surfaces.
+- **Size Management** (`Size-Management.md`): Weekly audits can flag CLAUDE.md approaching size thresholds before a session has to deal with it.
+
+---
+
 *Autonomous background work is the maintenance layer of a mature project. Build it when manual checks become a burden. Not before.*

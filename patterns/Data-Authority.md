@@ -86,6 +86,20 @@ Why it survived: every investigation verified one layer. "Are the records correc
 
 ---
 
+## Staleness and Refresh
+
+The complement to "no re-derivation" is detecting when derived state has gone stale and needs to be recomputed from its authoritative source.
+
+**Refresh through existing flows, not dedicated infrastructure**: Rather than building standalone refresh services, hook staleness detection into operational cadences the system already has — scheduled jobs, compilation steps, session-start checks. A derived result that's older than a freshness window gets recomputed the next time an existing flow touches it.
+
+**Example**: A consumer service depends on enrichment data from an upstream API. Instead of a dedicated "re-enrichment service," the existing daily cron checks enrichment age. If older than 30 days or if the upstream `dataVersion` has bumped, it re-enriches through the same pipeline used for initial enrichment. Zero new infrastructure, same code paths, automatic propagation of upstream improvements.
+
+**When upstream evolves**: If the authoritative source adds new data or changes its output format, downstream consumers need to detect this and refresh. Version fields (e.g., `dataVersion`) in API responses let consumers detect upstream evolution without polling for changes — the next normal read reveals the version mismatch.
+
+The principle: derived state has a shelf life. The system that computes it should also know when to recompute it, using flows it already has.
+
+---
+
 ## Encoding in CLAUDE.md
 
 These invariants belong in your project's Collaboration Guidelines or Critical Reminders:
