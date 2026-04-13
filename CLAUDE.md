@@ -106,15 +106,25 @@ Universal working preferences in `~/.claude/CLAUDE.md`.
 
 ## SESSION PROGRESS
 
-**Current**: Session #14 complete (April 13, 2026)
-**Status**: Pushed to GitHub. Skill framework fix + Overture local-command cleanup pilot shipped.
-**NEXT**: Verify Overture pilot via `/plugin update overture` + `/session-start`. Confirm no duplicate command entries and CLAUDE.md SESSION WORKFLOW kit health check executes. Gates portfolio propagation.
+**Current**: Session #15 complete (April 13, 2026)
+**Status**: Portfolio housekeeping propagated across all 6 projects. Prelude collapse direction decided.
+**NEXT**: Session #16 — Upstream audit (Overture ↔ Prelude). Pattern-by-pattern and template-by-template diff. Upstream any Prelude refinement generally useful to Overture with a privacy audit per commit. Exit criterion: Prelude's patterns directory provably redundant to Overture's.
 **Last queue hygiene**: Session #11
 
 ### Pending Verifications
-- **Cross-tool portability** — skills written in Agent Skills format but not tested on Codex or Gemini CLI
-- **Live init with profile** — plugin installs and marketplace works; full `/overture:init` with profile applied not yet verified end-to-end on a real project
-- **Skill SESSION WORKFLOW deference (Session #14)** — updated session skills to defer to operating doc SESSION WORKFLOW. Verify on next session-start in Overture (after `/plugin update`) that (a) no duplicate command entries appear, (b) kit health check from CLAUDE.md fires automatically.
+- **Cross-tool portability** — skills not tested on Codex or Gemini CLI. Deferred until after standardization (Sessions #16-18); porting to a second tool with Prelude/Overture drift in place would compound the mess.
+- **Live init with profile** — full `/overture:init` with profile applied not yet verified end-to-end on a real project. Naturally verified during Session #17 profile consolidation.
+
+### Session #15 Complete (April 13, 2026)
+
+**Portfolio housekeeping propagation + Prelude standardization decision**
+
+- Verified Session #14 pilot: plugin skill at v1.0.1 active in cache, local `.claude/commands/session-{start,end}.md` gone from Overture, skill SESSION WORKFLOW deference working (kit health check auto-fired during this session's own `/session-start`). No duplicate command entries.
+- Closed portfolio-wide privacy gap: `.claude/projects/` not gitignored in Overture (public repo), with an orphan auto-memory file sitting in the unignored path. Patched `.gitignore`, deleted orphan, folded unique content into canonical global memory. Commit `c3b2db0`.
+- Propagated session-command housekeeping across 6 projects: **prelude, itsmin.com, vb, choral, pxtxt, BETA**. 4 git commits across repos (overture `c3b2db0`, prelude `0f74d1f`, itsmin.com `8d9a88a`, BETA `f5a41834`); vb / choral / pxtxt had on-disk-only changes (untracked or non-repo). For each project with project-specific content in local commands, expanded CLAUDE.md SESSION WORKFLOW section to preserve the substance (metrics validation bash, contract paths, cross-project coordination checks, HARD RULES, size budgets, documentation sync tables).
+- **Architectural decision**: collapse Prelude into Overture's profile layer. Six patterns duplicated, templates nearly identical, `/prelude:init` unused. End state = one framework (Overture) with Min-specific opinions in `~/.overture/profile.md` + `voice.md`. Prelude repo archived after Session #18.
+- Findings flagged: portfolio CLAUDE.md tracking is inconsistent (pxtxt and itsmin.com gitignore CLAUDE.md, so Session #15 SESSION WORKFLOW expansions in those projects are on-disk only); Prelude has pre-existing uncommitted Session #8 drift; BETA had uncommitted Choral absorption work that was folded into the BETA commit with attribution in the message.
+- Session #16-18 plan captured in UPCOMING SESSIONS.
 
 ### Session #14 Complete (April 13, 2026)
 
@@ -270,28 +280,29 @@ Universal working preferences in `~/.claude/CLAUDE.md`.
 
 ### CURRENT PRIORITIES
 
-**P1: Portfolio housekeeping — local session command cleanup**
-- Overture pilot complete (Session #14). Propagate to the rest of the portfolio.
-- Each project (BETA, choral, itsmin.com, prelude, pxtxt, vb) needs its local `.claude/commands/session-{start,end}.md` diffed against its CLAUDE.md SESSION WORKFLOW section. Migrate gaps into CLAUDE.md, then delete the local files.
-- **Gate**: Session #15 Step 1 must verify the Overture pilot works end-to-end before touching other projects.
+**P1: Standardize portfolio on Overture (Prelude collapse)**
+- Collapse Prelude into Overture's profile layer. Six patterns, templates, and the Prelude plugin are duplicated; `/prelude:init` is unused. End state = one framework (Overture) with Min-specific opinions in `~/.overture/profile.md` + `voice.md`, Prelude repo archived.
+- Phased across Sessions #16-18 (audit → consolidation → archive). Full plan in UPCOMING SESSIONS below.
 
-**P1: Cross-tool portability**
+**P1: Cross-tool portability** *(re-sequenced, blocked by standardization)*
 - Copy skills to Codex or Gemini CLI, verify they load and produce correct output.
-- Should happen AFTER housekeeping is at least partially propagated — moving to a second tool with an inconsistent skill architecture would port the bug.
+- Moved behind standardization: porting to a second tool while Prelude/Overture drift persists would compound the mess. Unblocks after Session #18.
 
 ### UPCOMING SESSIONS
 
-1. **Session #15 Step 1: Verify Overture pilot** — `/plugin update overture`, run `/session-start`, confirm (a) only one entry appears (no more `(project)` duplicate), (b) kit health check from CLAUDE.md SESSION WORKFLOW fires automatically. Gates everything else.
-   - *Conditional*: if the skill update doesn't actually work (agents still miss SESSION WORKFLOW steps despite explicit instruction), that becomes the whole session — iterate on the skill prompt until it reliably fires.
+1. **Session #16: Upstream audit (Overture ↔ Prelude)** — Pattern-by-pattern diff on the six patterns shared between repos (Data-Authority, Autonomous-Background, Size-Management, Settings-Hygiene, Section-Ordering, Privacy-Boundary). Template-by-template diff on shared templates (CLAUDE.md, session-start, session-end, contract, choral, hooks). Upstream any Prelude refinement generally useful to Overture; privacy audit each commit. Exit criterion: Prelude's `patterns/` directory is provably redundant to Overture's.
 
-2. **Session #15 Step 2: Portfolio propagation — first project** — Only proceed if Step 1 passes. Pick BETA or pxtxt (most-used, most likely to surface edge cases). Diff local session commands vs that project's CLAUDE.md SESSION WORKFLOW. Migrate any gaps into CLAUDE.md. Delete local files. Commit in that project's repo.
+2. **Session #17: Profile + template consolidation** — Populate `~/.overture/profile.md` and `~/.overture/voice.md` from Prelude's voice and personal content. Verify `/overture:init` profile discovery actually loads them end-to-end on a sample project (this also discharges the "live init with profile" pending verification). Decide instance files fate: inspect `prelude/instances/beta.md` and `pxtxt.md` — if not load-bearing in current use, retire. Upstream template refinements (impact radius check, HARD RULE contract sync, CONTRACT HYGIENE, OBS bidirectional writing) from Prelude to Overture where not already present.
 
-3. **Session #16: Cross-tool portability test** — Original P1, still valid. Copy skills to Codex CLI, verify they load, init generates correct output. If issues surface, may need an adapter layer.
+3. **Session #18: Prelude archive + retirement** — Tag Prelude at final state. Archive repo to a cold location (user preference: keep archive, OK to collapse repo). Remove Prelude from `~/.claude/CLAUDE.md` portfolio list. Update Overture's `.claude/CLAUDE.local.md` Live Implementations reference. Confirm user has run `/plugin uninstall prelude`. Unblocks Cross-tool portability test as next P1.
+
+4. **Parallel P2 track — CLAUDE.md tracking normalization** — pxtxt and itsmin.com gitignore CLAUDE.md, so Session #15 SESSION WORKFLOW expansions in those projects are on-disk only and won't survive a fresh clone. Fix in-place during each project's own sessions: privacy audit → move sensitive bits to `.claude/CLAUDE.local.md` → remove `CLAUDE.md` from that project's `.gitignore` → commit. Not blocking standardization, but required for fresh-clone portability.
 
 ### COMPLETE (Recent)
 
 | Item | Session | Notes |
 |---------|---------|-------|
+| Portfolio housekeeping propagation + Prelude standardization decision | #15 | Pilot verified, privacy gap fixed (`.claude/projects/` gitignored), 6 projects cleaned up, 4 git commits, Prelude collapse direction set, Session #16-18 plan written. |
 | Skill framework fix + Overture local-command cleanup pilot | #14 | Skills now authoritatively defer to operating doc SESSION WORKFLOW. Overture local `.claude/commands/session-{start,end}.md` deleted. 2 commits. |
 | Plugin distribution + accessibility + profile layer | #13 | Marketplace, language pass, profile system, Prelude fixes. 4 commits. |
 | Choral coordination evolution from Prelude | #12 | 5 improvements: CONTRACT HYGIENE, HARD RULE, bidirectional OBS, /choral template, CLAUDE.md coordination section |
@@ -347,8 +358,8 @@ Before flipping from private → public:
 
 | Item | Originally From | Context |
 |------|-----------------|---------|
-| Cross-tool portability test | Session #14 | Originally P1 for #14, pivoted to housekeeping when duplicate-command issue surfaced. Still valid — do after housekeeping propagates. |
-| Portfolio propagation (BETA, choral, itsmin.com, prelude, pxtxt, vb) | Session #14 | Each project needs local-command diff vs CLAUDE.md SESSION WORKFLOW before deletion. Gated on Session #15 Step 1 pilot verification. |
+| Cross-tool portability test | Session #14 | Re-sequenced behind standardization (Sessions #16-18). Porting skills to a second tool while Prelude/Overture drift persists would compound the mess. Unblocks after #18. |
+| CLAUDE.md tracking normalization (pxtxt, itsmin.com) | Session #15 | Both projects gitignore CLAUDE.md, so Session #15 SESSION WORKFLOW expansions are on-disk only. Fix in each project's own session: privacy audit → move sensitive bits to `.claude/CLAUDE.local.md` → remove `CLAUDE.md` from the project's `.gitignore` → commit. |
 
 ---
 
