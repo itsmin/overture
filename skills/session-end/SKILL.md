@@ -13,6 +13,8 @@ Ensure clean handoff to the next session.
 
 **Operating mode**: Draft-first, review-second. You were present for the entire session — don't ask the user to recount what happened. Draft everything you can from session context (summary, queue reconciliation, verification assessment, deferred work, docs sync). Present the complete draft for review. Only ask questions for information you genuinely don't have.
 
+**Project-specific customizations are authoritative.** Before executing the flow below, locate the operating document's `SESSION WORKFLOW` section (the `Before /session-end:` subsection or equivalent). Any steps listed there are MANDATORY — they encode project-specific hygiene the generic framework can't know about (kit-table sync, schema docs, deployment notes, domain-specific sync lists). Merge them into the flow: when a project step and a generic step overlap, the project step wins; when the skill has something the operating doc doesn't, keep it.
+
 ## Instructions
 
 ### 1. Session Summary
@@ -81,6 +83,8 @@ If the project has a PRIVACY BOUNDARIES table in the operating document, check w
 If the project handles third-party PII and has NO declared boundaries, flag the gap.
 
 ### 5. Documentation Sync Check
+
+**Start with the operating document's SESSION WORKFLOW section.** Any project-specific sync items there are authoritative — e.g. "kit table", "marketing site", "schema docs", "pricing config". Execute those first, then use the generic checklist below to catch anything the project didn't call out.
 
 Assess from session context: did this session change any documented domain? Draft the list of affected docs:
 

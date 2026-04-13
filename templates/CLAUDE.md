@@ -38,6 +38,8 @@ Contract: [path to working contract]
 
 ## SESSION WORKFLOW
 
+*This section is the project-specific runbook the Overture session skills defer to. Steps listed here are authoritative — the skills read this section and execute these steps alongside their generic defaults. Be explicit about what's project-specific; don't assume the skill will catch it.*
+
 ### At `/session-start`:
 0. Clean state — commit/push/deploy anything left from last session
 1. [Project-specific: metrics validation, health checks — customize or skip]

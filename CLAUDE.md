@@ -80,6 +80,8 @@ Universal working preferences in `~/.claude/CLAUDE.md`.
 
 ## SESSION WORKFLOW
 
+*This section is the project-specific runbook the Overture session skills defer to. Steps listed here are authoritative — the skills read this section and execute these steps alongside their generic defaults.*
+
 ### At `/session-start`:
 1. Read this CLAUDE.md (automatic)
 2. Check documentation health — kit table accuracy, cross-references, archived file status

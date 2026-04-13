@@ -18,6 +18,8 @@ Skip steps that reference sections your operating document doesn't have yet — 
 
 Steps 0-2 are project-specific (customize or skip freely). Steps 3-7 are the structural backbone shared across projects.
 
+**Project-specific customizations are authoritative.** Before executing the flow below, locate the operating document's `SESSION WORKFLOW` section (the `At /session-start:` subsection or equivalent). Any steps listed there are MANDATORY — they encode project-specific checks the generic framework can't know about (kit tables, schema docs, deployment endpoints, domain health). Merge them into the flow: when a project step and a generic step overlap, the project step wins; when the skill has something the operating doc doesn't, keep it. Don't skip project customizations because they're not in this skill — they exist because someone learned the hard way that the generic flow missed something.
+
 ### 0. Clean State
 
 Before loading context, ensure the workspace is ready.
@@ -48,6 +50,8 @@ If checks aren't practical (no DB access, service down), note it and move on. Do
 
 ### 2. Project Health
 *Skip if the project has no health signals worth checking.*
+
+**First, execute any project-specific health checks listed in the operating document's SESSION WORKFLOW section.** Those are authoritative. The examples below are defaults for projects that haven't customized — not a replacement for the project's own list.
 
 Domain-specific health checks. Examples:
 
