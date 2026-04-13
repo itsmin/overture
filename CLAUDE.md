@@ -106,14 +106,25 @@ Universal working preferences in `~/.claude/CLAUDE.md`.
 
 ## SESSION PROGRESS
 
-**Current**: Session #13 complete (April 9, 2026)
-**Status**: Pushed to GitHub. Plugin install tested live.
-**NEXT**: Cross-tool portability test — copy skills to Codex or Gemini CLI, verify they load
+**Current**: Session #14 complete (April 13, 2026)
+**Status**: Pushed to GitHub. Skill framework fix + Overture local-command cleanup pilot shipped.
+**NEXT**: Verify Overture pilot via `/plugin update overture` + `/session-start`. Confirm no duplicate command entries and CLAUDE.md SESSION WORKFLOW kit health check executes. Gates portfolio propagation.
 **Last queue hygiene**: Session #11
 
 ### Pending Verifications
 - **Cross-tool portability** — skills written in Agent Skills format but not tested on Codex or Gemini CLI
 - **Live init with profile** — plugin installs and marketplace works; full `/overture:init` with profile applied not yet verified end-to-end on a real project
+- **Skill SESSION WORKFLOW deference (Session #14)** — updated session skills to defer to operating doc SESSION WORKFLOW. Verify on next session-start in Overture (after `/plugin update`) that (a) no duplicate command entries appear, (b) kit health check from CLAUDE.md fires automatically.
+
+### Session #14 Complete (April 13, 2026)
+
+**Skill framework fix + Overture local-command cleanup pilot**
+
+- Diagnosed duplicate `/session-start` and `/session-end` entries across every project as artifacts of the pre-Session-#11 manual-copy era — Session #13's profile model shifted customization to operating doc but never cleaned up old local copies
+- Closed latent gap: session skills now explicitly defer to operating doc's SESSION WORKFLOW section as authoritative for project-specific steps. Previously implicit — I demonstrated the failure mode by skipping Overture's kit health check during this session's own /session-start
+- Updated `skills/session-start/SKILL.md`, `skills/session-end/SKILL.md`, `templates/CLAUDE.md`, and Overture's `CLAUDE.md` with the "SESSION WORKFLOW is authoritative" lead-in
+- Overture pilot: deleted `.claude/commands/session-{start,end}.md` (already captured in CLAUDE.md SESSION WORKFLOW)
+- 2 commits, pushed
 
 ### Session #13 Complete (April 9, 2026)
 
@@ -259,20 +270,29 @@ Universal working preferences in `~/.claude/CLAUDE.md`.
 
 ### CURRENT PRIORITIES
 
+**P1: Portfolio housekeeping — local session command cleanup**
+- Overture pilot complete (Session #14). Propagate to the rest of the portfolio.
+- Each project (BETA, choral, itsmin.com, prelude, pxtxt, vb) needs its local `.claude/commands/session-{start,end}.md` diffed against its CLAUDE.md SESSION WORKFLOW section. Migrate gaps into CLAUDE.md, then delete the local files.
+- **Gate**: Session #15 Step 1 must verify the Overture pilot works end-to-end before touching other projects.
+
 **P1: Cross-tool portability**
-- Copy skills to Codex or Gemini CLI, verify they load and produce correct output
-- This is the remaining gap from the original P1 (plugin test now complete)
+- Copy skills to Codex or Gemini CLI, verify they load and produce correct output.
+- Should happen AFTER housekeeping is at least partially propagated — moving to a second tool with an inconsistent skill architecture would port the bug.
 
 ### UPCOMING SESSIONS
 
-1. **Session #14: Cross-tool portability test** — Copy skills to Codex CLI (most likely second tool at an interview). Verify they load, init generates correct output. If issues surface, may need an adapter layer.
+1. **Session #15 Step 1: Verify Overture pilot** — `/plugin update overture`, run `/session-start`, confirm (a) only one entry appears (no more `(project)` duplicate), (b) kit health check from CLAUDE.md SESSION WORKFLOW fires automatically. Gates everything else.
+   - *Conditional*: if the skill update doesn't actually work (agents still miss SESSION WORKFLOW steps despite explicit instruction), that becomes the whole session — iterate on the skill prompt until it reliably fires.
 
-2. **Session #15: Methodology doc lazy refactor** — Apply glossary terms to methodology docs as they're touched. Only if Session #14 doesn't absorb the full session.
+2. **Session #15 Step 2: Portfolio propagation — first project** — Only proceed if Step 1 passes. Pick BETA or pxtxt (most-used, most likely to surface edge cases). Diff local session commands vs that project's CLAUDE.md SESSION WORKFLOW. Migrate any gaps into CLAUDE.md. Delete local files. Commit in that project's repo.
+
+3. **Session #16: Cross-tool portability test** — Original P1, still valid. Copy skills to Codex CLI, verify they load, init generates correct output. If issues surface, may need an adapter layer.
 
 ### COMPLETE (Recent)
 
 | Item | Session | Notes |
 |---------|---------|-------|
+| Skill framework fix + Overture local-command cleanup pilot | #14 | Skills now authoritatively defer to operating doc SESSION WORKFLOW. Overture local `.claude/commands/session-{start,end}.md` deleted. 2 commits. |
 | Plugin distribution + accessibility + profile layer | #13 | Marketplace, language pass, profile system, Prelude fixes. 4 commits. |
 | Choral coordination evolution from Prelude | #12 | 5 improvements: CONTRACT HYGIENE, HARD RULE, bidirectional OBS, /choral template, CLAUDE.md coordination section |
 | Plugin architecture + Agent Skills + tool-agnostic foundation | #11 | 7 new files, README v3, glossary, structural validation passed |
@@ -294,6 +314,7 @@ Universal working preferences in `~/.claude/CLAUDE.md`.
 1. **Decay reference** — Decay and memory lifecycle templates. **Recommendation (Session #5)**: leave as documented gap. Size Management covers the actionable part. Revisit only if a generalizable pattern emerges.
 2. **Methodology doc lazy refactor** — Apply glossary terms to existing docs (Working-With-Claude-Code.md, Workflow Framework, Progression, patterns) as they're touched. No dedicated refactoring pass unless needed.
 3. **Adapter layer** — Build only after testing on a second tool reveals what actually needs adapting. Don't pre-build from theory.
+4. **Workflow Framework doc update** — Document the "operating doc SESSION WORKFLOW is authoritative, skills are generic runners" architectural principle established in Session #14. Low priority — not blocking propagation, but the methodology doc should reflect the current architecture.
 
 ### PUBLIC-READINESS CRITERIA
 
@@ -326,7 +347,8 @@ Before flipping from private → public:
 
 | Item | Originally From | Context |
 |------|-----------------|---------|
-| *(none)* | | |
+| Cross-tool portability test | Session #14 | Originally P1 for #14, pivoted to housekeeping when duplicate-command issue surfaced. Still valid — do after housekeeping propagates. |
+| Portfolio propagation (BETA, choral, itsmin.com, prelude, pxtxt, vb) | Session #14 | Each project needs local-command diff vs CLAUDE.md SESSION WORKFLOW before deletion. Gated on Session #15 Step 1 pilot verification. |
 
 ---
 
