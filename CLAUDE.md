@@ -106,14 +106,24 @@ Universal working preferences in `~/.claude/CLAUDE.md`.
 
 ## SESSION PROGRESS
 
-**Current**: Session #18 complete (April 13, 2026)
-**Status**: Prelude collapse done. One framework remaining (Overture); Min-specific opinions live in `~/.overture/profile.md` + `voice.md`. Prelude archived to `~/Projects/_archive/prelude` at tag `archived-2026-04-13`. Cross-tool portability unblocked.
-**NEXT**: Session #19 — Cross-tool portability test. Copy Overture skills to Codex CLI (or Gemini CLI) skill directory, verify they load and produce correct output on a sample project. First real test of the Agent Skills cross-tool claim. May reveal adapter-layer needs.
-**Last queue hygiene**: Session #19 (housekeeping pass: CLAUDE.md compressed #1-#10 to one-liners, 34.5k → 28.5k; deferred-work pruned)
+**Current**: Session #19 complete (April 13, 2026)
+**Status**: Housekeeping pass — CLAUDE.md compressed and back into GREEN, kit table verified, queue pruned. Clean state for the portability test.
+**NEXT**: Session #20 — Cross-tool portability test. Copy Overture skills (`overture-init`, `session-start`, `session-end`) to Codex CLI or Gemini CLI skill directory, run init on a throwaway project, capture findings. User to pick tool at session open.
+**Last queue hygiene**: Session #19 (CLAUDE.md compressed #1-#10 to one-liners, 34.5k → 28.2k; deferred-work pruned)
 
 ### Pending Verifications
 - **Cross-tool portability** — skills not tested on Codex or Gemini CLI. Now unblocked; queued as Session #19.
 - **Live init with profile** — profile loading verified by code-read of SKILL.md Step 0. End-to-end run on a fresh project still pending — natural discharge on next real init or during Session #19's portability test.
+
+### Session #19 Complete (April 13, 2026)
+
+**Housekeeping & hygiene pass**
+
+- CLAUDE.md compressed: Sessions #1-#10 collapsed to one-liner entries, COMPLETE (Recent) trimmed from 19 rows to 10, resolved deferred work pruned. **34,501 → 28,171 chars** (YELLOW 716-from-RED → solidly GREEN, ~6.8k headroom).
+- Kit table verified: all 29 files present, no broken references.
+- Queue hygiene refreshed (last performed #11 → #19).
+- Session #18 had planned #19 as "housekeeping + cross-tool portability test." User stopped after housekeeping for a break; portability test slipped to Session #20 with no scope loss.
+- 1 commit (`99a3126`), unpushed.
 
 ### Session #18 Complete (April 13, 2026)
 
@@ -222,14 +232,14 @@ Universal working preferences in `~/.claude/CLAUDE.md`.
 
 ### CURRENT PRIORITIES
 
-**P1: Cross-tool portability** *(unblocked)*
-- Copy Overture skills to Codex CLI or Gemini CLI, verify they load and produce correct output on a sample project. First real test of the Agent Skills cross-tool claim. See Session #19 in UPCOMING SESSIONS.
+**P1: Cross-tool portability** *(unblocked, clean state)*
+- Copy Overture skills to Codex CLI or Gemini CLI, verify they load and produce correct output on a sample project. First real test of the Agent Skills cross-tool claim. See Session #20 in UPCOMING SESSIONS.
 
 ### UPCOMING SESSIONS
 
-1. **Session #19: Cross-tool portability test** — Copy Overture skills (`overture-init`, `session-start`, `session-end`) to Codex CLI's skill directory (or Gemini CLI's). Run `/overture:init` (or tool equivalent) on a throwaway project. Watch for: skill loading errors, glossary/terminology friction, hard-coded Claude Code paths in skill bodies, profile discovery (`~/.overture/profile.md`) working under the new tool's filesystem conventions. Capture findings — first real test of the Agent Skills cross-tool claim; likely reveals what an adapter layer would actually need to do. *(Housekeeping done at session open: CLAUDE.md now at 28.5k GREEN.)*
+1. **Session #20: Cross-tool portability test** — Copy Overture skills (`overture-init`, `session-start`, `session-end`) to Codex CLI's skill directory (or Gemini CLI's). Run `/overture:init` (or tool equivalent) on a throwaway project. Watch for: skill loading errors, glossary/terminology friction, hard-coded Claude Code paths in skill bodies, profile discovery (`~/.overture/profile.md`) working under the new tool's filesystem conventions. Capture findings — first real test of the Agent Skills cross-tool claim; likely reveals what an adapter layer would actually need to do. Open decision at session open: pick Codex CLI or Gemini CLI.
 
-2. **Session #20+: Adapter layer (only if #19 reveals real needs)** — Don't pre-build from theory. Build only what the portability test proves is needed.
+2. **Session #21+: Adapter layer (only if #20 reveals real needs)** — Don't pre-build from theory. Build only what the portability test proves is needed.
 
 3. **Parallel P2 track — CLAUDE.md tracking normalization** — pxtxt and itsmin.com gitignore CLAUDE.md, so Session #15 SESSION WORKFLOW expansions in those projects are on-disk only and won't survive a fresh clone. Fix in-place during each project's own sessions: privacy audit → move sensitive bits to `.claude/CLAUDE.local.md` → remove `CLAUDE.md` from that project's `.gitignore` → commit. Not blocking; required for fresh-clone portability.
 
@@ -237,6 +247,7 @@ Universal working preferences in `~/.claude/CLAUDE.md`.
 
 | Item | Session | Notes |
 |---------|---------|-------|
+| Housekeeping & hygiene pass | #19 | CLAUDE.md 34.5k → 28.2k (YELLOW → GREEN), #1-#10 compressed, COMPLETE table trimmed, kit table verified, queue hygiene refreshed. Commit `99a3126`. |
 | Prelude archive + retirement | #18 | Drift committed, instance files retired, tagged `archived-2026-04-13`, moved to `_archive/prelude`. Global CLAUDE.md and PROJECT_MANAGEMENT.md cross-references updated. |
 | Profile + template consolidation (already done from #13) | #17 | Verified profile/voice in place, voice byte-identical to Prelude's, init skill loads profile, instance retirement decision made. |
 | Prelude upstream audit — 6 patterns + 5 templates diffed, 6 candidates upstreamed and sanitized | #16 | 5/6 patterns now redundant; Settings is structural exception. Commit `429559c`. |
