@@ -24,10 +24,12 @@ Universal working preferences in user-level preferences file.
 
 ## SESSION WORKFLOW
 
+*This section is the project-specific runbook the session skills defer to. The default 8-step session-start and 12-step session-end workflows live in the skills themselves; this section adds, modifies, or removes steps when the project has specific needs. If empty, the generic skill workflow runs as-is.*
+
 ### At session-start:
 0. Clean state — commit/push/deploy anything left from last session
-1. [Project-specific: metrics validation, health checks — customize or skip]
-2. [Project-specific: domain health checks — customize or skip]
+1. Metrics validation (skip if no metrics table exists)
+2. Project health (project-specific checks, e.g., build/typecheck/deploy)
 3. Present deferred work
 4. Check pending verifications
 5. Cross-project coordination (if applicable)

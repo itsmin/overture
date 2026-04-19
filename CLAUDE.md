@@ -20,10 +20,10 @@
 | `.claude-plugin/plugin.json` | Claude Code plugin manifest | Agent | **v1** — April 2026 |
 | `.claude-plugin/marketplace.json` | Self-hosted marketplace manifest | Agent | **v1** — April 2026 |
 | `commands/init.md` | CC plugin init command — `/overture:init` | Agent | **v1** — April 2026 |
-| `skills/overture-init/SKILL.md` | Init skill (Agent Skills format) — cross-tool project setup | Agent | **v1** — April 2026 |
-| `skills/overture-init/references/operating-document-template.md` | Tool-agnostic operating document template | Both | **v1** — April 2026 |
-| `skills/session-start/SKILL.md` | Session-start skill — cross-tool context loading | Agent | **v1** — April 2026 |
-| `skills/session-end/SKILL.md` | Session-end skill — cross-tool handoff and cleanup | Agent | **v1** — April 2026 |
+| `skills/overture-init/SKILL.md` | Init skill (Agent Skills format) — cross-tool project setup | Agent | **v1.1** — Session #20 |
+| `skills/overture-init/references/operating-document-template.md` | Tool-agnostic operating document template | Both | **v1.1** — Session #20 |
+| `skills/session-start/SKILL.md` | Session-start skill — cross-tool context loading | Agent | **v1.1** — Session #20 |
+| `skills/session-end/SKILL.md` | Session-end skill — cross-tool handoff and cleanup | Agent | **v1.1** — Session #20 |
 | `glossary.md` | Controlled vocabulary for tool-agnostic terminology | Both | **v1** — April 2026 |
 
 ### Methodology
@@ -106,14 +106,25 @@ Universal working preferences in `~/.claude/CLAUDE.md`.
 
 ## SESSION PROGRESS
 
-**Current**: Session #19 complete (April 13, 2026)
-**Status**: Housekeeping pass — CLAUDE.md compressed and back into GREEN, kit table verified, queue pruned. Clean state for the portability test.
-**NEXT**: Session #20 — Cross-tool portability test. Copy Overture skills (`overture-init`, `session-start`, `session-end`) to Codex CLI or Gemini CLI skill directory, run init on a throwaway project, capture findings. User to pick tool at session open.
+**Current**: Session #20 complete (April 18, 2026)
+**Status**: First cross-tool validation passed (Gemini CLI 0.38.2). Output-quality fixes applied per audit but not empirically re-validated — Gemini free-tier quota exhausted on retest.
+**NEXT**: Session #21 — Phase 4b: re-validate Phase 4a fixes on Gemini once free-tier quota resets (~24h+ from #20). Then Phase 4c: consolidate cross-tool win into framework docs (README install path, CLAUDE.md cross-tool claim, project memory). Alternative path: provision OpenAI auth and run Codex as second-tool data point.
 **Last queue hygiene**: Session #19 (CLAUDE.md compressed #1-#10 to one-liners, 34.5k → 28.2k; deferred-work pruned)
 
 ### Pending Verifications
-- **Cross-tool portability** — skills not tested on Codex or Gemini CLI. Now unblocked; queued as Session #19.
-- **Live init with profile** — profile loading verified by code-read of SKILL.md Step 0. End-to-end run on a fresh project still pending — natural discharge on next real init or during Session #19's portability test.
+- **Phase 4a fixes** (Session #20) — verbatim-copy Step 3, hardened Step 2 against step-dropping, optional-section rule against placeholder un-commenting. Applied per reasoned audit; not empirically re-tested. Discharge on Session #21's Gemini retry, or on a Codex run if OpenAI auth becomes available.
+
+### Session #20 Complete (April 18, 2026)
+
+**First cross-tool validation of Overture skills + output-quality audit**
+
+- Confirmed Anthropic SKILL.md is genuine cross-tool standard (Codex, Gemini, Cursor, GitHub Copilot adopt). `~/.agents/skills/` is shared user-level convention.
+- Installed Gemini CLI 0.38.2; symlinked Overture's 3 skills to `~/.agents/skills/`. Discovery worked pre-auth via `gemini skills list`.
+- **Phase 2 PASS**: Gemini executed `overture-init` end-to-end. Generated `GEMINI.md`, `.gemini/skills/session-{start,end}/SKILL.md`, `.gitignore` correctly. Profile applied per Step 0.
+- **Phase 1 fixes**: spec-clean frontmatter (3 skills, drop metadata/compatibility); detection table corrected; explicit sibling paths; hook caveats for non-CC tools; Step 3 expanded with per-tool format table.
+- **Phase 4a fixes** (from output audit — Gemini summarized 154→65 lines, dropped session-end steps 10/12, un-commented section to put `*(none yet)*` placeholder): SESSION WORKFLOW template concrete labels; Step 2 verbatim-from-template + hardened optional-section rule; Step 3 restructured to verbatim-copy + appended patches with within-10%-length self-check.
+- **Phase 4b BLOCKED**: Gemini free-tier quota exhausted on retest + Gemini TUI rendering crash (their bug). Phase 4a fixes applied but not empirically re-validated. Path A's hard-stop fired as planned. Deferred to #21.
+- Decided: Overture stays at `github.com/itsmin/overture` (memory `project_overture_ownership.md`). Plus 2 unpushed commits from #19.
 
 ### Session #19 Complete (April 13, 2026)
 
@@ -232,14 +243,16 @@ Universal working preferences in `~/.claude/CLAUDE.md`.
 
 ### CURRENT PRIORITIES
 
-**P1: Cross-tool portability** *(unblocked, clean state)*
-- Copy Overture skills to Codex CLI or Gemini CLI, verify they load and produce correct output on a sample project. First real test of the Agent Skills cross-tool claim. See Session #20 in UPCOMING SESSIONS.
+**P1: Cross-tool validation completion** *(Gemini one-tool validation done #20; Phase 4a fixes unverified)*
+- Phase 4b: re-run Gemini init with Phase 4a fixes once free-tier quota resets, verify verbatim-copy embedded skills (~150 lines for session-start, ~230 for session-end), no dropped steps, no `*(none yet)*` placeholder optional-section headers
+- Phase 4c (sequential after 4b): consolidate cross-tool win — README install path with verified Gemini steps, CLAUDE.md cross-tool claim from "untested premise" → "validated", project memory recording the milestone
+- Alternative path to unblock 4c: provision OpenAI auth and use Codex as the second-tool validation, sidestepping the Gemini quota wait
 
 ### UPCOMING SESSIONS
 
-1. **Session #20: Cross-tool portability test** — Copy Overture skills (`overture-init`, `session-start`, `session-end`) to Codex CLI's skill directory (or Gemini CLI's). Run `/overture:init` (or tool equivalent) on a throwaway project. Watch for: skill loading errors, glossary/terminology friction, hard-coded Claude Code paths in skill bodies, profile discovery (`~/.overture/profile.md`) working under the new tool's filesystem conventions. Capture findings — first real test of the Agent Skills cross-tool claim; likely reveals what an adapter layer would actually need to do. Open decision at session open: pick Codex CLI or Gemini CLI.
+1. **Session #21: Phase 4b + 4c — re-validate fixes + consolidate the win** — Phase 4b: launch `gemini` in `/tmp/overture-portability-test-3/` once free-tier quota resets (~24h+ from #20), run `overture-init`, verify Phase 4a fixes (verbatim-copy ~150-line embedded session-start, no dropped steps, no `*(none yet)*` placeholder optional-section headers). Skills already symlinked at `~/.agents/skills/` from #20 — fixes are already live. Phase 4c (sequential, only if 4b passes): update README with verified cross-tool install path (`brew install gemini-cli` + symlink pattern); update CLAUDE.md cross-tool claim from "untested premise" → "validated on Gemini CLI 0.38.2 with post-fix retest"; save project memory recording the milestone. Conditional: if 4b reveals new gaps, fix-and-retest cycle inside #21 before 4c. Alternative: provision OpenAI auth and run Codex as second-tool data point — could substitute for the Gemini retry, or add a second confirmation alongside it.
 
-2. **Session #21+: Adapter layer (only if #20 reveals real needs)** — Don't pre-build from theory. Build only what the portability test proves is needed.
+2. **Session #22+: Adapter layer (only if #21 reveals real needs)** — Don't pre-build from theory. Build only what testing proves is needed.
 
 3. **Parallel P2 track — CLAUDE.md tracking normalization** — pxtxt and itsmin.com gitignore CLAUDE.md, so Session #15 SESSION WORKFLOW expansions in those projects are on-disk only and won't survive a fresh clone. Fix in-place during each project's own sessions: privacy audit → move sensitive bits to `.claude/CLAUDE.local.md` → remove `CLAUDE.md` from that project's `.gitignore` → commit. Not blocking; required for fresh-clone portability.
 
@@ -247,6 +260,7 @@ Universal working preferences in `~/.claude/CLAUDE.md`.
 
 | Item | Session | Notes |
 |---------|---------|-------|
+| First cross-tool validation + skills audit & fixes | #20 | Gemini CLI 0.38.2 executed `overture-init` end-to-end (Phase 2 PASS). Phase 1 audit found portability gaps; fixed (spec-clean frontmatter, detection table, sibling paths, hook caveats). Phase 4a fixes from output audit (verbatim-copy Step 3, hardened Step 2, optional-section rule). Phase 4b retest blocked on Gemini free-tier quota; deferred to #21. |
 | Housekeeping & hygiene pass | #19 | CLAUDE.md 34.5k → 28.2k (YELLOW → GREEN), #1-#10 compressed, COMPLETE table trimmed, kit table verified, queue hygiene refreshed. Commit `99a3126`. |
 | Prelude archive + retirement | #18 | Drift committed, instance files retired, tagged `archived-2026-04-13`, moved to `_archive/prelude`. Global CLAUDE.md and PROJECT_MANAGEMENT.md cross-references updated. |
 | Profile + template consolidation (already done from #13) | #17 | Verified profile/voice in place, voice byte-identical to Prelude's, init skill loads profile, instance retirement decision made. |
@@ -298,6 +312,8 @@ Before flipping from private → public:
 
 | Item | Originally From | Context |
 |------|-----------------|---------|
+| Phase 4b: re-validate fixes on Gemini | Session #20 | Blocked on Gemini free-tier quota reset (~24h+). New sterile dir: `/tmp/overture-portability-test-3/`. Skills already symlinked at `~/.agents/skills/`; Phase 4a fixes already in source files (live via symlinks). |
+| Phase 4c: framework doc consolidation | Session #20 | Bundled with 4b in #20's Path A; deferred together. Update README install path with verified Gemini steps; update CLAUDE.md cross-tool claim from premise → validated; save project memory; possibly add cross-tool note to Working-With-Claude-Code.md. Sequential after 4b passes. |
 | CLAUDE.md tracking normalization (pxtxt, itsmin.com) | Session #15 | Both projects gitignore CLAUDE.md, so Session #15 SESSION WORKFLOW expansions are on-disk only. Fix in each project's own session: privacy audit → move sensitive bits to `.claude/CLAUDE.local.md` → remove `CLAUDE.md` from the project's `.gitignore` → commit. |
 
 ---
@@ -311,9 +327,9 @@ Before flipping from private → public:
 | Plugin Manifest | `.claude-plugin/plugin.json` | Session #13 | Claude Code plugin manifest |
 | Marketplace Manifest | `.claude-plugin/marketplace.json` | Session #13 | Self-hosted marketplace for plugin distribution |
 | Init Command (CC) | `commands/init.md` | Session #13 | CC plugin command — `/overture:init` (profile-aware) |
-| Init Skill | `skills/overture-init/` | Session #13 | Cross-tool init (Agent Skills format, profile-aware) |
-| Session-Start Skill | `skills/session-start/` | Session #11 | Cross-tool session-start (Agent Skills format) |
-| Session-End Skill | `skills/session-end/` | Session #11 | Cross-tool session-end (Agent Skills format) |
+| Init Skill | `skills/overture-init/` | Session #20 | Cross-tool init (Agent Skills format, profile-aware). Step 2/3 hardened post-Gemini-test for verbatim copy + appended patches. |
+| Session-Start Skill | `skills/session-start/` | Session #20 | Cross-tool session-start (Agent Skills format). Frontmatter spec-clean. |
+| Session-End Skill | `skills/session-end/` | Session #20 | Cross-tool session-end (Agent Skills format). Frontmatter spec-clean. |
 | Progression Guide | `Progression.md` | Session #13 | Day-1 paths, level-by-level experience, profile, when to evolve |
 | Conceptual Framework | `Working-With-Claude-Code.md` | Session #6 | ICL, memory tiers, Levels 0-4, Choral, Lyrical |
 | Workflow Framework | `workflow/Claude-Code-Workflow-Framework.md` | Session #6 | Methodology v2.0 — session management, CLAUDE.md anatomy, hooks |

@@ -1,10 +1,6 @@
 ---
 name: session-end
 description: Ensure clean handoff to the next session. Reconciles work queue, verifies features, syncs documentation, captures deferred work, and plans next session priorities. Use at the end of every session before closing.
-metadata:
-  author: Min Chang
-  version: 1.0.0
-  license: MIT
 ---
 
 # Session End
@@ -13,7 +9,7 @@ Ensure clean handoff to the next session.
 
 **Operating mode**: Draft-first, review-second. You were present for the entire session — don't ask the user to recount what happened. Draft everything you can from session context (summary, queue reconciliation, verification assessment, deferred work, docs sync). Present the complete draft for review. Only ask questions for information you genuinely don't have.
 
-**Project-specific customizations are authoritative.** Before executing the flow below, locate the operating document's `SESSION WORKFLOW` section (the `Before /session-end:` subsection or equivalent). Any steps listed there are MANDATORY — they encode project-specific hygiene the generic framework can't know about (kit-table sync, schema docs, deployment notes, domain-specific sync lists). Merge them into the flow: when a project step and a generic step overlap, the project step wins; when the skill has something the operating doc doesn't, keep it.
+**Project-specific customizations are authoritative.** Before executing the flow below, locate the operating document's `SESSION WORKFLOW` section (the `Before session-end:` subsection or equivalent). Any steps listed there are MANDATORY — they encode project-specific hygiene the generic framework can't know about (kit-table sync, schema docs, deployment notes, domain-specific sync lists). Merge them into the flow: when a project step and a generic step overlap, the project step wins; when the skill has something the operating doc doesn't, keep it.
 
 ## Instructions
 
@@ -231,4 +227,4 @@ Ready to close:
 - **Deferred work visibility** — always update status of touched items
 - **Capture discussions** — open threads get lost without explicit tracking
 - **Size discipline** — keep operating document under 35k characters (standard profile)
-- **Automation option**: Hygiene checks (git status, size, documentation staleness) can be automated with session hooks.
+- **Automation option**: Hygiene checks (git status, size, documentation staleness) can be automated with session hooks if your tool supports them. Overture ships hook templates for Claude Code (`templates/hooks/`); Codex CLI and Gemini CLI have their own event/hook systems — adapt the pattern.

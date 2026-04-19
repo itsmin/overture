@@ -1,10 +1,6 @@
 ---
 name: session-start
 description: Load project context and present current state at the beginning of a working session. Reads the operating document, checks health, surfaces deferred work, and presents the work queue. Use at the start of every session.
-metadata:
-  author: Min Chang
-  version: 1.0.0
-  license: MIT
 ---
 
 # Session Start
@@ -18,7 +14,7 @@ Skip steps that reference sections your operating document doesn't have yet — 
 
 Steps 0-2 are project-specific (customize or skip freely). Steps 3-7 are the structural backbone shared across projects.
 
-**Project-specific customizations are authoritative.** Before executing the flow below, locate the operating document's `SESSION WORKFLOW` section (the `At /session-start:` subsection or equivalent). Any steps listed there are MANDATORY — they encode project-specific checks the generic framework can't know about (kit tables, schema docs, deployment endpoints, domain health). Merge them into the flow: when a project step and a generic step overlap, the project step wins; when the skill has something the operating doc doesn't, keep it. Don't skip project customizations because they're not in this skill — they exist because someone learned the hard way that the generic flow missed something.
+**Project-specific customizations are authoritative.** Before executing the flow below, locate the operating document's `SESSION WORKFLOW` section (the `At session-start:` subsection or equivalent). Any steps listed there are MANDATORY — they encode project-specific checks the generic framework can't know about (kit tables, schema docs, deployment endpoints, domain health). Merge them into the flow: when a project step and a generic step overlap, the project step wins; when the skill has something the operating doc doesn't, keep it. Don't skip project customizations because they're not in this skill — they exist because someone learned the hard way that the generic flow missed something.
 
 ### 0. Clean State
 
@@ -151,4 +147,4 @@ Then: **"Session context loaded. Ready to work."**
 - Health checks should be fast (timeout after 15 seconds)
 - Flag discrepancies, don't silently accept them
 - Deferred work visibility prevents lost work
-- **Automation option**: Steps 0-2 can be automated with session hooks. See the Overture hook templates for the pattern.
+- **Automation option**: Steps 0-2 can be automated with session hooks if your tool supports them. Overture ships hook templates for Claude Code (`templates/hooks/`); Codex CLI and Gemini CLI have their own event/hook systems — adapt the pattern.
