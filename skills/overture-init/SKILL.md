@@ -132,3 +132,19 @@ Tell the user:
 - That optional operating document sections can be added as the project matures
 - If no profile exists: mention they can create one at `~/.overture/profile.md` to carry preferences into future projects (see the profile template in Overture's `templates/profile.md`)
 - They can now run their session-start command to begin their first session
+
+## Step 6: Surface the Ecosystem
+
+Overture is opinionated about session discipline but doesn't try to cover every lane. Surface the companion plugins that pair well — the user composes their own stack.
+
+Mention (without installing — these are suggestions, not requirements):
+
+- **Pre-creative work** — Superpowers' `/brainstorm` for any new feature/spec; `/writing-plans` for multi-step task planning; `/systematic-debugging` for bug investigation. Install: `/plugin install superpowers@claude-plugins-official`. *(Claude Code only.)*
+- **Quality audit of operating doc** — Anthropic's CLAUDE.md Management plugin (`/revise-claude-md`). Complements Overture's structural session-end by auditing command currency, conciseness, and architecture coverage. *(Claude Code only.)*
+- **Cross-session activity capture** — Anthropic's Remember plugin (`/remember`). Auto-captures activity via hooks, Haiku-compresses into tiered logs. Different memory layer than Overture's operating doc — coexists, doesn't replace. *(Claude Code only.)*
+- **Visual/frontend design quality** — Anthropic's frontend-design plugin. Auto-activates on frontend work. *(Claude Code only.)*
+- **PR review** — Anthropic's code-review plugin (`/code-review`). *(Claude Code only.)*
+
+For non-Claude-Code tools (Codex, Gemini, Cursor): Overture's skills work via the cross-tool Agent Skills standard, but most first-party Claude plugins above are Claude Code-specific. Check your tool's marketplace for equivalents.
+
+See Overture's [STRATEGY.md](../../STRATEGY.md) and [SCAN-LOG.md](../../SCAN-LOG.md) for the full lane map and quarterly ecosystem updates.

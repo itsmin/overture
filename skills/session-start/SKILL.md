@@ -148,3 +148,12 @@ Then: **"Session context loaded. Ready to work."**
 - Flag discrepancies, don't silently accept them
 - Deferred work visibility prevents lost work
 - **Automation option**: Steps 0-2 can be automated with session hooks if your tool supports them. Overture ships hook templates for Claude Code (`templates/hooks/`); Codex CLI and Gemini CLI have their own event/hook systems — adapt the pattern.
+
+## Companion Capabilities (if installed)
+
+Overture's session-start owns *intent and structure*. Other ecosystem plugins layer in adjacent capabilities at session-start that Overture doesn't try to replicate:
+
+- **Anthropic's `/remember` plugin** (if installed) — its SessionStart hook will have auto-loaded a handoff document of recent activity. That's a *different layer* from Overture's NEXT pointer: Remember captures what happened; Overture captures what's intended. They complement.
+- **Superpowers' `/brainstorm`** — reach for it before any creative work surfaces during the session (new feature, component, behavior change). Not a session-start step; a moment-of-use companion.
+
+These are advisory only. Overture does not invoke other plugins; it surfaces them so the user knows when to reach. See [STRATEGY.md](../../STRATEGY.md) for the full lane map.

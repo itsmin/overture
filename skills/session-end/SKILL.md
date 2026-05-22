@@ -94,6 +94,8 @@ Assess from session context: did this session change any documented domain? Draf
 
 **Source of truth hierarchy**: Code/config files first, then documentation, then operating document metrics. Update upstream before downstream.
 
+**Companion: quality audit (optional, if installed)**: Overture handles structural sync — what changed, what docs are affected. Anthropic's CLAUDE.md Management plugin (`/revise-claude-md`) handles quality audit — are documented commands still accurate, is conciseness slipping, did architecture references go stale. The two are complementary. If installed, consider running `/revise-claude-md` after this step to catch drift the structural sync doesn't see. Skip silently if not installed.
+
 ### 6. Open Discussions Check
 
 Ask: "Were there any discussions or decisions that didn't get captured? Topics to continue next session?"
@@ -237,3 +239,12 @@ Ready to close:
 - **Capture discussions** — open threads get lost without explicit tracking
 - **Size discipline is session-end work, not a deferrable task** — compression happens this session, not "when there's time." Incremental cleanup each session prevents crash diets later. Never queue it to Deferred Work.
 - **Automation option**: Hygiene checks (git status, size, documentation staleness) can be automated with session hooks if your tool supports them. Overture ships hook templates for Claude Code (`templates/hooks/`); Codex CLI and Gemini CLI have their own event/hook systems — adapt the pattern.
+
+## Companion Capabilities (if installed)
+
+Overture's session-end owns *structure, reconciliation, and handoff intent*. Adjacent capabilities to surface at session-end:
+
+- **`/revise-claude-md`** (Anthropic CLAUDE.md Management) — audits operating doc against quality criteria (command currency, conciseness, architecture). Sequenced after Overture's structural sync (Step 5). Skip silently if not installed.
+- **`/remember`** (Anthropic Remember) — auto-captures activity into tiered logs via PostToolUse hook. Its capture is already in flight if installed; no explicit step needed. Coexists with Overture's NEXT pointer — different memory layer.
+
+These are advisory only. Overture does not invoke other plugins; it surfaces them so the user knows when to reach. See [STRATEGY.md](../../STRATEGY.md) for the full lane map.
