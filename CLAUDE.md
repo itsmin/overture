@@ -121,6 +121,11 @@ Universal working preferences in `~/.claude/CLAUDE.md`.
 ### Pending Verifications
 - **Phase 4a fixes** (Session #20) — verbatim-copy Step 3, hardened Step 2 against step-dropping, optional-section rule against placeholder un-commenting. Applied per reasoned audit; not empirically re-tested. Demoted to P2 per Session #21 strategic reframe — empirical Gemini retest still valuable but no longer top priority.
 
+### Continuing / Open Threads (for Session #22)
+- **Voice derivation plan drafted** — full plan with corpus sources, methodology steps, and validation criteria lives in `.claude/CLAUDE.local.md` (gitignored; references CaliKo project paths). Session #22 reads from there and executes.
+- **README treatment of STRATEGY/SCAN-LOG deferred** — won't add flat-voiced pointers; they'll be introduced in the right register during Phase 2 README rewrite.
+- **Companion Capabilities propagation scope** — skills-only for now (already shipped #21). Legacy `templates/session-{start,end}.md` not updated. Revisit only if templates become primary surface again.
+
 ### Session #21 Complete (May 21, 2026)
 
 **Strategic reframe + Phase 1 execution — Overture as the human-discipline layer that teaches the ecosystem**
@@ -135,25 +140,16 @@ Universal working preferences in `~/.claude/CLAUDE.md`.
 
 ### Session #20 Complete (April 18, 2026)
 
-**First cross-tool validation of Overture skills + output-quality audit**
+**First cross-tool validation + output-quality audit**
 
-- Confirmed Anthropic SKILL.md is genuine cross-tool standard (Codex, Gemini, Cursor, GitHub Copilot adopt). `~/.agents/skills/` is shared user-level convention.
-- Installed Gemini CLI 0.38.2; symlinked Overture's 3 skills to `~/.agents/skills/`. Discovery worked pre-auth via `gemini skills list`.
-- **Phase 2 PASS**: Gemini executed `overture-init` end-to-end. Generated `GEMINI.md`, `.gemini/skills/session-{start,end}/SKILL.md`, `.gitignore` correctly. Profile applied per Step 0.
-- **Phase 1 fixes**: spec-clean frontmatter (3 skills, drop metadata/compatibility); detection table corrected; explicit sibling paths; hook caveats for non-CC tools; Step 3 expanded with per-tool format table.
-- **Phase 4a fixes** (from output audit — Gemini summarized 154→65 lines, dropped session-end steps 10/12, un-commented section to put `*(none yet)*` placeholder): SESSION WORKFLOW template concrete labels; Step 2 verbatim-from-template + hardened optional-section rule; Step 3 restructured to verbatim-copy + appended patches with within-10%-length self-check.
-- **Phase 4b BLOCKED**: Gemini free-tier quota exhausted on retest + Gemini TUI rendering crash (their bug). Phase 4a fixes applied but not empirically re-validated. Path A's hard-stop fired as planned. Deferred to #21.
-- Decided: Overture stays at `github.com/itsmin/overture` (memory `project_overture_ownership.md`). Plus 2 unpushed commits from #19.
+- Anthropic SKILL.md confirmed as genuine cross-tool standard. Installed Gemini CLI 0.38.2, symlinked Overture skills to `~/.agents/skills/`. **Phase 2 PASS**: Gemini executed `overture-init` end-to-end (GEMINI.md + `.gemini/skills/...` correctly generated).
+- **Phase 1 fixes**: spec-clean frontmatter, detection table, sibling paths, hook caveats, per-tool format table.
+- **Phase 4a fixes** (from output audit — Gemini summarized 154→65 lines, dropped session-end steps, un-commented optional sections): SESSION WORKFLOW concrete labels, Step 2 verbatim-from-template + optional-section rule, Step 3 verbatim-copy + appended patches with length self-check.
+- **Phase 4b BLOCKED**: Gemini free-tier quota + their TUI bug. Phase 4a fixes applied but not empirically re-tested. Demoted to P2 in #21.
 
 ### Session #19 Complete (April 13, 2026)
 
-**Housekeeping & hygiene pass**
-
-- CLAUDE.md compressed: Sessions #1-#10 collapsed to one-liner entries, COMPLETE (Recent) trimmed from 19 rows to 10, resolved deferred work pruned. **34,501 → 28,171 chars** (YELLOW 716-from-RED → solidly GREEN, ~6.8k headroom).
-- Kit table verified: all 29 files present, no broken references.
-- Queue hygiene refreshed (last performed #11 → #19).
-- Session #18 had planned #19 as "housekeeping + cross-tool portability test." User stopped after housekeeping for a break; portability test slipped to Session #20 with no scope loss.
-- 1 commit (`99a3126`), unpushed.
+**Housekeeping & hygiene pass** — CLAUDE.md compressed (Sessions #1-#10 to one-liners, COMPLETE trimmed 19→10 rows, deferred-work pruned). 34.5k → 28.2k chars (YELLOW → GREEN). Kit table verified. Queue hygiene refreshed. Commit `99a3126`.
 
 ### Session #18 Complete (April 13, 2026)
 
@@ -236,15 +232,15 @@ Universal working preferences in `~/.claude/CLAUDE.md`.
 | Portfolio housekeeping propagation + Prelude standardization decision | #15 | Privacy gap fixed (`.claude/projects/` gitignored), 6 projects cleaned up, 4 commits, Prelude collapse direction set. |
 | Skill framework fix + Overture local-command cleanup pilot | #14 | Skills now defer to operating doc SESSION WORKFLOW. Overture local commands deleted. |
 | Plugin distribution + accessibility + profile layer | #13 | Marketplace, language pass, profile system. |
-| Choral coordination evolution from Prelude | #12 | 5 improvements: CONTRACT HYGIENE, HARD RULE, bidirectional OBS, /choral template. |
-| *...and earlier foundational work (#1-#11)* | #1-11 | See compressed Session Progress entries above. |
+| *...and earlier foundational work (#1-#12)* | #1-12 | See compressed Session Progress entries above. |
 
 ### P2: FUTURE WORK
 
-1. **Decay reference** — Decay and memory lifecycle templates. **Recommendation (Session #5)**: leave as documented gap. Size Management covers the actionable part. Revisit only if a generalizable pattern emerges.
-2. **Methodology doc lazy refactor** — Apply glossary terms to existing docs (Working-With-Claude-Code.md, Workflow Framework, Progression, patterns) as they're touched. No dedicated refactoring pass unless needed.
-3. **Adapter layer** — Build only after testing on a second tool reveals what actually needs adapting. Don't pre-build from theory.
-4. **Workflow Framework doc update** — Document the "operating doc SESSION WORKFLOW is authoritative, skills are generic runners" architectural principle established in Session #14. Low priority — not blocking propagation, but the methodology doc should reflect the current architecture.
+1. **Active ecosystem prompting** *(Session #21 idea)* — extend the passive Companion Capabilities references shipped in #21 with active in-flow prompting: when the user signals creative work / debugging / multi-step planning / quality concerns, surface the appropriate skill (`/brainstorm`, `/systematic-debugging`, `/writing-plans`, `/revise-claude-md`, etc.) at the moment of use. Implementation options to evaluate: (a) reference card in operating doc / new `references/ecosystem-trigger-map.md`, (b) session-start skill suggesting companions based on queued priorities, (c) UserPromptSubmit hook detecting signal phrases and injecting suggestions. The hook route is most ambitious; the reference card is most lightweight. Decide after Phase 2 voice work lands.
+2. **Decay reference** — Decay and memory lifecycle templates. **Recommendation (Session #5)**: leave as documented gap. Size Management covers the actionable part. Revisit only if a generalizable pattern emerges.
+3. **Methodology doc lazy refactor** — Apply glossary terms to existing docs (Working-With-Claude-Code.md, Workflow Framework, Progression, patterns) as they're touched. No dedicated refactoring pass unless needed.
+4. **Adapter layer** — Build only after testing on a second tool reveals what actually needs adapting. Don't pre-build from theory.
+5. **Settings hygiene review** *(Session #21 flag)* — 51 permission entries in `.claude/settings.local.json` (just over the 50-entry threshold). Quick scan for clusters replaceable by broader patterns, stale one-offs, anything that looks like a stale credential. ~5-10 minutes.
 
 ### PARKING LOT
 
