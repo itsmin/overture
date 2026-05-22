@@ -189,7 +189,19 @@ For the full guide with "when to move up" signals, see the [Progression Guide](P
 
 ## Provenance
 
-Built across 480+ sessions on two production products — a company intelligence platform and a professional representation service. Cross-project coordination between the two became the Choral pattern. Approaches that didn't work were dropped. Honest gaps are [documented](Working-With-Claude-Code.md#part-6-honest-gaps).
+Overture started in late 2025 as a single CLAUDE.md. The goal: make Claude remember between sessions. 480+ working sessions later, across two production products (a company intelligence platform and a professional representation service), it had become a working framework. Most of what survived wasn't designed. It was extracted from real fires.
+
+Two products had to stay in sync without an integration layer. Without coordination, decisions made for one would drift in the other; what was settled at the boundary in week 4 got re-litigated in week 6. Choral fell out as a working contract. Markdown, written by humans, kept at the project boundary. Not a graph, not a dependency tree. A shared blackboard both sessions read and write.
+
+Editorial drafts started reading as AI-tinted. The structural moves were the author's; the connective tissue had drifted toward AI defaults. Readers spot pattern density, not single words. The fix: encode voice as a discipline. Paired-sample diff against AI-free writing. Profile what survived solo work; ban what didn't. The profile travels with the work. Sessions load it when voice matters.
+
+A CLAUDE.md tripped its size limit. Two options: lossy compression (delete history, lose signal) or systemic refactoring (move content to sibling files, break cross-session continuity). Both worked for a session. Neither worked across months. What landed: size thresholds with explicit compression protocols, canonical section ordering across projects, a NEXT pointer that carries the most-important-next-thing between sessions, deferred-work tracking with a half-life. The operating document is the kit's load-bearing primitive.
+
+Three patterns with the same shape: a problem the ecosystem didn't fix, a fix that survived contact with users. All three are human-mediated. Humans write the contract. Humans encode the voice. Humans maintain the operating doc. The ecosystem mostly tries to automate around the human.
+
+By mid-2026 Anthropic had shipped first-party plugins for most of the table-stakes: session memory, CLAUDE.md audit, frontend design quality, code review automation. Overture is the human-discipline layer the ecosystem doesn't try to be.
+
+Honest gaps are [documented](Working-With-Claude-Code.md#part-6-honest-gaps).
 
 This framework — including its documentation — was built collaboratively with Claude Code, using the patterns described in the kit. The system architecture, workflow design, and judgment calls are the author's; Claude is a collaborator on implementation and documentation. A framework for AI-assisted development should probably be built that way.
 
