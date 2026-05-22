@@ -1,14 +1,12 @@
 # Overture Strategy
 
-> **Status**: Structural skeleton (Session #21). Origins prose shipped Session #24. Purpose and "What Overture Is, and Isn't" remain placeholders, deferred to future Phase 2 work.
+> **Status**: Structural skeleton (Session #21). Origins prose shipped Session #24. Purpose and "What Overture Is, and Isn't" voiced Session #25. All prose placeholders cleared.
 
 ---
 
 ## Purpose
 
-Overture is a portable framework for AI-assisted development patterns. It supplies the human-discipline layer — operating-document structure, session ritual, cross-project coordination, voice as design material — that the rest of the ecosystem doesn't try to be.
-
-_(prose: Session #22)_
+Overture is a portable framework for AI-assisted development. It anchors the human-discipline layer of the workflow: the deliberate-judgment work that lives outside what AI tools can or should do, organized into patterns refined across hundreds of working sessions in production use. The patterns come from doing the work; the discipline is the product.
 
 ---
 
@@ -117,7 +115,9 @@ Patterns are extracted on-demand from real product work, never pre-built from th
 
 ## What Overture Is, and Isn't
 
-_(prose: Session #22 — sharper positioning statement under voice. Provisional framing: "Overture is the human-discipline layer for AI-assisted development. It assumes you compose with first-party Anthropic plugins and community skills for the parts they own well; it provides what they don't — structured operating documents, cross-project coordination via human-curated contracts, voice as design material, session handoff ritual." Refine in Session #22.)_
+Overture composes with the rest of the ecosystem instead of rebuilding it. First-party Anthropic plugins handle the table-stakes (session capture, CLAUDE.md audit, frontend-design quality, code review), and community skills handle adjacent work; Overture reaches for both. What sits at the human-discipline layer is what Overture owns: cross-project coordination through human-curated contracts, voice as design material, operating-document discipline as methodology.
+
+What Overture is not: a swarm coordinator, an exhaustive skill library, or a growth project. Multi-agent orchestration and large productivity skill collections are well-served elsewhere; Overture stays small, opinionated, and visible only to people looking for exactly what it provides. The posture is specialist mode — present where it adds something distinctive, absent where the ecosystem already does the job.
 
 ---
 
