@@ -92,6 +92,49 @@ Behavioral rules govern how the voice operates in conversation, not just how ind
 
 ---
 
+## Defeating the AI Default
+
+When the writing partner is an LLM, voice definition has an additional job: stripping out the AI defaults that show up in any unguided output. AI writing leaves recognizable fingerprints. Readers can spot it. Encoding anti-AI-tells into your voice profile is no longer optional for serious editorial work.
+
+### Why this matters
+
+LLMs trained on vast formal-writing corpora gravitate toward statistically safe patterns: certain punctuation rhythms, certain vocabulary, certain structural moves that read as professional but feel generic. The same patterns appear across providers (Claude, GPT, Gemini) because the training data overlaps. When these patterns dominate an output, readers register the text as AI-generated even when no specific phrase is "wrong."
+
+Two practical consequences:
+
+1. **Co-authored output drifts toward AI defaults.** When a human writer drafts with AI assistance, the human's structural moves typically survive (verdict-first openings, soften-then-assert closers, specific vocabulary), but the connective tissue between them absorbs AI tendencies (heavy em-dash use, formulaic negative parallelism, listicle inflation). Voice profiles built from the fused output encode both signals, blurring what's actually the human's voice.
+
+2. **Voice profiles that don't name AI tells fail to defeat them.** Generic guidance ("write clearly", "avoid jargon") leaves the AI defaults unchallenged because they're already clear, professional, and jargon-free. The defaults are recognized through pattern density, not through individual word choice.
+
+### Categories of AI tells
+
+A voice profile that defeats AI defaults should explicitly name patterns in at least these categories:
+
+**Punctuation tells.** Em-dash density is the most-cited AI signal in 2026. AI uses 3-5 em-dashes per 500 words; humans average less than one. Other punctuation tells: smart quotes (curly), excessive boldface, emojis as section breaks.
+
+**Vocabulary tells.** Specific words that dominate AI output: *delve, leverage, foster, garner, bolster, showcase, exemplify, underscore, streamline, navigate (metaphorically), tapestry, landscape, realm, journey, beacon, robust, seamless, scalable, comprehensive, multifaceted, pivotal, dynamic, intricate, profound, enduring, transformative, testament*. AI transitions: *Additionally, Furthermore, Moreover, In conclusion*.
+
+**Structural tells.** Copula substitution (replacing "is" with "serves as / stands as / represents / marks"). Negative parallelism ("Not X, but Y" used formulaically). Rule-of-three lists deployed as a template. Present-participle tacks ("...contributing to the broader ecosystem"). Hedging accumulation. Outline-like conclusions ("Despite its strengths, X faces challenges..."). Perfect rectangular paragraphs with consistent sentence length.
+
+**Markup tells.** Bullets where prose would work. Bold headers followed by colons and explanatory sentences (listicle inflation). Title-case section headers. Decorative emoji as visual structure.
+
+These categories are not exhaustive. Specific tells evolve as models change. A voice profile should treat the categories as durable and update the specific patterns as new AI defaults emerge.
+
+### Encoding anti-AI-tells
+
+Practical patterns for encoding these in a voice profile:
+
+- **List specific patterns, not categories.** "Em-dash density above one per page" is enforceable. "Avoid sounding like AI" is not.
+- **Provide replacements, not just bans.** "Replace em-dashes with commas, periods, or colons depending on the structural job" gives the model somewhere to go.
+- **Mark context-dependent rules.** Some patterns (rhetorical questions, "basically" as a softener, three-item rhythmic groupings) are anti-patterns in one register and signature moves in another. Note the register where each applies.
+- **Distinguish formulaic use from substantive use.** "Not X, but Y" used once per document, doing real semantic work, is fine. The same construction used three times in a piece is AI rhythm. Encode the threshold, not a blanket ban.
+
+### A note on what survives
+
+Defeating AI defaults does not mean writing in a way no AI could produce. Most strong human voice consists of moves that are individually plausible from an LLM. What makes it human is the *specific combination* — particular structural moves clustered together, particular vocabulary used with intent, particular rhythmic preferences. The goal of an anti-AI-tell pass is to remove the defaults that signal genericness, leaving the specific moves that signal authorship.
+
+---
+
 ## Encoding Voice for AI Collaboration
 
 Voice rules need to live somewhere the model can read them. Options:
@@ -123,6 +166,8 @@ Watch for these signals that voice is drifting:
 - **Pattern intrusion** — AI-default patterns creeping in (list-heavy formatting, "Let's dive in," rhetorical questions as openers)
 - **Hedging accumulation** — Each revision adds qualifiers until the point is buried
 - **Voice homogenization** — Different contexts (editorial, agent, documentation) start sounding identical
+- **AI-tell creep** — Em-dash density rising, copula-substitution returning ("serves as", "stands as"), vocabulary tells reappearing (*delve, leverage, robust, comprehensive*). Defaults absorb back in when the voice profile isn't enforced.
+- **Co-authored fossilization** — Drafts where the AI's punctuation rhythms and connective-tissue habits get encoded as your voice because they survived editing. The structural skeleton remains yours; the connective tissue is the partner's. See Voice Reference for the paired-sample diff methodology that catches this.
 
 ### Feedback Loops
 

@@ -67,6 +67,70 @@ Apply the definition to new content. If the model still drifts, the definition h
 
 ---
 
+## Derivation by Paired-Sample Diff
+
+When a writer regularly drafts with AI assistance, their working corpus is fused. Sessions notes, commit bodies, design docs, even marketing copy carry both the writer's structural moves and the AI's default rhythms. A voice profile built from this corpus encodes the fusion, not the writer.
+
+The paired-sample diff is the methodology for separating signal from fusion.
+
+### The method
+
+1. **Identify a piece written entirely by the human.** Personal essay, journal entry, an email composed without AI assistance, a piece explicitly produced AI-free. The longer the better, the more recent the better. This is the ground truth.
+
+2. **Identify a piece on the same or adjacent topic that was AI-assisted.** A co-authored launch post, a blog draft polished by AI, a system summary the AI drafted that the human edited. Same writer, same time period, same general subject matter where possible.
+
+3. **Diff them across a structured set of features**:
+   - Em-dash count per 500 words
+   - Rhetorical questions (count, role)
+   - "Not X, but Y" constructions (count, formulaic vs. substantive)
+   - Three-item lists (closure vs. lead-to-fourth)
+   - Sentence-length distribution
+   - Header-payload colons
+   - Verdict-first openings
+   - Soften-then-assert closers
+   - Calibrated softeners (*basically, kinda, ironically, if I'm being honest*)
+   - First-person depth (surface ownership vs. vulnerable rumination)
+   - Listicle inflation
+   - Copula substitution rate
+   - Aesthetic adjectives in descriptive contexts
+
+4. **Categorize each feature as one of**:
+   - **Survives both** — present in human-alone and co-authored. This is structural skeleton, distinctly the writer's.
+   - **Inflated in co-authored** — present in both but at much higher density in the AI-influenced sample. This is AI absorbing into the connective tissue.
+   - **Stripped in co-authored** — present in human-alone but missing from AI-influenced. This is voice signal the AI smooths away.
+   - **Foreign in co-authored** — present in AI-influenced but absent from human-alone. This is pure AI default.
+
+5. **Encode each category in the voice profile.**
+   - Survives both → positive patterns (sounds-like).
+   - Inflated in co-authored → density caps ("em-dashes once per page, not three per paragraph").
+   - Stripped in co-authored → patterns to actively encode (rhetorical questions when structural, vulnerable first-person, calibrated softeners).
+   - Foreign in co-authored → anti-patterns (banned phrases, AI tells to avoid).
+
+### What the diff catches that intuition misses
+
+The fusion is hard to see without comparison. A writer reading their own co-authored output recognizes the structural moves as theirs and doesn't notice the punctuation rhythms underneath. A writer reading their own solo output finds it satisfying but can't articulate why. The diff makes both visible at once: same writer, same topic, two voices. The delta is the AI signal.
+
+The methodology also catches register-shifts that single-sample analysis misses. A writer's solo prose may use rhetorical questions structurally, calibrated softeners freely, and aesthetic adjectives in descriptive contexts — moves that the AI-influenced output strips because they read as "too casual" or "too vulnerable" to the model. Encoding the stripped-out patterns is as important as banning the AI-defaults.
+
+### When this is and isn't worth doing
+
+Worth doing when:
+- The writer regularly co-authors with AI and is shaping a voice profile that will guide future AI-assisted work.
+- The voice is for editorial work where readers will pattern-match against AI-generic.
+- The voice is for an AI agent that speaks on the human's behalf (representation, customer-facing).
+- The corpus has visible AI-tells (em-dash density, vocabulary tells) that the writer didn't put there intentionally.
+
+Not worth doing when:
+- The writing is purely mechanical (logs, scripts, data processing) where voice isn't a design concern.
+- The corpus is small enough that intuition can separate signal from fusion.
+- The writer doesn't use AI assistance in the relevant work.
+
+### Maintaining the diff
+
+A voice profile derived this way needs periodic refresh. AI defaults evolve with model versions. A profile derived against GPT-4 defaults in 2024 may not catch the GPT-5 defaults in 2026. The paired-sample diff is repeatable. Run it again when the model partner changes substantially or when output begins to feel generic in ways the current profile doesn't catch.
+
+---
+
 ## Encoding Patterns
 
 ### For Editorial Voice
@@ -177,6 +241,12 @@ The same voice definition is used verbatim across all contexts — editorial, ag
 
 ### Fossilized Voice
 The voice definition was written months ago and hasn't been updated. The actual voice has evolved through hundreds of sessions, but the definition reflects the state at definition-time. **Fix**: Treat the voice definition like any other living document. Update it when corrections reveal that the original definition no longer matches.
+
+### Co-Authored Fossilization
+The voice definition was derived from a corpus of AI-assisted output. The writer's structural moves got encoded, but so did the AI's punctuation rhythms and connective-tissue habits, treated as if they were the writer's. Future writing matches the encoded definition, which means it matches both the writer and the AI. **Fix**: Run the paired-sample diff (see Derivation by Paired-Sample Diff above) against a piece written entirely without AI assistance. Strip the AI-only features from the definition. Re-encode the features that show up in solo work but were absent from the co-authored corpus.
+
+### AI-Default Absorption
+Voice definition was solid when written, but recent output has acquired AI tells the definition doesn't catch. Em-dash density has crept up, copula substitution returned, AI vocabulary slid back in. The definition didn't go stale; the model defaults are pulling harder than the definition can hold. **Fix**: Strengthen the anti-AI-tell anchors with specific patterns and density caps. Provide explicit replacements, not just bans. If output is still drifting, the model partner may have changed (version bump, new defaults); refresh the AI-tells inventory.
 
 ---
 

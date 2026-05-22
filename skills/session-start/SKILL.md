@@ -16,6 +16,17 @@ Steps 0-2 are project-specific (customize or skip freely). Steps 3-7 are the str
 
 **Project-specific customizations are authoritative.** Before executing the flow below, locate the operating document's `SESSION WORKFLOW` section (the `At session-start:` subsection or equivalent). Any steps listed there are MANDATORY — they encode project-specific checks the generic framework can't know about (kit tables, schema docs, deployment endpoints, domain health). Merge them into the flow: when a project step and a generic step overlap, the project step wins; when the skill has something the operating doc doesn't, keep it. Don't skip project customizations because they're not in this skill — they exist because someone learned the hard way that the generic flow missed something.
 
+### Pre-Step: Personal Profile (optional)
+
+Overture's profile layer at `~/.overture/` carries personal customizations that apply across every project. Load whichever of these exist:
+
+- **`~/.overture/profile.md`** — Personal collaboration preferences (working style, contracts, decision authority, autonomy defaults). Read this if present; it informs how to interpret the user's intent during the session.
+- **`~/.overture/voice.md`** — Voice and writing rules. These apply to any prose the agent produces during the session: commit messages, session-end summaries, design docs, READMEs, response text. Voice rules are not scoped to "writing tasks" — they apply to all language the agent generates on the user's behalf.
+
+Skip silently if either file is absent. Overture's profile/voice layer is optional; not every user maintains one. If both exist, hold them in context for the rest of the session.
+
+If a project also has a local `.claude/voice.md`, prefer the project-local copy for that project's session (project override takes precedence over the global `~/.overture/voice.md`). If only `~/.overture/voice.md` exists, use it.
+
 ### 0. Clean State
 
 Before loading context, ensure the workspace is ready.

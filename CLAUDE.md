@@ -29,8 +29,8 @@
 | `commands/init.md` | CC plugin init command — `/overture:init` | Agent | **v1** — April 2026 |
 | `skills/overture-init/SKILL.md` | Init skill (Agent Skills format) — cross-tool project setup. Step 6 ecosystem surfacing added #21. | Agent | **v1.2** — Session #21 |
 | `skills/overture-init/references/operating-document-template.md` | Tool-agnostic operating document template | Both | **v1.1** — Session #20 |
-| `skills/session-start/SKILL.md` | Session-start skill — cross-tool context loading. Companion Capabilities section added #21. | Agent | **v1.2** — Session #21 |
-| `skills/session-end/SKILL.md` | Session-end skill — cross-tool handoff and cleanup. `/revise-claude-md` reference + Companion Capabilities + size-check strengthening added #21. | Agent | **v1.2** — Session #21 |
+| `skills/session-start/SKILL.md` | Session-start skill — cross-tool context loading. Companion Capabilities section added #21. Personal-profile auto-load pre-step added #22 (loads `~/.overture/voice.md` + `profile.md` if present; project-local `.claude/voice.md` overrides). | Agent | **v1.3** — Session #22 |
+| `skills/session-end/SKILL.md` | Session-end skill — cross-tool handoff and cleanup. `/revise-claude-md` reference + Companion Capabilities + size-check strengthening added #21. Voice-context load instruction added #22 (load voice.md if not already in context before drafting session summary or prose). | Agent | **v1.3** — Session #22 |
 | `glossary.md` | Controlled vocabulary for tool-agnostic terminology | Both | **v1** — April 2026 |
 
 ### Methodology
@@ -42,8 +42,8 @@
 | `Working-With-Claude-Code.md` | Conceptual framework: ICL foundations, memory architecture, Levels 0-4, Choral, Lyrical | You | Updated March 22, 2026 |
 | `workflow/Claude-Code-Workflow-Framework.md` | The methodology: session management, CLAUDE.md anatomy, documentation hygiene | You | **v2.0** — March 2026 |
 | `choral/Choral-Pattern.md` | Standalone Choral reference: three coordination modes, shared blackboard, setup | You | **v2.0** — March 23, 2026 |
-| `voice/Voice-Framework.md` | Voice as design material: defining, encoding, maintaining voice | You | v2.0 — March 2026 |
-| `voice/Voice-Reference.md` | Detailed session structure, derivation approach, encoding patterns | You | v2.0 — March 2026 |
+| `voice/Voice-Framework.md` | Voice as design material: defining, encoding, maintaining voice. "Defeating the AI Default" section added #22 (AI-tells methodology + anti-pattern categories). | You | **v2.1** — Session #22 |
+| `voice/Voice-Reference.md` | Detailed session structure, derivation approach, encoding patterns. "Derivation by Paired-Sample Diff" section added #22 (co-authored vs human-alone diff methodology) + 2 new failure modes. | You | **v2.1** — Session #22 |
 | `patterns/Data-Authority.md` | Architectural pattern: single source of truth for derived state | You | v1.1 — April 2026 |
 | `patterns/Autonomous-Background.md` | Scheduled triggers for between-session quality work | You | v1.1 — April 2026 |
 | `patterns/Size-Management.md` | Operating document size thresholds, archiving protocol, project profiles | You | v1.1 — April 2026 |
@@ -113,60 +113,48 @@ Universal working preferences in `~/.claude/CLAUDE.md`.
 
 ## SESSION PROGRESS
 
-**Current**: Session #21 complete (May 21, 2026)
-**Status**: Strategic reframe — specialist mode + ecosystem-teaching positioning. Phase 1 shipped: `STRATEGY.md` skeleton, inaugural `SCAN-LOG.md`, first-party plugin references in all 3 skills. Session-end size-check rule strengthened (compression now mandatory at YELLOW/RED, never deferrable). CLAUDE.md compressed this session per the new rule.
-**NEXT**: Session #22 — Phase 2 voice elevation. Run voice derivation pass on sibling project corpus (BETA / pxtxt / itsmin.com / catenate / absOrbs CLAUDE.md session entries + commit messages + decision narratives). Refresh `~/.overture/voice.md`. Then invoke `/brainstorm` for voice-encoded README hero, voice section, before/after example, STRATEGY.md voiced prose, and origins narrative.
-**Last queue hygiene**: Session #21 (queue reorganized per strategic reframe; Phase 4b/4c demoted to P2; #11-#16 compressed to one-liners)
+**Current**: Session #22 complete (May 22, 2026)
+**Status**: Phase 2 voice derivation + AI-tells discovery + skill-wire of voice.md auto-load. Personal voice.md refreshed across 3 revisions (4-register architecture, AI-tells anti-patterns, paired-sample diff findings). AI-tells methodology baked into `Voice-Framework.md` + `Voice-Reference.md` as Overture-generic teaching. Session-start + session-end skills now auto-load `~/.overture/voice.md` (single source of truth across all Overture-using projects, with project-local override semantics).
+**NEXT**: Session #23 — Em-dash purge of `voice/Voice-Framework.md` + `voice/Voice-Reference.md`. Framework docs teaching AI-tells avoidance are themselves AI-tell-laden (45 + 34 em-dashes from pre-AI-tells writing). Walking the talk pass; tests voice.md rules in practice on substantive Min-aligned content before larger Phase 2 brainstorm work.
+**Last queue hygiene**: Session #22 (P1 substructure updated; new follow-ups surfaced and sequenced into UPCOMING; #20-#21 compressed)
 
 ### Pending Verifications
-- **Phase 4a fixes** (Session #20) — verbatim-copy Step 3, hardened Step 2 against step-dropping, optional-section rule against placeholder un-commenting. Applied per reasoned audit; not empirically re-tested. Demoted to P2 per Session #21 strategic reframe — empirical Gemini retest still valuable but no longer top priority.
+- **Phase 4a fixes** (Session #20) — verbatim-copy Step 3, hardened Step 2 against step-dropping, optional-section rule against placeholder un-commenting. Applied per reasoned audit; not empirically re-tested. Demoted to P2 per Session #21 strategic reframe.
 
-### Continuing / Open Threads (for Session #22)
-- **Voice derivation plan drafted** — full plan with corpus sources, methodology steps, and validation criteria lives in `.claude/CLAUDE.local.md` (gitignored; references CaliKo project paths). Session #22 reads from there and executes.
-- **README treatment of STRATEGY/SCAN-LOG deferred** — won't add flat-voiced pointers; they'll be introduced in the right register during Phase 2 README rewrite.
-- **Companion Capabilities propagation scope** — skills-only for now (already shipped #21). Legacy `templates/session-{start,end}.md` not updated. Revisit only if templates become primary surface again.
+### Continuing / Open Threads (for Session #23)
+- **Project-copies decision pending Min's call** — 7 projects have `.claude/voice.md` copies from #22 propagation. With skill-wire active, copies now function as project-overrides. Min: keep as overrides (snapshots will drift; allows per-project variants) or delete (single source of truth at `~/.overture/voice.md`)?
+- **Wider Overture em-dash + AI-tells purge** — beyond `voice/`, the README, Progression, Working-With-Claude-Code, patterns/, workflow/ all written pre-AI-tells. Sequence: #23 cleans `voice/` (walks-the-talk), then either dedicated purge session or fold into Phase 2 brainstorm rewrites.
+- **Phase 2 brainstorm work queued** — once `voice/` is voice-clean, invoke `/brainstorm` for README hero rewrite, voice section, before/after example, STRATEGY.md voiced sections (Purpose / Origins / "What Overture Is, and Isn't"), origins narrative. Sessions #24+.
 
-### Session #21 Complete (May 21, 2026)
+### Session #22 Complete (May 22, 2026)
 
-**Strategic reframe + Phase 1 execution — Overture as the human-discipline layer that teaches the ecosystem**
+**Voice derivation + AI-tells discovery + skill-wire of voice.md auto-load**
 
-- Reaffirmed specialist mode (no community-building, no active promotion). Overture has become Min's most-used product. Three distinctive lanes (Choral, Voice, Operating-Doc Discipline) own forward investment; coexisting lanes (audit, auto-memory, hooks) get referenced at point-of-use, not reinvented.
-- Phase 1 shipped: `SCAN-LOG.md` (inaugural Q2 entry, quarterly cadence Apr/Jul/Oct/Jan), `STRATEGY.md` skeleton (voiced prose deferred to #22), first-party plugin references added to all 3 skills via new "Companion Capabilities" sections + Step 6 ecosystem surfacing in overture-init.
-- Earlier in session: strengthened session-end size-check rule (`d389d1b`) — YELLOW/RED compression now mandatory this session, never deferrable. Followed the rule today: CLAUDE.md compressed (Sessions #11-#16 → one-liners, COMPLETE Recent trimmed, kit table reorganized).
-- Ecosystem context (from web research): Anthropic ships `/revise-claude-md` and `/remember` first-party plugins overlapping session management; Superpowers (`/brainstorm`, `/writing-plans`) in official marketplace; Agent Skills cross-tool across 30+ tools; hook events expanded to 27-32 (PreCompact, PostCompact, TeammateIdle, etc.).
-- Distinctive positioning: Choral (no encroachment), Voice as design material (no encroachment, most defensible niche), Operating-Doc discipline (no encroachment). Quality audit / auto-memory / orchestration explicitly ceded to first-party + community.
-- Phase 4b/4c (Gemini retest, cross-tool consolidation) demoted to P2 per reframe — still valuable, no longer top of queue.
-- Sibling project audit via 4 parallel agents surfaced patterns to consider (privacy verification at session-end, hook upgrades from BETA/pxtxt, documentation sync matrix). Bundled as Phase 2-3 candidates.
+- Personal `~/.overture/voice.md` refreshed across 3 revisions (93 → 355 lines). First pass derived patterns from 6 sibling-project corpus reports (parallel agents on BETA / pxtxt / itsmin.com / catenate / absOrbs / Aloud). Second pass corrected after Min surfaced em-dash overuse as AI tell — web research on AI-writing patterns + vocabulary blacklist. Third pass refined after Min provided paired LinkedIn samples (co-authored launch post vs. solo essay) — confirmed co-authored voice = Min's structural skeleton + Claude's connective tissue. Final encoding: 4-register architecture (consumer / personal essay / technical / operational), explicit AI-tells anti-patterns with replacements, before/after pairs distilled from the paired-sample diff, context-dependent rules (rhetorical questions / calibrated softeners / aesthetic adjectives all essay-allowed, technical-banned).
+- Overture framework docs absorbed the AI-tells methodology: `Voice-Framework.md` +44 lines ("Defeating the AI Default" section: punctuation / vocabulary / structural / markup tell categories + encoding guidance). `Voice-Reference.md` +70 lines ("Derivation by Paired-Sample Diff" methodology + 2 new failure modes: Co-Authored Fossilization, AI-Default Absorption). Generic, anyone-using-Overture inherits.
+- Skill-wire: `skills/session-start/SKILL.md` v1.3 adds pre-step auto-loading `~/.overture/voice.md` + `profile.md`, with project-local `.claude/voice.md` override semantics. `skills/session-end/SKILL.md` v1.3 defensively reloads voice.md before session-end prose if not in context. Cross-tool (Gemini, Codex via Agent Skills standard).
+- Side artifacts: voice.md propagated to `~/Desktop/voice.md` + 7 projects' `.claude/voice.md` (BETA, pxtxt, itsmin.com, catenate, absOrbs, Aloud, choral). Memory saved: `feedback_autonomous_git_probes.md` (proceed without asking on read-only sibling-project git probes).
+- Surfaced new follow-ups: em-dash purge of Voice-Framework + Voice-Reference (the framework warning against em-dashes is itself full of them — 45 + 34 in pre-AI-tells writing), wider Overture em-dash purge, project-copies decision (keep as overrides vs. delete given skill-wire).
 
-### Session #20 Complete (April 18, 2026)
+### Session #21 Complete (May 21, 2026, compressed)
 
-**First cross-tool validation + output-quality audit**
+Strategic reframe — specialist mode + ecosystem-teaching positioning. Phase 1 shipped: `STRATEGY.md` skeleton, inaugural `SCAN-LOG.md` (quarterly cadence Apr/Jul/Oct/Jan), first-party plugin references in all 3 skills via "Companion Capabilities" sections. Session-end size-check rule strengthened (`d389d1b`) — YELLOW/RED compression now mandatory, never deferrable. CLAUDE.md compressed per the new rule (Sessions #11-#16 → one-liners). Distinctive lanes affirmed: Choral, Voice as design material, Operating-Doc discipline (no encroachment from first-party plugins). Quality audit / auto-memory / orchestration ceded to ecosystem.
 
-- Anthropic SKILL.md confirmed as genuine cross-tool standard. Installed Gemini CLI 0.38.2, symlinked Overture skills to `~/.agents/skills/`. **Phase 2 PASS**: Gemini executed `overture-init` end-to-end (GEMINI.md + `.gemini/skills/...` correctly generated).
-- **Phase 1 fixes**: spec-clean frontmatter, detection table, sibling paths, hook caveats, per-tool format table.
-- **Phase 4a fixes** (from output audit — Gemini summarized 154→65 lines, dropped session-end steps, un-commented optional sections): SESSION WORKFLOW concrete labels, Step 2 verbatim-from-template + optional-section rule, Step 3 verbatim-copy + appended patches with length self-check.
-- **Phase 4b BLOCKED**: Gemini free-tier quota + their TUI bug. Phase 4a fixes applied but not empirically re-tested. Demoted to P2 in #21.
+### Session #20 Complete (April 18, 2026, compressed)
+
+First cross-tool validation. Anthropic SKILL.md confirmed as genuine cross-tool standard. Installed Gemini CLI 0.38.2; symlinked Overture skills to `~/.agents/skills/`; **Phase 2 PASS** — Gemini executed `overture-init` end-to-end. Phase 1 portability fixes + Phase 4a output-quality fixes (verbatim-copy Step 3, hardened Step 2, optional-section rule). Phase 4b retest blocked on Gemini free-tier quota + TUI bug; demoted to P2 in #21.
 
 ### Session #19 Complete (April 13, 2026)
 
 **Housekeeping & hygiene pass** — CLAUDE.md compressed (Sessions #1-#10 to one-liners, COMPLETE trimmed 19→10 rows, deferred-work pruned). 34.5k → 28.2k chars (YELLOW → GREEN). Kit table verified. Queue hygiene refreshed. Commit `99a3126`.
 
-### Session #18 Complete (April 13, 2026)
+### Session #18 Complete (April 13, 2026, compressed)
 
-**Prelude archive + retirement**
+Prelude archive + retirement. Final drift committed in Prelude (`cde4bdb`); pre-collapse instance files deleted (`be5ba7e`); tagged `archived-2026-04-13`; moved to local `_archive/` sibling. All material content already absorbed into Overture across #11-#16. Plugin cache cleaned. `~/.claude/CLAUDE.md` + cross-project coordination file updated to drop Prelude references. Cross-tool portability test unblocked → #19.
 
-- Committed Prelude's uncommitted drift as honest final-state (`cde4bdb` in Prelude): plugin.json fix, marketplace.json, OBS bidirectional writing in CLAUDE.md/choral.md/contract.md, CONTRACT HYGIENE section, HARD RULE strengthening, Coordination profile in session-end. All material content already absorbed into Overture across Sessions #11-#16.
-- Deleted `prelude/instances/{beta,pxtxt}.md` (`be5ba7e`). Pre-collapse alignment-tracking docs; specializations already absorbed into Overture patterns/templates.
-- Tagged Prelude `archived-2026-04-13` with archive note.
-- Moved Prelude repo to local `_archive/` sibling. Git intact, tag intact, working tree clean.
-- Removed `~/.claude/plugins/cache/prelude` leftover (plugin already globally uninstalled — plugins are global, not per-project, so no per-project work needed).
-- Updated `~/.claude/CLAUDE.md`: dropped Prelude portfolio entry, redirected privacy boundary reference from Prelude → Overture, added Prelude-collapse note to Overture entry.
-- Updated the cross-project coordination file (sibling project tree): redirected stale Prelude settings-patterns reference → Overture's Settings-Hygiene.md.
-- Cross-tool portability test now unblocked. Sequenced as Session #19.
+### Session #17 Complete (April 13, 2026, compressed)
 
-### Session #17 Complete (April 13, 2026)
-
-**Profile + template consolidation verification** — confirmed `~/.overture/profile.md` and `voice.md` exist from #13, voice byte-identical to Prelude's, init skill Step 0 loads profile, instance retirement decided (executed #18). All Session #17 template refinements already upstreamed in #16's `429559c`. No new edits needed.
+Profile + template consolidation verification. Confirmed `~/.overture/profile.md` and `voice.md` exist from #13, init skill Step 0 loads profile, instance retirement decided (executed #18). No new edits needed.
 
 ### Sessions #11-#16 (compressed)
 
@@ -197,11 +185,12 @@ Universal working preferences in `~/.claude/CLAUDE.md`.
 ### CURRENT PRIORITIES
 
 **P1: Phase 2 — Voice elevation** *(per Session #21 strategic reframe; voice is Overture's most defensible distinctive)*
-- Voice derivation pass on sibling project corpus: scan BETA / pxtxt / itsmin.com / catenate / absOrbs CLAUDE.md session entries + commit messages + decision narratives. Apply Voice-Reference.md methodology. Identify signature moves, vocabulary, structural preferences that have evolved since the original derivation.
-- Refresh `~/.overture/voice.md` based on derived patterns.
-- Invoke `/brainstorm` (Superpowers) for voice-encoded prose: README hero rewrite, voice section, before/after working example (same task, generic vs. voice-encoded output), STRATEGY.md voiced sections (Purpose / Origins / "What Overture Is, and Isn't"), strategy doc opening prose.
-- Promote `voice/` to top-level prominence in repo structure.
-- Pattern docs get "Related capabilities" footers cross-referencing ecosystem-map (structural, no brainstorm needed).
+- (a) **DONE #22**: Voice derivation pass on sibling project corpus. `~/.overture/voice.md` refreshed (4-register architecture, AI-tells anti-patterns, paired-sample diff findings).
+- (b) **DONE #22**: AI-tells methodology baked into `Voice-Framework.md` + `Voice-Reference.md` as Overture-generic teaching.
+- (c) **DONE #22**: Skill-wire — session-start + session-end skills auto-load voice.md (single source of truth across projects).
+- (d) **NEXT (#23)**: Em-dash purge of `voice/Voice-Framework.md` + `voice/Voice-Reference.md`. Mechanical voice application; tests voice.md rules in practice before larger creative work.
+- (e) **Sessions #24+**: Invoke `/brainstorm` (Superpowers) for voice-encoded prose — README hero rewrite, voice section, before/after working example (same task, generic vs. voice-encoded output), STRATEGY.md voiced sections (Purpose / Origins / "What Overture Is, and Isn't"), origins narrative.
+- (f) Pattern docs get "Related capabilities" footers cross-referencing ecosystem-map (structural, no brainstorm needed). Can fold into (e).
 
 **P2: Phase 3 — Marketplace submission + community distribution** *(sequenced after Phase 2; ~1-2 sessions)*
 - Submission hygiene: CHANGELOG.md (missing), `claude plugin validate` pass, version-consistency check (plugin.json / CHANGELOG / git tags), README polish post-Phase 2.
@@ -211,19 +200,22 @@ Universal working preferences in `~/.claude/CLAUDE.md`.
 
 ### UPCOMING SESSIONS
 
-1. **Session #22: Phase 2 — voice elevation** — Run the voice derivation pass on the sibling corpus first (Voice-Reference.md methodology applied to BETA / pxtxt / itsmin.com / catenate / absOrbs session entries). Refresh `~/.overture/voice.md`. Then invoke `/brainstorm` for the creative prose work (README hero, voice section, before/after example, STRATEGY.md voiced sections, origins narrative). Promote `voice/` to top-level. Pattern doc cross-reference footers as bonus structural item.
+1. **Session #23: Em-dash purge of `voice/Voice-Framework.md` + `voice/Voice-Reference.md`** — Apply the AI-tells rules from voice.md to the framework docs that teach those rules. Currently inconsistent (45 + 34 em-dashes in pre-AI-tells writing). Mechanical voice-application pass; ~1-2 hours. Tests voice.md rules on substantive Min-aligned content; surfaces any gaps before bigger Phase 2 brainstorm work. Project-copies decision can be resolved here too.
 
-2. **Session #23+: Phase 3 — marketplace submission + community directory PRs** — Hygiene pass (CHANGELOG, validate, version consistency), submit Overture to Anthropic-curated marketplace, opportunistic PRs to community indexes. Optional Medium post on voice-as-material.
+2. **Sessions #24+: Phase 2 brainstorm — voice-encoded public prose** — Invoke `/brainstorm` informed by voice-clean framework docs. README hero rewrite, voice section, before/after example, STRATEGY.md voiced sections, origins narrative. May fold wider Overture em-dash purge into rewrites where they overlap. 1-2 sessions.
 
-3. **Parallel P2 track — Phase 4b: Gemini retest of Phase 4a fixes** *(demoted from #20's plan)* — still empirically valuable; no longer top priority. Quota constraint dissolved by time (Apr 18 → quota long since reset). Run when convenient; rolls into Phase 4c (cross-tool consolidation in framework docs).
+3. **Session #25+: Phase 3 — marketplace submission + community directory PRs** — Hygiene pass (CHANGELOG, validate, version consistency), submit Overture to Anthropic-curated marketplace, opportunistic PRs to community indexes. Optional Medium post on voice-as-material.
 
-4. **Parallel P2 track — CLAUDE.md tracking normalization** — pxtxt and itsmin.com gitignore CLAUDE.md (Session #15 SESSION WORKFLOW expansions on-disk only). Fix in each project's own session: privacy audit → move sensitive bits to `.claude/CLAUDE.local.md` → remove `CLAUDE.md` from gitignore → commit. Not blocking; required for fresh-clone portability.
+4. **Parallel P2 track — Phase 4b: Gemini retest of Phase 4a fixes** *(demoted from #20's plan)* — still empirically valuable; no longer top priority. Quota constraint dissolved by time. Run when convenient; rolls into Phase 4c (cross-tool consolidation in framework docs).
+
+5. **Parallel P2 track — CLAUDE.md tracking normalization** — pxtxt and itsmin.com gitignore CLAUDE.md (Session #15 SESSION WORKFLOW expansions on-disk only). Fix in each project's own session: privacy audit → move sensitive bits to `.claude/CLAUDE.local.md` → remove `CLAUDE.md` from gitignore → commit. Not blocking; required for fresh-clone portability.
 
 ### COMPLETE (Recent)
 
 | Item | Session | Notes |
 |---------|---------|-------|
-| Strategic reframe + Phase 1 execution | #21 | Specialist mode reaffirmed. `STRATEGY.md` skeleton + inaugural `SCAN-LOG.md` shipped. First-party plugin references added to all 3 skills (Companion Capabilities sections, Step 6 in overture-init). Session-end size-check rule strengthened (`d389d1b`). CLAUDE.md compressed (#11-#16 to one-liners). Phase 2 voice elevation queued for #22. |
+| Voice derivation + AI-tells discovery + skill-wire | #22 | `~/.overture/voice.md` refreshed (4-register, AI-tells, paired-sample diff). `Voice-Framework.md` + `Voice-Reference.md` absorbed AI-tells methodology as Overture-generic. Skills auto-load voice.md (single source of truth). Voice.md propagated to ~/Desktop + 7 projects. |
+| Strategic reframe + Phase 1 execution | #21 | Specialist mode reaffirmed. `STRATEGY.md` skeleton + inaugural `SCAN-LOG.md` shipped. First-party plugin references added to all 3 skills. Session-end size-check rule strengthened (`d389d1b`). CLAUDE.md compressed (#11-#16 to one-liners). |
 | First cross-tool validation + skills audit & fixes | #20 | Gemini CLI 0.38.2 executed `overture-init` end-to-end (Phase 2 PASS). Phase 1 audit found portability gaps; fixed. Phase 4a fixes from output audit. Phase 4b retest blocked on Gemini quota; demoted to P2 in #21. |
 | Housekeeping & hygiene pass | #19 | CLAUDE.md 34.5k → 28.2k (YELLOW → GREEN), #1-#10 compressed, COMPLETE table trimmed, kit table verified. Commit `99a3126`. |
 | Prelude archive + retirement | #18 | Drift committed, instance files retired, tagged `archived-2026-04-13`, moved to `_archive/prelude`. |
@@ -231,8 +223,7 @@ Universal working preferences in `~/.claude/CLAUDE.md`.
 | Prelude upstream audit — 6 patterns + 5 templates diffed, 6 candidates upstreamed | #16 | 5/6 patterns now redundant; Settings is structural exception. Commit `429559c`. |
 | Portfolio housekeeping propagation + Prelude standardization decision | #15 | Privacy gap fixed (`.claude/projects/` gitignored), 6 projects cleaned up, 4 commits, Prelude collapse direction set. |
 | Skill framework fix + Overture local-command cleanup pilot | #14 | Skills now defer to operating doc SESSION WORKFLOW. Overture local commands deleted. |
-| Plugin distribution + accessibility + profile layer | #13 | Marketplace, language pass, profile system. |
-| *...and earlier foundational work (#1-#12)* | #1-12 | See compressed Session Progress entries above. |
+| *...and earlier foundational work (#1-#13)* | #1-13 | See compressed Session Progress entries above. |
 
 ### P2: FUTURE WORK
 
@@ -282,15 +273,15 @@ Universal working preferences in `~/.claude/CLAUDE.md`.
 | Marketplace Manifest | `.claude-plugin/marketplace.json` | Session #13 | Self-hosted marketplace for plugin distribution |
 | Init Command (CC) | `commands/init.md` | Session #13 | CC plugin command — `/overture:init` (profile-aware) |
 | Init Skill | `skills/overture-init/` | Session #21 | Cross-tool init (Agent Skills format, profile-aware). Step 6 ecosystem surfacing added #21. |
-| Session-Start Skill | `skills/session-start/` | Session #21 | Cross-tool session-start. Companion Capabilities section added #21. |
-| Session-End Skill | `skills/session-end/` | Session #21 | Cross-tool session-end. `/revise-claude-md` reference + size-check strengthening + Companion Capabilities added #21. |
+| Session-Start Skill | `skills/session-start/` | Session #22 | Cross-tool session-start. Companion Capabilities section added #21. **Personal-profile auto-load pre-step added #22** (loads `~/.overture/voice.md` + `profile.md`; project-local `.claude/voice.md` overrides). |
+| Session-End Skill | `skills/session-end/` | Session #22 | Cross-tool session-end. `/revise-claude-md` reference + size-check strengthening + Companion Capabilities added #21. **Voice-context defensive reload added #22.** |
 | Progression Guide | `Progression.md` | Session #13 | Day-1 paths, level-by-level experience, profile, when to evolve |
 | Conceptual Framework | `Working-With-Claude-Code.md` | Session #6 | ICL, memory tiers, Levels 0-4, Choral, Lyrical |
 | Workflow Framework | `workflow/Claude-Code-Workflow-Framework.md` | Session #6 | Methodology v2.0 — session management, CLAUDE.md anatomy, hooks |
 | Choral Reference | `choral/Choral-Pattern.md` | Session #12 | Standalone coordination pattern guide |
 | Choral Sync Template | `templates/choral.md` | Session #12 | Mid-session coordination command template |
-| Voice Framework | `voice/Voice-Framework.md` | Session #1 | Voice methodology — defining, encoding, maintaining |
-| Voice Reference | `voice/Voice-Reference.md` | Session #1 | Session structure, derivation, encoding patterns |
+| Voice Framework | `voice/Voice-Framework.md` | Session #22 | Voice methodology — defining, encoding, maintaining. **"Defeating the AI Default" section added #22** (AI-tells anti-pattern categories + encoding guidance). |
+| Voice Reference | `voice/Voice-Reference.md` | Session #22 | Session structure, derivation, encoding patterns. **"Derivation by Paired-Sample Diff" section added #22** + 2 new failure modes (Co-Authored Fossilization, AI-Default Absorption). |
 | Data Authority | `patterns/Data-Authority.md` | Session #16 | Architectural pattern: single source of truth for derived state. Staleness/Refresh added #16. |
 | Autonomous Background | `patterns/Autonomous-Background.md` | Session #16 | Scheduled triggers for between-session quality work. Pattern interconnection added #16. |
 | Size Management | `patterns/Size-Management.md` | Session #16 | Operating document size thresholds, archiving protocol. Coordination profile added #16. |

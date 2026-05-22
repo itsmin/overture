@@ -11,6 +11,8 @@ Ensure clean handoff to the next session.
 
 **Project-specific customizations are authoritative.** Before executing the flow below, locate the operating document's `SESSION WORKFLOW` section (the `Before session-end:` subsection or equivalent). Any steps listed there are MANDATORY — they encode project-specific hygiene the generic framework can't know about (kit-table sync, schema docs, deployment notes, domain-specific sync lists). Merge them into the flow: when a project step and a generic step overlap, the project step wins; when the skill has something the operating doc doesn't, keep it.
 
+**Voice context (load if not already present):** If `~/.overture/voice.md` (or project-local `.claude/voice.md`) exists and is not in your current context, read it now. The session summary, work-queue entries, and any prose written to the operating document during session-end follow these voice rules. If `~/.overture/profile.md` exists and isn't in context, load it too — it informs decision authority, autonomy defaults, and collaboration preferences that may apply to session-end choices. Skip silently if neither file exists.
+
 ## Instructions
 
 ### 1. Session Summary
