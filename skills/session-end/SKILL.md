@@ -149,18 +149,27 @@ Update values and "Last Validated" date if sources of truth changed.
 If queue hygiene was performed this session (backlog pruned, priorities re-evaluated, parking lot reviewed), update `Last queue hygiene` to the current session number.
 
 #### Size Check
+
+**MANDATORY at every session-end.** Hygiene work — including compression — happens THIS session, not a future one. Incremental cleanup each session is cheaper than crash compression when the doc hits a hard limit. Even GREEN docs deserve a brief look for stale entries.
+
 Check operating document size (character count).
 
 Thresholds (standard profile):
-- GREEN: <30k characters
-- YELLOW: 30k-35k characters
-- RED: >35k characters
+- GREEN: <30k characters — log size, scan briefly for stale entries
+- YELLOW: 30k-35k characters — **compress this session**
+- RED: >35k characters — **compress this session, no exceptions**
 
-If YELLOW or RED, run archiving:
-1. Create archive file if needed
-2. Compress old session entries (keep last 5-10 inline)
-3. Trim COMPLETE (Recent) to last ~10 entries
-4. Verify size after pruning
+If YELLOW or RED, compress NOW (do not defer to a future session):
+
+1. **Archive aged session entries.** Sessions older than ~5-10 from current go to `docs/sessions/SESSIONS_XX_YY_ARCHIVE.md` (or per-session files). Replace each verbose entry with a single archive-pointer line.
+2. **Extract stable reference material.** Move design systems, architecture diagrams, code style guides, full directory trees, color palettes, etc. into `docs/<name>.md`. Leave a header + one-line pointer in the operating document.
+3. **Trim COMPLETE (Recent)** to last ~10 entries.
+4. **Drop verbose narratives** once their archive file exists — the operating document should point at the archive, not duplicate it.
+5. **Verify size** after pruning. Re-run until under threshold.
+
+**Never write "operating-document compression" or "CLAUDE.md compression" to Deferred Work.** That item should not exist as a deferred task — compression IS session-end work. If you find yourself reaching for the deferred-work table to record it, do the compression instead.
+
+If the user explicitly says to defer for this turn (e.g., crunch before a deadline), honor that — but the default is: hygiene happens now, every session.
 
 #### Session Entry
 Add condensed entry (~8 lines max):
@@ -212,7 +221,7 @@ Documentation:
 Hygiene:
 - [ ] Settings hygiene (if >50 entries)
 - [ ] Working contract updated (if applicable)
-- [ ] Size check (GREEN/YELLOW/RED)
+- [ ] **Size check + compression executed if YELLOW/RED** (not deferred)
 
 Ready to close:
 1. Review operating document changes
@@ -226,5 +235,5 @@ Ready to close:
 - **Verification first** — don't mark complete without testing evidence
 - **Deferred work visibility** — always update status of touched items
 - **Capture discussions** — open threads get lost without explicit tracking
-- **Size discipline** — keep operating document under 35k characters (standard profile)
+- **Size discipline is session-end work, not a deferrable task** — compression happens this session, not "when there's time." Incremental cleanup each session prevents crash diets later. Never queue it to Deferred Work.
 - **Automation option**: Hygiene checks (git status, size, documentation staleness) can be automated with session hooks if your tool supports them. Overture ships hook templates for Claude Code (`templates/hooks/`); Codex CLI and Gemini CLI have their own event/hook systems — adapt the pattern.
