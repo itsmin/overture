@@ -26,7 +26,7 @@
 
 **Files:**
 - Read: `docs/superpowers/specs/2026-05-22-origins-narrative-design.md`
-- Read: `/Users/itsmin/.overture/voice.md` (already in session context — re-load only if not present)
+- Read: `~/.overture/voice.md` (already in session context; re-load only if not present)
 - Produce: prose text held inline in the session (no scratch file needed for a single piece)
 
 - [ ] **Step 1: Re-read the spec sections actively used during drafting**
@@ -115,7 +115,7 @@ Keep the final prose accessible in the session for the Edit operation in Task 2.
 ## Task 2: Integrate prose into README.md
 
 **Files:**
-- Modify: `/Users/itsmin/Projects/overture/README.md` (replace the `## Provenance` paragraph; preserve the meta-attribution paragraph below)
+- Modify: `README.md` (replace the `## Provenance` paragraph; preserve the meta-attribution paragraph below)
 
 - [ ] **Step 1: Read the current Provenance section to capture exact text**
 
