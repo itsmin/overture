@@ -1,6 +1,6 @@
 # Overture Strategy
 
-> **Status**: Structural skeleton (Session #21). Voiced narrative prose deferred to Session #22 voice-elevation work — sections marked _(prose: Session #22)_ are placeholders.
+> **Status**: Structural skeleton (Session #21). Origins prose shipped Session #24. Purpose and "What Overture Is, and Isn't" remain placeholders, deferred to future Phase 2 work.
 
 ---
 
@@ -14,7 +14,9 @@ _(prose: Session #22)_
 
 ## Origins
 
-_(prose: Session #22 — narrative of why Overture exists, the 480+ session provenance, what was missing in early 2026 that the kit was built to address, how the relationship to the ecosystem changed as Anthropic and the community shipped first-party investments.)_
+Overture started in late 2025 as a single CLAUDE.md. The goal: make Claude remember between sessions. By mid-2026, after 480+ working sessions across two production products (a company intelligence platform and a professional representation service), the kit had grown into a framework. Most of what survived wasn't designed; it was extracted from real fires.
+
+Early-2026 had no first-party equivalents for any of the patterns the kit was producing. The ecosystem changed. Anthropic shipped session memory, CLAUDE.md audit, frontend design quality, code review automation. The kit could have dissolved into the first-party defaults. Instead it sharpened. The lanes Overture occupies are the ones the ecosystem doesn't try to occupy. They are human-mediated by design. The ecosystem mostly tries to automate around the human.
 
 ---
 
