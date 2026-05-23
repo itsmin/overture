@@ -22,17 +22,17 @@ Early-2026 had no first-party equivalents for any of the patterns the kit was pr
 
 Overture owns three lanes that no first-party or community plugin currently occupies. These are the kit's defensible niches and the focus of forward investment.
 
-### 1. Choral — cross-project coordination via human-curated working contracts
+### 1. Choral: cross-project coordination via human-curated working contracts
 
 Three-mode pattern (passive / active / review). Contracts live as markdown files at the project boundary, written and maintained by humans. A coordinator session can read both project codebases and write architectural recommendations to the contract.
 
-Closest comparator: Claude Codex's per-project `.task/` directories — but those are agent-task-shaped, not contract-shaped, and don't carry the "shared blackboard" semantics. Choral is human-mediated coordination, not agent-mediated swarm.
+Closest comparator: Claude Codex's per-project `.task/` directories. Those are agent-task-shaped, not contract-shaped, and don't carry the "shared blackboard" semantics. Choral is human-mediated coordination, not agent-mediated swarm.
 
 Reference: [`choral/Choral-Pattern.md`](choral/Choral-Pattern.md), [`templates/contract.md`](templates/contract.md), [`templates/choral.md`](templates/choral.md).
 
 ### 2. Voice as design material
 
-Voice is treated as something to define, encode, and maintain — not as a byproduct of model output. Includes derivation methodology, encoding patterns, profile layer at `~/.overture/voice.md`.
+Voice is treated as something to define, encode, and maintain. Not as a byproduct of model output. Includes derivation methodology, encoding patterns, profile layer at `~/.overture/voice.md`.
 
 No first-party or community equivalent.
 
@@ -40,7 +40,7 @@ Reference: [`voice/Voice-Framework.md`](voice/Voice-Framework.md), [`voice/Voice
 
 ### 3. Operating-doc discipline as methodology
 
-The *why* behind operating-document structure — section ordering, size management with thresholds and compression protocol, NEXT pointer ritual, deferred-work lifecycle, COMPLETE table trimming. CLAUDE.md Management (Anthropic first-party) audits quality against generic criteria; it doesn't structure.
+The *why* behind operating-document structure: section ordering, size management with thresholds and compression protocol, NEXT pointer ritual, deferred-work lifecycle, COMPLETE table trimming. CLAUDE.md Management (Anthropic first-party) audits quality against generic criteria; it doesn't structure.
 
 Reference: [`workflow/Claude-Code-Workflow-Framework.md`](workflow/Claude-Code-Workflow-Framework.md), [`patterns/Size-Management.md`](patterns/Size-Management.md), [`patterns/Section-Ordering.md`](patterns/Section-Ordering.md), [`templates/CLAUDE.md`](templates/CLAUDE.md).
 
@@ -52,11 +52,11 @@ Areas where first-party or community plugins do excellent work that Overture ref
 
 | Lane | Owner | How Overture surfaces it |
 |------|-------|--------------------------|
-| Quality audit of CLAUDE.md (commands current, conciseness) | `/revise-claude-md` — Anthropic, first-party | session-end skill suggests as complement to structural sync |
-| Auto-capture activity tier | `/remember` — Anthropic, first-party; `claude-mem` — community, cross-tool | session-start skill notes as a different memory layer than the operating doc |
-| Pre-creative ideation / planning / debugging discipline | Superpowers (`/brainstorm`, `/writing-plans`, `/systematic-debugging`) — Anthropic marketplace | overture-init skill recommends; lane map points to specific skills at specific moments |
-| Visual / frontend design quality | `frontend-design` — Anthropic, first-party | overture-init skill recommends |
-| PR review automation | `code-review` — Anthropic, first-party | overture-init skill recommends |
+| Quality audit of CLAUDE.md (commands current, conciseness) | `/revise-claude-md` (Anthropic, first-party) | session-end skill suggests as complement to structural sync |
+| Auto-capture activity tier | `/remember` (Anthropic, first-party); `claude-mem` (community, cross-tool) | session-start skill notes as a different memory layer than the operating doc |
+| Pre-creative ideation / planning / debugging discipline | Superpowers (Anthropic marketplace): `/brainstorm`, `/writing-plans`, `/systematic-debugging` | overture-init skill recommends; lane map points to specific skills at specific moments |
+| Visual / frontend design quality | `frontend-design` (Anthropic, first-party) | overture-init skill recommends |
+| PR review automation | `code-review` (Anthropic, first-party) | overture-init skill recommends |
 | Hook event primitives | Claude Code's 27-32 event set | adopted as primitives where they're better than custom shell |
 
 ---
@@ -78,7 +78,7 @@ Overture explicitly does not compete in these lanes, even where the problem is i
 
 Overture watches the ecosystem on a fixed quarterly cadence. The discipline exists because gradual encroachment is the failure mode that loses distinctive niches without anyone noticing.
 
-**Cadence**: Quarterly — January, April, July, October. Calendar-driven.
+**Cadence**: Quarterly (January, April, July, October). Calendar-driven.
 
 **Scope per scan**:
 - New plugins in `anthropics/claude-plugins-official` (internal + external)
@@ -103,13 +103,13 @@ Overture watches the ecosystem on a fixed quarterly cadence. The discipline exis
 
 ## Anti-Atrophy Mechanisms
 
-Overture is the kit's author's most-used product. The risk isn't lack of use — it's lack of improvement. Three mechanisms keep the kit alive without committing to community-building.
+Overture is the kit's author's most-used product. The risk isn't lack of use. It's lack of improvement. Three mechanisms keep the kit alive without committing to community-building.
 
-1. **Usage cadence** — every CaliKo project session exercises Overture's session skills, operating doc patterns, and (where applicable) Choral coordination. The kit is dogfooded constantly.
-2. **Quarterly scan** (above) — the only calendar-driven discipline. Surfaces ecosystem moves before they become problems.
-3. **First-party watch in CRITICAL REMINDERS** — Overture's own CLAUDE.md carries a standing rule: when Anthropic releases new first-party plugins or skills, evaluate against Overture's lanes within one session. Low overhead, ensures awareness.
+1. **Usage cadence**: every CaliKo project session exercises Overture's session skills, operating doc patterns, and (where applicable) Choral coordination. The kit is dogfooded constantly.
+2. **Quarterly scan** (above): the only calendar-driven discipline. Surfaces ecosystem moves before they become problems.
+3. **First-party watch in CRITICAL REMINDERS**: Overture's own CLAUDE.md carries a standing rule. When Anthropic releases new first-party plugins or skills, evaluate against Overture's lanes within one session. Low overhead, ensures awareness.
 
-Patterns are extracted on-demand from real product work, never pre-built from theory. Data-Authority came from pxtxt; Privacy-Boundary came from itsmin.com; Autonomous-Background came from BETA. Continue this discipline — patterns extracted from real fires stay distinctive.
+Patterns are extracted on-demand from real product work, never pre-built from theory. Data-Authority came from pxtxt; Privacy-Boundary came from itsmin.com; Autonomous-Background came from BETA. Continue this discipline. Patterns extracted from real fires stay distinctive.
 
 ---
 
@@ -125,10 +125,10 @@ What Overture is not: a swarm coordinator, an exhaustive skill library, or a gro
 
 Overture is intentionally available, not aggressively promoted. Specialist mode, not active growth.
 
-- **Public repo** at `github.com/itsmin/overture` — current state.
-- **Self-hosted marketplace** via `.claude-plugin/marketplace.json` — current state, two-command install.
-- **Anthropic official marketplace** — targeted submission (Session #21+ Phase 3 work). Requires CHANGELOG, version-consistency, structural validation, README polish.
-- **Community directories** (ClaudePluginHub, awesome-agent-skills) — opportunistic listings, free distribution.
+- **Public repo** at `github.com/itsmin/overture` (current state).
+- **Self-hosted marketplace** via `.claude-plugin/marketplace.json` (current state, two-command install).
+- **Anthropic official marketplace**: targeted submission (Session #21+ Phase 3 work). Requires CHANGELOG, version-consistency, structural validation, README polish.
+- **Community directories** (ClaudePluginHub, awesome-agent-skills): opportunistic listings, free distribution.
 - **No commitment to**: regular content cadence, community management, talks, paid tier.
 
 The purpose is credibility + sharp niche + organic discoverability. Anything beyond that is a portfolio decision that displaces something else.
