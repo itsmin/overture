@@ -204,6 +204,40 @@ Lighter touch. Voice shows in what's included and excluded, not in flourishes:
 
 ---
 
+## Drafting note: positive patterns first
+
+Grep-verifying voice constraints catches AI defaults. It does not, by itself, produce voice-clean prose.
+
+The pattern surfaces this way. Draft prose against the voice definition. Run the AI-tell scans: em-dashes, banned vocab, copula substitution, smart quotes. The draft passes every check. Read it back. It still reads as competent-AI-prose.
+
+The grep checks are necessary but not sufficient. They catch the obvious tells. AI-default prose can be voice-clean by negation without being voice-distinctive by construction.
+
+The fix: draft *toward* positive patterns first. Then grep-verify.
+
+Positive patterns live in the *What's Distinctly [the writer's]* section of the voice profile. Before drafting, internalize them: verdict-first openings, soften-then-assert closers, header-payload colons, compound-noun with parenthetical-unpacking, binary naming for hard decisions, plan-revision-in-public, mechanism-first postmortems. The list is specific. The draft should aim at it.
+
+Then run the grep checks as the final gate. If the positive patterns landed, the negations usually follow. If the positive patterns missed, the grep checks alone will not save the prose; they will confirm that nothing is actively wrong, while the prose remains generic.
+
+### How this works in practice
+
+1. **Re-read positive patterns before drafting.** The voice profile's *What's Distinctly [writer]'s* section. Specific named moves.
+2. **Draft with each move in view.** Open verdict-first. Use header-payload colons where setup is followed by elaboration. Close with soften-then-assert. Binary-name hard decisions.
+3. **Run grep checks last.** Em-dash count, banned vocab, copula substitution, smart quotes, word count. They verify; they do not prompt.
+
+If a positive pattern is hard to land on a specific piece, the writing might be in the wrong register, or the piece may be fighting the voice. Do not force it. Note the conflict and either pick a different angle or capture it as a voice profile gap.
+
+### When grep alone is enough
+
+For older content getting cleaned up after the fact, grep-based purges are the appropriate tool. The piece is already shaped; the goal is scrubbing residual AI defaults from existing prose. Em-dash purges, banned-vocab replacements, smart-quote sweeps fit this case.
+
+For new prose where voice is part of the design, positive patterns first.
+
+### Provenance of this note
+
+The lesson surfaced twice in production drafting (Overture Sessions #24, #25). First drafts of the Origins narrative and the STRATEGY.md Purpose + Is/Isn't sections passed every grep check but read as competent-AI-prose on re-read. Second drafts, written *toward* the voice profile's positive patterns and grep-verified after, landed.
+
+---
+
 ## Voice across projects
 
 When maintaining voice consistency across multiple projects or contexts, the challenge is keeping the underlying voice recognizable while adapting to different formats and audiences.
