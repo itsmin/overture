@@ -185,6 +185,22 @@ Not every project needs the full framework. Most don't.
 
 For the full guide with "when to move up" signals, see the [Progression Guide](Progression.md).
 
+## Voice in Practice
+
+A long-running project accumulates AI-drafted prose: session summaries, commit messages, postmortems, eventually the docs themselves. Unguided, all of it sounds like the model, and readers notice. Overture treats voice as part of the setup. Here is the same bug-fix summary drafted twice.
+
+**No voice context.** A model left to its defaults produces something like:
+
+> Fixed a critical bug in the export pipeline — duplicate rows were appearing in the CSV output. The root cause was a race condition in the cache layer, which has now been comprehensively addressed. Additionally, we refactored the retry logic to be more robust, ensuring seamless recovery from transient failures. This isn't just a bug fix — it's a meaningful reliability improvement, allowing users to trust their exports again.
+
+**Drafted against a voice profile:**
+
+> The export pipeline was duplicating rows. Root cause: the cache layer let two refresh jobs run concurrently, and both wrote the same page (`export-cache.ts:141`). Fixed with a per-key lock and a regression test that trips if a second writer lands. The retry path had the sibling bug; it got the same lock. Two sessions of intermittent reports, one mechanism.
+
+Both drafts report the same fix. The first carries the tells: em-dashes as connective tissue, "robust" and "seamless", "Additionally", an "isn't just X" pivot, a participle tail. No single tell is damning; the density is what reads as machine output. The second was drafted toward a profile: verdict first, mechanism before fix, receipts in parentheses, a closer that lands.
+
+The profile is a file (`~/.overture/voice.md`). The session skills load it whenever the agent writes on your behalf, and [voice/Voice-Framework.md](voice/Voice-Framework.md) covers deriving one from your own writing. Same fix, different author.
+
 ---
 
 ## Provenance
