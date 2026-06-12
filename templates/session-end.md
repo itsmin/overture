@@ -6,6 +6,8 @@ Ensure clean handoff to the next session.
 
 **Operating mode**: Draft-first, review-second. You were present for the entire session — don't ask the user to recount what happened. Draft everything you can from session context (summary, queue reconciliation, verification assessment, deferred work, docs sync). Present the complete draft for review. Only ask questions for information you genuinely don't have (unspoken decisions, external testing, open threads the user hasn't mentioned).
 
+**Progress ledger.** Session-end is a multi-step ritual; the user should never wonder where the close-out stands. Before Step 1, present a roster: every step numbered, marked run or skip, each skip with its reason ("no metrics table", "repo is private with no public surfaces", "no working contract"). Then open each step with a `[N/M] Step name` line and close it with a one-line outcome: done (what changed), skipped (reason), or flagged (what needs attention). A skip without a reason is a bug; silent skipping is how steps get lost. Mirror the roster in Claude Code's task list and update statuses as steps complete; the text ledger still runs alongside it.
+
 ## Instructions
 
 ### 1. Session Summary
@@ -198,6 +200,8 @@ See `patterns/Settings-Hygiene.md` for the full protocol. Don't block session-en
 
 ### 12. Final Checklist
 
+Assemble this checklist from the ledger outcomes above. It is a receipt of what ran, not a fresh recitation; every line should trace to a `[N/M]` outcome.
+
 ```
 ## Session End Checklist
 
@@ -230,6 +234,8 @@ Ready to close:
 
 **Session complete. Safe to exit.**
 ```
+
+**Session-close commit convention (advisory)**: when committing the close, carry the state in the message: session number, CLAUDE.md size transition (e.g. `YELLOW 33.6k → GREEN 29.9k`), and the NEXT pointer. The git log becomes a session-by-session health record, readable at a glance without opening CLAUDE.md.
 
 ## Important Notes
 

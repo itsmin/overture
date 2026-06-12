@@ -16,6 +16,8 @@ Steps 0-2 are project-specific (customize or skip freely). Steps 3-7 are the str
 
 **Project-specific customizations are authoritative.** Before executing the flow below, locate the operating document's `SESSION WORKFLOW` section (the `At session-start:` subsection or equivalent). Any steps listed there are MANDATORY — they encode project-specific checks the generic framework can't know about (kit tables, schema docs, deployment endpoints, domain health). Merge them into the flow: when a project step and a generic step overlap, the project step wins; when the skill has something the operating doc doesn't, keep it. Don't skip project customizations because they're not in this skill — they exist because someone learned the hard way that the generic flow missed something.
 
+**Progress ledger.** Open each step with a `[N/M] Step name` line and close it with a one-line outcome: done, skipped (reason), or flagged (what). Skips always carry reasons. An up-front roster is optional here (session-start runs fast when the project is healthy); the ledger earns its keep when a health check stalls or a step turns up a discrepancy. If your tool has a native task or progress list, mirror progress there as well.
+
 ### Pre-Step: Personal Profile (optional)
 
 Overture's profile layer at `~/.overture/` carries personal customizations that apply across every project. Load whichever of these exist:

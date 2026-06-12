@@ -13,6 +13,10 @@ Ensure clean handoff to the next session.
 
 **Voice context (load if not already present):** If `~/.overture/voice.md` (or project-local `.claude/voice.md`) exists and is not in your current context, read it now. The session summary, work-queue entries, and any prose written to the operating document during session-end follow these voice rules. If `~/.overture/profile.md` exists and isn't in context, load it too — it informs decision authority, autonomy defaults, and collaboration preferences that may apply to session-end choices. Skip silently if neither file exists.
 
+**Progress ledger.** Session-end is a multi-step ritual; the user should never wonder where the close-out stands. Before Step 1, present a roster: every step numbered, marked run or skip, each skip with its reason ("no metrics table", "repo is private with no public surfaces", "no working contract"). Then open each step with a `[N/M] Step name` line and close it with a one-line outcome: done (what changed), skipped (reason), or flagged (what needs attention). A skip without a reason is a bug; silent skipping is how steps get lost.
+
+If your tool has a native task or progress list, mirror the roster there and update statuses as steps complete. The text ledger still runs. The task list reinforces it; it does not replace it.
+
 ## Instructions
 
 ### 1. Session Summary
@@ -201,6 +205,8 @@ Don't block session-end on this — just flag it.
 
 ### 12. Final Checklist
 
+Assemble this checklist from the ledger outcomes above. It is a receipt of what ran, not a fresh recitation; every line should trace to a `[N/M]` outcome.
+
 ```
 ## Session End Checklist
 
@@ -233,6 +239,8 @@ Ready to close:
 
 **Session complete. Safe to exit.**
 ```
+
+**Session-close commit convention (advisory)**: when committing the close, carry the state in the message: session number, operating-doc size transition (e.g. `YELLOW 33.6k → GREEN 29.9k`), and the NEXT pointer. The git log becomes a session-by-session health record, readable at a glance without opening the operating document.
 
 ## Notes
 

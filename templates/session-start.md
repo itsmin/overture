@@ -11,6 +11,8 @@ Skip steps that reference sections your CLAUDE.md doesn't have yet — not all p
 
 Steps 0-2 are project-specific (customize or skip freely). Steps 3-7 are the structural backbone shared across projects.
 
+**Progress ledger.** Open each step with a `[N/M] Step name` line and close it with a one-line outcome: done, skipped (reason), or flagged (what). Skips always carry reasons. An up-front roster is optional here (session-start runs fast when the project is healthy); the ledger earns its keep when a health check stalls or a step turns up a discrepancy. Mirror progress in Claude Code's task list as well.
+
 ### 0. Clean State
 
 Before loading context, ensure the workspace is ready.
