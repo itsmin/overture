@@ -113,37 +113,34 @@ Universal working preferences in `~/.claude/CLAUDE.md`.
 
 ## SESSION PROGRESS
 
-**Current**: Session #26 complete (June 12, 2026)
-**Status**: Phase 2 substantive delivery + sibling-project pattern harvest. README "Voice in Practice" section shipped (`57d2946`, 284w before/after demonstration, drafted positive-patterns-first per the #25 Drafting note). Progress ledger added to both session skills + both CC templates (`e7b07e2`): step roster at session-end entry, [N/M] step lines with one-line outcomes, skips always carry reasons, session-close commit convention (size transition + NEXT in the message). Ledger design extracted from Fortomino/itsmin.com recon; five further recon candidates captured to P2.
+**Current**: Session #26 complete (June 12, 2026); #27 planning interlude (June 14, 2026) — Fortomino autonomous-execution audit + #28 build queued
+**Status**: Planning interlude (no code). Audited Fortomino's autonomous-execution mode; decided to build it as an opt-in Overture pattern + tooling, queued Session #28 after README hero. Detail in the #27 interlude entry + #28 UPCOMING entry.
 **NEXT**: Session #27 — README hero rewrite. Biggest visibility surface; STRATEGY framing settled, Voice in Practice now live raises the bar on the hero. Current tagline is doing real work; replacing it requires earning the change. Dedicated brainstorm.
-**Last queue hygiene**: Session #26 (P1 (e) advanced via Voice in Practice ship; UPCOMING renumbered; recon findings captured as P2 #6; COMPLETE trimmed to ~10 rows)
+**Last queue hygiene**: Session #27 interlude (UPCOMING #28 inserted + renumbered; COMPLETE Notes + session entries compressed at close)
 
 ### Pending Verifications
-*(Phase 4a fix verification absorbed into Deferred Work — see Phase 4b row.)*
+*(Phase 4a fix verification → Deferred Work, Phase 4b row.)*
 
 ### Continuing / Open Threads (for Session #27)
-- **Wider Overture em-dash + AI-tells purge** — STRATEGY done #25 (20→1 load-bearing). Remaining surfaces: README outside Origins/Provenance/Voice-in-Practice (incl. heading-case question deferred from #26), Progression, Working-With-Claude-Code, workflow/, patterns/ (heaviest at ~95), choral/. Dedicated session or folded into #27 where the editor is in README anyway.
-- **Phase 2 brainstorm work remaining** — Origins #24; STRATEGY Purpose + Is/Isn't #25; README voice section #26. Remaining: README hero rewrite (#27), LinkedIn derivative (parallel P2).
-- **Plugin version bump pending** — #26 skill changes live in repo source, not in the installed 1.0.1 plugin cache. Fold the version bump into Phase 3 hygiene (CHANGELOG + version consistency already queued there).
+- **Wider em-dash + AI-tells purge** — see UPCOMING #3 (README leftovers incl. heading-case question, Progression, Working-With-Claude-Code, workflow/, patterns/ ~95, choral/); foldable into #27.
+- **Plugin version bump pending** — #26 skill changes live in repo source, not the installed 1.0.1 plugin cache. Fold into Phase 3 hygiene (CHANGELOG + version consistency already queued).
 
-### Session #26 Complete (June 12, 2026)
+### Session #27 Planning Interlude (June 14, 2026)
 
-**README Voice in Practice + progress ledger in session skills**
+**Fortomino autonomous-execution audit → Session #28 build queued**
 
-- Brainstorm run self-directed (user pre-approved); spec `dbae4fe`, plan `365ff5e`, decisions documented for post-hoc review.
-- **Voice in Practice** (`57d2946`): new README H2 between How It Works and Provenance. Same bug-fix summary drafted twice (unguided model vs voice profile), naming paragraph, pointer to `voice/` + profile mechanism. 284w. Drafted toward positive patterns first, grep-gated after (0 em-dashes outside exhibits, 0 banned vocab, 0 curly quotes).
-- **Progress ledger** (`e7b07e2`): session-end gets entry roster + [N/M] step lines + one-line outcomes + receipt checklist + session-close commit convention; session-start gets the lighter variant. Skill/template pairs synced. Extracted from Fortomino (state-transition commits, reconciliation metadata) + itsmin.com (automated boundary checks) recon.
-- Five recon candidates captured to P2 (verification ladder, compute-only hooks, size-check hook, severity-graded privacy gate, contract template upgrade).
+- Read Fortomino's autonomous build-to-playtest mode end-to-end (CLAUDE.md §5, memory `feedback_autonomous_execution`, 287-line `settings.local.json`, `~/.overture/profile.md` line 53).
+- Audit finding: bare tool-level `Bash` makes the merge/deploy "hard gates" behavioral-only and voids `Settings-Hygiene.md`'s dangerous-by-absence model; the contradiction ships live in the kit today (profile.md vs Settings-Hygiene 83-86).
+- Decision (user-confirmed): full pattern + tooling build, opt-in not default, queued as Session #28 (after README hero #27). Better implementation = broad `Bash` for flow + mechanical gating via `deny`>`ask`>`allow` + PreToolUse hook backstop; enforcement scales with blast radius. Full design captured in the #28 UPCOMING entry.
+- No code written. Doc compressed at close (YELLOW 32.8k → GREEN; #25 entry condensed, #28 entry tightened).
 
-### Session #25 Complete (May 22, 2026)
+### Session #26 Complete (June 12, 2026, compressed)
 
-**STRATEGY.md voiced sections + em-dash purge + Drafting note codified**
+README "Voice in Practice" H2 shipped (`57d2946`, 284w before/after; positive-patterns-first, grep-gated). Progress ledger added to both session skills + CC templates (`e7b07e2`): entry roster + [N/M] step lines + outcomes + receipt checklist + session-close commit convention (session-start gets lighter variant). Extracted from Fortomino/itsmin.com recon; five further recon candidates captured to P2 #6. Spec `dbae4fe`, plan `365ff5e`.
 
-- Brainstorm via `superpowers:brainstorming` → spec (`e8c26cb`) → plan (`4f2de9b`) → inline execution. 3 calls locked: distinct jobs for Purpose vs Is/Isn't; two-paragraph contrast for Is/Isn't; specialist mode lands at the close.
-- **Purpose + Is/Isn't voiced** (`9247fc0`): Purpose 53w (verdict-first definition; "the discipline is the product" closer). Is/Isn't 119w two paragraphs (Is = composition + 3 lanes; Isn't = declined claims + specialist mode soften-then-assert). Status note refreshed.
-- **STRATEGY.md em-dash purge** (`f997e11`): 20 → 1 load-bearing across Distinctive Lanes, Coexisting Lanes, Scan Discipline, Anti-Atrophy, Marketplace Posture. Header-payload em-dashes → colons; receipts → parens; clause-splits → periods.
-- **Drafting note codified** (`6fec5b5`): new H2 in `voice/Voice-Reference.md` encoding the #24+#25 finding (grep necessary but not sufficient; draft toward voice.md positive patterns first, grep-verify second; "When grep alone is enough" sub-section distinguishes purge work from new prose). Walks the talk (0 em-dashes, verdict-first, soften-then-assert).
-- STRATEGY.md is voice-clean end-to-end. All prose placeholders cleared.
+### Session #25 Complete (May 22, 2026, compressed)
+
+STRATEGY.md voiced + em-dash purge + Drafting note. Purpose (53w) + Is/Isn't (119w two-paragraph contrast) voiced (`9247fc0`); STRATEGY em-dash purge 20→1 load-bearing (`f997e11`); Drafting note H2 added to `voice/Voice-Reference.md` (`6fec5b5`) encoding the #24+#25 finding (draft toward voice.md positive patterns first, grep-verify second; "When grep alone is enough" distinguishes purge from new prose). Brainstorm → spec `e8c26cb` → plan `4f2de9b`. STRATEGY voice-clean end-to-end; all prose placeholders cleared.
 
 ### Session #24 Complete (May 22, 2026, compressed)
 
@@ -183,15 +180,17 @@ See [`docs/sessions/SESSIONS_01_16_ARCHIVE.md`](docs/sessions/SESSIONS_01_16_ARC
 
 1. **Session #27: README hero rewrite** — Biggest visibility surface, biggest stakes. STRATEGY framing fully settled; Voice in Practice (#26) now live raises the bar on the hero. Current tagline ("The setup before the performance...") is doing real work; replacing it requires earning the change. Dedicated brainstorm. Note: Voice in Practice cites the "setup" tagline framing ("voice as part of the setup") — if the hero changes, check that callback.
 
-2. **Session #28+: Wider em-dash + AI-tells purge** — STRATEGY done #25. Remaining: README outside Origins/Provenance/Voice-in-Practice (incl. heading-case question), Progression, Working-With-Claude-Code, workflow/, patterns/ (heaviest at ~95), choral/. Mechanical, low-risk. Could be dedicated session or folded into #27 where the editor is in README anyway.
+2. **Session #28: Autonomous Execution Mode — full command/skill/hook build** *(NEW, queued by #27-interlude after Fortomino recon; START with `superpowers:brainstorming`)* — Capture Fortomino's autonomous build-to-playtest posture as a reusable Overture pattern with tooling. **Core design finding:** the mode has two layers — policy (own spec→plan→implement→verify, no approval gates; merge-to-main + public-deploy stay gated) and mechanism (suppress permission-prompt friction). Fortomino's mechanism is **broken**: bare tool-level `Bash` in allow + empty deny makes the two hard gates *behavioral-only* (`git push`/`git merge` auto-approve; the gate survives only if the model remembers the rule). **Better implementation = separate the concerns:** broad `Bash` for *flow*, plus mechanical gating of irreversible ops via `deny`>`ask`>`allow` precedence, with a **PreToolUse hook** as the hard backstop for high-blast-radius projects (static `ask`/`deny` patterns are as form-leaky as the allowlist — `git -C x push`, `cd x && push` evade them — only a hook reading the *resolved* command guarantees the block). Principle: **enforcement scales with blast radius** (solo game = behavioral + static ask; PII/public product = hook-enforced). **Build scope (5):** (1) `patterns/Autonomous-Execution.md` (tool-agnostic: posture + allowlist-can't-work finding + broad-allow/mechanical-gate + blast-radius tiering); (2) reconcile `Settings-Hygiene.md` — add autonomous-mode exception (broad Bash voids "dangerous-by-absence," lines 83-86, so explicit gates mandatory); (3) operating-doc template block (declarable "Autonomous Execution Mode" + per-project gate list); (4) CC command/skill `/overture:autonomous-on|-off` (writes clean profile + gates on, scopes Bash back at session-end — manual process already failed twice in Fortomino); (5) PreToolUse hook template in `templates/hooks/`. **Verdict: opt-in, NOT default** (conflicts with `~/.claude/CLAUDE.md` partnership/ask/privacy defaults; safe only where worst-case is cheap). **LIVE INCONSISTENCY to resolve here:** `~/.overture/profile.md` line 53 (added 2026-06-14) says grant bare `Bash` upfront; `Settings-Hygiene.md` lines 83-86 say never do that — component (2) must reconcile the two opposed instructions shipping in the kit today. Source: Fortomino `CLAUDE.md` §5 + memory `feedback_autonomous_execution` + its `settings.local.json` (287-line allowlist, ~280 lines dead under bare Bash — a Settings-Hygiene cruft case study).
 
-3. **Parallel P2: LinkedIn derivative of Origins** — Essay-register first test (voice.md beyond technical-narrative). Different register; will surface voice.md gaps. Origins is shipped + STRATEGY positioning final, so timing is open.
+3. **Session #29+: Wider em-dash + AI-tells purge** — STRATEGY done #25. Remaining: README outside Origins/Provenance/Voice-in-Practice (incl. heading-case question), Progression, Working-With-Claude-Code, workflow/, patterns/ (heaviest at ~95), choral/. Mechanical, low-risk. Could be dedicated session or folded into #27 where the editor is in README anyway.
 
-4. **Parallel P2 — Phase 4b Gemini retest** *(demoted from #20's plan)* — empirically valuable; quota constraint dissolved by time. Run when convenient; rolls into Phase 4c (framework doc consolidation). Note: #26 skill edits widen the retest surface (progress ledger is new cross-tool behavior).
+4. **Parallel P2: LinkedIn derivative of Origins** — Essay-register first test (voice.md beyond technical-narrative). Different register; will surface voice.md gaps. Origins is shipped + STRATEGY positioning final, so timing is open.
 
-5. **Parallel P2 — CLAUDE.md tracking normalization** (pxtxt, itsmin.com) — Each project's own session: privacy audit → move sensitive bits to `.claude/CLAUDE.local.md` → remove `CLAUDE.md` from gitignore → commit. Not blocking; required for fresh-clone portability.
+5. **Parallel P2 — Phase 4b Gemini retest** *(demoted from #20's plan)* — empirically valuable; quota constraint dissolved by time. Run when convenient; rolls into Phase 4c (framework doc consolidation). Note: #26 skill edits widen the retest surface (progress ledger is new cross-tool behavior).
 
-6. **Sessions #29+: Phase 3 — marketplace submission + community directory PRs** — Hygiene pass (CHANGELOG, validate, version consistency, **plugin version bump so installed plugin picks up #26 skill changes**), submit to Anthropic-curated marketplace, opportunistic PRs. Sequenced after Phase 2 prose work fully lands.
+6. **Parallel P2 — CLAUDE.md tracking normalization** (pxtxt, itsmin.com) — Each project's own session: privacy audit → move sensitive bits to `.claude/CLAUDE.local.md` → remove `CLAUDE.md` from gitignore → commit. Not blocking; required for fresh-clone portability.
+
+7. **Sessions #30+: Phase 3 — marketplace submission + community directory PRs** — Hygiene pass (CHANGELOG, validate, version consistency, **plugin version bump so installed plugin picks up #26 skill changes**), submit to Anthropic-curated marketplace, opportunistic PRs. Sequenced after Phase 2 prose work fully lands.
 
 ### COMPLETE (Recent)
 
@@ -199,23 +198,23 @@ See [`docs/sessions/SESSIONS_01_16_ARCHIVE.md`](docs/sessions/SESSIONS_01_16_ARC
 |---------|---------|-------|
 | Voice in Practice README section | #26 | New H2 between How It Works and Provenance: same bug-fix summary drafted twice (unguided vs voice profile), naming paragraph, pointer to `voice/` + profile mechanism. 284w, drafted positive-patterns-first per #25 Drafting note, grep-gated after. Spec `dbae4fe`, plan `365ff5e`, ship `57d2946`. |
 | Progress ledger in session skills + templates | #26 | Session-end: entry roster + [N/M] step lines + one-line outcomes (skips always carry reasons) + receipt checklist + session-close commit convention (size transition + NEXT in message). Session-start: lighter variant. Skill/template pairs synced; skills v1.4, templates v4/v3. Extracted from Fortomino/itsmin.com recon. Ship `e7b07e2`. |
-| Drafting note codified in Voice-Reference.md | #25 | New H2 section between Encoding patterns and Voice across projects. Encodes #24+#25 finding: grep checks necessary but not sufficient; draft toward voice.md positive patterns first, grep-verify second. "When grep alone is enough" sub-section distinguishes purge work from new prose. Walks the talk (0 em-dashes, verdict-first opening, soften-then-assert close). Commit `6fec5b5`. |
-| STRATEGY.md em-dash purge (5 remaining sections) | #25 | 20 → 1 load-bearing across Distinctive Lanes, Coexisting Lanes, Scan Discipline, Anti-Atrophy, Marketplace Posture. Header-payload em-dashes → colons; receipts → parens; clause-splits → periods. STRATEGY is voice-clean end-to-end. Commit `f997e11`. |
-| STRATEGY.md Purpose + What Overture Is, and Isn't voiced | #25 | Two placeholder blocks replaced with voiced prose per approved spec. Purpose 53w (verdict-first definition + role + "discipline is the product" closer). Is/Isn't 119w two-paragraph contrast (Is = composition + 3 lanes; Isn't = declined claims + specialist mode soften-then-assert at section close). 1 load-bearing em-dash; 0 banned vocab; 0 copula substitution. Spec `e8c26cb`, plan `4f2de9b`, ship `9247fc0`. |
-| Origins narrative shipped to README + STRATEGY | #24 | 328w README integration replacing Provenance paragraph (commit `9ae1573`); 122w STRATEGY derivation (`753ef63`). Spec + plan committed (`e8a723c`, `1d1ac48`). Drafting finding: v1 passed all grep-checks but read as competent-AI-prose; v2 was rewritten toward voice.md positive patterns. |
-| Voice purge of voice docs + project-copies decision | #23 | `voice/Voice-Framework.md` + `voice/Voice-Reference.md` cleaned (47+36 em-dashes → 0; sentence-case headings). 7 project copies deleted; single source at `~/.overture/voice.md`. Commit `d829a9f`. |
-| Voice derivation + AI-tells discovery + skill-wire | #22 | `~/.overture/voice.md` refreshed (4-register, AI-tells, paired-sample diff). `Voice-Framework.md` + `Voice-Reference.md` absorbed AI-tells methodology. Skills auto-load voice.md. Voice.md propagated to ~/Desktop + 7 projects. |
-| Strategic reframe + Phase 1 execution | #21 | Specialist mode reaffirmed. `STRATEGY.md` skeleton + inaugural `SCAN-LOG.md` shipped. First-party plugin references added to all 3 skills. Session-end size-check rule strengthened (`d389d1b`). CLAUDE.md compressed. |
-| First cross-tool validation + skills audit & fixes | #20 | Gemini CLI 0.38.2 executed `overture-init` end-to-end (Phase 2 PASS). Phase 1 audit found portability gaps; fixed. Phase 4a fixes from output audit. Phase 4b retest demoted to P2 in #21. |
+| Drafting note codified in Voice-Reference.md | #25 | New H2 encoding the #24+#25 finding (draft toward voice.md positive patterns first, grep-verify second). Commit `6fec5b5`. |
+| STRATEGY.md em-dash purge (5 sections) | #25 | 20→1 load-bearing; STRATEGY voice-clean end-to-end. Commit `f997e11`. |
+| STRATEGY.md Purpose + Is/Isn't voiced | #25 | Purpose 53w + Is/Isn't 119w two-paragraph contrast. Spec `e8c26cb`, plan `4f2de9b`, ship `9247fc0`. |
+| Origins narrative shipped to README + STRATEGY | #24 | 328w README (`9ae1573`) + 122w STRATEGY (`753ef63`). Spec/plan `e8a723c`/`1d1ac48`. |
+| Voice purge of voice docs + project-copies decision | #23 | Voice-Framework/Reference cleaned (47+36→0); 7 project copies deleted, single source at `~/.overture/voice.md`. Commit `d829a9f`. |
+| Voice derivation + AI-tells discovery + skill-wire | #22 | `~/.overture/voice.md` refreshed (4-register, AI-tells); methodology absorbed into voice docs; skills auto-load voice.md. |
+| Strategic reframe + Phase 1 execution | #21 | Specialist mode reaffirmed; `STRATEGY.md` + `SCAN-LOG.md` shipped; first-party plugin refs in all 3 skills (`d389d1b`). |
+| First cross-tool validation + skills audit | #20 | Gemini CLI executed `overture-init` end-to-end (Phase 2 PASS); portability gaps fixed; 4b retest demoted to P2. |
 | *...and earlier foundational work (#1-#19)* | #1-#19 | See [`docs/sessions/SESSIONS_01_16_ARCHIVE.md`](docs/sessions/SESSIONS_01_16_ARCHIVE.md) + [`SESSIONS_17_22_ARCHIVE.md`](docs/sessions/SESSIONS_17_22_ARCHIVE.md). |
 
 ### P2: FUTURE WORK
 
 1. **Active ecosystem prompting** *(Session #21 idea)* — extend #21's passive Companion Capabilities references with in-flow prompting: surface the right companion skill at the moment of use. Options: (a) reference card / `references/ecosystem-trigger-map.md`, (b) session-start suggesting companions from queued priorities, (c) UserPromptSubmit hook on signal phrases. Reference card is lightest. Decide after Phase 2 lands.
-2. **Decay reference** — Decay and memory lifecycle templates. **Recommendation (Session #5)**: leave as documented gap. Size Management covers the actionable part. Revisit only if a generalizable pattern emerges.
+2. **Decay reference** — Decay/memory lifecycle templates. Leave as documented gap (#5); Size Management covers the actionable part. Revisit only if a generalizable pattern emerges.
 3. **Methodology doc lazy refactor** — Apply glossary terms to existing docs (Working-With-Claude-Code.md, Workflow Framework, Progression, patterns) as they're touched. No dedicated refactoring pass unless needed.
 4. **Adapter layer** — Build only after testing on a second tool reveals what actually needs adapting. Don't pre-build from theory.
-5. **Settings hygiene review** *(Session #21 flag, drift confirmed #25)* — 61 permission entries in `.claude/settings.local.json` (was 51 at #21). Quick scan for clusters replaceable by broader patterns, stale one-offs, anything that looks like a stale credential. ~5-10 minutes.
+5. **Settings hygiene review** *(#21 flag, drift confirmed #25)* — 61 permission entries in `.claude/settings.local.json` (51 at #21). Scan for broad-pattern consolidation, stale one-offs, stray credentials. ~5-10 min.
 6. **Sibling-project pattern harvest** *(Session #26 recon, Fortomino + itsmin.com)* — five candidates, each its own small upstream: (a) **verification ladder** — typed verification stages (unit → E2E → probe → live) strengthening session-end Step 3; (b) **compute-only hook principle** — hooks compute live state, never duplicate source-of-truth content; encode in `templates/hooks/README.md` + scripts; (c) **size-check hook enforcement** — WARN/FAIL thresholds in the session-end hook script (operationalizes Size-Management); (d) **severity-graded privacy gate** — block/warn severities at compile/deploy time for `patterns/Privacy-Boundary.md`; (e) **working-contract upgrade** — PHASES / numbered RECOMMENDATIONS / OWNERSHIP BOUNDARY / live STATUS sections for `templates/contract.md` + Choral-Pattern. Progress-ledger + commit-convention candidates already shipped #26.
 
 ### PARKING LOT
