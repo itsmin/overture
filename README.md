@@ -1,16 +1,16 @@
 # Overture
 
-The setup before the performance. A working framework for getting more out of AI coding tools like [Claude Code](https://claude.ai/code) — so your agent remembers what you're working on, session after session.
+**A memory file remembers. A workflow compounds.** Your agent already keeps a CLAUDE.md; Overture turns it into a managed operating document: a work queue, deliberate session handoffs, and hygiene that fights the drift. It also adds craft the base tool has no answer for — the agent writes in your voice, and the same system runs one project or a whole portfolio.
 
-Also works with [Codex CLI](https://openai.com/index/codex-cli), [Gemini CLI](https://github.com/google-gemini/gemini-cli), and any tool supporting the [Agent Skills](https://agentskills.io) standard.
+Works with [Claude Code](https://claude.ai/code), [Codex CLI](https://openai.com/index/codex-cli), [Gemini CLI](https://github.com/google-gemini/gemini-cli), and any tool on the [Agent Skills](https://agentskills.io) standard.
 
 ---
 
 ## The Problem This Solves
 
-You open Claude Code, do good work, close the session. Next time, it remembers nothing. You re-explain your project, re-state your priorities, re-describe what you were working on. Context lost. Work gets dropped. You become the sole carrier of project state.
+Your agent keeps a memory file now, so it remembers facts about your project. But a file that only grows isn't a workflow. Priorities go stale, the memory bloats, and the thing you actually need next session — what was in flight, what got deferred, what's next — was never captured as more than prose. The work still lives in your head; the agent just has better notes.
 
-Overture fixes that. It gives your agent a structured file — your project's current state, priorities, work queue, and session handoffs — so every session starts where the last one ended.
+Overture fixes that. It gives your agent a managed operating document: current state, priorities, a work queue, and deliberate session handoffs, plus the hygiene to keep it from rotting as it grows. Every session starts where the last one ended, and the memory gets more useful instead of just bigger.
 
 Evolved through 480+ working sessions across real products with real users and real deadlines. Not theoretical patterns. What survived contact with production work.
 
