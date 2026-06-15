@@ -37,7 +37,7 @@
 
 | File | Purpose | Audience | Status |
 |------|---------|----------|--------|
-| `README.md` | Entry point — problem, quick start, orientation, kit overview. Voice in Practice section (before/after demonstration) added #26. | You | **v5** — Session #26 |
+| `README.md` | Entry point — problem, quick start, orientation, kit overview. Voice in Practice section added #26. Hero + Problem section rewritten onto the OOTB-aware wedge #27. | You | **v6** — Session #27 |
 | `Progression.md` | Progression guide — day-1 paths, level-by-level experience, when to evolve | You | **v2** — April 9, 2026 |
 | `Working-With-Claude-Code.md` | Conceptual framework: ICL foundations, memory architecture, Levels 0-4, Choral, Lyrical | You | Updated March 22, 2026 |
 | `workflow/Claude-Code-Workflow-Framework.md` | The methodology: session management, CLAUDE.md anatomy, documentation hygiene | You | **v2.0** — March 2026 |
@@ -251,7 +251,7 @@ See [`docs/sessions/SESSIONS_01_16_ARCHIVE.md`](docs/sessions/SESSIONS_01_16_ARC
 |----------|------|-------------|---------|
 | Strategy | `STRATEGY.md` | Session #25 | Distinctive lanes, coexisting lanes, scan discipline, marketplace posture. **All prose complete #25** (Origins #24, Purpose + Is/Isn't #25). Voice-clean end-to-end after em-dash purge #25 (20 → 1 load-bearing). |
 | Scan Log | `SCAN-LOG.md` | Session #21 | Quarterly ecosystem scans. Inaugural Q2 2026 entry. Next: Jul 2026. |
-| README | `README.md` | Session #26 | Entry point — plugin install, profile, orientation. Origins narrative #24 (328w). **Voice in Practice section #26** (before/after demonstration between How It Works and Provenance). |
+| README | `README.md` | Session #27 | Entry point — plugin install, profile, orientation. Origins narrative #24 (328w). Voice in Practice section #26. **Hero rewritten #27** (OOTB-aware wedge, "A memory file remembers. A workflow compounds."); Problem section reconciled to match. |
 | Glossary | `glossary.md` | Session #11 | Controlled vocabulary for tool-agnostic terminology |
 | Plugin Manifest | `.claude-plugin/plugin.json` | Session #13 | Claude Code plugin manifest |
 | Marketplace Manifest | `.claude-plugin/marketplace.json` | Session #13 | Self-hosted marketplace for plugin distribution |
