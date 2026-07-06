@@ -24,8 +24,9 @@
 
 | File | Purpose | Audience | Status |
 |------|---------|----------|--------|
-| `.claude-plugin/plugin.json` | Claude Code plugin manifest | Agent | **v1** — April 2026 |
-| `.claude-plugin/marketplace.json` | Self-hosted marketplace manifest | Agent | **v1** — April 2026 |
+| `.claude-plugin/plugin.json` | Claude Code plugin manifest | Agent | **v1.1.0** — July 2026 |
+| `.claude-plugin/marketplace.json` | Self-hosted marketplace manifest | Agent | **v1.1** — July 2026 (metadata description) |
+| `CHANGELOG.md` | Plugin version history (1.0.0 → 1.1.0) | Both | **v1** — July 2026 |
 | `commands/init.md` | CC plugin init command — `/overture:init` | Agent | **v1** — April 2026 |
 | `skills/overture-init/SKILL.md` | Init skill (Agent Skills format) — cross-tool project setup. Step 6 ecosystem surfacing added #21. | Agent | **v1.2** — Session #21 |
 | `skills/overture-init/references/operating-document-template.md` | Tool-agnostic operating document template | Both | **v1.1** — Session #20 |
@@ -113,38 +114,37 @@ Universal working preferences in `~/.claude/CLAUDE.md`.
 
 ## SESSION PROGRESS
 
-**Current**: Session #26 complete (June 12, 2026); #27 planning interlude (June 14, 2026) — Fortomino autonomous-execution audit + #28 build queued
-**Status**: Planning interlude (no code). Audited Fortomino's autonomous-execution mode; decided to build it as an opt-in Overture pattern + tooling, queued Session #28 after README hero. Detail in the #27 interlude entry + #28 UPCOMING entry.
-**NEXT**: Session #27 — README hero rewrite. Biggest visibility surface; STRATEGY framing settled, Voice in Practice now live raises the bar on the hero. Current tagline is doing real work; replacing it requires earning the change. Dedicated brainstorm.
-**Last queue hygiene**: Session #27 interlude (UPCOMING #28 inserted + renumbered; COMPLETE Notes + session entries compressed at close)
+**Current**: Session #27 complete (June 15, 2026); July 6 hygiene sitting — plugin 1.1.0 published per coordinator contract
+**Status**: Publish gap closed (coordinator contract `choral/contracts/portfolio-overture.md`, Jul 6). #27 shipped Jun 15 without `/session-end`; close-out reconciled retroactively in the Jul 6 sitting. Plugin bumped 1.0.1 → 1.1.0 with CHANGELOG.md + validate + tag v1.1.0; all pushed. Siblings pick up #20-#26 skill changes via `/plugin update`.
+**NEXT**: Session #28 — Autonomous Execution Mode (full command/skill/hook build; START with `superpowers:brainstorming`). Parked during the Jul 6 housekeeping week by coordinator contract; full design intact in UPCOMING #1.
+**Last queue hygiene**: July 6 sitting (#27 UPCOMING entry cleared + renumbered; #27 close entry written; #24/#25 entries merged)
 
 ### Pending Verifications
 *(Phase 4a fix verification → Deferred Work, Phase 4b row.)*
 
-### Continuing / Open Threads (for Session #27)
-- **Wider em-dash + AI-tells purge** — see UPCOMING #3 (README leftovers incl. heading-case question, Progression, Working-With-Claude-Code, workflow/, patterns/ ~95, choral/); foldable into #27.
-- **Plugin version bump pending** — #26 skill changes live in repo source, not the installed 1.0.1 plugin cache. Fold into Phase 3 hygiene (CHANGELOG + version consistency already queued).
+### Continuing / Open Threads (for Session #28)
+- **Wider em-dash + AI-tells purge** — see UPCOMING #2 (README leftovers incl. heading-case question, Progression, Working-With-Claude-Code, workflow/, patterns/ ~95, choral/). Mechanical; foldable into any session.
+- **Voice in Practice "setup" callback** — README ~line 190 ("voice as part of the setup") echoed the old hero tagline; reads fine standalone post-#27 but the echo is gone. Optional touch-up on the next README pass.
 
-### Session #27 Planning Interlude (June 14, 2026)
+### July 6, 2026 Hygiene Sitting (coordinator contract)
 
-**Fortomino autonomous-execution audit → Session #28 build queued**
+Executed `choral/contracts/portfolio-overture.md` (publish gap: #27 README + plugin bump sitting unpushed while Min actively interviews). Privacy audit of pending commits PASS → CHANGELOG.md authored (actual 1.0.1→1.1.0 delta spans #20-#26, wider than the contract's "#22+#26") → plugin.json 1.1.0 + marketplace metadata description (`claude plugin validate` clean) → tag v1.1.0 → push. #27 close-out reconciled retroactively; STATUS written back to the contract.
 
-- Read Fortomino's autonomous build-to-playtest mode end-to-end (CLAUDE.md §5, memory `feedback_autonomous_execution`, 287-line `settings.local.json`, `~/.overture/profile.md` line 53).
-- Audit finding: bare tool-level `Bash` makes the merge/deploy "hard gates" behavioral-only and voids `Settings-Hygiene.md`'s dangerous-by-absence model; the contradiction ships live in the kit today (profile.md vs Settings-Hygiene 83-86).
-- Decision (user-confirmed): full pattern + tooling build, opt-in not default, queued as Session #28 (after README hero #27). Better implementation = broad `Bash` for flow + mechanical gating via `deny`>`ask`>`allow` + PreToolUse hook backstop; enforcement scales with blast radius. Full design captured in the #28 UPCOMING entry.
-- No code written. Doc compressed at close (YELLOW 32.8k → GREEN; #25 entry condensed, #28 entry tightened).
+### Session #27 Complete (June 15, 2026, reconciled July 6)
+
+README hero rewritten onto the OOTB-aware wedge: "A memory file remembers. A workflow compounds." Problem section reconciled to match. Spec `93a2455`, plan `f4be9af`, ship `896f191`, kit table `7e48f1f`. Session ended without `/session-end`; closed retroactively in the Jul 6 sitting. Voice in Practice "setup" callback checked: reads fine standalone, tagline echo gone (open thread).
+
+### Session #27 Planning Interlude (June 14, 2026, compressed)
+
+Fortomino autonomous-execution audit: bare tool-level `Bash` in allow makes the merge/deploy hard gates behavioral-only, voiding Settings-Hygiene's dangerous-by-absence model; contradiction live in the kit (profile.md line 53 vs Settings-Hygiene 83-86). Decision (user-confirmed): full opt-in pattern + tooling build queued as Session #28; design in the #28 UPCOMING entry. No code.
 
 ### Session #26 Complete (June 12, 2026, compressed)
 
 README "Voice in Practice" H2 shipped (`57d2946`, 284w before/after; positive-patterns-first, grep-gated). Progress ledger added to both session skills + CC templates (`e7b07e2`): entry roster + [N/M] step lines + outcomes + receipt checklist + session-close commit convention (session-start gets lighter variant). Extracted from Fortomino/itsmin.com recon; five further recon candidates captured to P2 #6. Spec `dbae4fe`, plan `365ff5e`.
 
-### Session #25 Complete (May 22, 2026, compressed)
+### Sessions #24-#25 Complete (May 22, 2026, compressed)
 
-STRATEGY.md voiced + em-dash purge + Drafting note. Purpose (53w) + Is/Isn't (119w two-paragraph contrast) voiced (`9247fc0`); STRATEGY em-dash purge 20→1 load-bearing (`f997e11`); Drafting note H2 added to `voice/Voice-Reference.md` (`6fec5b5`) encoding the #24+#25 finding (draft toward voice.md positive patterns first, grep-verify second; "When grep alone is enough" distinguishes purge from new prose). Brainstorm → spec `e8c26cb` → plan `4f2de9b`. STRATEGY voice-clean end-to-end; all prose placeholders cleared.
-
-### Session #24 Complete (May 22, 2026, compressed)
-
-Origins narrative shipped to README (`9ae1573`, 328w) + STRATEGY.md (`753ef63`, 122w). Brainstormed D+B hybrid spine (ecosystem-evolution earned via 480+ session provenance), fire-by-fire structure, third-person clinical register. Spec `e8a723c`, plan `1d1ac48`. Sessions #1-#16 archived to `docs/sessions/SESSIONS_01_16_ARCHIVE.md`. Drafting finding surfaced: v1 passed all grep-checks but read as competent-AI-prose; v2 required writing toward voice.md positive patterns. Finding encoded in Voice-Reference.md as "Drafting note" H2 in #25.
+Origins narrative shipped (README 328w `9ae1573` + STRATEGY 122w `753ef63`); STRATEGY Purpose + Is/Isn't voiced + em-dash purge 20→1 (`9247fc0`, `f997e11`); Drafting note H2 codified in `voice/Voice-Reference.md` (`6fec5b5`): draft toward voice.md positive patterns first, grep-verify second (v1 passed grep but read as competent-AI-prose). Detail in COMPLETE table + archives.
 
 ### Session #23 Complete (May 22, 2026, compressed)
 
@@ -166,41 +166,39 @@ See [`docs/sessions/SESSIONS_01_16_ARCHIVE.md`](docs/sessions/SESSIONS_01_16_ARC
 
 **P1: Phase 2 — Voice elevation** *(per Session #21 strategic reframe; voice is Overture's most defensible distinctive)*
 - (a)-(d) **DONE #22-#23**: voice derivation pass (`~/.overture/voice.md` refreshed, 4-register + AI-tells), methodology baked into Voice-Framework/Reference, skills auto-load voice.md, voice-doc em-dash purge (47+36 → 0) + project copies deleted.
-- (e) **PARTIAL — Origins SHIPPED #24** (README 328w + STRATEGY 122w); **Purpose + Is/Isn't SHIPPED #25** (STRATEGY 53w + 119w); **README voice section SHIPPED #26** (Voice in Practice, 284w before/after). Remaining: README hero rewrite (#27), LinkedIn derivative (parallel P2).
+- (e) **PARTIAL — Origins SHIPPED #24** (README 328w + STRATEGY 122w); **Purpose + Is/Isn't SHIPPED #25** (STRATEGY 53w + 119w); **README voice section SHIPPED #26** (Voice in Practice, 284w before/after); **README hero SHIPPED #27** (OOTB-aware wedge). Remaining: LinkedIn derivative (parallel P2).
 - (f) Pattern docs "Related capabilities" footers cross-referencing ecosystem-map (structural, no brainstorm needed). Can fold into (e).
 - (g) **DONE #25**: Drafting note codified in `voice/Voice-Reference.md` (positive-patterns-first lesson from #24+#25 production drafting).
 
 **P2: Phase 3 — Marketplace submission + community distribution** *(sequenced after Phase 2; ~1-2 sessions)*
-- Submission hygiene: CHANGELOG.md (missing), `claude plugin validate` pass, version-consistency check (plugin.json / CHANGELOG / git tags), README polish post-Phase 2.
+- Submission hygiene **DONE Jul 6 sitting** (CHANGELOG.md authored, plugin.json 1.1.0 + tag v1.1.0, marketplace metadata description, validate clean). Remaining: README polish post-Phase 2 (optional).
 - Submit to Anthropic-curated marketplace via form at `clau.de/plugin-directory-submission`. Curated review ~few days.
 - Opportunistic: ClaudePluginHub auto-indexing, awesome-agent-skills PR (~30 min), claudemarketplaces.com listing.
 - Optional capstone: Medium/Substack post on voice-as-design-material (indexed artifact, not community-building).
 
 ### UPCOMING SESSIONS
 
-1. **Session #27: README hero rewrite** — Biggest visibility surface, biggest stakes. STRATEGY framing fully settled; Voice in Practice (#26) now live raises the bar on the hero. Current tagline ("The setup before the performance...") is doing real work; replacing it requires earning the change. Dedicated brainstorm. Note: Voice in Practice cites the "setup" tagline framing ("voice as part of the setup") — if the hero changes, check that callback.
+1. **Session #28: Autonomous Execution Mode — full command/skill/hook build** *(NEW, queued by #27-interlude after Fortomino recon; START with `superpowers:brainstorming`)* — Capture Fortomino's autonomous build-to-playtest posture as a reusable Overture pattern with tooling. **Core design finding:** the mode has two layers — policy (own spec→plan→implement→verify, no approval gates; merge-to-main + public-deploy stay gated) and mechanism (suppress permission-prompt friction). Fortomino's mechanism is **broken**: bare tool-level `Bash` in allow + empty deny makes the two hard gates *behavioral-only* (`git push`/`git merge` auto-approve; the gate survives only if the model remembers the rule). **Better implementation = separate the concerns:** broad `Bash` for *flow*, plus mechanical gating of irreversible ops via `deny`>`ask`>`allow` precedence, with a **PreToolUse hook** as the hard backstop for high-blast-radius projects (static `ask`/`deny` patterns are as form-leaky as the allowlist — `git -C x push`, `cd x && push` evade them — only a hook reading the *resolved* command guarantees the block). Principle: **enforcement scales with blast radius** (solo game = behavioral + static ask; PII/public product = hook-enforced). **Build scope (5):** (1) `patterns/Autonomous-Execution.md` (tool-agnostic: posture + allowlist-can't-work finding + broad-allow/mechanical-gate + blast-radius tiering); (2) reconcile `Settings-Hygiene.md` — add autonomous-mode exception (broad Bash voids "dangerous-by-absence," lines 83-86, so explicit gates mandatory); (3) operating-doc template block (declarable "Autonomous Execution Mode" + per-project gate list); (4) CC command/skill `/overture:autonomous-on|-off` (writes clean profile + gates on, scopes Bash back at session-end — manual process already failed twice in Fortomino); (5) PreToolUse hook template in `templates/hooks/`. **Verdict: opt-in, NOT default** (conflicts with `~/.claude/CLAUDE.md` partnership/ask/privacy defaults; safe only where worst-case is cheap). **LIVE INCONSISTENCY to resolve here:** `~/.overture/profile.md` line 53 (added 2026-06-14) says grant bare `Bash` upfront; `Settings-Hygiene.md` lines 83-86 say never do that — component (2) must reconcile the two opposed instructions shipping in the kit today. Source: Fortomino `CLAUDE.md` §5 + memory `feedback_autonomous_execution` + its `settings.local.json` (287-line allowlist, ~280 lines dead under bare Bash — a Settings-Hygiene cruft case study).
 
-2. **Session #28: Autonomous Execution Mode — full command/skill/hook build** *(NEW, queued by #27-interlude after Fortomino recon; START with `superpowers:brainstorming`)* — Capture Fortomino's autonomous build-to-playtest posture as a reusable Overture pattern with tooling. **Core design finding:** the mode has two layers — policy (own spec→plan→implement→verify, no approval gates; merge-to-main + public-deploy stay gated) and mechanism (suppress permission-prompt friction). Fortomino's mechanism is **broken**: bare tool-level `Bash` in allow + empty deny makes the two hard gates *behavioral-only* (`git push`/`git merge` auto-approve; the gate survives only if the model remembers the rule). **Better implementation = separate the concerns:** broad `Bash` for *flow*, plus mechanical gating of irreversible ops via `deny`>`ask`>`allow` precedence, with a **PreToolUse hook** as the hard backstop for high-blast-radius projects (static `ask`/`deny` patterns are as form-leaky as the allowlist — `git -C x push`, `cd x && push` evade them — only a hook reading the *resolved* command guarantees the block). Principle: **enforcement scales with blast radius** (solo game = behavioral + static ask; PII/public product = hook-enforced). **Build scope (5):** (1) `patterns/Autonomous-Execution.md` (tool-agnostic: posture + allowlist-can't-work finding + broad-allow/mechanical-gate + blast-radius tiering); (2) reconcile `Settings-Hygiene.md` — add autonomous-mode exception (broad Bash voids "dangerous-by-absence," lines 83-86, so explicit gates mandatory); (3) operating-doc template block (declarable "Autonomous Execution Mode" + per-project gate list); (4) CC command/skill `/overture:autonomous-on|-off` (writes clean profile + gates on, scopes Bash back at session-end — manual process already failed twice in Fortomino); (5) PreToolUse hook template in `templates/hooks/`. **Verdict: opt-in, NOT default** (conflicts with `~/.claude/CLAUDE.md` partnership/ask/privacy defaults; safe only where worst-case is cheap). **LIVE INCONSISTENCY to resolve here:** `~/.overture/profile.md` line 53 (added 2026-06-14) says grant bare `Bash` upfront; `Settings-Hygiene.md` lines 83-86 say never do that — component (2) must reconcile the two opposed instructions shipping in the kit today. Source: Fortomino `CLAUDE.md` §5 + memory `feedback_autonomous_execution` + its `settings.local.json` (287-line allowlist, ~280 lines dead under bare Bash — a Settings-Hygiene cruft case study).
+2. **Session #29+: Wider em-dash + AI-tells purge** — STRATEGY done #25. Remaining: README outside Origins/Provenance/Voice-in-Practice (incl. heading-case question), Progression, Working-With-Claude-Code, workflow/, patterns/ (heaviest at ~95), choral/. Mechanical, low-risk. Could be a dedicated session or folded into any session already editing README.
 
-3. **Session #29+: Wider em-dash + AI-tells purge** — STRATEGY done #25. Remaining: README outside Origins/Provenance/Voice-in-Practice (incl. heading-case question), Progression, Working-With-Claude-Code, workflow/, patterns/ (heaviest at ~95), choral/. Mechanical, low-risk. Could be dedicated session or folded into #27 where the editor is in README anyway.
+3. **Parallel P2: LinkedIn derivative of Origins** — Essay-register first test (voice.md beyond technical-narrative). Different register; will surface voice.md gaps. Origins is shipped + STRATEGY positioning final, so timing is open.
 
-4. **Parallel P2: LinkedIn derivative of Origins** — Essay-register first test (voice.md beyond technical-narrative). Different register; will surface voice.md gaps. Origins is shipped + STRATEGY positioning final, so timing is open.
+4. **Parallel P2 — Phase 4b Gemini retest** *(demoted from #20's plan)* — empirically valuable; quota constraint dissolved by time. Run when convenient; rolls into Phase 4c (framework doc consolidation). Note: #26 skill edits widen the retest surface (progress ledger is new cross-tool behavior).
 
-5. **Parallel P2 — Phase 4b Gemini retest** *(demoted from #20's plan)* — empirically valuable; quota constraint dissolved by time. Run when convenient; rolls into Phase 4c (framework doc consolidation). Note: #26 skill edits widen the retest surface (progress ledger is new cross-tool behavior).
+5. **Parallel P2 — CLAUDE.md tracking normalization** (pxtxt, itsmin.com) — Each project's own session: privacy audit → move sensitive bits to `.claude/CLAUDE.local.md` → remove `CLAUDE.md` from gitignore → commit. Not blocking; required for fresh-clone portability.
 
-6. **Parallel P2 — CLAUDE.md tracking normalization** (pxtxt, itsmin.com) — Each project's own session: privacy audit → move sensitive bits to `.claude/CLAUDE.local.md` → remove `CLAUDE.md` from gitignore → commit. Not blocking; required for fresh-clone portability.
-
-7. **Sessions #30+: Phase 3 — marketplace submission + community directory PRs** — Hygiene pass (CHANGELOG, validate, version consistency, **plugin version bump so installed plugin picks up #26 skill changes**), submit to Anthropic-curated marketplace, opportunistic PRs. Sequenced after Phase 2 prose work fully lands.
+6. **Sessions #29+: Phase 3 — marketplace submission + community directory PRs** — Hygiene pass **DONE Jul 6** (CHANGELOG.md, 1.1.0 bump + tag v1.1.0, validate clean). Remaining: submit to Anthropic-curated marketplace via `clau.de/plugin-directory-submission`, opportunistic PRs (ClaudePluginHub, awesome-agent-skills, claudemarketplaces.com).
 
 ### COMPLETE (Recent)
 
 | Item | Session | Notes |
 |---------|---------|-------|
+| Plugin 1.1.0: CHANGELOG + bump + tag + push | Jul 6 sitting | Coordinator contract executed; CHANGELOG covers the actual #20-#26 delta; marketplace metadata description added; validate clean; publish gap closed. |
+| README hero rewrite + Problem reconciliation | #27 | "A memory file remembers. A workflow compounds." (OOTB-aware wedge). Spec `93a2455`, plan `f4be9af`, ship `896f191`, kit table `7e48f1f`. Closed retroactively Jul 6. |
 | Voice in Practice README section | #26 | New H2 between How It Works and Provenance: same bug-fix summary drafted twice (unguided vs voice profile), naming paragraph, pointer to `voice/` + profile mechanism. 284w, drafted positive-patterns-first per #25 Drafting note, grep-gated after. Spec `dbae4fe`, plan `365ff5e`, ship `57d2946`. |
 | Progress ledger in session skills + templates | #26 | Session-end: entry roster + [N/M] step lines + one-line outcomes (skips always carry reasons) + receipt checklist + session-close commit convention (size transition + NEXT in message). Session-start: lighter variant. Skill/template pairs synced; skills v1.4, templates v4/v3. Extracted from Fortomino/itsmin.com recon. Ship `e7b07e2`. |
-| Drafting note codified in Voice-Reference.md | #25 | New H2 encoding the #24+#25 finding (draft toward voice.md positive patterns first, grep-verify second). Commit `6fec5b5`. |
-| STRATEGY.md em-dash purge (5 sections) | #25 | 20→1 load-bearing; STRATEGY voice-clean end-to-end. Commit `f997e11`. |
-| STRATEGY.md Purpose + Is/Isn't voiced | #25 | Purpose 53w + Is/Isn't 119w two-paragraph contrast. Spec `e8c26cb`, plan `4f2de9b`, ship `9247fc0`. |
+| STRATEGY voiced + em-dash purge + Drafting note | #25 | Purpose 53w + Is/Isn't 119w (`9247fc0`); em-dash 20→1 (`f997e11`); Drafting note H2 in Voice-Reference (`6fec5b5`). Spec `e8c26cb`, plan `4f2de9b`. |
 | Origins narrative shipped to README + STRATEGY | #24 | 328w README (`9ae1573`) + 122w STRATEGY (`753ef63`). Spec/plan `e8a723c`/`1d1ac48`. |
 | Voice purge of voice docs + project-copies decision | #23 | Voice-Framework/Reference cleaned (47+36→0); 7 project copies deleted, single source at `~/.overture/voice.md`. Commit `d829a9f`. |
 | Voice derivation + AI-tells discovery + skill-wire | #22 | `~/.overture/voice.md` refreshed (4-register, AI-tells); methodology absorbed into voice docs; skills auto-load voice.md. |
@@ -253,8 +251,9 @@ See [`docs/sessions/SESSIONS_01_16_ARCHIVE.md`](docs/sessions/SESSIONS_01_16_ARC
 | Scan Log | `SCAN-LOG.md` | Session #21 | Quarterly ecosystem scans. Inaugural Q2 2026 entry. Next: Jul 2026. |
 | README | `README.md` | Session #27 | Entry point — plugin install, profile, orientation. Origins narrative #24 (328w). Voice in Practice section #26. **Hero rewritten #27** (OOTB-aware wedge, "A memory file remembers. A workflow compounds."); Problem section reconciled to match. |
 | Glossary | `glossary.md` | Session #11 | Controlled vocabulary for tool-agnostic terminology |
-| Plugin Manifest | `.claude-plugin/plugin.json` | Session #13 | Claude Code plugin manifest |
-| Marketplace Manifest | `.claude-plugin/marketplace.json` | Session #13 | Self-hosted marketplace for plugin distribution |
+| Plugin Manifest | `.claude-plugin/plugin.json` | Jul 6, 2026 | Claude Code plugin manifest — **v1.1.0** |
+| Marketplace Manifest | `.claude-plugin/marketplace.json` | Jul 6, 2026 | Self-hosted marketplace; metadata description added |
+| Changelog | `CHANGELOG.md` | Jul 6, 2026 | Plugin version history, 1.0.0 → 1.1.0 |
 | Init Command (CC) | `commands/init.md` | Session #13 | CC plugin command — `/overture:init` (profile-aware) |
 | Init Skill | `skills/overture-init/` | Session #21 | Cross-tool init (Agent Skills format, profile-aware). Step 6 ecosystem surfacing added #21. |
 | Session-Start Skill | `skills/session-start/` | Session #26 | Cross-tool session-start. Companion Capabilities #21; profile auto-load pre-step #22. **Progress ledger added #26.** |
