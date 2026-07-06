@@ -3,6 +3,9 @@
   "owner": {
     "name": "Min Chang"
   },
+  "metadata": {
+    "description": "Self-hosted marketplace for Overture, a session management framework for AI-assisted development."
+  },
   "plugins": [
     {
       "name": "overture",
