@@ -187,7 +187,7 @@ For the full guide with "when to move up" signals, see the [Progression Guide](P
 
 ## Voice in Practice
 
-A long-running project accumulates AI-drafted prose: session summaries, commit messages, postmortems, eventually the docs themselves. Unguided, all of it sounds like the model, and readers notice. Overture treats voice as part of the setup. Here is the same bug-fix summary drafted twice.
+A long-running project accumulates AI-drafted prose: session summaries, commit messages, postmortems, eventually the docs themselves. Unguided, all of it sounds like the model, and readers notice. Overture treats voice as part of what compounds. Here is the same bug-fix summary drafted twice.
 
 **No voice context.** A model left to its defaults produces something like:
 

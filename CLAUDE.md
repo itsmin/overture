@@ -124,11 +124,10 @@ Universal working preferences in `~/.claude/CLAUDE.md`.
 
 ### Continuing / Open Threads (for Session #28)
 - **Wider em-dash + AI-tells purge** — see UPCOMING #2 (README leftovers incl. heading-case question, Progression, Working-With-Claude-Code, workflow/, patterns/ ~95, choral/). Mechanical; foldable into any session.
-- **Voice in Practice "setup" callback** — README ~line 190 ("voice as part of the setup") echoed the old hero tagline; reads fine standalone post-#27 but the echo is gone. Optional touch-up on the next README pass.
 
 ### July 6, 2026 Hygiene Sitting (coordinator contract)
 
-Executed `choral/contracts/portfolio-overture.md` (publish gap: #27 README + plugin bump sitting unpushed while Min actively interviews). Privacy audit of pending commits PASS → CHANGELOG.md authored (actual 1.0.1→1.1.0 delta spans #20-#26, wider than the contract's "#22+#26") → plugin.json 1.1.0 + marketplace metadata description (`claude plugin validate` clean) → tag v1.1.0 → push. #27 close-out reconciled retroactively; STATUS written back to the contract.
+Executed `choral/contracts/portfolio-overture.md` (publish gap: #27 README + plugin bump sitting unpushed while Min actively interviews). Privacy audit of pending commits PASS → CHANGELOG.md authored (actual 1.0.1→1.1.0 delta spans #20-#26, wider than the contract's "#22+#26") → plugin.json 1.1.0 + marketplace metadata description (`claude plugin validate` clean) → tag v1.1.0 → push. #27 close-out reconciled retroactively; STATUS written back to the contract. Same-day follow-up: Voice in Practice callback rewired to the new hero ("part of what compounds"); settings.local.json cleaned per Settings-Hygiene protocol (76 → 31 entries; credential scan clean; home-dir-wide Read narrowed to Projects + tool dirs; backup in session scratchpad).
 
 ### Session #27 Complete (June 15, 2026, reconciled July 6)
 
@@ -140,7 +139,7 @@ Fortomino autonomous-execution audit: bare tool-level `Bash` in allow makes the 
 
 ### Session #26 Complete (June 12, 2026, compressed)
 
-README "Voice in Practice" H2 shipped (`57d2946`, 284w before/after; positive-patterns-first, grep-gated). Progress ledger added to both session skills + CC templates (`e7b07e2`): entry roster + [N/M] step lines + outcomes + receipt checklist + session-close commit convention (session-start gets lighter variant). Extracted from Fortomino/itsmin.com recon; five further recon candidates captured to P2 #6. Spec `dbae4fe`, plan `365ff5e`.
+README "Voice in Practice" H2 shipped (`57d2946`, 284w before/after; positive-patterns-first, grep-gated). Progress ledger added to both session skills + CC templates (`e7b07e2`): entry roster + [N/M] step lines + outcomes + receipt checklist + session-close commit convention (session-start gets lighter variant). Extracted from Fortomino/itsmin.com recon; five further recon candidates captured to P2 #5. Spec `dbae4fe`, plan `365ff5e`.
 
 ### Sessions #24-#25 Complete (May 22, 2026, compressed)
 
@@ -212,8 +211,7 @@ See [`docs/sessions/SESSIONS_01_16_ARCHIVE.md`](docs/sessions/SESSIONS_01_16_ARC
 2. **Decay reference** — Decay/memory lifecycle templates. Leave as documented gap (#5); Size Management covers the actionable part. Revisit only if a generalizable pattern emerges.
 3. **Methodology doc lazy refactor** — Apply glossary terms to existing docs (Working-With-Claude-Code.md, Workflow Framework, Progression, patterns) as they're touched. No dedicated refactoring pass unless needed.
 4. **Adapter layer** — Build only after testing on a second tool reveals what actually needs adapting. Don't pre-build from theory.
-5. **Settings hygiene review** *(#21 flag, drift confirmed #25)* — 61 permission entries in `.claude/settings.local.json` (51 at #21). Scan for broad-pattern consolidation, stale one-offs, stray credentials. ~5-10 min.
-6. **Sibling-project pattern harvest** *(Session #26 recon, Fortomino + itsmin.com)* — five candidates, each its own small upstream: (a) **verification ladder** — typed verification stages (unit → E2E → probe → live) strengthening session-end Step 3; (b) **compute-only hook principle** — hooks compute live state, never duplicate source-of-truth content; encode in `templates/hooks/README.md` + scripts; (c) **size-check hook enforcement** — WARN/FAIL thresholds in the session-end hook script (operationalizes Size-Management); (d) **severity-graded privacy gate** — block/warn severities at compile/deploy time for `patterns/Privacy-Boundary.md`; (e) **working-contract upgrade** — PHASES / numbered RECOMMENDATIONS / OWNERSHIP BOUNDARY / live STATUS sections for `templates/contract.md` + Choral-Pattern. Progress-ledger + commit-convention candidates already shipped #26.
+5. **Sibling-project pattern harvest** *(Session #26 recon, Fortomino + itsmin.com)* — five candidates, each its own small upstream: (a) **verification ladder** — typed verification stages (unit → E2E → probe → live) strengthening session-end Step 3; (b) **compute-only hook principle** — hooks compute live state, never duplicate source-of-truth content; encode in `templates/hooks/README.md` + scripts; (c) **size-check hook enforcement** — WARN/FAIL thresholds in the session-end hook script (operationalizes Size-Management); (d) **severity-graded privacy gate** — block/warn severities at compile/deploy time for `patterns/Privacy-Boundary.md`; (e) **working-contract upgrade** — PHASES / numbered RECOMMENDATIONS / OWNERSHIP BOUNDARY / live STATUS sections for `templates/contract.md` + Choral-Pattern. Progress-ledger + commit-convention candidates already shipped #26.
 
 ### PARKING LOT
 
