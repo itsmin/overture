@@ -18,6 +18,27 @@ Steps 0-2 are project-specific (customize or skip freely). Steps 3-7 are the str
 
 **Progress ledger.** Open each step with a `[N/M] Step name` line and close it with a one-line outcome: done, skipped (reason), or flagged (what). Skips always carry reasons. An up-front roster is optional here (session-start runs fast when the project is healthy); the ledger earns its keep when a health check stalls or a step turns up a discrepancy. If your tool has a native task or progress list, mirror progress there as well.
 
+### Pre-Step: Current date/time (always)
+
+Run `date` and take the result as authoritative for the whole session.
+
+Do this every time, before anything else. Three failure modes it prevents, all
+of which have produced wrong work:
+
+- **A stale sense of "today."** Any date the agent carries from its context or
+  its training is a guess. Session logs, "N sessions ago" arithmetic, deadline
+  math, and "last updated" judgements all silently inherit that guess.
+- **Sessions that cross midnight.** A long session started yesterday will date
+  its own commits, session entries, and handoff notes to the wrong day unless
+  the clock is re-read.
+- **Relative dates written into durable docs.** Operating documents outlive the
+  session. "Last week" and "in 3 weeks" are unreadable later; convert to
+  absolute dates at the point of writing, which requires knowing the real date.
+
+Carry the real date forward into every dated artifact this session produces:
+session-progress entries, deferred-work timestamps, planning horizons, and any
+"as of" line in a document.
+
 ### Pre-Step: Personal Profile (optional)
 
 Overture's profile layer at `~/.overture/` carries personal customizations that apply across every project. Load whichever of these exist:
