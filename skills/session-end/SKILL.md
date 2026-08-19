@@ -119,6 +119,33 @@ Assess from session context: were any planned items bumped? Draft the deferred i
 - Include: what it was, which session, context needed to resume
 - Never let a planned item disappear silently
 
+### 7b. Handoff Durability Check
+
+**Before writing anything to NEXT or UPCOMING SESSIONS**, ask what in this
+session's outcome has to outlive the next cycle.
+
+Those two fields ROTATE — this skill overwrites both every session-end. Anything
+parked there for a session two or more ahead is destroyed by this very step, and
+it fails silently: nothing errors, the note is simply gone, and the record of
+what was lost was the thing that was lost.
+
+| Rotating (overwritten every cycle) | Durable (persist until closed) |
+|---|---|
+| NEXT, Current status, UPCOMING SESSIONS | Deferred Work, Parking Lot, Reserved Sessions, Critical Reminders, Pending Verifications |
+
+**The rule**: anything that must survive more than one cycle goes in a durable
+structure; the rotating field may only POINT at it.
+
+Applies to reserved future sessions, multi-session plans, and any context
+document written for later work. If this session produced a plan document for a
+session that is not the next one, its pointer does not belong in NEXT alone.
+
+Note the trap: the rotating field is the most PROMINENT one — session-start
+reads and displays it first — so it feels like the safest place for something
+important. It is the least safe, and nothing in the document's layout says so.
+
+Full pattern: `patterns/Handoff-Durability.md`.
+
 ### 8. Next Session Planning
 
 **CRITICAL**: This is the primary handoff to the next session. What you write here is what session-start reads. If it's vague, the next session starts blind.
@@ -214,6 +241,7 @@ Work Tracking:
 - [ ] Each CURRENT PRIORITY reconciled
 - [ ] Completed items moved to COMPLETE
 - [ ] Session Progress NEXT pointer is specific
+- [ ] Anything that must outlive ONE cycle is in a durable structure, not only in NEXT/UPCOMING (see 7b)
 - [ ] UPCOMING SESSIONS has full prioritized plan
 - [ ] Deferred items tracked (if any bumped)
 - [ ] Open discussions captured (if any)

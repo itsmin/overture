@@ -167,6 +167,12 @@ Display ALL work queue items — do not summarize or truncate.
 - Does UPCOMING SESSIONS exist and contain prioritized candidates with reasoning? Or is it a flat list of titles / a compressed one-liner?
 - Is the NEXT pointer specific (e.g., "Auth middleware + tenant config") or vague (e.g., "Continue P1 work")?
 - If the handoff is vague or missing, flag it: *"Last session's planning detail may not have survived into the operating document. Consider reviewing recent session history or git log for context before choosing direction."*
+- **Durability check**: does the NEXT pointer reference work more than one
+  session out, with no durable structure holding it? NEXT and UPCOMING SESSIONS
+  are rewritten every session-end, so anything living only there is one
+  session-end from silent deletion. Surface the durable structures — Reserved
+  Sessions, Deferred Work, Parking Lot — alongside the pointer rather than
+  reading the pointer alone. See `patterns/Handoff-Durability.md`.
 
 ### 7. Alignment
 

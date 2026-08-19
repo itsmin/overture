@@ -2,6 +2,18 @@
 
 Notable changes to the Overture plugin. Skill and command behavior only; methodology docs and patterns evolve continuously in the repo and are not versioned here.
 
+## [Unreleased]
+
+### Added
+- **Handoff durability check** in session-end (step 7b) and session-start
+  (handoff quality check). Found in absOrbs #26: two reserved sessions had their
+  pointers written to NEXT, which session-end overwrites every cycle — so the
+  pointer to the session-after-next would have been destroyed by the ritual that
+  exists to preserve continuity, silently. Rotating fields (NEXT, Current,
+  UPCOMING SESSIONS) now explicitly distinguished from durable ones (Deferred
+  Work, Parking Lot, Reserved Sessions, Critical Reminders, Pending
+  Verifications). Pattern: `patterns/Handoff-Durability.md`.
+
 ## [1.1.0] - 2026-07-06
 
 Additive skill behavior from Sessions #20 through #26. No breaking changes.
