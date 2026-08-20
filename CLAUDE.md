@@ -135,7 +135,7 @@ README hero rewritten onto the OOTB-aware wedge: "A memory file remembers. A wor
 
 ### Session #27 Planning Interlude (June 14, 2026, compressed)
 
-Fortomino autonomous-execution audit: bare tool-level `Bash` in allow makes the merge/deploy hard gates behavioral-only, voiding Settings-Hygiene's dangerous-by-absence model; contradiction live in the kit (profile.md line 53 vs Settings-Hygiene 83-86). Decision (user-confirmed): full opt-in pattern + tooling build queued as Session #28; design in the #28 UPCOMING entry. No code.
+Fortomino autonomous-execution audit: bare tool-level `Bash` in allow makes the merge/deploy hard gates behavioral-only, voiding Settings-Hygiene's dangerous-by-absence model; contradiction live in the kit (profile.md line 53 vs Settings-Hygiene 83-86). Decision (user-confirmed): full opt-in pattern + tooling build queued as Session #29 (renumbered); design in `docs/plans/2026-08-19-autonomous-execution-context.md`. No code.
 
 ### Session #26 Complete (June 12, 2026, compressed)
 
