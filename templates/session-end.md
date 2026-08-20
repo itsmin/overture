@@ -108,6 +108,41 @@ Assess from session context: were any planned items bumped? Draft the deferred i
 - Include: what it was, which session, context needed to resume
 - Never let a planned item disappear silently
 
+### 7b. Handoff Durability Check
+
+**Before writing anything to NEXT or UPCOMING SESSIONS**, ask what in this
+session's outcome has to outlive the next cycle.
+
+Every handoff field is one of two kinds, distinguished by how it is edited:
+
+| Rotating (rewritten wholesale every cycle) | Durable (edited item-wise; items leave only by explicit disposition) |
+|---|---|
+| NEXT, Current status, "this session" lines | UPCOMING SESSIONS, Deferred Work, Parking Lot, Reserved Sessions, Critical Reminders, Pending Verifications |
+
+**Rotating fields hold pointers and single-cycle information only.** Anything
+that must survive more than one cycle goes in a durable structure; the rotating
+field may only POINT at it. Reserved future sessions, multi-session plans, and
+context documents for later work all qualify. Step 9 rewrites NEXT, so anything
+parked there is destroyed by this ritual, and it fails silently: nothing errors,
+the note is simply gone, and the record of what was lost was the thing that was
+lost.
+
+**Durable fields drop items only by explicit disposition.** An entry leaves
+UPCOMING SESSIONS (or any durable field) by moving somewhere named: COMPLETE,
+DEFERRED WORK, PARKING LOT, an archive, or a doc. Never by silent omission
+during a rewrite.
+
+**The doc rule**: a queued entry whose context exceeds roughly a paragraph gets
+a real file (plan, spec, or context doc); the entry carries the pointer plus a
+one-line summary.
+
+Note the trap: the rotating field is the most PROMINENT one — session-start
+reads and displays it first — so it feels like the safest place for something
+important. It is the least safe. The operating-document layout now carries this
+annotation; keep it intact when editing.
+
+Full pattern: `patterns/Handoff-Durability.md`.
+
 ### 8. Next Session Planning
 
 **CRITICAL**: This is the primary handoff to the next session. What you write here is what the next session-start reads. If it's vague, the next session starts blind.
@@ -137,6 +172,9 @@ Get confirmation before proceeding to Step 9. This plan is written verbatim to C
 - Promote next priority if current work is done
 - Remove "blocked by" tags from newly unblocked items
 - **UPCOMING SESSIONS**: Write the full prioritized plan from Step 8. Each candidate gets its own sub-bullet with reasoning and P1/P2 cross-reference. Do NOT compress to a one-liner — the next session-start reads this verbatim and needs the detail to present actionable priorities.
+  UPCOMING is DURABLE: reconcile it item-wise. Every entry present before this
+  session must either survive, or leave by explicit disposition (COMPLETE,
+  DEFERRED WORK, PARKING LOT, archive, or doc) named in this session's close.
 
 #### Metrics
 *Skip if no metrics table.*
@@ -160,6 +198,11 @@ If YELLOW or RED, run archiving:
 2. Compress old session entries (keep last 5-10 inline)
 3. Trim COMPLETE (Recent) to last ~10 entries
 4. Verify size after pruning
+
+**Citation rule**: before trimming any entry on the strength of a citation
+("detail in ARCHIVE.md"), verify the target actually holds the content. A
+citation is not a backup; trimming against a dangling citation destroys the
+only record. See `patterns/Handoff-Durability.md`.
 
 #### Session Entry
 Add condensed entry (~8 lines max):
@@ -209,6 +252,9 @@ Work Tracking:
 - [✓/✗] Each CURRENT PRIORITY reconciled (✅/⏳/➖)
 - [✓/✗] Completed items moved to COMPLETE
 - [✓/✗] Session Progress NEXT pointer is specific
+- [✓/✗] Anything that must outlive ONE cycle is in a durable structure, NEXT holds only pointers (see 7b)
+- [✓/✗] UPCOMING reconciled item-wise; departures have explicit dispositions (see 7b)
+- [✓/✗/N/A] Archive targets verified before any citation-based trim (citation rule)
 - [✓/✗] UPCOMING SESSIONS has full prioritized plan (not just titles)
 - [✓/✗] Deferred items tracked (if any bumped)
 - [✓/✗] Open discussions captured (if any)

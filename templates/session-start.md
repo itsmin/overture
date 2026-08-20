@@ -11,6 +11,16 @@ Skip steps that reference sections your CLAUDE.md doesn't have yet — not all p
 
 Steps 0-2 are project-specific (customize or skip freely). Steps 3-7 are the structural backbone shared across projects.
 
+### Pre-Step: Current date/time (always)
+
+Run `date` and take the result as authoritative for the whole session.
+
+Do this every time, before anything else. Three failure modes it prevents:
+a stale sense of "today" inherited from context or training; sessions that
+cross midnight and date their own commits wrong; and relative dates written
+into durable docs that outlive the session. Carry the real date into every
+dated artifact this session produces.
+
 **Progress ledger.** Open each step with a `[N/M] Step name` line and close it with a one-line outcome: done, skipped (reason), or flagged (what). Skips always carry reasons. An up-front roster is optional here (session-start runs fast when the project is healthy); the ledger earns its keep when a health check stalls or a step turns up a discrepancy. Mirror progress in Claude Code's task list as well.
 
 ### 0. Clean State
@@ -128,6 +138,13 @@ Display ALL work queue items — do not summarize or truncate.
 - Does UPCOMING SESSIONS exist and contain prioritized candidates with reasoning? Or is it a flat list of titles / a compressed one-liner?
 - Is the NEXT pointer specific (e.g., "Auth middleware + tenant config") or vague (e.g., "Continue P1 work")?
 - If the handoff is vague or missing, flag it: *"Last session's planning detail may not have survived into CLAUDE.md. Consider reviewing recent session history or git log for context before choosing direction."*
+- **Durability check**: NEXT and Current are rewritten every session-end
+  (UPCOMING SESSIONS is durable: curated item-wise, entries leave only by
+  explicit disposition). If NEXT references work more than one session out,
+  a durable structure (Reserved Sessions, UPCOMING SESSIONS, Deferred Work)
+  must hold the substance; flag it if the pointer is the only copy. Surface
+  the durable structures alongside the pointer rather than reading the pointer
+  alone. See `patterns/Handoff-Durability.md`.
 
 ### 7. Alignment
 
