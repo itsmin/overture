@@ -68,6 +68,10 @@ Contract: [path to working contract]
 
 ## SESSION PROGRESS
 
+*Rotating fields: Current, Status, and NEXT are rewritten at every session-end.
+Anything that must survive more than one cycle lives in a durable structure
+(UPCOMING SESSIONS, RESERVED SESSIONS, DEFERRED WORK), pointed at from here.*
+
 **Current**: Session #1 pending
 **Status**: Initial setup
 **NEXT**: [Set by session-end — the #1 priority for the next session, stated specifically. Be precise: "Auth middleware + tenant config", not "Continue P1 work"]
@@ -78,6 +82,10 @@ Contract: [path to working contract]
 ---
 
 ## WORK QUEUE
+
+*Durable sections: entries are curated item-wise and leave only by explicit
+disposition (moved to COMPLETE, DEFERRED WORK, PARKING LOT, an archive, or a
+doc), never by silent omission at session-end.*
 
 ### CURRENT PRIORITIES
 
@@ -135,6 +143,19 @@ Add as lessons are learned — NEVER/ALWAYS invariants only. These are hard-won 
 
 1. **NEVER** [dangerous thing to avoid]
 2. **ALWAYS** [essential thing to maintain]
+-->
+
+<!-- RESERVED SESSIONS
+Add under WORK QUEUE when a future session beyond the next one is reserved with
+written context. This block is DURABLE — the NEXT pointer is rewritten every
+session-end, so pointers to future sessions live here, not there. Context docs
+get full paths from the repo root.
+
+### RESERVED SESSIONS
+
+| # | Session | Why | Context |
+|---|---------|-----|---------|
+| #NN | [name] | [one-line reasoning with the load-bearing numbers] | [full path to context doc] |
 -->
 
 <!-- DEVELOPMENT WORKFLOW
