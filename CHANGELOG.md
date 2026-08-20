@@ -2,17 +2,35 @@
 
 Notable changes to the Overture plugin. Skill and command behavior only; methodology docs and patterns evolve continuously in the repo and are not versioned here.
 
-## [Unreleased]
+## [1.2.0] - 2026-08-19
+
+Handoff durability, behavioral and structural. Driven by a defect absOrbs #26
+exposed in this framework: multi-session context parked in a rotating field is
+destroyed, silently, by the ritual that exists to preserve continuity.
 
 ### Added
+- **Session-start pre-step: read the real date/time first** (2026-08-10). A
+  stale sense of "today", midnight-crossing sessions, and relative dates in
+  durable docs all inherit a guessed date otherwise.
 - **Handoff durability check** in session-end (step 7b) and session-start
-  (handoff quality check). Found in absOrbs #26: two reserved sessions had their
-  pointers written to NEXT, which session-end overwrites every cycle — so the
-  pointer to the session-after-next would have been destroyed by the ritual that
-  exists to preserve continuity, silently. Rotating fields (NEXT, Current,
-  UPCOMING SESSIONS) now explicitly distinguished from durable ones (Deferred
-  Work, Parking Lot, Reserved Sessions, Critical Reminders, Pending
-  Verifications). Pattern: `patterns/Handoff-Durability.md`.
+  (handoff quality check). Rotating fields (NEXT, Current) hold pointers and
+  single-cycle information only; durable structures hold anything that must
+  outlive one cycle. Pattern: `patterns/Handoff-Durability.md`.
+- **Citation rule** in session-end's size/archive step: verify an archive
+  target actually holds the content before trimming on the strength of the
+  citation.
+- **Operating-doc skeletons**: field lifetime annotations in the layout plus a
+  RESERVED SESSIONS optional section (CC template and the tool-agnostic
+  operating-document template).
+- **Templates synced with skills** (session-start and session-end pairs),
+  including the date/time pre-step the templates had missed.
+
+### Changed
+- **UPCOMING SESSIONS reclassified as durable.** The classification criterion
+  is edit semantics: rotating fields are rewritten wholesale each cycle;
+  durable fields are edited item-wise and entries leave only by explicit
+  disposition (COMPLETE, DEFERRED, PARKING LOT, archive, or doc). Session-end
+  now reconciles UPCOMING item-wise instead of rewriting it.
 
 ## [1.1.0] - 2026-07-06
 
