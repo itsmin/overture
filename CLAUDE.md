@@ -30,8 +30,8 @@
 | `commands/init.md` | CC plugin init command — `/overture:init` | Agent | **v1** — April 2026 |
 | `skills/overture-init/SKILL.md` | Init skill (Agent Skills format) — cross-tool project setup. Step 6 ecosystem surfacing added #21. | Agent | **v1.2** — Session #21 |
 | `skills/overture-init/references/operating-document-template.md` | Tool-agnostic operating document template | Both | **v1.1** — Session #20 |
-| `skills/session-start/SKILL.md` | Session-start skill — cross-tool context loading. Companion Capabilities #21; profile auto-load pre-step #22. Progress ledger added #26 ([N/M] step lines + outcome lines). | Agent | **v1.4** — Session #26 |
-| `skills/session-end/SKILL.md` | Session-end skill — cross-tool handoff and cleanup. Companion Capabilities + size-check strengthening #21; voice-context load #22. Progress ledger + receipt checklist + session-close commit convention added #26. | Agent | **v1.4** — Session #26 |
+| `skills/session-start/SKILL.md` | Session-start skill — cross-tool context loading. Companion Capabilities #21; profile auto-load pre-step #22. Progress ledger added #26 ([N/M] step lines + outcome lines). Date/time pre-step (Aug 10); durability check + durable-UPCOMING (Aug 18 + #28). | Agent | **v1.5** — Session #28 |
+| `skills/session-end/SKILL.md` | Session-end skill — cross-tool handoff and cleanup. Companion Capabilities + size-check strengthening #21; voice-context load #22. Progress ledger + receipt checklist + session-close commit convention added #26. Durability step 7b + explicit dispositions + citation rule (#28). | Agent | **v1.5** — Session #28 |
 | `glossary.md` | Controlled vocabulary for tool-agnostic terminology | Both | **v1** — April 2026 |
 
 ### Methodology
@@ -51,6 +51,7 @@
 | `patterns/Settings-Hygiene.md` | Settings accumulation, two-layer organization, cleanup protocol | You | v1 — March 2026 |
 | `patterns/Section-Ordering.md` | Canonical operating document section ordering across projects | You | v1 — March 2026 |
 | `patterns/Privacy-Boundary.md` | PII filtering at public surfaces — boundary declaration, runtime verification | You | v1.1 — April 2026 |
+| `patterns/Handoff-Durability.md` | Field lifetime model: rotating vs durable fields, doc rule, citation rule | You | **v1.1** — Session #28 (v1 Aug 18 sitting; edit-semantics revision #28) |
 
 ### Templates & Hooks (manual setup / backwards compatible)
 
@@ -59,8 +60,8 @@
 | `templates/profile.md` | Overture profile template — personal customizations | You | **v1** — April 2026 |
 | `templates/CLAUDE.md` | CC-specific operating document skeleton | Both | v3.1 — April 2026 |
 | `templates/init.md` | Manual init guide (superseded by plugin/skills) | Agent | v1 — March 2026 |
-| `templates/session-start.md` | CC session-start command template. Progress ledger #26 (synced with skill). | Agent | v3 — Session #26 |
-| `templates/session-end.md` | CC session-end command template. Progress ledger + commit convention #26 (synced with skill). | Agent | v4 — Session #26 |
+| `templates/session-start.md` | CC session-start command template. Progress ledger #26 (synced with skill). Date/time pre-step + durability synced (#28). | Agent | v4 — Session #28 |
+| `templates/session-end.md` | CC session-end command template. Progress ledger + commit convention #26 (synced with skill). 7b + dispositions + citation rule (#28). | Agent | v5 — Session #28 |
 | `templates/contract.md` | Cross-project working contract template | Both | v2 — April 2026 |
 | `templates/choral.md` | Choral sync command template — mid-session coordination | Agent | v1 — April 2026 |
 | `templates/hooks/README.md` | Hook setup, testing, specialization recipes | You | v1 — March 2026 |
@@ -114,6 +115,10 @@ Universal working preferences in `~/.claude/CLAUDE.md`.
 
 ## SESSION PROGRESS
 
+*Rotating fields: Current, Status, and NEXT are rewritten at every session-end.
+Anything that must survive more than one cycle lives in a durable structure
+(UPCOMING SESSIONS, RESERVED SESSIONS, DEFERRED WORK), pointed at from here.*
+
 **Current**: Session #27 complete (June 15, 2026); July 6 hygiene sitting — plugin 1.1.0 published per coordinator contract
 **Status**: Publish gap closed (coordinator contract `choral/contracts/portfolio-overture.md`, Jul 6). #27 shipped Jun 15 without `/session-end`; close-out reconciled retroactively in the Jul 6 sitting. Plugin bumped 1.0.1 → 1.1.0 with CHANGELOG.md + validate + tag v1.1.0; all pushed. Siblings pick up #20-#26 skill changes via `/plugin update`.
 **NEXT**: Marketplace submission talk-through — decide what Overture submits and why BEFORE submitting anything (Min's call, Jul 6). Ground in STRATEGY.md marketplace posture + UPCOMING #6; 1.1.0 is tagged and validate-clean, so the mechanical part is unblocked once the decision lands. Then Session #29 — Autonomous Execution Mode (full build; context: `docs/plans/2026-08-19-autonomous-execution-context.md`).
@@ -128,6 +133,15 @@ Universal working preferences in `~/.claude/CLAUDE.md`.
 ### July 6, 2026 Hygiene Sitting (coordinator contract)
 
 Executed `choral/contracts/portfolio-overture.md` (publish gap: #27 README + plugin bump sitting unpushed; the public repo showed the pre-#27 README). Privacy audit of pending commits PASS → CHANGELOG.md authored (actual 1.0.1→1.1.0 delta spans #20-#26, wider than the contract's "#22+#26") → plugin.json 1.1.0 + marketplace metadata description (`claude plugin validate` clean) → tag v1.1.0 → push. #27 close-out reconciled retroactively; STATUS written back to the contract. Same-day follow-up: Voice in Practice callback rewired to the new hero ("part of what compounds"); settings.local.json cleaned per Settings-Hygiene protocol (76 → 31 entries; credential scan clean; home-dir-wide Read narrowed to Projects + tool dirs; backup in session scratchpad).
+
+### August sittings (untracked; reconciled at #28)
+
+**Aug 10**: session-start gained the mandatory date/time pre-step (`ddb2db7`),
+hand-mirrored into the plugin cache pending a release. **Aug 18**: absOrbs #26
+surfaced the handoff-durability defect; the behavioral patch landed (`b3fd07e`:
+pattern doc + session-end 7b + session-start check), unmirrored. Both sat
+unpushed until #28 session-start (privacy-audited, then pushed); 1.2.0
+supersedes the hand-mirroring.
 
 ### Session #27 Complete (June 15, 2026, reconciled July 6)
 
@@ -160,6 +174,10 @@ See [`docs/sessions/SESSIONS_01_16_ARCHIVE.md`](docs/sessions/SESSIONS_01_16_ARC
 ---
 
 ## WORK QUEUE
+
+*Durable sections: entries are curated item-wise and leave only by explicit
+disposition (moved to COMPLETE, DEFERRED WORK, PARKING LOT, an archive, or a
+doc), never by silent omission at session-end.*
 
 ### CURRENT PRIORITIES
 
@@ -250,8 +268,8 @@ See [`docs/sessions/SESSIONS_01_16_ARCHIVE.md`](docs/sessions/SESSIONS_01_16_ARC
 | Changelog | `CHANGELOG.md` | Jul 6, 2026 | Plugin version history, 1.0.0 → 1.1.0 |
 | Init Command (CC) | `commands/init.md` | Session #13 | CC plugin command — `/overture:init` (profile-aware) |
 | Init Skill | `skills/overture-init/` | Session #21 | Cross-tool init (Agent Skills format, profile-aware). Step 6 ecosystem surfacing added #21. |
-| Session-Start Skill | `skills/session-start/` | Session #26 | Cross-tool session-start. Companion Capabilities #21; profile auto-load pre-step #22. **Progress ledger added #26.** |
-| Session-End Skill | `skills/session-end/` | Session #26 | Cross-tool session-end. Companion Capabilities + size-check strengthening #21; voice-context reload #22. **Progress ledger + receipt checklist + session-close commit convention added #26.** |
+| Session-Start Skill | `skills/session-start/` | Session #28 | Cross-tool session-start. Companion Capabilities #21; profile auto-load pre-step #22. Progress ledger added #26. **Date/time pre-step (Aug 10); durability check + durable-UPCOMING (Aug 18 + #28).** |
+| Session-End Skill | `skills/session-end/` | Session #28 | Cross-tool session-end. Companion Capabilities + size-check strengthening #21; voice-context reload #22. Progress ledger + receipt checklist + session-close commit convention added #26. **Durability step 7b + explicit dispositions + citation rule (#28).** |
 | Progression Guide | `Progression.md` | Session #13 | Day-1 paths, level-by-level experience, profile, when to evolve |
 | Conceptual Framework | `Working-With-Claude-Code.md` | Session #6 | ICL, memory tiers, Levels 0-4, Choral, Lyrical |
 | Workflow Framework | `workflow/Claude-Code-Workflow-Framework.md` | Session #6 | Methodology v2.0 — session management, CLAUDE.md anatomy, hooks |
@@ -265,6 +283,7 @@ See [`docs/sessions/SESSIONS_01_16_ARCHIVE.md`](docs/sessions/SESSIONS_01_16_ARC
 | Settings Hygiene | `patterns/Settings-Hygiene.md` | Session #8 | Settings accumulation, two-layer org, cleanup |
 | Section Ordering | `patterns/Section-Ordering.md` | Session #8 | Canonical operating document section ordering |
 | Privacy Boundary | `patterns/Privacy-Boundary.md` | Session #16 | PII filtering at public surfaces, boundary declaration, runtime verification. How-It-Hid narrative added #16. |
+| Handoff Durability | `patterns/Handoff-Durability.md` | Session #28 | Field lifetime model: rotating vs durable fields, doc rule, citation rule. v1 Aug 18 sitting; edit-semantics revision #28. |
 | Profile Template | `templates/profile.md` | Session #13 | Personal Overture profile — customization layer |
 | Hook Templates | `templates/hooks/` | Session #8 | Hook scripts, setup guide, specialization recipes |
 | Init Guide (legacy) | `templates/init.md` | Session #2 | Manual init (superseded by plugin/skills) |
