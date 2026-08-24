@@ -24,12 +24,12 @@
 
 | File | Purpose | Audience | Status |
 |------|---------|----------|--------|
-| `.claude-plugin/plugin.json` | Claude Code plugin manifest | Agent | **v1.1.0** — July 2026 |
+| `.claude-plugin/plugin.json` | Claude Code plugin manifest | Agent | **v1.2.0** — Session #28 (Aug 2026) |
 | `.claude-plugin/marketplace.json` | Self-hosted marketplace manifest | Agent | **v1.1** — July 2026 (metadata description) |
-| `CHANGELOG.md` | Plugin version history (1.0.0 → 1.1.0) | Both | **v1** — July 2026 |
+| `CHANGELOG.md` | Plugin version history (1.0.0 → 1.2.0) | Both | **v1.2** — Session #28 |
 | `commands/init.md` | CC plugin init command — `/overture:init` | Agent | **v1** — April 2026 |
 | `skills/overture-init/SKILL.md` | Init skill (Agent Skills format) — cross-tool project setup. Step 6 ecosystem surfacing added #21. | Agent | **v1.2** — Session #21 |
-| `skills/overture-init/references/operating-document-template.md` | Tool-agnostic operating document template | Both | **v1.1** — Session #20 |
+| `skills/overture-init/references/operating-document-template.md` | Tool-agnostic operating document template. Lifetime annotations + RESERVED SESSIONS #28. | Both | **v1.2** — Session #28 |
 | `skills/session-start/SKILL.md` | Session-start skill — cross-tool context loading. Companion Capabilities #21; profile auto-load pre-step #22. Progress ledger added #26 ([N/M] step lines + outcome lines). Date/time pre-step (Aug 10); durability check + durable-UPCOMING (Aug 18 + #28). | Agent | **v1.5** — Session #28 |
 | `skills/session-end/SKILL.md` | Session-end skill — cross-tool handoff and cleanup. Companion Capabilities + size-check strengthening #21; voice-context load #22. Progress ledger + receipt checklist + session-close commit convention added #26. Durability step 7b + explicit dispositions + citation rule (#28). | Agent | **v1.5** — Session #28 |
 | `glossary.md` | Controlled vocabulary for tool-agnostic terminology | Both | **v1** — April 2026 |
@@ -58,7 +58,7 @@
 | File | Purpose | Audience | Status |
 |------|---------|----------|--------|
 | `templates/profile.md` | Overture profile template — personal customizations | You | **v1** — April 2026 |
-| `templates/CLAUDE.md` | CC-specific operating document skeleton | Both | v3.1 — April 2026 |
+| `templates/CLAUDE.md` | CC-specific operating document skeleton. Lifetime annotations + RESERVED SESSIONS #28. | Both | v3.2 — Session #28 |
 | `templates/init.md` | Manual init guide (superseded by plugin/skills) | Agent | v1 — March 2026 |
 | `templates/session-start.md` | CC session-start command template. Progress ledger #26 (synced with skill). Date/time pre-step + durability synced (#28). | Agent | v4 — Session #28 |
 | `templates/session-end.md` | CC session-end command template. Progress ledger + commit convention #26 (synced with skill). 7b + dispositions + citation rule (#28). | Agent | v5 — Session #28 |
@@ -119,16 +119,20 @@ Universal working preferences in `~/.claude/CLAUDE.md`.
 Anything that must survive more than one cycle lives in a durable structure
 (UPCOMING SESSIONS, RESERVED SESSIONS, DEFERRED WORK), pointed at from here.*
 
-**Current**: Session #27 complete (June 15, 2026); July 6 hygiene sitting — plugin 1.1.0 published per coordinator contract
-**Status**: Publish gap closed (coordinator contract `choral/contracts/portfolio-overture.md`, Jul 6). #27 shipped Jun 15 without `/session-end`; close-out reconciled retroactively in the Jul 6 sitting. Plugin bumped 1.0.1 → 1.1.0 with CHANGELOG.md + validate + tag v1.1.0; all pushed. Siblings pick up #20-#26 skill changes via `/plugin update`.
-**NEXT**: Marketplace submission talk-through — decide what Overture submits and why BEFORE submitting anything (Min's call, Jul 6). Ground in STRATEGY.md marketplace posture + UPCOMING #6; 1.1.0 is tagged and validate-clean, so the mechanical part is unblocked once the decision lands. Then Session #29 — Autonomous Execution Mode (full build; context: `docs/plans/2026-08-19-autonomous-execution-context.md`).
-**Last queue hygiene**: July 6 sitting (#27 UPCOMING entry cleared + renumbered; #27 close entry written; #24/#25 entries merged)
+**Current**: Session #28 complete (August 19, 2026; closed August 24) — handoff durability structural + plugin 1.2.0 released
+**Status**: absOrbs #26's rotating-field fault closed at three layers: behavioral (skills), structural (layout annotations + RESERVED SESSIONS in skeletons), distributed (1.2.0 tagged + pushed; user-scope plugin updated on this machine, every project loads it at next session start). UPCOMING reclassified durable (edit-semantics criterion). Mechanical hook backstop deferred to #29 by design.
+**NEXT**: Marketplace submission talk-through — decide what Overture submits and why BEFORE submitting anything (Min's call, Jul 6). Ground in STRATEGY.md marketplace posture + UPCOMING #6; 1.2.0 is tagged and validate-clean, so the mechanical part is a decision away. Fold in the overdue quarterly ecosystem scan (SCAN-LOG next was Jul 2026; CRITICAL REMINDERS #4) — the submission decision benefits from a fresh first-party read. Then Session #29 — Autonomous Execution Mode (full build; context: `docs/plans/2026-08-19-autonomous-execution-context.md`).
+**Last queue hygiene**: Session #28 (UPCOMING reconciled item-wise; #29+ labels relabeled #30+; #28 COMPLETE row added)
 
 ### Pending Verifications
 *(Phase 4a fix verification → Deferred Work, Phase 4b row.)*
 
 ### Continuing / Open Threads (for Session #29)
 - **Wider em-dash + AI-tells purge** — see UPCOMING #2 (README leftovers incl. heading-case question, Progression, Working-With-Claude-Code, workflow/, patterns/ ~95, choral/). Mechanical; foldable into any session.
+
+### Session #28 Complete (August 19, 2026; closed August 24)
+
+Handoff durability made structural + plugin 1.2.0 released. absOrbs #26's fault (multi-session context in rotating fields, silently destroyed by session-end) preempted the queued NEXT. Shipped: skills v1.5 (7b rewrite, explicit dispositions, citation rule), lifetime annotations + RESERVED SESSIONS in both skeletons + profile, `patterns/Handoff-Durability.md` v1.1 (edit-semantics revision, UPCOMING reclassified durable), template pairs synced (incl. the missed Aug 10 date pre-step). #29 design moved to `docs/plans/2026-08-19-autonomous-execution-context.md` (13/13 parity-verified before trim). Executed as SDD-over-Workflow (ultracode: 21 agents, 9 tasks review-clean, 1 fix round, final review approved). Spec `2263a72`, plan `947b731`, release `6d924c0`, tag `v1.2.0` verified on remote. Deferred to #29: hook backstop, profile line-55 citation fix.
 
 ### July 6, 2026 Hygiene Sitting (coordinator contract)
 
@@ -151,17 +155,9 @@ README hero rewritten onto the OOTB-aware wedge: "A memory file remembers. A wor
 
 Fortomino autonomous-execution audit: bare tool-level `Bash` in allow makes the merge/deploy hard gates behavioral-only, voiding Settings-Hygiene's dangerous-by-absence model; contradiction live in the kit (profile.md line 53 vs Settings-Hygiene 83-86). Decision (user-confirmed): full opt-in pattern + tooling build queued as Session #29 (renumbered); design in `docs/plans/2026-08-19-autonomous-execution-context.md`. No code.
 
-### Session #26 Complete (June 12, 2026, compressed)
+### Sessions #23-#26 (archived)
 
-README "Voice in Practice" H2 shipped (`57d2946`, 284w before/after; positive-patterns-first, grep-gated). Progress ledger added to both session skills + CC templates (`e7b07e2`): entry roster + [N/M] step lines + outcomes + receipt checklist + session-close commit convention (session-start gets lighter variant). Extracted from Fortomino/itsmin.com recon; five further recon candidates captured to P2 #5. Spec `dbae4fe`, plan `365ff5e`.
-
-### Sessions #24-#25 Complete (May 22, 2026, compressed)
-
-Origins narrative shipped (README 328w `9ae1573` + STRATEGY 122w `753ef63`); STRATEGY Purpose + Is/Isn't voiced + em-dash purge 20→1 (`9247fc0`, `f997e11`); Drafting note H2 codified in `voice/Voice-Reference.md` (`6fec5b5`): draft toward voice.md positive patterns first, grep-verify second (v1 passed grep but read as competent-AI-prose). Detail in COMPLETE table + archives.
-
-### Session #23 Complete (May 22, 2026, compressed)
-
-Voice purge of voice docs: `Voice-Framework.md` 47 em-dashes → 0, `Voice-Reference.md` 36 → 0, sentence-case headings, header-payload colons. 7 project `.claude/voice.md` copies deleted (byte-identical #22 snapshots); single source of truth restored at `~/.overture/voice.md`, project-local override still functional. Commit `d829a9f`. The docs that teach AI-tells avoidance now demonstrate it.
+See [`docs/sessions/SESSIONS_23_26_ARCHIVE.md`](docs/sessions/SESSIONS_23_26_ARCHIVE.md) for the compressed entries.
 
 ### Sessions #17-#22 (archived)
 
@@ -188,7 +184,7 @@ doc), never by silent omission at session-end.*
 - (g) **DONE #25**: Drafting note codified in `voice/Voice-Reference.md` (positive-patterns-first lesson from #24+#25 production drafting).
 
 **P2: Phase 3 — Marketplace submission + community distribution** *(sequenced after Phase 2; ~1-2 sessions)*
-- Submission hygiene **DONE Jul 6 sitting** (CHANGELOG.md authored, plugin.json 1.1.0 + tag v1.1.0, marketplace metadata description, validate clean). Remaining: README polish post-Phase 2 (optional).
+- Submission hygiene **DONE Jul 6 sitting, superseded by 1.2.0 (#28)** — CHANGELOG current through 1.2.0, tag v1.2.0, validate clean. Remaining: README polish post-Phase 2 (optional).
 - Submit to Anthropic-curated marketplace via form at `clau.de/plugin-directory-submission`. Curated review ~few days.
 - Opportunistic: ClaudePluginHub auto-indexing, awesome-agent-skills PR (~30 min), claudemarketplaces.com listing.
 - Optional capstone: Medium/Substack post on voice-as-design-material (indexed artifact, not community-building).
@@ -197,7 +193,7 @@ doc), never by silent omission at session-end.*
 
 1. **Session #29: Autonomous Execution Mode — full command/skill/hook build** *(queued by the #27 interlude; renumbered from #28 when #28 became the handoff-durability build; START with `superpowers:brainstorming`)* — Capture Fortomino's autonomous build-to-playtest posture as a reusable pattern with tooling. Full design (two-layer finding, 5-component build scope, opt-in verdict, the live profile/Settings-Hygiene inconsistency, both settings case studies): `docs/plans/2026-08-19-autonomous-execution-context.md`.
 
-2. **Session #29+: Wider em-dash + AI-tells purge** — STRATEGY done #25. Remaining: README outside Origins/Provenance/Voice-in-Practice (incl. heading-case question), Progression, Working-With-Claude-Code, workflow/, patterns/ (heaviest at ~95), choral/. Mechanical, low-risk. Could be a dedicated session or folded into any session already editing README.
+2. **Sessions #30+: Wider em-dash + AI-tells purge** *(relabeled from #29+ at #28; #29 is reserved)* — STRATEGY done #25. Remaining: README outside Origins/Provenance/Voice-in-Practice (incl. heading-case question), Progression, Working-With-Claude-Code, workflow/, patterns/ (heaviest at ~95), choral/, plus the plan-mandated dash in both skeletons' RESERVED SESSIONS note (#28 final review, ship-as-is ruling). Mechanical, low-risk. Could be a dedicated session or folded into any session already editing README.
 
 3. **Parallel P2: LinkedIn derivative of Origins** — Essay-register first test (voice.md beyond technical-narrative). Different register; will surface voice.md gaps. Origins is shipped + STRATEGY positioning final, so timing is open.
 
@@ -205,12 +201,13 @@ doc), never by silent omission at session-end.*
 
 5. **Parallel P2 — CLAUDE.md tracking normalization** (pxtxt, itsmin.com) — Each project's own session: privacy audit → move sensitive bits to `.claude/CLAUDE.local.md` → remove `CLAUDE.md` from gitignore → commit. Not blocking; required for fresh-clone portability.
 
-6. **Sessions #29+: Phase 3 — marketplace submission + community directory PRs** — Hygiene pass **DONE Jul 6** (CHANGELOG.md, 1.1.0 bump + tag v1.1.0, validate clean). **Decision gate first (Min, Jul 6): talk through what Overture submits and why before submitting** — revisit STRATEGY.md marketplace posture, what a curated listing commits the project to (support expectations, scan cadence, versioning discipline), and whether directories beyond the curated one earn their listing. Then, if it survives: submit via `clau.de/plugin-directory-submission`, opportunistic PRs (ClaudePluginHub, awesome-agent-skills, claudemarketplaces.com).
+6. **Sessions #30+: Phase 3 — marketplace submission + community directory PRs** *(relabeled from #29+ at #28)* — Hygiene pass **DONE Jul 6, superseded by 1.2.0 (#28)** (CHANGELOG.md through 1.2.0, tag v1.2.0, validate clean). **Decision gate first (Min, Jul 6): talk through what Overture submits and why before submitting** — revisit STRATEGY.md marketplace posture, what a curated listing commits the project to (support expectations, scan cadence, versioning discipline), and whether directories beyond the curated one earn their listing. Then, if it survives: submit via `clau.de/plugin-directory-submission`, opportunistic PRs (ClaudePluginHub, awesome-agent-skills, claudemarketplaces.com).
 
 ### COMPLETE (Recent)
 
 | Item | Session | Notes |
 |---------|---------|-------|
+| Handoff durability structural + plugin 1.2.0 | #28 | Rotating/durable field model (edit semantics), skills v1.5, skeleton annotations + RESERVED SESSIONS, template sync, #29 design → durable doc, release pushed + tag `v1.2.0`. Spec `2263a72`, plan `947b731`, ship `6d924c0`. SDD-over-Workflow, 21 agents, final review approved. |
 | Plugin 1.1.0: CHANGELOG + bump + tag + push | Jul 6 sitting | Coordinator contract executed; CHANGELOG covers the actual #20-#26 delta; marketplace metadata description added; validate clean; publish gap closed. |
 | README hero rewrite + Problem reconciliation | #27 | "A memory file remembers. A workflow compounds." (OOTB-aware wedge). Spec `93a2455`, plan `f4be9af`, ship `896f191`, kit table `7e48f1f`. Closed retroactively Jul 6. |
 | Voice in Practice README section | #26 | New H2 between How It Works and Provenance: same bug-fix summary drafted twice (unguided vs voice profile), naming paragraph, pointer to `voice/` + profile mechanism. 284w, drafted positive-patterns-first per #25 Drafting note, grep-gated after. Spec `dbae4fe`, plan `365ff5e`, ship `57d2946`. |
@@ -263,9 +260,9 @@ doc), never by silent omission at session-end.*
 | Scan Log | `SCAN-LOG.md` | Session #21 | Quarterly ecosystem scans. Inaugural Q2 2026 entry. Next: Jul 2026. |
 | README | `README.md` | Session #27 | Entry point — plugin install, profile, orientation. Origins narrative #24 (328w). Voice in Practice section #26. **Hero rewritten #27** (OOTB-aware wedge, "A memory file remembers. A workflow compounds."); Problem section reconciled to match. |
 | Glossary | `glossary.md` | Session #11 | Controlled vocabulary for tool-agnostic terminology |
-| Plugin Manifest | `.claude-plugin/plugin.json` | Jul 6, 2026 | Claude Code plugin manifest — **v1.1.0** |
+| Plugin Manifest | `.claude-plugin/plugin.json` | Session #28 (Aug 19, 2026) | Claude Code plugin manifest — **v1.2.0** |
 | Marketplace Manifest | `.claude-plugin/marketplace.json` | Jul 6, 2026 | Self-hosted marketplace; metadata description added |
-| Changelog | `CHANGELOG.md` | Jul 6, 2026 | Plugin version history, 1.0.0 → 1.1.0 |
+| Changelog | `CHANGELOG.md` | Session #28 (Aug 19, 2026) | Plugin version history, 1.0.0 → 1.2.0 |
 | Init Command (CC) | `commands/init.md` | Session #13 | CC plugin command — `/overture:init` (profile-aware) |
 | Init Skill | `skills/overture-init/` | Session #21 | Cross-tool init (Agent Skills format, profile-aware). Step 6 ecosystem surfacing added #21. |
 | Session-Start Skill | `skills/session-start/` | Session #28 | Cross-tool session-start. Companion Capabilities #21; profile auto-load pre-step #22. Progress ledger added #26. **Date/time pre-step (Aug 10); durability check + durable-UPCOMING (Aug 18 + #28).** |
@@ -294,5 +291,6 @@ doc), never by silent omission at session-end.*
 
 | Archive | Sessions | Period |
 |---------|----------|--------|
+| [`docs/sessions/SESSIONS_23_26_ARCHIVE.md`](docs/sessions/SESSIONS_23_26_ARCHIVE.md) | #23-#26 | May 22 – Jun 12, 2026 |
 | [`docs/sessions/SESSIONS_17_22_ARCHIVE.md`](docs/sessions/SESSIONS_17_22_ARCHIVE.md) | #17-#22 | Apr 13 – May 22, 2026 |
 | [`docs/sessions/SESSIONS_01_16_ARCHIVE.md`](docs/sessions/SESSIONS_01_16_ARCHIVE.md) | #1-#16 | Mar 22 – Apr 13, 2026 |
