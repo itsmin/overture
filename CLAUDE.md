@@ -134,9 +134,9 @@ Anything that must survive more than one cycle lives in a durable structure
 
 Handoff durability made structural + plugin 1.2.0 released. absOrbs #26's fault (multi-session context in rotating fields, silently destroyed by session-end) preempted the queued NEXT. Shipped: skills v1.5 (7b rewrite, explicit dispositions, citation rule), lifetime annotations + RESERVED SESSIONS in both skeletons + profile, `patterns/Handoff-Durability.md` v1.1 (edit-semantics revision, UPCOMING reclassified durable), template pairs synced (incl. the missed Aug 10 date pre-step). #29 design moved to `docs/plans/2026-08-19-autonomous-execution-context.md` (13/13 parity-verified before trim). Executed as SDD-over-Workflow (ultracode: 21 agents, 9 tasks review-clean, 1 fix round, final review approved). Spec `2263a72`, plan `947b731`, release `6d924c0`, tag `v1.2.0` verified on remote. Deferred to #29: hook backstop, profile line-55 citation fix.
 
-### July 6, 2026 Hygiene Sitting (coordinator contract)
+### July 6, 2026 Hygiene Sitting (coordinator contract, archived)
 
-Executed `choral/contracts/portfolio-overture.md` (publish gap: #27 README + plugin bump sitting unpushed; the public repo showed the pre-#27 README). Privacy audit of pending commits PASS → CHANGELOG.md authored (actual 1.0.1→1.1.0 delta spans #20-#26, wider than the contract's "#22+#26") → plugin.json 1.1.0 + marketplace metadata description (`claude plugin validate` clean) → tag v1.1.0 → push. #27 close-out reconciled retroactively; STATUS written back to the contract. Same-day follow-up: Voice in Practice callback rewired to the new hero ("part of what compounds"); settings.local.json cleaned per Settings-Hygiene protocol (76 → 31 entries; credential scan clean; home-dir-wide Read narrowed to Projects + tool dirs; backup in session scratchpad).
+Plugin 1.1.0 published per coordinator contract; publish gap closed; settings cleaned 76 → 31. Full entry: [`docs/sessions/SESSIONS_23_26_ARCHIVE.md`](docs/sessions/SESSIONS_23_26_ARCHIVE.md).
 
 ### August sittings (untracked; reconciled at #28)
 
@@ -151,9 +151,9 @@ supersedes the hand-mirroring.
 
 README hero rewritten onto the OOTB-aware wedge: "A memory file remembers. A workflow compounds." Problem section reconciled to match. Spec `93a2455`, plan `f4be9af`, ship `896f191`, kit table `7e48f1f`. Session ended without `/session-end`; closed retroactively in the Jul 6 sitting. Voice in Practice "setup" callback checked: reads fine standalone, tagline echo gone (open thread).
 
-### Session #27 Planning Interlude (June 14, 2026, compressed)
+### Session #27 Planning Interlude (June 14, 2026, archived)
 
-Fortomino autonomous-execution audit: bare tool-level `Bash` in allow makes the merge/deploy hard gates behavioral-only, voiding Settings-Hygiene's dangerous-by-absence model; contradiction live in the kit (profile.md line 53 vs Settings-Hygiene 83-86). Decision (user-confirmed): full opt-in pattern + tooling build queued as Session #29 (renumbered); design in `docs/plans/2026-08-19-autonomous-execution-context.md`. No code.
+Fortomino autonomous-execution audit → #29 build queued; design in `docs/plans/2026-08-19-autonomous-execution-context.md`. Full entry: [`docs/sessions/SESSIONS_23_26_ARCHIVE.md`](docs/sessions/SESSIONS_23_26_ARCHIVE.md).
 
 ### Sessions #23-#26 (archived)
 

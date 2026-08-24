@@ -13,3 +13,15 @@ Origins narrative shipped (README 328w `9ae1573` + STRATEGY 122w `753ef63`); STR
 ### Session #23 Complete (May 22, 2026, compressed)
 
 Voice purge of voice docs: `Voice-Framework.md` 47 em-dashes → 0, `Voice-Reference.md` 36 → 0, sentence-case headings, header-payload colons. 7 project `.claude/voice.md` copies deleted (byte-identical #22 snapshots); single source of truth restored at `~/.overture/voice.md`, project-local override still functional. Commit `d829a9f`. The docs that teach AI-tells avoidance now demonstrate it.
+
+---
+
+## Interim entries archived at #28 close (post-#26 sittings and interludes)
+
+### Session #27 Planning Interlude (June 14, 2026, compressed)
+
+Fortomino autonomous-execution audit: bare tool-level `Bash` in allow makes the merge/deploy hard gates behavioral-only, voiding Settings-Hygiene's dangerous-by-absence model; contradiction live in the kit (profile.md line 53 vs Settings-Hygiene 83-86). Decision (user-confirmed): full opt-in pattern + tooling build queued as Session #29 (renumbered); design in `docs/plans/2026-08-19-autonomous-execution-context.md`. No code.
+
+### July 6, 2026 Hygiene Sitting (coordinator contract)
+
+Executed `choral/contracts/portfolio-overture.md` (publish gap: #27 README + plugin bump sitting unpushed; the public repo showed the pre-#27 README). Privacy audit of pending commits PASS → CHANGELOG.md authored (actual 1.0.1→1.1.0 delta spans #20-#26, wider than the contract's "#22+#26") → plugin.json 1.1.0 + marketplace metadata description (`claude plugin validate` clean) → tag v1.1.0 → push. #27 close-out reconciled retroactively; STATUS written back to the contract. Same-day follow-up: Voice in Practice callback rewired to the new hero ("part of what compounds"); settings.local.json cleaned per Settings-Hygiene protocol (76 → 31 entries; credential scan clean; home-dir-wide Read narrowed to Projects + tool dirs; backup in session scratchpad).
